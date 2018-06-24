@@ -47,6 +47,8 @@ if (!in_array($script, scandir('pages'))) {
 src="/images/html5.png" alt="Valid HTML5"/></a>
 <a href="http://jigsaw.w3.org/css-validator/check/referer"><img
 src="/images/css3.png" alt="Valid CSS3"/></a>
+<a href="https://github.com/t3nsor/brianbi.ca"><img
+src="/images/git.png" alt="Website source repository"/></a>
 <p style="margin: 0.25em 0">The views expressed here are solely those of the
 author in his private capacity and do not in any way represent the views of his
 employer.</p>
