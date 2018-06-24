@@ -1,0 +1,146 @@
+<h2>Section 6.12. Finite Subgroups of the Rotation Group</h2>
+<p><span class="problem">Exercise 6.12.1</span> To every dodecahedron there
+corresponds an inscribed icosahedron whose vertices are located at the
+centres of the dodecahedron's faces. Every symmetry of the dodecahedron is
+therefore a symmetry of this inscribed icosahedron. The converse is also true:
+to every icosahedron we can associate a dodecahedron whose vertices are
+located at the centres of the icosahedron's faces, implying that every
+symmetry of the icosahedron is a symmetry of the inscribed dodecahedron also.
+This implies that the symmetry groups of the dodecahedron and icosahedron are
+the same.</p>
+
+<p><span class="problem">Exercise 6.12.2</span> The poles fall into three
+subsets: the vertex poles \(P_v\) which are unit vectors directed from the
+centre of the octahedron to one of the vertices; the edge poles \(P_e\) which
+are directed from the centre to the midpoint of one of the edges; and the
+face poles \(P_f\) which are directed from the centre to the centre of one of
+the faces. Any symmetry of the octahedron can only map a pole to
+another pole of the same type, by virtue of the fact that it maps vertices to
+vertices, edges to edges, and faces to faces. But \(O\) acts transitively on
+the vertices, on the edges, and on the faces of the octahedron, so there is
+only a single orbit for each of \(P_v\), \(P_e\), and \(P_f\).</p> 
+
+<p><span class="problem">Exercise 6.12.3</span> The order of \(O\) is 24, and
+\(O\) acts transitively on \(S\) which has size 4, since to carry one body
+diagonal onto another it suffices to carry one of the vertices of the source
+diagonal onto one of the vertices of the target diagonal. Therefore the
+stabilizer \(O_D\) of a single diagonal \(D\) has order \(|O|/|S| = 6\).
+The 6 elements of \(O\) that fix \(D\)
+are the three rotations \(\rho_0 = 1, \rho_{2\pi/3}, \rho_{4\pi/3}\)
+around \(D\) and the three rotations \(\rho_0 r, \rho_{2\pi/3}r,
+\rho_{4\pi/3}\) where \(r\) is some rotation that exchanges the two vertices of
+\(D\); it is easy to see that these are 6 distinct elements of \(O\). There is
+an isomorphism from \(O_D\) to
+\(\operatorname{Perm}(S \setminus \{D\})\) mapping a rotation to the
+permutation it induces on the other three body diagonals: the rotations by
+120 and 240 degrees act as 3-cycles while \(r\) acts as a transposition so
+that the \(\rho r\)'s correspond to odd permutations of \(S \setminus \{D\}\).
+Therefore \(O_D\) is isomorphic to \(S_3\).</p>
+
+<p><span class="problem">Exercise 6.12.4</span> The group \(O\) has order 24,
+and acts transitively on the set \(S = \{t_1, t_2\}\) of the two inscribed
+tetrahedra (for example, any of the 90 degree rotations in \(O\) will exchange
+the two tetrahedra). Therefore the stabilizer \(H = O_{t_1}\) has order 12. Now
+consider the rotational symmetries of \(t_1\), which may or may not be
+symmetries of the containing cube. There are 12 such symmetries (the order
+of \(T\)). In fact, any permutation of the four vertices \(A, B, C, D\) of
+\(t_1\) must also permute the four affine combinations
+\(A + B + C - 2D, B + C + D - 2A, C + D + A - 2B, D + A + B - 2C\), but these
+are precisely the other four vertices of the cube. So \(T\) is a subgroup of
+\(H\). And \(H\) has the same order as \(T\), so \(H = T\).</p>
+
+<p><span class="problem">Exercise 6.12.5</span> The icosahedral group has
+order 60 (Example 6.9.5(a)) and acts transitively on the set of 6 long
+diagonals of the icosahedron (diagonals that join a vertex to the opposite
+vertex). To see this, observe that to carry one diagonal onto another it
+suffices to carry a vertex of the source diagonal onto a vertex of the target
+diagonal. Therefore the stabilizer subgroup of one of these six diagonals
+has order \(60 \div 6 = 10\).</p>
+
+<p><span class="problem">Exercise 6.12.6</span><p>
+<ol class="subproblems">
+<li><p>Every subgroup of the tetrahedral group is a finite subgroup of
+\(SO(3)\). By the classification theorem (6.12.1), such a group must be cyclic,
+dihedral, or one of the groups \(T, O, I\).  Obviously \(T\) is a subgroup of
+\(T\) while \(O\) and \(I\) are not.</p>
+<p>All elements of \(T\) have order 2 or
+3, which rules out any cyclic groups of order 4 or greater. (A 180 degree
+rotation that fixes an edge has order 2, while a 120 degree rotation that fixes
+a vertex and the opposite face has order 3.) The elements of orders 2 and 3
+generate subgroups of \(T\) isomorphic to \(C_2\) and \(C_3\).</p>
+<p>Again, any \(D_n\) with \(n &gt; 3\) is ruled out since \(T\) has no
+elements of order greater than 3.
+The group \(D_1\) is just \(C_2\). Now consider the set
+consisting of the 3 pairs of opposite edges of the tetrahedron; \(T\) acts
+transitively on this set, so the stabilizer of a particular pair of edges is
+a subgroup of order 4. This subgroup can't be \(C_4\), so it must be \(D_2\).
+To answer the question of whether \(D_3 = S_3\) occurs as a subgroup of
+\(T\), we use the fact from <a href="/artin/6.9">Exercise 6.9.4</a> that \(T\)
+is isomorphic to \(A_4\), and the solution to <a href="/artin/6.11">Exercise
+6.11.1</a>, which implies that the only faithful actions of \(S_3\) on a set of
+4 elements are those that fix
+one element while permuting the other three, therefore their images contain
+odd permutations and are not subgroups of \(A_4\).</p>
+<p>In conclusion, all the
+subgroups of \(T\) are \(C_1, C_2, C_3, D_2\), and \(T\) itself.</li>
+<li><p>Again we turn to (6.12.1). Consider first the case of cyclic groups.
+\(I\) has elements of orders 1, 2, 3, and 5, and no other orders, so the cyclic
+groups \(C_1, C_2, C_3, C_5\) are the only cyclic subgroups of \(I\).</p>
+<p>Similarly, as \(D_n\) contains elements of order \(n\),
+any dihedral group other than \(D_1, D_2, D_3, D_5\)
+can't be a subgroup of \(I\). Again, \(D_1\) is just \(C_2\), and again
+\(D_2\) arises as the stabilizer group of a pair of opposite edges of
+an icosahedron. Now \(I\) acts transitively on the set of the 10 pairs of
+opposite faces of an icosahedron, so the stabilizer group \(H\) of one of these
+10 pairs must have order 6. \(H\) consists  of three rotations by 0, 120, and
+240 degrees, call them \(1, \rho, \rho^2\), around the axis joining the centres
+of the two faces, plus the three rotations consisting of the composition of one
+of these three aforementioned rotations with some fixed rotation \(r\) that
+exchanges the two faces. By labelling the three vertices of one of the faces,
+we can see that \(r\rho r^{-1} = \rho^{-1}\), so \(H\) is isomorphic to
+\(D_3\). \(I\) also acts transitively on the set of the 6 pairs of opposite
+faces of a dodecahedron, and by similar reasoning we find that a stabilizer
+subgroup of order 10 that is isomorphic to \(D_5\).</p>
+<p>We now turn our attention to the last three groups, \(T, O, I\). \(I\) is of
+course a subgroup of itself. \(O\) contains elements of order 4, so it isn't a
+subgroup of \(I\). We claim that \(T\) is a subgroup of \(I\). This argument is
+due to <a href="https://math.stackexchange.com/a/2463774/24692">Steven
+Stadnicki</a>. Let \(t\) be one of the tetrahedra inscribed in a dodecahedron.
+Now \(T\) is the symmetry
+group of \(t\) and it is generated by the 120 degree rotations around an axis
+passing through a vertex of \(t\) and the centre of the opposite face. But
+such an axis also passes through the opposite vertex on the dodecahedron, and
+the dodecahedron has 3-fold rotational symmetry around that axis. This implies
+that each rotational symmetry of \(t\) is also a rotational symmetry of the
+icosahedron in which \(t\) is inscribed. The 12 elements of \(T\) therefore
+form a subgroup of \(I\).</p>
+<p>In conclusion, all the subgroups of \(I\) are given by \(C_1, C_2, C_3,
+C_5, D_2, D_3, D_5, T\), and the entire group \(I\).</p>
+</li>
+</ol>
+
+<p><span class="problem">Exercise 6.12.7</span> Let \(P = (1, \alpha, 0).\)
+If \(\alpha &gt; 1,\) then of the points \((\pm 1, \pm \alpha, 0),\) the one
+closest to \(P\) other than itself is \((-1, \alpha, 0),\) which is 2 units
+away. The two points \((0, -1, \pm \alpha)\) are more than 2 units away from
+\(P\), as are \((-\alpha, 0, \pm 1).\) Therefore the five points adjacent to
+\(P\) must be \((-1, \alpha, 0), (0, 1, \pm \alpha), (\alpha, 0, \pm 1).\)
+In order for \((1, \alpha, 0)\) to be 2 units from \((0, 1, \alpha),\) we
+must have \(1 + (\alpha - 1)^2 + \alpha^2 = 4,\) which has a single positive
+root \(\alpha = \frac{1}{2}(1 + \sqrt{5}).\) With this choice of \(\alpha,\)
+we can easily verify that the following five sets of points:
+\begin{array}{ccc}
+(1, \alpha, 0) &amp; (-1, \alpha, 0) &amp; (0, 1, \alpha) \\
+(1, \alpha, 0) &amp; (0, 1, \alpha) &amp; (\alpha, 0, 1) \\
+(1, \alpha, 0) &amp; (\alpha, 0, 1) &amp; (\alpha, 0, -1) \\
+(1, \alpha, 0) &amp; (\alpha, 0, -1) &amp; (0, 1, -\alpha) \\
+(1, \alpha, 0) &amp; (0, 1, -\alpha) &amp; (-1, \alpha, 0)
+\end{array}
+are equilateral triangles with side length 2, meeting at the vertex
+\((1, \alpha, 0).\) By applying rotations and reflections to \((1, \alpha, 0)\)
+we can similarly write down such a set of 5 equilateral triangles of side
+length 2 meeting at any of the other 12 given points. (For example, to get
+the five triangles meeting at \((-1, \alpha, 0),\) just reverse the sign of
+each \(\pm 1\) entry in the table above.) Each triangle is counted 3 times, one
+for each of its vertices, so there are \(12 \times 5 \div 3 = 20\) triangles
+in all, which therefore form the faces of a regular icosahedron.</p>

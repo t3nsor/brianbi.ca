@@ -1,0 +1,43 @@
+<h2>Section 2.13. Hilbert's third problem</h2>
+<p><span class="problem">Problem 2.13.1</span></p>
+<ol class="subproblems">
+<li><p>A straight cut can do any or all of the following, any number of times:
+<ol><li>Cut an edge transversely, cutting it into two shorter edges.</li>
+<li>Cut an edge longitudinally, creating two edges with the same length as the
+original.</li>
+<li>Cut a face, producing a new edge.</li></ol>
+<p>In case 1, if the edge had length \(\ell\) and dihedral angle \(\theta\),
+then it is divided into two edges with lengths \(\ell_1, \ell_2\) and the same
+dihedral angle \(\theta\), where \(\ell_1 + \ell_2 = \ell\). The cut therefore
+removes the contribution \(\ell \otimes \theta/\pi\) from the Dehn invariant
+and adds \(\ell_1 \otimes \theta/\pi\) and \(\ell_2 \otimes \theta/\pi\),
+leaving it unchanged.</p>
+<p>Case 2 is similar, but here the length remains the same but the dihedral
+angle is divided.</p>
+<p>In case 3, the two new edges would contribute \(\ell \times \theta/\pi\)
+and \(\ell \times (\pi - \theta)/\pi\), for a sum of \(\ell \times 1\). Since
+\(1 \in \mathbb{Q}\), this vanishes, and the Dehn invariant is left unchanged
+again.</p><div class="qed"></div></li>
+<li><p><em>Lemma:</em> If \(x + x^{-1} = 2/3\), then \(x^k + x^{-k}\) has
+denominator \(3^k\) in lowest terms, where \(k\) is a positive integer</p>
+<p><em>Proof:</em> Obviously this is true for \(k = 0\) and \(k = 1\). Proceed
+by induction. For \(k \geq 2\), we have \(x^k + x^{-k} =
+(x + x^{-1})(x^{k-1} + x^{-(k-1)}) - (x^{k-2} + x^{-(k-2)})\). By the inductive
+hypothesis, the first term on the RHS has denominator \(3^k\) and the second
+\(3^{k-2}\), so the result has denominator \(3^k\).</p><div class="qed"></div>
+<p>Following the Hint, suppose \(\alpha = 2m/n\) for integers \(m, n\), so
+that \(\cos(2\pi m/n) = 1/3\). Consider the equation \(x + x^{-1} = 2/3\). If
+we put \(x = \cos(2\pi m/n) + i \sin(2\pi m/n)\), then since \(|x| = 1\), it
+follows that \(x + x^{-1} = 2\Re(x) = 2 \cos(2\pi m/n) = 2/3\). By the Lemma,
+\(x^n + x^{-n}\) has denominator \(3^n\), but that's a contradiction since
+\(x^n + x^{-n} = 2\).</p><div class="qed"></div></li>
+<li>The cube has zero Dehn invariant since each dihedral angle is \(\pi/2\).
+For the regular tetrahedron, let AB be one of the edges and M the midpoint of
+CD. Then the dihedral angle is the angle \(\angle AMB\). If \(|AB| = 1\), then
+\(|AM| = |BM| = \sqrt{3}/2\). By the law of cosines, \(1 = 3/4 + 3/4
+- 2(3/4) \cos \angle AMB\), so \(\angle AMB = \cos^{-1}(1/3)\). The Dehn
+invariant for the regular tetrahedron is thus \(6l \otimes
+\cos^{-1}(1/3)/\pi\). The second term is nonzero by the previous part, so the
+regular tetrahedron has nonzero Dehn invariant. We conclude that the cube and
+regular tetrahedron are not interdissectable.</li>
+</ol>

@@ -1,0 +1,30 @@
+<h2>Section 2.1. Laws of Composition</h2>
+<p><span class="problem">Exercise 2.1.1</span> Let \(a, b, c \in S\). Then
+\(a(bc) = ab = a = ac = (ab)c\) so the law of composition is associative.
+Obviously if \(|S| = 1\), then the sole element of \(S\) is the identity.
+Otherwise, suppose \(a \in S\) and choose \(b \in S \setminus \{a\}\); then
+\(ab = a \neq b\), so \(a\) is not the identity. Therefore there is no identity
+when \(|S| \neq 1\).</p>
+
+<p><span class="problem">Exercise 2.1.2</span></p>
+<ol class="subproblems">
+<li>Suppose \(a\) has both a left inverse \(\ell\) and a right inverse \(r\),
+that is, \(\ell a = ar = 1\). Then by associativity, \(\ell = \ell 1 = \ell(ar)
+= (\ell a)r = 1r = r\). Therefore \(ar = 1\) and \(ra = \ell a = 1\), so \(r\)
+is the inverse of \(a\).</li>
+<li>If \(a\) is invertible, and \(b_1, b_2\) are inverses of \(a\), then part
+(a) implies that \(b_1 = b_2\). Therefore inverses are unique for associative
+operations.</li>
+<li>Observe that \((ab)(b^{-1}a^{-1}) = a(b b^{-1})a^{-1} = a a^{-1} = 1\),
+therefore \(b^{-1} a^{-1}\) is the inverse of \(ab\).</li>
+<li>If \(S\) is the set of functions \(\mathbb{N}^{\mathbb{N}}\) with the law of
+composition given by the composition of functions, then the function \(f \in
+S\) defined by \(f(x) = x+1\) has a left inverse given by \(g(x) = \max(x-1,
+0)\) but no right inverse since there is no \(x\) with \(f(x) = 0\). Likewise
+the function \(g\) has \(f\) as its right inverse but can have no left inverse
+since it is not injective.</li>
+</ol>
+
+<p><span class="problem">Exercise 2.1.3</span> This was explained in the
+solution to 1.2(d) above; we just note here that \(g(0)\) can be any natural
+number, so there are infinitely many possible \(g\)'s.</p>

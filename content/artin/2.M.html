@@ -1,0 +1,425 @@
+<h2>Miscellaneous Problems for Chapter 2</h2>
+<p><span class="problem">Problem 2.M.1</span> Suppose \(M\) is an invertible
+2&times;2 integer matrix whose inverse is also an integer matrix. Then
+\(\det M\) and \(\det(M^{-1})\) are both integers. But they are also
+reciprocals of each other. This is only possible when \(\det M = \pm 1\). This
+condition is not only necessary but also sufficient&mdash;formula (1.1.17) for
+the inverse of a 2&times;2 matrix implies that
+whenever \(M\) is an integer matrix with determinant \(\pm 1\), \(M^{-1}\)
+will be an integer matrix too.</p>
+<p>Now suppose \(a, c \in \mathbb{Z}\) with \(\gcd(a, c) = 1\). By
+Corollary 2.3.6, there always exist \(b, d \in
+\mathbb{Z}\) such that \(ad - bc = 1\), so \((a\ c)^t\) can occur as the
+first column of some integer matrix with an integer inverse matrix. Conversely,
+if \(a = c = 0\) then obviously a matrix with first column \((a\ c)^t\) is
+singular, and if \(\gcd(a, c) &gt; 1\) then the determinant of any integer
+matrix with first column \((a\ c)^t\) will also be a multiple of that GCD. So
+the answer to the problem is <q>precisely those \(a, c\) that are relatively
+prime</q>.</p>
+
+<p><span class="problem">Problem 2.M.2</span></p>
+<ol class="subproblems">
+<li>A group of even order can be partitioned into equivalence classes by the
+relation defined so that \(a \sim b\) iff \(a = b\) or \(a = b^{-1}\). Then
+the number of such equivalence classes of odd size must be even. The element
+1 is in its own equivalence class, so there must be some other equivalence
+class of odd size. Obviously every equivalence class has size 1 or 2. So there
+is some element \(a \neq 1\) that is in an equivalence class containing only
+itself, that is, \(a = a^{-1}\). Therefore \(a\) has order 2.</li>
+<li>The argument used in the solution to <a href="/artin/2.8">Exercise
+2.8.4</a> proves the existence of an element of order 3
+(however, it cannot be used to prove the existence of an element of order
+7).</li>
+</ol>
+
+<p><span class="problem">Problem 2.M.3</span> If \(G\) contains an element of
+order 6 then it is isomorphic to \(C_6\). If \(G\) contains an element of order
+3 (call it \(x\)) but no element of order 6, then by Problem 2.M.2(a), it must
+contain an element of order 2 as well (call it \(y\)), and by an argument given
+in the solution to <a href="/artin/2.11">Exercise 2.11.6</a>, the six elements
+\(1, x, x^2, y, xy, x^2y\) must be distinct. It is easy to see that \(yx
+\notin \{1, x, x^2, y\}\), so either \(yx = xy\) or \(yx = x^2 y\). In the
+former were true, then \((xy)^n = x^n y^n\) and \(xy\) would have order 6 (a
+contradiction). In the latter case, \(G\) would be isomorphic to \(S_3\).
+Finally, the last possibility, where all elements of \(G\) have order 1 or 2,
+can't occur. For in such a group we could choose two arbitrary elements \(x, y
+\in G \setminus \{1\}\) with \(x \neq y\), which are their own inverses, so
+\(xy = (xy)^{-1} = y^{-1}x^{-1} = yx\), implying that \(x\) and \(y\) generate
+a subgroup of order 4, which violates Lagrange's theorem. We conclude that all
+groups of order 6 are isomorphic to either \(C_6\) or \(S_3\).</p>
+
+<p><span class="problem">Problem 2.M.5</span> All we need to prove is that
+each element of \(S\) has an inverse. Let \(a \in S\). Then consider the map
+\(L_a : S \to S\) given by \(L_a(b) = ab\). The Cancellation Law states that
+this map is injective. Since \(S\) is finite, \(L_a\) is also surjective, that
+is, 1 lies in its image. The \(b\) for which \(L_a(b) = 1\) is then a right
+inverse of \(a\). By considering the map \(R_a : S \to S\) with \(R_a(b) =
+ba\), we can similarly deduce the existence of a left inverse. We conclude that
+\(a\) is invertible for each \(a \in S\).</p>
+
+<p><span class="problem">Problem 2.M.6</span></p>
+<ol class="subproblems">
+<li>Suppose \(a \in S\). Then the constant path \(X(t) = a\) lies within \(S\).
+So \(a \sim a\). Now suppose \(a \sim b\) using some path \(X\) lying in \(S\);
+then define \(X^r : [0, 1] \to \mathbb{R}^k\) by \(X^r(t) = X(1-t)\); then
+\(X^r(0) = b\), \(X^r(1) = a\), \(X\) is continuous, and \(X^r\) lies entirely
+in \(S\), so \(b \sim a\). Finally, suppose \(a \sim b\) and \(b \sim c\)
+using paths \(X\) and \(Y\) lying in \(S\). Then define \(Z : [0, 1] \to
+\mathbb{R}^k\) as follows:
+\[
+Z(t) = \begin{cases}
+X(2t) &amp; \text{if $t &le; 1/2$} \\
+Y(2t-1) &amp; \text{if $t &gt; 1/2$}
+\end{cases}
+\]
+Now the image of \(Z\) lies entirely in \(S\) since \(Z\) only takes on values
+that \(X\) and \(Y\) take on. The functions \(t \mapsto X(2t)\) and \(t
+\mapsto Y(2t-1)\) are continous since \(X\) and \(Y\) are; so \(Z\) is
+continuous provided that it is continous at \(t = 1/2\), which it is since
+\(X(1) = Y(0) = b\). Finally, \(Z(0) = X(0) = a\) and \(Z(1) = Y(1) = c\). So
+\(a \sim c\). The above results imply that \(\sim\) is an equivalence
+relation.</li>
+<li>This follows from Proposition 2.7.4.</li>
+<li>The first set is the unit circle, which is path-connected since there is an
+arc joining any pair of points on the circle. The second set is the union of
+the x and y axes, which is path-connected since every point \(P\) in the set is
+connected to the origin by the line segment with the origin and \(P\) as
+endpoints. The third set is not path-connected, since \((1, 1) \not\sim
+(-1, -1)\); to see this, observe that any continuous function taking on the
+values \((1, 1)\) and \((-1, -1)\) must pass through the y-axis (by applying
+the intermediate value theorem to its first component), but no point on the
+y-axis satisfies \(xy = 1\).</li>
+</ol>
+
+<p><span class="problem">Problem 2.M.7</span></p>
+<ol class="subproblems">
+<li>Suppose \(X\) is a path from \(A\) to \(B\) that lies in \(G\), and
+\(Y\) is a path from \(C\) to \(D\) that lies in \(G\). Define \(Z : [0, 1]
+\to G\) by \(Z(t) = X(t)Y(t)\). Then \(Z\) is continuous since matrix
+multiplication is continuous, \(Z(0) = AC, Z(1) =
+BD\), and since each \(X(t)\) and \(Y(t)\) lies in \(G\), and \(G\) is a group,
+each \(X(t)Y(t)\) lies in \(G\) as well. Thus, \(Z\) is a path  from \(AC\) to
+\(BD\) lying in \(G\).</li>
+<li><p>Denote the set described in the problem by \(N\).
+We are given that \(I \in N\). Also,
+if \(A, B \in N\), then \(I \sim A\) and \(I \sim B\), and by part (a) we have
+\(I \sim AB\), so \(AB \in N\). Also, for every \(A \in N\), let \(X\) be a
+path from \(I\) to \(A\) that lies in \(G\); then define \(Y : [0, 1] \to G\)
+by \(Y(t) = X(t)^{-1}\). This only takes on values in \(G\) since \(X\) only
+takes on values in \(G\) and \(G\) is a group; it is continous since matrix
+inversion is continous; and also \(Y(0) = I\) and \(Y(1) = A^{-1}\). So
+\(I \sim A^{-1}\). These results taken together establish that \(N\) is a
+subgroup of \(G\).</p>
+<p>Let \(A \in G\) and \(B \in N\). Using \(A \sim A\) and \(B \sim I\) and
+part (a), obtain that \(AB \sim A\). Using this together with \(A^{-1} \sim
+A^{-1}\) and part (a), obtain that \(ABA^{-1} \sim I\). Since this holds for
+all \(A, B\), conclude that \(N\) is normal in \(G\).</p>
+</li>
+</ol>
+
+<p><span class="problem">Problem 2.M.8</span></p>
+<ol class="subproblems">
+<li>We proved for <a href="/artin/2.4">Exercise 2.4.8(b)</a> that the
+elementary matrices of the first type generate \(SL_n(\mathbb{R})\). Each
+elementary matrix of the first type can be joined to the identity matrix by a
+continous path that lies in \(SL_n(\mathbb{R})\) simply by contracting the
+entry \(a\) to zero. That is, \(I \sim E\) for every elementary matrix \(E\)
+of the first type. Suppose \(A \in SL_n(\mathbb{R})\). Write \(A = E_1 E_2
+\ldots E_n\). Then since \(I \sim E_1, I \sim E_2, \ldots, I \sim E_n\), use
+2.M.7(a) to conclude that \(I \sim A\). This holds for all \(A \in
+SL_n(\mathbb{R})\), so \(SL_n(\mathbb{R})\) is path-connected.</li>
+<li><p>Suppose \(A, B \in GL_n(\mathbb{R})\) and \(\det A \det B &lt; 0\). Then
+for any path \(X\) from \(A\) to \(B\), by the intermediate value theorem, the
+continous function \(\det \circ X\) must take on the value 0, therefore the
+image of \(X\) must contain a singular matrix. So \(A\) and \(B\) cannot be
+connected by a path in \(GL_n(\mathbb{R})\).</p>
+<p>Suppose \(\det A &gt; 0\) and \(\det B &gt; 0\). Then consider the path
+\(X : [0, 1] \to GL_n(\mathbb{R})\) defined by \(X(t) = (\det A)^{-t/n} A\).
+This is continuous, and satisfies \(X(0) = A, X(1) = (\det A)^{-1/n}A\), so
+that \(\det X(1) = ((\det A)^{-1/n})^n \det A = 1\), that is, \(X(1) \in
+SL_n(\mathbb{R})\). Analogously \(B \sim (\det B)^{-1/n} B\) where the latter
+matrix is in \(SL_n(\mathbb{R})\). Since \(SL_n(\mathbb{R})\) is
+path-connected, the transitive property of path-connectivity implies that
+\(A \sim B\). If on the other hand \(\det A &lt; 0\) and \(\det B &lt; 0\),
+then let \(C = \diag(-1, 1, 1, \ldots, 1)\). We then have \(AC \sim BC\) since
+\(AC, BC\) both have positive determinant, and \(C^{-1} \sim C^{-1}\), so by
+2.M.7(a), \(A \sim B\).</p>
+<p>In conclusion, the two connected components of \(GL_n(\mathbb{R})\) consist
+of the matrices with positive determinant and the matrices with negative
+determinant.</p></li>
+</ol>
+</p>
+
+<p><span class="problem">Problem 2.M.9</span> Yes, the double cosets partition
+\(G\). Obviously the double cosets cover \(G\), so we only need to prove that
+every pair of double cosets is either coincident or disjoint. Let
+\(g_1, g_2 \in G\) and suppose the double cosets \(Hg_1K, Hg_2K\) are not
+disjoint, that is, they have some element in common, \(x = h_1 g_1 k_1 =
+h_2 g_2 k_2\). Then \(g_1 = h_1^{-1} h_2 g_2 k_2 k_1^{-1}\). If \(y\) is some
+other element of \(Hg_1 K\), that is, \(y = h_3 g_1 k_3\), then
+\(y = (h_3 h_1^{-1} h_2) g_2 (k_2 k_1^{-1} k_3)\), so \(y \in Hg_2 K\). This
+establishes \(Hg_1 K \subseteq Hg_2 K\). Analogously we can show that the
+reverse inclusion also holds. In conclusion, whenever \(Hg_1 K\) and \(Hg_2 K\)
+are not disjoint, they coincide.</p>
+
+<p><span class="problem">Problem 2.M.10</span> Suppose first that \(H\) is
+normal. Then \(Hg = gH\) for each \(g \in G\), therefore \(HgH = gHH =
+gH\). Conversely, suppose that for all \(g \in G\), \(HgH = gH\). But
+\(Hg \subseteq HgH = gH\). Also, \(Hg^{-1} \subseteq Hg^{-1}H = g^{-1}H\), and
+inverting both sides yields \(gH \subseteq Hg\). Since these inclusions hold
+for all \(g\), the left and right cosets coincide and \(H\) is normal.</p>
+
+<p><span class="problem">Problem 2.M.11</span></p>
+<ol class="subproblems">
+<li>The matrices \(L\) and \(U\) are computed by using row reduction to bring
+the matrix \(A\) to upper triangular form. This proceeds one column at a time,
+starting from the leftmost column. If the entry \(A_{cc}\) vanishes, then give
+up. Write \(A_{cc} = EB\) where \(E\) is the elementary matrix of the third
+type with \(E_{cc} = A_{cc}\); then \(B\) will be the same as \(A\) but with
+all entries in row \(c\) scaled by \(1/c\), therefore \(B_{cc} = 1\). We then
+use \(B\) in place of \(A\) and proceed to zero out all subdiagonal elements in
+column \(c\). Namely, if \(A_{rc}\) needs to be zeroed out, write \(A = EB\)
+where \(E\) is an elementary matrix of the first type with \(E_{rc} =
+-A_{rc}\); the matrix \(B\) is obtained by subtracting \(A_{rc}\) times row
+\(c\) from row \(r\). After all subdiagonal entries in column \(c\) have been
+zeroed out, continue to column \(c + 1\). If this procedure succeeds through
+the last column, the matrix \(U\) left over will be upper triangular with each
+diagonal element equal to 1, and the product of all the elementary matrices
+used will be a lower triangular matrix \(L\) since each individual elementary
+matrix was lower triangular.</li>
+<li>Suppose \(A = L_1 U_1 = L_2 U_2\) where \(A\) is invertible. This implies
+that \(L_1, L_2, U_1, U_2\) are invertible. Rearrange the equality to yield
+\(L_1^{-1} L_2 = U_1 U_2^{-1}\). Since the invertible lower triangular matrices
+form a subgroup of the invertible matrices, and similarly with the upper
+triangular matrices where all diagonal entries are 1, we have that the
+LHS is lower triangular and the RHS is upper triangular with all diagonal
+entries equal to 1. This implies that both sides equal the identity matrix.
+Therefore \(L_1 = L_2\) and \(U_1 = U_2\).<div class="qed"></div></li>
+<li><p>This solution is due to Michael Joyce [1]; for an alternative approach,
+see [2].</p>
+<p>The algorithm described in part (a) can be modified so that it always
+succeeds, producing an LPU decomposition. Namely, start with an empty array of
+pivot rows, \(R = []\), before processing column 1. The invariant is that just
+before processing column \(c\), the matrix \(A\) is still invertible, the row
+list contains \(c - 1\) distinct entries, and for each column \(i &lt; c\), the
+entry \(A_{i,R_i}\) is equal to 1, and all entries \(A_{ij}\) where
+\(i \notin \{R_1, R_2, \ldots, R_j\}\) vanish.  Clearly this is vacuously
+true just before processing column 1. To process column \(c\), find the
+smallest \(r\) such that \(A_{rc} \neq 0\) and \(r \notin R\); this will be
+the pivot for this column.</p>
+<p>Crucially, this step cannot fail. Consider \(A\) where the entries
+\(\{A_{ic} \mid i \notin R\}\) are all zero.
+Then row reduction could be used to zero out the entries \(A_{ij}\)
+where \(j &lt; c, i \in R, i \neq R_j\), yielding some matrix \(A'\) which also
+has the property that \(A'_{rc} = 0\) for all \(r \notin R\). Then column
+\(c\) of \(A'\) could be written as the linear combination \(\sum_{i=1}^{c-1}
+A'_{R_i,c} C_i\) where \(C_i\) denotes column \(A'\) (which has 1 in row
+\(R_i\) and 0 elsewhere), implying \(A'\) is singular. But then \(A\) would
+also be singular since \(A\) is a product of \(A'\) and elementary matrices,
+contradicting the assumption that \(A\) is invertible.</p>
+<p>Having found the smallest pivot row index \(r\), set \(R_c = r\) then use an
+elementary matrix of the third type to set \(A_{rc} = 1\) and elementary
+matrices of the first type to zero out the entries \(A_{ic}\) where
+\(i \notin R\) and \(i &gt; r\) by subtracting \(A_{ic}\) times row
+\(r\) from row \(i\). Note that the entries with \(i \notin R\)
+and \(i &lt; r\) are zero by assumption that we chose the smallest \(r\)
+possible. This zeroing doesn't affect any of the first \(c-1\) columns, and
+it results in column \(c\) having the property that the only nonzero entries
+are those in rows \(\{R_1, R_2, \ldots, R_c\}\), and \(A_{R_c,c} = 1\), and
+\(A\) is still invertible. So the operations done on each column preserve
+the invariant. Also note that when zeroing entry \(A_{ic}\) (which, as noted
+above, only needs to be done when \(i &gt; r\)), the elementary matrix of the
+first type used will have its nonzero off-diagonal entry in row \(i\) and
+column \(r\). But \(i &gt; r\), so this elementary matrix is lower
+triangular.</p>
+<p>After this algorithm has completed for row \(c\), the result is a complete
+pivot list \(R_{1,\ldots, n}\) that is a permutation of \(1, \ldots, n\), and a
+factorization \(A = LC\) where:</p>
+<ul>
+<li>\(L\) is a product of elementary matrices of the first and third kinds,
+but as previously noted, each elementary matrix of the first kind used is
+lower triangular, and therefore \(L\) is also lower triangular;</li>
+<li>\(C_{i,R_i} = 1\) for each \(i \in \{1, \ldots, n\}\) and \(C_{ij} = 0\)
+whenever \(i \notin \{R_1, \ldots, R_j\}\).</li>
+</ul>
+<p>Consider the elements \(C_{R_c, j}\) for each \(c \in \{1, \ldots, n\}\) and
+\(j &lt; c\). Since \(R_c \notin \{R_1, \ldots, R_j\}\), this implies that
+the entry \(C_{R_c, j}\) is zero. That is, all entries to the left of each
+pivot element in \(C\) vanish. Write \(C\) as the product
+\(PU\) where row \(r\) of \(U\) equals row \(R_r\) of \(C\), and \(P\) is the
+permutation matrix that sends row \(r\) to row \(R_r\). Now in every row
+\(R_r\) of \(C\) the entries in columns \(c &lt; r\) vanish and the entry
+in column \(r\) is 1, so in row \(r\) of \(U\) the entries in columns
+\(c &lt; r\) vanish and the entry \(U_{rr}\) is 1. That is, \(U\) is
+upper triangular with ones along the diagonal. In conclusion, \(A = LPU\)
+where \(L\) is lower triangular, \(P\) is a permutation matrix, and \(U\) is
+upper triangular with ones along the diagonal.</p></li>
+<li><p>There is one double coset for each permutation matrix
+\(P \in GL_n(\mathbb{R})\). To see this, first observe that part (c) implies
+that each invertible matrix lies in the double coset of some permutation
+matrix. Thus, it only remains to show that if two permutation matrices
+\(P_1, P_2 \in GL_n(\mathbb{R})\) are given, and \(P_1 = LP_2 U\) where
+\(L\) is lower triangular and \(U\) is upper triangular, then \(P_1 = P_2\).
+Clearly such \(L, U\) are invertible (all diagonal entries are nonzero).
+Rearrange the equality to yield \(P_1 U^{-1} P_2^{-1} = L\). \(P_2\) is also a
+permutation matrix. Left-multiplication by a permutation matrix permutes rows
+of a matrix, while right-multiplication permutes the columns. Therefore, the
+entries of \(P_1 U^{-1} P_2^{-1}\) are a permutation of those of \(U^{-1}\).
+Now all diagonal entries of \(U^{-1}\) are nonzero; another way of saying this
+is that the set of positions \(\{(i, j) \mid U^{-1}_{ij} \neq 0\}\) is a
+superset of the corresponding set of positions \(\{(i, j) \mid I_{ij} \neq
+0\}\) for the identity matrix. This will remain true after permutation:
+\(\{(i, j) \mid (P_1 I P_2^{-1})_{ij} \neq 0\} \subseteq \{(i, j) \mid
+(P_1 U^{-1} P_2^{-1})_{ij} \neq 0\}\). So \(P_1 U^{-1} P_2^{-1}\) being lower
+triangular implies that \(P_1 I P_2^{-1}\) is lower triangular. But this is
+another permutation matrix \(P_3 = P_1 P_2^{-1}\) and the only lower triangular
+permutation matrix is the identity matrix. Therefore \(P_1 = P_2\).</p>
+<p><em>Note from Brian:</em> According to folklore, an invertible matrix has
+an LU decomposition if and only if all its leading principal minors are
+nonzero. I believe this statement can be generalized to LPU decompositions:
+let an invertible matrix \(A\) be given; then find the lexicographically
+smallest permutation \(R\) such that for each \(k = 1, 2, \ldots,
+n\), the \(k \times k\) matrix given by \(B_{ij} = A_{R(i),R(j)}\)
+is invertible. The permutation matrix is then given by \(P\) as in (c). This
+therefore gives a characterization of each double coset. But I
+am too lazy to write up a proof and check whether it's valid.</p>
+</li>
+</ol>
+
+<p><span class="problem">Problem 2.M.12</span>
+The problem statement says
+that \(r, s\) are positive, but I assume what was meant is that they must be
+nonnegative.</p>
+<ol class="subproblems">
+<li>Consider the set of all pairs of integers \(r, s\) such
+that \(n = ra + sb\); if the pair with the least nonnegative \(r\) also has
+nonnegative \(s\) then the desired nonnegative solution has been found;
+otherwise, if \(s\) is negative even for the least nonnegative \(r\) then it
+will have to be negative for any other nonnegative \(r\) as well, so no
+nonnegative solution exists. Now
+suppose there is indeed no nonnegative solution for a given \(n, a, b\). Let
+\(r, s\) be the pair of integers with \(n = ra + sb\) with the least
+nonnegative \(r\).  Then \(r \leq b - 1\), otherwise
+write \(r' = r - b, s' = s + a\), whereupon \(n = r'a + s'b\) and \(r' \ge 0\),
+giving a contradiction. By assumption, \(s \leq -1\). Therefore
+\(n \leq (b-1)a + (-1)b = ab - a - b\). That is, a nonnegative solution always
+exists when \(n &gt; ab - a - b\).</li>
+<li>Consider \(n = ab - a - b\). Write
+\(ab - a - b = ra + sb\) and rearrange this to yield \((s+1)b = (b-r-1)a\).
+Since \(a, b\) are relatively prime, this is satisfied only when
+\(a \divides s + 1\) and \(b \divides b - r - 1\). If \(s\) is nonnegative,
+then \(s \geq a - 1\), and substituting this into \(ab - a - b = ra + sb\)
+yields \(r \leq -1\).  So there is no nonnegative
+solution for \(ab - a - b\). By (a), this is also the greatest \(n\) for
+which there is no nonnegative solution.</li>
+</ol>
+
+<p><span class="problem">Problem 2.M.13</span> A move does not change the
+GCD of the two numbers in the position, so no \((a, b)\) such that
+\(\gcd(a, b) &gt; 1\) can be reached starting from \((1, 1)\). Also, obviously,
+if \(a \le 0\) or \(b \le 0\) can be reached starting from \((1, 1)\). That is,
+it is necessary that \(a \geq 1, b \geq 1, \gcd(a, b) = 1\). We now claim that
+this is also sufficient. The proof is by induction; the statement to be proved
+is that for every positive integer \(n \geq 2\), all pairs of positive integers
+\(a, b\) with \(a + b = n\) and \(\gcd(a, b) = 1\) are reachable from
+\((1, 1)\). The details are left as an exercise for the reader.</p>
+
+<p><span class="problem">Problem 2.M.14</span> This problem is similar to
+Problem 2.M.13. If \(A \in SL_2(\mathbb{Z})\) then \(A_{11}\) and \(A_{21}\)
+must be relatively prime and we can use induction, this time on the sum of
+absolute values since some entries may be negative.</p>
+<p><em>Lemma:</em> \(-I = (E' E^{-2})^2\). The proof is trivial.</p>
+<p><em>Claim:</em> For every integer \(n \geq 1\), every matrix \(A \in
+SL_2(\mathbb{Z})\) with \(|A_{11}| + |A_{21}| = n\) is generated by the
+matrices \(E\) and \(E'\).</p>
+<p><em>Base case:</em> \(|A_{11}| + |A_{21}|\) cannot be zero. Suppose it is
+one. There are four cases. If \(A_{11} = 1\) and \(A_{21} = 0\), then since
+\(\det A = 1\), we must have \(A_{22} = 1\). Then \(A = E^{A_{12}}\). If
+\(A_{11} = -1\) and \(A_{21} = 0\), then \(A = -IB\); the Lemma tells us that
+\(-I \in \langle E, E'\rangle\), and \(B\) falls into the previous case. The
+remaining two cases, in which \(A_{11} = 0\) and \(A_{21} = \pm 1\), are
+similar.</p>
+<p><em>Inductive case:</em> Assume \(A_{11}\) and \(A_{21}\) are relatively
+prime and let \(n = |A_{11}| + |A_{21}|\). One of these two magnitudes must
+be greater than the other. We can write \(A = MB\) where \(M\) is one of the
+four elementary matrices \(E\), \(E^{-1}\), \(E'\), \(E'^{-1}\) and \(B\) is
+obtained from \(A\) by, respectively, subtracting the second row from the
+first, adding the second row to the first, subtracting the first row from the
+second, or adding the first row to the second. We choose the appropriate
+\(M\) to reduce the sum of the absolute values of the first column: namely,
+the target row is the one that contains the larger of the two entries
+\(A_{11}, A_{21}\) in absolute value, and the other row is either subtracted or
+added in order to bring that entry closer to zero, depending on whether
+the signs of the two entries are like or opposite, respectively.
+The resulting matrix \(B\) satisfies \(\det B = 1\) and
+\(|B_{11}| + |B_{21}| &lt; n\); by the inductive hypothesis,
+\(B \in \langle E, E' \rangle\), and therefore \(A \in \langle E, E'\rangle\)
+also.</p>
+<div class="qed"></div>
+
+<p><span class="problem">Problem 2.M.15</span> This problem is similar to the
+previous two problems. Denote the two given matrices by \(A\) and \(B\),
+respectively and the semigroup they generate by \(\langle A, B\rangle\).
+Obviously every matrix in \(\langle A, B\rangle\) has nonnegative entries and
+unit determinant; we use an induction argument similar to that in Problem
+2.M.14 to show that this condition is also sufficient, although for this
+problem we are also asked to prove uniqueness.</p>
+<p><em>Lemma:</em> For every nonnegative integer \(x\), the matrix
+\(A^x = \begin{pmatrix} 1 &amp; x \\ 0 &amp; 1 \end{pmatrix}\) can be written
+as a product of \(A\) and \(B\) matrices in exactly one way.</p>
+<p><em>Proof of Lemma:</em> By induction. If \(x = 0\) then the matrix \(A^x\)
+is the identity matrix \(I\); this equals an empty product, but if \(I = AM\)
+then \(M\) must be \(A^{-1}\), which has a negative entry; this implies that
+no product of \(A\)'s and \(B\)'s with \(A\) as the leftmost factor can equal
+\(I\). Since \(B^{-1}\) has a negative entry, we can likewise conclude that
+the leftmost factor can't be \(B\) either. So uniqueness holds for \(x = 0\)
+(only the empty product works). For the inductive case, if \(A^x = BM\) then
+\(M = \begin{pmatrix} 1 &amp; x \\ -1 &amp; 1-x\end{pmatrix}\), which has at
+least one negative entry, so any product with \(B\) as the leftmost factor is
+excluded. And any product with \(A\) as the leftmost factor would have
+\(A^{x-1}\) as the product of the remaining factors; the uniqueness of such a
+product representation for \(A^{x-1}\), which is the inductive hypothesis,
+then implies uniqueness for \(A^x\) as well.</p>
+<div class="qed"></div>
+<p><em>Claim:</em> For every positive integer \(n\), every integer matrix
+\(C\) with four nonnegative entries, unit determinant, and \(C_{11} + C_{21}
+= n\) can be written as a product of \(A\) and \(B\) matrices in exactly one
+way.</p>
+<p><em>Base case:</em> Suppose \(n = 1\). If \(C_{11} = 1\) and \(C_{21} = 0\),
+then the assumption \(\det C = 1\) implies \(C_{22} = 1\), that is,
+\(C = \begin{pmatrix} 1 &amp; x \\ 0 &amp; 1\end{pmatrix}\) for some
+nonnegative integer \(x\). Then \(C = A^x\). The Lemma states that \(C\) can
+only be written as a product of \(A\) and \(B\) matrices in one way (namely
+\(A^x\)). On the other hand, the case \(C_{11} = 0\) and \(C_{21} = 1\) does
+not occur (such a matrix would have to have \(C_{12} &lt; 0\) in order to
+have unit determinant).</p>
+<p><em>Inductive case:</em> If \(C_{11} &gt; C_{21}\) then the assumption
+\(\det C &gt; 0\) implies that \(C_{12} \ge C_{22}\).  Write \(C =
+AD\); the matrix \(D\) is obtained from \(C\) by subtracting the second row
+from the first, and since \(C_{12} \ge C_{22}\), it is also the case that
+\(D\) has unit determinant and four nonnegative entries. The sum of the
+entries in the first column of \(D\) will be less than \(n\), so by the
+inductive hypothesis, there is exactly one way to write \(C\) as a product of
+\(A\)'s and \(B\)'s with \(A\) as the leftmost factor. On the other hand, there
+are no ways with \(B\) as the leftmost factor, since if \(C = BD\) then the
+matrix \(D\) would have at least one negative entry. Uniqueness is therefore
+established for such \(C\). If on the other hand \(C_{21} &gt; C_{11}\), then
+we would analogously get one product with \(B\) as the leftmost factor, where
+the remaining part equals the matrix obtained by subtracting the first row from
+the second, and no representations with \(A\) as the leftmost factor.
+Finally, if \(C_{11} = C_{21}\), which is only
+possible when both are equal to unity, the unique choice of the first factor in
+the representation depends on which of \(C_{12}\) and \(C_{22}\) is greater
+(they can't be equal if the determinant is 1).</p>
+<div class="qed"></div>
+
+<h3>References</h3>
+<ol>
+<li>Michael Joyce's
+<a href="https://math.stackexchange.com/a/290730">answer</a> to
+<q>Decompose \(A\) as \(A = LPU,\)</q> on Mathematics Stack Exchange,
+retrieved Oct 5, 2017</li>
+<li>Copper, M. (1992). On the Gauss decomposition of a matrix.
+<em>Linear algebra and its applications</em>, <em>177</em>, 175&ndash;189.
+[<a href="http://www.sciencedirect.com/science/article/pii/0024379592903266">link</a>]</li>
+</ol>

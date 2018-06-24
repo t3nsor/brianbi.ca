@@ -1,0 +1,227 @@
+<h2>Section 2.11. Tensor products</h2>
+<p><span class="problem">Exercise 2.11.2</span> This problem was skipped
+because it's too tedious.</p>
+
+<p><span class="problem">Problem 2.11.3</span></p>
+<ol class="subproblems">
+<li>A linear map \(f : V \otimes W \to U\) can be associated to the bilinear
+map \(g(v, w) = f(v \otimes w)\). In the other direction, a bilinear map
+\(g : V \times W \to U\) can be associated to the linear map defined so that
+\(f(v \otimes w) = g(v, w)\), extended by linearity to all of
+\(V \otimes W\). The defining properties of the tensor product space mimic the
+conditions in the definition of a bilinear map, guaranteeing that this
+bijection is well-defined.</li>
+<li>By the definition of the tensor product, the \(\{v_i \otimes w_j\}\)
+clearly span \(V \otimes W\). To see that they are linearly independent, we use
+the result from part (a). If \(\sum_{i, j} c_{ij} v_i \otimes w_j = 0\), then
+for each pair \((i, j)\), let \(g_{ij}\) be the bilinear map such that
+\(g(v_k, w_l) = 1\) if \(k = i\) and \(l = j\), and 0 otherwise. Let \(f_{ij} :
+V \otimes W \to k\) be the corresponding linear map from part (a). Then
+\(f_{ij}(0) = c_{ij}\), so \(c_{ij} = 0\). This is true for all \((i, j)\), so
+the \(\{v_i \otimes w_j\}\) indeed form a basis.<div class="qed"></div></li>
+<li>For pure tensors \(t = \varphi \otimes w\), the corresponding homomorphism
+is defined by \(f(v) = \varphi(v) w\). This is bilinear in \(\varphi\) and
+\(w\), so it can be uniquely extended to all \(t \in V^* \otimes W\) by
+linearity.  Injectivity follows after choosing a basis for \(V\). If \(t =
+\sum_i \varphi_i \otimes w_i\) where \(\varphi_i\) is dual to the basis vector
+\(v_i\), then \(f(v) = \sum_i \varphi_i(v) w_i\), and if the latter vanishes
+identically, then \(0 = f(v_i) = w_i\) for all \(i\), hence \(t = 0\).
+Surjectivity also requires us to use the assumption that \(V\) is
+finite-dimensional; it implies that the \(\varphi_i\) span \(V^*\), so that
+every \(f \in \Hom(V, W)\) can be written as \(f = \sum_i \varphi_i f(v_i)\),
+and hence corresponds to the tensor \(t = \sum_i \varphi_i \otimes
+f(v_i)\).</li>
+<li><p>A basis \(B\) for \(S^n V\) is given by all tensors of the form
+\(v_{i_1} \otimes v_{i_2} \otimes \ldots \otimes v_{i_n}\) where \(i_1 \leq
+i_2 \leq \ldots \leq i_n\). These span \(S^n V\) because any pure tensor in
+\(V^{\otimes n}\) differs from one of these basis tensors by a sequence of
+transpositions. To prove linear independence, we make an observation about the
+structure of the subspace \(S\) spanned by the \(T - s(T)\). Namely, if
+\(T = v \otimes w \otimes \ldots\) and the transposition swaps \(v\) and \(w\),
+then by expanding \(v\), \(w\), and the remaining factors in the basis
+\(\{v_i\}\), we can write \(T - s(T) = \sum_k t_k - s(t_k)\), where each
+\(t_k\)  is a basis tensor (the product of basis vectors). The general element
+in \(S\) can then be written in the form \(\sum_m t_m - s_m(t_m)\), where each
+\(t_m\) is a basis tensor and \(s_m\) is some transposition, since the above
+argument applies for any transposition. Such a linear
+combination has the property that for each set of indices \(\{i_1, \ldots,
+i_n\}\), we collect together terms of the form \(v_{i_{\sigma(1)}} \otimes
+\ldots \otimes v_{i_{\sigma(n)}}\), where \(\sigma\) is any permutation, the
+sum of the coefficients of all such terms is zero. A linear combination of the
+elements in \(B\) cannot have this property since each possible set of indices
+appears only once, unless all coefficients are zero; hence \(B\) is indeed a
+basis. The dimension of \(S^n V\) is the size of \(B\), that is,
+\(\binom{m+n-1}{n}\) (by a <q>stars and bars</q> argument or similar).</p>
+<p>For the \(\wedge^n V\) case, observe that the two tensors \(t_1 = v \otimes
+w \otimes \ldots\) and \(t_2 = w \otimes v \otimes \ldots\) are additive
+inverses in \(\wedge^n V\) since their sum equals its own transposition.
+It follows that a tensor of the form \(t = v_{i_1} \otimes v_{i_2} \otimes
+\ldots \otimes v_{i_n}\) vanishes in \(\wedge^n V\) if any of the \(i\)'s are
+equal, and otherwise it can be rearranged so that the \(i\)'s are strictly
+increasing, at the cost of a possible minus sign. Therefore the set of tensors
+\(v_{i_1} \otimes \ldots \otimes v_{i_n}\) with \(i_1 &lt; \ldots &lt; i_n\)
+spans \(\wedge^n V\). Linear independence is proven by a similar argument to
+that used for \(S^n V\): if \(S\) is the subspace spanned by all pure tensors
+\(T\) with \(T = s(T)\) for some transposition \(s\), then by writing out the
+factors of \(T\) in terms of the basis \(\{v_i\}\), we can write the general
+term of \(S\) in the form \(\sum_m t_m + s_m(t_m)\) where \(t_m\) is a basis
+tensor and \(s_m\) is a transposition. This then has the property that when we
+collect terms with some subset of distinct indices \(i_1, \ldots, i_n\), the
+alternating sum of their coefficients vanishes (where a coefficient is
+subtracted rather than added if the basis tensor has an odd permutation of
+the basis vector indices). For a linear combination of the tensors in the set
+we claim as basis, this cannot be unless all coefficients are zero, since each
+possible subset of indices appears in only one basis tensor. So our set is
+indeed a basis. Its size is \(\binom{m}{n}\), the number of subsets of size
+\(n\) that can be drawn from a set of size \(m\).</p></li>
+<li><p>For this problem, we assume that transposition is defined for all
+tensors, not just pure tensors, by writing the tensor as a sum of pure tensors
+and taking the transposition of each term.</p>
+<p>For each pure tensor \(t = w_1 \otimes w_2 \otimes \ldots w_n\)
+(where the \(w_i\) are not necessarily basis vectors), we can identify its
+projection down to \(S^n V\) with its <em>symmetrization</em>,
+\begin{equation*}
+\mathrm{Sym}(t) = \frac{1}{n!} \sum_\sigma w_{\sigma(1)} \otimes
+w_{\sigma(2)} \otimes \ldots \otimes w_{\sigma(n)}
+\end{equation*}
+where \(\sigma\) ranges over all permutations of \(\{1, \ldots, n\}\). This
+satisfies \(\mathrm{Sym}(t) = s(\mathrm{Sym}(t))\) for all \(s\), and extending
+by linearity to all of \(V^{\otimes n}\). This map is well-defined on \(S^n V\)
+since two tensors differing only by transpositions are mapped to the
+<em>same</em> symmetrized tensor. To go the other direction, a given
+\(t \in T\) can simply be identified with its projection down to \(S^n V\); it
+is easy to see that this is the inverse map.</p>
+<p>For the exterior power, for each \(t = \otimes_i w_i\), we identify its
+projection down to \(\wedge^n V\) with its <em>antisymmetrization</em>,
+\begin{equation*}
+\mathrm{Anti}(t) = \frac{1}{n!} \sum_\sigma \sgn(\sigma) w_{\sigma(1)}
+\otimes w_{\sigma(2)} \otimes \ldots \otimes w_{\sigma(n)}
+\end{equation*}
+This has the desired property that \(\mathrm{Anti}(t) = -s(\mathrm{Anti}(t))\)
+for all \(s\), and again we can extend it by linearity to all of
+\(V^{\otimes n}\), and it is well-defined on \(\wedge^n V\) since it
+annihilates any \(t\) such that \(t = s(t)\) for some transposition \(s\).
+Again, in the other direction, we simply identify \(t \in T\) with its
+projection down to \(\wedge^n V\).</p>
+<p>In both cases, the fact that \(k\) has characteristic zero is needed so
+that division by \(n!\) is always well-defined. We might choose to define Sym
+and Anti without the factor of \(1/n!\), but this does not solve the problem
+since if the characteristic divides \(n!\), some nonzero elements of the
+{symmetric, exterior} power may be mapped to zero.</p>
+</li>
+<li>Using the eigenbasis \(\{v_i\}\) (with \(A v_i = \lambda_i v_i\)), each
+basis tensor \(v_{i_1} \otimes \ldots \otimes v_{i_n}\) is mapped to
+\(\lambda_{i_1} \cdot \otimes \cdot \lambda_{i_n}\) times itself, so
+\(\tr(S^n A)\) is the sum of all \(\lambda_{i_1} \cdot \ldots \cdot
+\lambda_{i_n}\) where \(1 \le i_1 \le \ldots \le i_n \le N\), and likewise
+\(\tr(\wedge^n A)\) is the sum of all \(\lambda_{i_1} \cdot \ldots \cdot
+\lambda_{i_n}\) where \(1 \le i_1 &lt; \ldots &lt; i_n \le N\), that is, the
+\(i_1, \ldots, i_n\) range over all subsets of \(\{1, \ldots, N\}\).</li>
+<li><p>Where \(n = N\), \(\tr(\Lambda^N A)\) is therefore the single term
+\(\lambda_1 \cdot \ldots \cdot \lambda_N\), which is \(\det A\). Also
+\(\Lambda^N V\) is one-dimensional, so \(\Lambda^N A = (\det A) I\).</p>
+<p>It then follows that
+\begin{equation*}
+\det(AB)I = \Lambda^N(AB) = \Lambda^N A \circ \Lambda^N B = (\det A)I \circ
+(\det B)I = (\det A \det B)I
+\end{equation*}
+so \(\det(AB) = \det A \det B\).</p>
+</ol>
+
+<p><span class="problem">Exercise 2.11.5</span>
+\(A \otimes_K L\) can be given the structure of an algebra over \(L\) by
+defining:</p>
+<ol><li>\(l'(a \otimes_K l) = a \otimes_K (l' l)\)</li>
+<li>\((a_1 \otimes_K l_1)(a_2 \otimes_K l_2) =
+(a_1 a_2) \otimes_K (l_1 l_2)\)</li>
+</ol>
+<p>and extending by linearity to all of \(A \otimes_K L\). For (1) this is
+well-defined since the defining relations of the tensor product are
+annihilated, for example, for all \(a \in A, k \in K, l \in L\):
+\[
+(ka) \otimes_K l - k(a \otimes_K l) \mapsto (ka) \otimes_K (l'l) -
+k(a \otimes_K (l'l))
+\]
+where the RHS also vanishes by the defining relations of \(\otimes_K\). A
+similar result holds for the other defining relations. For (2) well-definedness
+follows by a similar argument. If we take one of the defining relations for,
+say, the left operand, and use a pure tensor \(a \otimes_K l_2\) as the right
+operand:
+\[
+(a_1 + a_2) \otimes_K l_1 - a_1 \otimes_K l_1 - a_2 \otimes_K l_2 \mapsto
+((a_1 + a_2)a) \otimes_K (l_1 l_2) - (a_1a) \otimes_K (l_1 l_2) -
+(a_2a) \otimes_K (l_1 l_2)
+\]
+which is again a defining relation, and vanishes.</p>
+<p>We can easily verify that:</p>
+<ul>
+<li>\(l_1 (l_2 t) = (l_1 l_2) t\)</li>
+<li>\(l (t_1 t_2) = (l t_1) t_2\)</li>
+<li>\((l_1 + l_2) t = l_1 t + l_2 t\)</li>
+<li>\(l(t_1 + t_2) = lt_1 + lt_2\)</li>
+</ul>
+<p>where \(l, l_1, l_2 \in L\), \(t, t_1, t_2 \in A \otimes_K L\).</p>
+<p>For the second part of the problem, \(V \otimes_K L\) can be given the
+structure of a module over \(A \otimes_K L\) by defining
+\begin{equation*}
+(a \otimes_K l_1)(v \otimes_K l_2) = (av) \otimes_K (l_1 l_2)
+\end{equation*}
+and extending by linearity. Proof of well-definedness and the module axioms is
+very similar so we omit it.</p>
+
+<p><span class="problem">Problem 2.11.6</span></p>
+<ol class="subproblems">
+<li><p>As the problem says, the isomorphism from left to right is given by
+\((v \otimes_B w) \otimes_C x \mapsto v \otimes_B (w \otimes_C x)\). We can
+extend this by linearity to the entirety of \((V \otimes_B W) \otimes X\). If
+we simply choose bases for \(V\), \(W\), and \(X\), it is easy to see that this
+is well-defined: once we fix \((v_i \otimes_B w_j) \otimes_C x_k \mapsto
+v_i \otimes_B (w_j \otimes_C x_k)\) for all basis vectors \(v_i \in V, w_j \in
+W, x_k \in X\), then \((v \otimes_B w) \otimes_C x\) will indeed be mapped to
+\(v \otimes_B (w \otimes_C x)\) for any \(v \in V, w \in W, x \in X\).</p>
+<p>We need to show that the isomorphism preserves the \((A, D)\)-bimodule
+structure. Note that
+\begin{align*}
+a((v \otimes_B w) \otimes_C x) &amp;= (a(v \otimes_B w)) \otimes_C x \\
+&amp;= ((av) \otimes_B w) \otimes_C x \\
+&amp;\mapsto (av) \otimes_B (w \otimes_C x) \\
+&amp;= a(v \otimes_B (w \otimes_C x))
+\end{align*}
+and a similar fact holds for right-multiplication by \(d \in D\). We can then
+conclude from linearity that the desired result holds in general.</p></li>
+<li><p>If \(f \mapsto 0\), then \(w \otimes_B v \mapsto f(v)w\) must vanish for
+all \(w \in W, v \in V\), which is only possible if \(f(v) = 0 \, \forall
+v \in V\), that is, \(f = 0\). Therefore the homomorphism given in the text is
+one-to-one.</p>
+<p>We also need it to be onto. Let \(g \in \Hom_C(W \otimes_B V, X)\) be given.
+We claim that there exists \(f \in \Hom_B(V, \Hom_C(W, X))\) such that
+\(g(w \otimes_B v) = f(v)w\) for all \(w \in W, v \in V\). To construct such
+\(f\), notice that if \(v\) is fixed, then \(g(w \otimes_B v)\) is a linear
+and \(C\)-linear function of \(w\) taking \(W\) into \(X\); let that map be
+\(f(v)\). If \(v_1, v_2 \in V\), then \(g(w \otimes_B (v_1 + v_2)) =
+g(w \otimes_B v_1 + w \otimes_B v_2) = g(w \otimes_B v_1) +
+g(w \otimes_B v_2)\), and similarly \(g(w \otimes_B \alpha v)
+= \alpha g(w \otimes_B v)\), so \(f\) is linear. Finally, if \(b \in B\), then
+\(f(bv) = (w \mapsto g(w \otimes_B (bv))) = (w \mapsto g((wb) \otimes_B v))
+= b(w \mapsto g(w \otimes_B v))\) according to the left \(B\)-module structure
+of \(\Hom_C(W, X)\). So \(f\) is \(B\)-linear.</p>
+<p>If \(a \in A\), then \(af \mapsto (w \otimes_B v \mapsto (af)(v)w)
+= (w \otimes_B v \mapsto f(va)w) = a(w \otimes_B v \mapsto f(v)w)\) since
+\((w \otimes_B v)a = w \otimes_B (va)\), and hence \(w \otimes_B v\) would be
+mapped to \(f(va)w\) under \(a(w \otimes_B v \mapsto f(v)w)\). And if \(d
+\in D\), then \(fd \mapsto (w \otimes_B \mapsto (fd)(v)w) =
+(w \otimes_B \mapsto (f(v)d)w) = (w \otimes_B \mapsto (f(v)w)d) =
+(w \otimes_B \mapsto f(v)w)d\). So \(f \mapsto (w \otimes_B v \mapsto f(v)w)\)
+preserves the \((A, D)\)-bimodule structure.</p></li>
+</ol>
+
+<p><span class="problem">Problem 2.11.7</span> For \(a \in A\), define
+\(a(m \otimes_A n) \equiv (am) \otimes_A n = m \otimes_A (an)\) for the pure
+tensors, and otherwise, if \(t \in M \otimes_A N\) is expressed as
+\(t = \sum_i m_i \otimes_A n_i\), then \(at = \sum_i (am_i) \otimes_A n_i\).
+To get well-definedness, note that defining relations are mapped to zero,
+for example, \(a((m_1 \otimes_A n) + (m_2 \otimes_A n) - ((m_1 + m_2) \otimes_A
+n) = a(m_1 \otimes_A n) + a(m_2 \otimes_A n) - a((m_1 + m_2) \otimes_A n)
+= (am_1 \otimes_A n) + (am_2 \otimes_A n) - (a(m_1 + m_2) \otimes_A n) = 0\)
+since the last expression is in the form of a defining relation. It is easy to
+verify that the module axioms are satisfied.</p>

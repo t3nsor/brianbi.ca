@@ -1,0 +1,45 @@
+<h2>Section 2.5. Homomorphisms</h2>
+<p><span class="problem">Exercise 2.5.1</span> Suppose \(G\) is cyclic. Let
+\(x\) be a generator of \(G\). Let \(y \in G'\). Then \(y = \varphi(x^i)\) for
+some \(i\) since \(\varphi\) is surjective, and this equals \(\varphi(x)^i\)
+since \(\varphi\) is a homomorphism. This holds for arbitrary \(y\), therefore
+\(\varphi(x)\) generates \(G'\).</p>
+<p>Suppose \(G\) is abelian. Let \(x, y \in G'\). Since \(\varphi\) is
+surjective, we can find \(a, b \in G\) with \(\varphi(a) = x, \varphi(b) = y\),
+whence \(xy = \varphi(a)\varphi(b) = \varphi(ab) = \varphi(ba) = \varphi(b)
+\varphi(a) = yx\). This holds for arbitrary \(x, y\), so \(G'\) is abelian.</p>
+
+<p><span class="problem">Exercise 2.5.2</span> \(K\) and \(H\) both contain
+the identity, so \(K \cap H\) contains the identity. For all \(x \in K \cap H\)
+we have \(x \in K\) and \(x \in H\), so \(x^{-1} \in K\) and \(x^{-1} \in H\),
+so \(x^{-1} \in K \cap H\). Finally, for all \(x, y \in K \cap H\), we have
+\(x, y \in K\) and \(x, y \in H\), so \(xy \in K\) and \(xy \in H\), so
+\(xy \in K \cap H\). Therefore \(K \cap H\) is a subgroup. In the case where
+\(K\) is a normal subgroup of \(G\), for all \(x \in K \cap H\) and \(g \in H\),
+we have that \(gxg^{-1} \in K\) by virtue of the normality of \(K\) and
+\(gxg^{-1} \in H\) since \(x, g \in H\), therefore \(gxg^{-1} \in K \cap H\);
+so \(K \cap H\) is a normal subgroup of \(H\) (but not necessarily of \(G\)).
+</p>
+
+<p><span class="problem">Exercise 2.5.6</span> Consider the elementary matrix
+of the first kind with \(1\) in position \((r, c)\), which we will notate as
+\(E^{r,c}\). Let \(M \in GL_n(\mathbb{R})\). Then \(E^{r,c}M\) is the matrix
+obtained by adding row \(c\) of \(M\) to row \(r\), while \(ME^{r,c}\) is the
+matrix obtained by adding column \(r\) of \(M\) to column \(c\).
+The two results are the same if and only if each element of row \(r\) has the
+same value added to it by both multiplications and each element of column \(c\)
+has the same value added to it by both multiplications. For all \(i \neq c\),
+the value added to \(M_{r,i}\) by left-multiplication is \(M_{c,i}\) and it is
+unaffected by right-multiplication, therefore all such \(M_{c,i}\) must vanish
+in order for \(M\) to commute with \(E^{r,c}\). For all \(i \neq r\), the
+value added to \(M_{i,c}\) by right-multiplication is \(M_{i,r}\) and it is
+unaffected by left-multiplication, therefore all such \(M_{i,r}\) must
+likewise vanish. That is, all off-diagonal elements in row \(c\) must vanish
+and all off-diagonal elements in column \(r\) must vanish. The element
+\(M_{r,c}\) has \(M_{c,c}\) added to it by left-multiplication and \(M_{r,r}\)
+added by right-multiplication, so those two elements must be equal. Since
+\(r,c\) can be chosen arbitrarily, it follows that all off-diagonal elements of
+\(M\) vanish and all on-diagonal elements are equal to each other, that is,
+\(M\) is a scalar matrix. All nonzero scalar matrices are indeed central and
+invertible, so such matrices for the centre of \(GL_n(\mathbb{R})\). Note that
+this proof  works for any field.</p>

@@ -1,0 +1,72 @@
+<p><em>Remark:</em> In Theorem 4.5.1, it is asserted that the element
+\(P \in \mathbb{C}[G]\) defined by \(P = \frac{1}{|G|} \sum_{g\in G} g\) acts
+as the identity in the trivial representation \(G\) and as the zero operator
+in any other irreducible representation of \(G\). I had not noticed that
+\(P\) is central until I saw it pointed out on Math StackExchange, although the
+proof does explicitly say that \(P \in Z(\mathbb{C}[G])\). This fact is needed
+in order to understand the assertion. Indeed, since \(P\) is central, it acts
+as a scalar in every irreducible representation, and since \(P^2 = P\), this
+scalar is either 1 or 0. Travis points out that \(gP = P\) for all \(g \in G\),
+so in the case where \(P = \Id\), we have \(\rho(g)x = \rho(g)\rho(P)x =
+\rho(P)x = x\)
+for all \(x \in X\), therefore \(\rho(g)\) is also the identity for each
+\(g \in G\), and \(X\) is the trivial representation.</p>
+<p>Additionally,I found the equalities at the end of the proof to be difficult
+to understand. Since \(P\) is the projector onto the \(G\)-invariant subspace,
+and the trace of a projection operator is the dimension of the subspace that it
+projects onto, it is clear that \(\tr|_{V\otimes W^*}(P) =
+\dim(V \otimes W^*)^G \cong \dim \Hom(W, V)^G\). Darij Grinberg
+<a href="https://math.stackexchange.com/questions/2577483/understanding-etingofs-proof-of-the-character-orthogonality-theorem#comment5319909_2577483">points
+out</a> that \(\Hom(W, V)^G = \Hom_G(W, V)\), so this completes the proof.
+I'm not sure why \(\dim \Hom_G(\mathbb{C}, V \otimes W^*)\) is mentioned, but
+oh well, there are other theorems to think about...</p>
+
+<p><span class="problem">Problem 4.5.2</span></p>
+<ol class="subproblems">
+<li><p>We follow the hint given in the text. Let \(h \in G\). Then
+\begin{gather*}
+h\psi_i = \frac{\dim V_i}{|G|} \sum_{g \in G} \chi_{V_i}(g) h g^{-1} =
+\frac{\dim V_i}{|G|} \sum_{k \in G} \chi_{V_i}(k^{-1}h) k \\
+\psi_i h = \frac{\dim V_i}{|G|} \sum_{g \in G} \chi_{V_i}(g) g^{-1} h =
+\frac{\dim V_i}{|G|} \sum_{k \in G} \chi_{V_i}(hk^{-1}) k
+\end{gather*}
+But for all \(k\), \(\chi_{V_i}(k^{-1}h) = \chi_{V_i}(hk^{-1})\) since the
+elements \(k^{-1}h\) and \(hk^{-1}\) are conjugates. Therefore \(h\psi_i =
+\psi_i h\), and \(\psi_i\) is central in \(\mathbb{C}[G]\). By Schur's lemma,
+\(\psi_i\) acts as a scalar operator \(\lambda_{ij} \Id\) on each \(V_j\).</p>
+<p>Taking the trace in \(V_j\) we obtain
+\begin{align*}
+\lambda_{ij} \dim V_j
+&amp;= \chi_{V_j}(\psi_i) \\
+&amp;= \frac{\dim V_i}{|G|} \sum_{g \in G} \chi_{V_i}(g) \chi_{V_j}(g^{-1}) \\
+&amp;= \frac{\dim V_i}{|G|} \sum_{g \in G} \chi_{V_i}(g)
+\overline{\chi_{V_j}(g)} \\
+&amp;= (\dim V_i) \langle \chi_{V_i}, \chi_{V_j} \rangle \\
+&amp;= \delta_{ij} \dim V_i
+\end{align*}
+so \(\lambda_{ij} = \delta_{ij} \frac{\dim V_i}{\dim V_j}\), which is zero
+when \(i \ne j\) and unity when \(i = j\).</p></li>
+<li><p>Suppose \(i \ne j\). Let \(V_k\) be an irreducible representation
+of \(G\). At least one of \(i, j\) is unequal to \(k\), so by part (a),
+at least one of \(\psi_i, \psi_j\) acts as the zero operator in \(V_k\).
+Therefore \(\psi_i \psi_j\) acts as the zero operator in \(V_k\). Therefore
+\(\psi_i \psi_j \in \mathrm{Rad}(\mathbb{C}[G])\). By Maschke's theorem,
+\(\psi_i \psi_j = 0\).</p>
+<p>On the other hand, if \(i = j\), then \(\psi_i \psi_j = \psi_i^2\) and by
+part (a), in every irreducible representation of \(G\), \(\psi_i\) acts as the
+scalar 1 or 0 depending on whether \(i = k\) or \(i \ne k\). Thus, in all
+irreducible representations, \(\psi_i^2 - \psi_i\) acts as zero. Again, by
+Maschke's theorem, \(\psi_i^2 - \psi_i = 0\).</p></li>
+</ol>
+
+<p><em>Remark:</em> In the proof of Theorem 4.5.4, it appears that
+the object \(g \otimes (h^*)^{-1}\) is an abbreviated way of writing
+\(\rho(g) \otimes (\rho(h)^T)^{-1}\) where \(\rho\) is the action for the
+representation \(\oplus_V V\). This gave me a lot of headaches trying to figure
+it out, and perhaps there is some deeper way in which Etingof intended for
+\(h^*\) makes sense by itself, but in any case, with this interpretation, the
+first equality follows from the identity \((\tr A)(\tr B) = \tr(A \otimes B)\),
+and the second equality follows from (I think) the canonical isomorphism
+between \(V \otimes V^*\) and \(\End V\), regarded as
+\((\End(V) \otimes \End(V))\)-modules, or alternatively
+\((\End V, \End V)\)-bimodules.</p>

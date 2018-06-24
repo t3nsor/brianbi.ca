@@ -1,0 +1,47 @@
+<p><span class="problem">Exercise 3.10.1</span> Let \(A_{ij}\) denote the
+element of \(\mathrm{Mat}_m(k)\) that has a 1 in the \(i\)<sup>th</sup> row and
+\(j\)<sup>th</sup> column and 0 for all other entries; evidently the
+\(A_{ij}\)'s form a basis of \(\mathrm{Mat}_m(k)\). Let \(B_{ij}\) denote
+the similar element of \(\mathrm{Mat}_n(k)\). Let \(C_{ij}\) denote the
+similar element of \(\mathrm{Mat}_{mn}(k)\).</p>
+<p>The tensor product \(\mathrm{Mat}_m(k) \otimes \mathrm{Mat}_n(k)\) has a
+basis given by elements of the form \(A_{ij} \otimes B_{pq}\) where
+\(1 \le i, j \le m, 1 \le p, q \le n\). Define \(\varphi :
+\mathrm{Mat}_m(k) \otimes \mathrm{Mat}_n(k) \to \mathrm{Mat}_{mn}(k)\) to be
+the unique linear map such that
+\[
+\varphi(A_{ij} \otimes B_{pq}) = C_{i+(m-1)p, j+(m-1)q}
+\]
+For each \(r \in \{1, \ldots, mn\}\) there is exactly one pair
+\((i, p) \in \{1, \ldots, m\} \times \{1, \ldots, n\}\) with \(r =
+i+(m-1)p\), therefore \(\varphi\) maps a basis of its domain to a basis of its
+codomain; it is an isomorphism of vector spaces.</p>
+<p>Furthermore
+\begin{align*}
+\varphi((A_{ij} \otimes B_{pq})(A_{i'j'} \otimes B_{p'q'}))
+&amp;= \varphi(A_{ij}A_{i'j'} \otimes B_{pq}B_{p'q'}) \\
+&amp;= \varphi(\delta_{ji'} A_{ij'} \otimes \delta_{qp'} B_{pq'}) \\
+&amp;= \delta_{ji'} \delta_{qp'} C_{i+(m-1)p, j'+(n-1)q'} \\
+&amp;= \delta_{j+(n-1)q, i'+(m-1)p'} C_{i+(m-1)p, j'+(n-1)q'} \\
+&amp;= C_{i+(m-1)p, j+(n-1)q} C_{i'+(m-1)p', j'+(n-1)q'} \\
+&amp;= \varphi(A_{ij} \otimes B_{pq}) \varphi(A_{i'j'} \otimes B_{p'q'}) \\
+\end{align*}
+so the identity \(\varphi(ab) = \varphi(a)\varphi(b)\) holds whenever
+\(a, b\) belong to the previously described basis of
+\(\mathrm{Mat}_m(k) \otimes \mathrm{Mat}_n(k)\).  By linearity,
+\(\varphi(ab) = \varphi(a)\varphi(b)\) for all \(a, b \in
+\mathrm{Mat}_m(k) \otimes \mathrm{Mat}_n(k)\).</p>
+<p>The identity of \(\mathrm{Mat}_m(k) \otimes \mathrm{Mat}_n(k)\) is
+\[
+I = \left[\sum_{i=1}^m A_{ii}\right] \otimes \left[\sum_{j=1}^n B_{jj}\right]
+= \sum_{i=1}^m \sum_{j=1}^n A_{ii} \otimes B_{jj}
+\]
+so
+\begin{align*}
+\varphi(I)
+&amp;= \sum_{i=1}^m \sum_{j=1}^n \varphi(A_{ii} \otimes B_{jj}) \\
+&amp;= \sum_{i=1}^m \sum_{j=1}^n C_{i+(m-1)j,i+(m-1)j} \\
+&amp;= \sum_{r=1}^{mn} C_{rr}
+\end{align*}
+and the last expression is the identity of \(\mathrm{Mat}_{mn}(k)\). So
+\(\varphi\) is an isomorphism of algebras.</p>

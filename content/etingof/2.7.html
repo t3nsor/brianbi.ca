@@ -1,0 +1,248 @@
+<h2>Section 2.7. Examples of algebras</h2>
+<p><span class="problem">Parenthetical to definition 2.7.3</span> We are asked
+to show that if \(\char k = 0\), then \(k[t]\) is a faithful representation of
+the Weyl algebra, where \(x\) acts by multiplication by \(t\) and \(y\) acts by
+differentiation with respect to \(t\). For this we just need
+the kernel of the homomorphism \(\rho\) from the Weyl algebra \(A\) to
+\(\End k[t]\) to be trivial. Let \(a \in A\) be nonzero. Then \(a\) can be
+written uniquely as \(\sum_{j} P_j(x) y^j\) where \(P_j(x)\) is a polynomial in
+\(x\) and at least one \(P_j\) is nonzero. If \(J\) is the minimum \(j\) with
+nonzero \(P_j\), then all \(y^j\) with \(j &gt; J\) annihilate \(t^J\).
+Therefore \(at^J = P_J(x) y^J t^J = J! P_J(x) \neq 0\). The desired result
+follows.</p>
+<div class="qed"></div>
+
+<p class="out-of-line-lemma">If \(x, y\) are the generators of the Weyl algebra
+as defined in the text, and \([\cdot, \cdot]\) denotes the commutator,
+then:</p>
+<ol>
+<li>\([x^i y^j, x] = j x^i y^{j-1}\)</li>
+<li>\([y, x^i y^j] = i x^{i-1} y^j\)</li>
+</ol>
+<p>Therefore, \([\cdot, x]\) acts as formal differentiation with respect to
+\(y\), and \([y, \cdot]\) acts as formal differentiation with respect to
+\(x\).</p>
+<p><em>Proof:</em>
+<ol>
+<li>By induction on \(j\).</li>
+<li>By induction on \(i\).</li>
+</ol>
+<div class="qed"></div>
+
+<span class="problem">Problem 2.7.4</span>
+<ol class="subproblems">
+<li>In an \(n\)-dimensional representation of \(A\), we have \(n =
+\tr(I_n) = \tr(\rho(yx - xy)) = \tr(\rho(y)\rho(x)) - \tr(\rho(x)\rho(y)) =
+0\), so only the trivial representation is finite-dimensional. A nonzero
+two-sided ideal \(I \subseteq A\) is closed under commutators with all elements
+of \(A\), and contains some nonzero \(a\), which can be uniquely written as
+\(a = \sum_j P_j(x) y^j\) where each \(P_j(x)\) is a polynomial in \(x\) and at
+least one \(P_j\) is nonzero. Let \(J\) be the greatest \(j\) with nonzero
+\(P_j\). Then, by taking the commutator with \(x\) iterated \(J\) times, and
+using the Lemma, we obtain that
+\(I\) contains \(P_J(x) J!\) and therefore \(P_J(x)\), a nonzero polynomial.
+By taking the commutator with \(y\) iterated \(\deg P_J\) times, and using the
+Lemma again, we obtain that \(I\) contains a nonzero scalar, so \(I = A\).
+We conclude that the Weyl algebra is simple.</li>
+<li>That the elements \(x^p\) and \(y^p\) commute with \(x\) and \(y\) follows
+immediately from the Lemma. Since they commute with the generators, they
+commute with all elements of \(A\). The centre of \(A\) certainly contains
+\(k[x^p, y^p]\). If we have some \(a \in A \setminus k[x^p, y^p]\), then write
+\(a\) with respect to the basis \(\{x^i y^j\}\) and let \(b\) consist of \(a\)
+with all terms of the form \(c_{ij} x^i y^j\) removed where \(p \mid i, j\).
+Such \(b\) is nonzero. If it contains some \(c_{ij} x^i y^j\) with \(p
+\not\mid i\), then write it in the form \(b = \sum_i x^i P_i(y)\) where each
+\(P_i(y)\) is a polynomial in \(y\); then \([y, b] = \sum_i i x^{i-1} P_i(y)\)
+by the Lemma, and is nonzero. Otherwise, it must contain some \(c_{ij} x^i
+y^j\)
+with \(p \not\mid j\), in which case write it as \(b = \sum_j P_j(x) y^j\), and
+the Lemma gives \([b, x] = \sum_j P_j(x) j y^{j-1}\), which is nonzero. In
+either case, \(b\) is not central. We
+conclude that \(k[x^p, y^p]\) is the entire centre of \(A\).</li>
+<li><p>Following the Hint, let \(V\) be an irreducible finite-dimensional
+representation of \(A\), and let \(v\) be an eigenvector of \(y\). Since
+\(V\) is irreducible, \(v\) is cyclic, implying that \(\{x^i y^j v \mid
+x, y \in \mathbb{N}\}\) spans \(V\). But \(x^i y^j v = \lambda^j x^i v\)
+where \(\lambda\) is the eigenvalue corresponding to \(v\), so \(\{x^i v \mid
+x \in \mathbb{N}\}\) spans \(V\). Furthermore, since \(x^p\) is central, it
+acts as a scalar in \(V\) (Problem 2.3.16), so \(\{v, xv, \ldots, x^{p-1}v\}\)
+spans \(V\).
+To see that this set is linearly independent (and therefore a
+basis), observe that if \(av = 0\), then \([y, a]v = 0\) since \(v\) is an
+eigenvector of \(y\). If \(\sum_i c_i x^i v = 0\), then \((\sum_i c_i x^i)v =
+0\) and taking the commutator with \(y\) iterated \(p-1\) times immediately
+gives that \((p-1)! c_{p-1} v = 0\), so \(c_{p-1} = 0\); repeating this process
+for each \(i\) in descending order then shows that all \(c_i\) vanish, as
+required. Thus all irreducible finite-dimensional representations of \(A\), if
+any, are \(p\)-dimensional. Note that by the trace argument used in part (a),
+any \(p\)-dimensional representation of \(A\) is also automatically
+irreducible.</p>
+<p>Our objective now is to construct all \(p\)-dimensional representations.
+We know that \(y^p\) is a scalar, say, \(c \, \mathrm{Id}\). This implies
+that \(y\) has only one eigenvalue, \(\lambda = \sqrt[p]{c}\), since
+\(p\)<sup>th</sup> roots are unique in characteristic \(p\). Furthermore, we
+claim that there is only one linearly independent eigenvector of \(y\). To see
+this, say \(yv_1 = \lambda v_1\) and \(yv_2 = \lambda v_2\), then let \(P(x)\)
+be the polynomial of degree at most \(p-1\) such that \(v_2 = P(x)v_1\); the
+argument given in the previous paragraph implies that such \(P\) exists and is
+unique. Now \(P'(x)v_1 = [y, P(x)]v_1 = yP(x)v_1 - P(x)yv_1 = \lambda v_2 -
+\lambda v_2 = 0\), so \(P' = 0\), therefore \(v_2\) is a constant multiple of
+\(v_1\). Thus, the Jordan form of \(y\) has \(\lambda\) for each diagonal entry
+and 1 for each superdiagonal entry. Call this matrix \(Y\). We always have one
+representation given by
+\begin{equation*}
+X_{ij} = \begin{cases}
+j &amp; \text{if $i = j+1$} \\
+0 &amp; \text{otherwise}
+\end{cases}
+\end{equation*}
+where \(X = \rho(x)\).  For example, for \(p = 5\), this gives the following
+representation:
+\[
+X = \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 2 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 3 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 4 &amp; 0 \end{pmatrix}
+\qquad
+Y = \begin{pmatrix} \lambda &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; \lambda &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \lambda &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; \lambda &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \lambda \end{pmatrix}
+\]
+Once \(\lambda \in k\) is fixed, the objective is to find all \(X\) such that
+\([Y, X] = I_p\); we then set \(\rho(x) = X, \rho(y) = Y\) to obtain a
+representation.  To find all such \(X\),
+notice that \([Y, X] = I_p\) is a linear equation in \(X\), so the general
+solution is obtained as the sum of the particular solution previously given,
+which we shall call \(X_p\), and the solution to the homogeneous equation
+\([Y, X] = 0\). It is easy to verify that \(Y - \lambda \, \mathrm{Id}\) (and
+therefore \(Y\))
+commutes with \(X\) precisely when \(X\) is upper triangular and constant along
+each diagonal. All such representations are pairwise nonisomorphic, since
+either they have different Jordan forms \(Y\) for \(\rho(y)\), or, when they
+have the same \(Y\), they have different \(X\). For the case \(p = 5\) this
+general form is illustrated below:
+\[
+X = \begin{pmatrix} a &amp; b &amp; c &amp; d &amp; e \\
+1 &amp; a &amp; b &amp; c &amp; d \\
+0 &amp; 2 &amp; a &amp; b &amp; c \\
+0 &amp; 0 &amp; 3 &amp; a &amp; b \\
+0 &amp; 0 &amp; 0 &amp; 4 &amp; a \end{pmatrix}
+\]
+<em>Remark:</em> If we regard \(V\) as \(k[t]/\langle t^p\rangle\), with
+the \(i\)<sup>th</sup> entry being the coefficient of \(t^{p-i-1}\), then
+the result we have obtained can be interpreted as that all the representations
+over \(V\), up to isomorphism, are given by
+\begin{align*}
+y &amp;= t + \lambda \\
+x &amp;= -\frac{\partial}{\partial t} + P(t)
+\end{align*}
+with \(\lambda\) drawn from \(k\) and \(P(t)\) drawn from \(k[t]/\langle
+t^p\rangle\). We can cast this into a more familiar form by noting that
+given a representation \(\rho\) of \(A\), we can always construct the
+<q>90 degrees rotated</q>
+representation \(\rho'\) given by \(\rho'(x) = \rho(y); \rho'(y) = -\rho(x)\).
+This gives
+\begin{align*}
+x &amp;= t + \lambda \\
+y &amp;= \frac{\partial}{\partial t} - P(t)
+\end{align*}
+It should also be apparent that this is the inspiration for the ansatz for
+\(X_p\).</p></li>
+</ol>
+<p><span class="problem">Problem 2.7.5</span>
+We should first of all observe that \(x^{-1}y = qyx^{-1}\) and \(xy^{-1} =
+qy^{-1}x\) (proof left as exercise for reader).</p>
+<ol class="subproblems">
+<li><p>It is easy to see that:
+\begin{align*}
+[x^i y^j, x] &amp;= (q^j - 1)x^{i+1} y^j \\
+[x^i y^j, x^{-1}] &amp;= (q^{-j} - 1)x^{i-1} y^j \\
+[y, x^i y^j] &amp;= (q^i - 1) x^i y^{j+1} \\
+[y^{-1}, x^i y^j] &amp;= (q^{-i} - 1) x^i y^{j-1}
+\end{align*}
+Since \(\{x^i y^j \mid i, j \in \mathbb{Z}\}\) is a basis, an element \(a \in
+A_q\) commutes with \(x\) and \(x^{-1}\) if and only if all \(x^i y^j\) with
+nonzero coefficients in \(a\) satisfy \(q^j = q^{-j} = 1\), and with \(y\) and
+\(y^{-1}\) if and only if all \(x^i y^j\) with nonzero coefficients in \(a\)
+satisfy \(q^i = q^{-i} = 1\). So for \(q\) not a root of unity, the centre is
+trivial, while for \(q\) a primitive \(n\)<sup>th</sup> root of unity, the
+centre is \(k[x^n, y^n, x^{-n}, y^{-n}]\); elements belonging to
+this set will commute with the generators and hence all of \(A_q\).</p>
+
+<p>For \(q\) not a root of unity, suppose we have a nonzero ideal containing
+the nonzero element \(a = \sum_{i \in \mathbb{Z}} Q_i(x) y^i\), where each
+\(Q_i \in \langle x, x^{-1}\rangle\) and therefore commutes with \(x\). By
+right-multiplying by \(y\) or \(y^i\), without loss of generality, we can take
+\(Q_i = 0\) for \(i &lt; 0\) and \(Q_0 \neq 0\). If \(Q_i = 0\) for \(i &gt;
+0\), then we have \(a \in k[x, x^{-1}]\). Otherwise, take the
+commutator with \(x\):
+\begin{equation*}
+[a, x] = \sum_{i \in \mathbb{N}} (q^i - 1)x Q_i(x) y^i \\
+\end{equation*}
+This eliminates the \(i = 0\) term and since \(q\) is not a root of unity, it
+does not eliminate \(i \neq 0\) terms. By left-multiplying by \(x^{-1}\) and
+repeating this process, we can obtain that the ideal contains some \(b \in k[x,
+x^{-1}]\). By taking commutators with \(y\), we can analogously eliminate terms
+one by one, eventually finding that \(1\) belongs to the ideal. Thus, \(A_q\)
+is simple whenever \(q\) is not a root of unity.</p></li>
+<li>In an \(n\)-dimensional representation of \(A_q\), we have
+\(\det\rho(y)\det\rho(x) = \det(\rho(yx)) = \det(\rho(qxy)) =
+q^n\det\rho(x)\det\rho(y)\). Neither \(\rho(x)\) nor \(\rho(y)\) can be
+singular, since \(\rho(x^{-1}) = \rho(x)^{-1}\) and \(\rho(y^{-1}) =
+\rho(y)^{-1}\). So we get finite-dimensional representations only when
+\(q\) is a root of unity. If \(q^n = 1\), then we can get \(n\)-dimensional
+representations.</li>
+<li><p>Say \(q\) is a primitive \(n\)<sup>th</sup> root of unity. Let \(v \in
+A_q\) be an eigenvector of \(y\) in a finite-dimensional representation \(V\),
+so that \(yv = \lambda v\). Since \(y\) has an inverse, \(\lambda \neq 0\), and
+\(y^{-1}v = \lambda^{-1}v\). If this representation is irreducible, then it is
+cyclic, and \(\{x^i y^j v \mid i, j \in \mathbb{Z}\}\) spans \(V\). But since
+\(y^j v = \lambda^j v\), it must be that \(\{x^i v \mid i \in \mathbb{Z}\}\)
+spans \(V\). But \(x^n\) and \(x^{-n}\) act as scalars in \(V\) (Problem
+2.3.16), so \(\{v, xv, \ldots, x^{n-1}v\}\) spans \(V\). Note that \(yxv = qxyv
+= q\lambda xv\), so \(xv\) is an eigenvector of \(y\) with eigenvalue
+\(q\lambda\). We immediately see that all of \(\{v, xv, \ldots, x^{n-1}v\}\)
+are eigenvectors of \(y\) with distinct eigenvalues \(\lambda, q\lambda,
+\ldots, q^{n-1}\lambda\), so they are linearly
+independent (and hence a basis). So \(\rho(y)\) has a Jordan form like the
+following (taking \(n = 4\)):
+\begin{equation*}
+\rho(y) = \lambda \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; q &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; q^2 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; q^3
+\end{pmatrix}
+\end{equation*}
+Since \(\rho(x)\) promotes an eigenvector to an eigenvector with \(q\) times
+the eigenvalue, the most general form it takes on is as follows:
+\begin{equation*}
+\rho(x) = \begin{pmatrix}
+0 &amp; 0 &amp; 0 &amp; \mu_0 \\
+\mu_1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; \mu_2 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \mu_3 &amp; 0
+\end{pmatrix}
+\end{equation*}
+where \(\mu_i \neq 0\), so that \(\rho(x)\) has an inverse given by
+\begin{equation*}
+\rho(x^{-1}) = \begin{pmatrix}
+0 &amp; \mu_1^{-1} &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \mu_2^{-1} &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; \mu_3^{-1} \\
+\mu_0^{-1} &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}
+\end{equation*}
+We should choose \(\lambda\) with argument in the range
+\([0, 2\pi/n)\), to avoid getting the same eigenvalues for \(y\) with different
+values of \(\lambda\). With this
+restriction, clearly all representations with different \(\lambda\) are
+nonisomorphic, and for the same \(\lambda\), by choosing \(\mu_i\) differently,
+we get different forms for \(\rho(x)\), so all representations obtained in this
+way are pairwise nonisomorphic.</p>
+<p><em>Remark:</em> In the special case that \(q = 1\), we obtain only
+one-dimensional irreps. This is consistent with Corollary 2.3.12.</p></li>
+</ol>

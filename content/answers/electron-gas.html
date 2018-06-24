@@ -1,0 +1,18 @@
+<div id="question_content">
+<h2>What is the pressure needed to contain a 1 molar electron gas at room temperature?</h2>
+</div>
+<div id="answer_content"><p>I'm not sure how to work out the thermodynamics, but I can do the calculation at low temperatures (i.e. where the system will be found very close to its ground state).</p>
+
+<p>For ease of calculation, we will take the container to be spherical. Say the container has volume \(V\) and there are \(N\) electrons inside.</p>
+
+<p>From basic electrostatics we know that the ground state of this system will have all the electrons at the surface. A straightforward calculation gives the surface area of the container as \(A = 4\pi\left(\frac{3V}{4\pi}\right)^{2/3}\). So we get a surface charge density of \[\sigma = Ne/A = \frac{Ne}{4\pi} \left(\frac{3V}{4\pi}\right)^{-2/3}.\]</p>
+
+<p>A surface with net charge density feels an electrostatic pressure of \(\frac{\epsilon_0}{2}E^2\) where \(E\) is the magnitude of the electric field just outside the surface. By Gauss's law and the vanishing of the electric field in the container's interior this is \[P = \frac{\epsilon_0}{2}E^2 = \frac{\epsilon_0}{2}(\sigma/\epsilon_0)^2 = \frac{\sigma^2}{2\epsilon_0}\]</p>
+
+<p>Putting it all together \[P = \frac{N^2 e^2}{32\pi^2\epsilon_0} \left(\frac{3V}{4\pi}\right)^{-4/3}\] Putting \(N = 6.022 \times 10^{23}\) and \(V\) = 1&nbsp;dm<sup>3</sup> we obtain the result</p>
+
+<p style="text-align: center">\(P \sim 2.25 \times 10^{23}\)&nbsp;pascals</p>
+
+<p>This is about 10 million times greater than the pressure at the core of the sun.</p>
+
+<p>A curious feature is that the pressure is not related to the particle density \(N/V\) in any straightforward way. This is because the electrostatic repulsion between electrons is a long-ranged force and the expressions for the virial coefficients diverge.</p></div>

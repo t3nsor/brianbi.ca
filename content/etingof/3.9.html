@@ -1,0 +1,690 @@
+<p><span class="problem">Problem 3.9.1</span></p>
+<ol class="subproblems">
+<li><p>The map \(\rho_U : A \to \End_k U\) is obviously linear whenever \(f\)
+is. In order for \(\rho_U\) to be an algebra homomorphism, it is sufficient and
+necessary that, additionally, \(\rho_U(ab) = \rho_U(a)\rho_U(b)\) for all
+\(a, b \in A\). That is
+\[
+\begin{pmatrix}
+\rho_V(ab) &amp; f(ab) \\
+0 &amp; \rho_W(ab)
+\end{pmatrix} =
+\begin{pmatrix}
+\rho_V(a) &amp; f(a) \\
+0 &amp; \rho_W(a)
+\end{pmatrix}
+\begin{pmatrix}
+\rho_V(b) &amp; f(b) \\
+0 &amp; \rho_W(b)
+\end{pmatrix}
+\]
+Using the fact that \(\rho_V(ab) = \rho_V(a)\rho_V(b)\) and
+\(\rho_W(ab) = \rho_W(a)\rho_W(b)\), and expanding out the RHS, we arrive at
+the equivalent condition
+\[
+f(ab) = \rho_V(a)f(b) + f(a)\rho_W(b)
+\]
+We make one useful observation here before proceeding. Substituting \(a = b =
+1\) yields \(f(1) = \Id_V f(1) + f(1) \Id_W = 2f(1)\), therefore \(f(1) = 0\).
+</p></li>
+<li><p>For all \(a, b \in A\), we have
+\begin{align*}
+\mathrm{d}X(ab) &amp;= \rho_V(ab)X - X\rho_W(ab) \\
+&amp;= \rho_V(a)\rho_V(b)X - X\rho_W(a)\rho_W(b) \\
+&amp;= \rho_V(a)\rho_V(b)X - \rho_V(a)X\rho_W(b) + \rho_V(a)X\rho_W(b) -
+X\rho_W(a)\rho_W(b) \\
+&amp;= \rho_V(a)(\rho_V(b)X - X\rho_W(b)) + (\rho_V(a)X - X\rho_W(a))\rho_W(b)
+\\
+&amp;= \rho_V(a)\mathrm{d}X(b) + \mathrm{d}X(a)\rho_W(b)
+\end{align*}
+Therefore \(\mathrm{d}X\) is a cocycle.</p>
+<p>The map \(\mathrm{d}X\) will be identically zero iff for all \(a \in A\),
+\(w \in W\), we have \(\rho_V(a)Xw = X\rho_W(a)w\). This is the same as the
+definition of \(X\) being a homomorphism between the representations \(\rho_V\)
+and \(\rho_W\).</p>
+<p>The map \(\mathrm{d} : \Hom_k(W, V) \to \Hom_k(A, \Hom_k(W, V))\) is easily
+seen to be linear. We have determined that \(\ker \mathrm{d} = \Hom_A(W, V)\).
+The first isomorphism theorem implies that \(\im \mathrm{d} \cong
+\Hom_k(W, V)/\Hom_A(W, V)\).</p></li>
+<li><p>Suppose \(f, f' \in Z^1(W, V)\) with \(f - f' \in B^1(W, V)\). The
+corresponding representations are
+\[
+\rho_U(a) = \begin{pmatrix} \rho_V(a) &amp; f(a) \\
+0 &amp; \rho_W(a) \end{pmatrix}
+\qquad
+\rho_{U'}(a) = \begin{pmatrix} \rho_V(a) &amp; f'(a) \\
+0 &amp; \rho_W(a) \end{pmatrix}
+\]
+Suppose \(X \in \Hom_k(W, V)\). Define
+\[
+\varphi_X = \begin{pmatrix} \Id_V &amp; X \\
+0 &amp; \Id_W \end{pmatrix}
+\]
+\(\varphi_X\) is always invertible, therefore it is always an isomorphism of
+\(U\) and \(U'\) as vector spaces. For each \(a \in A\),
+\begin{align*}
+\rho_U(a) \varphi_X - \varphi_X \rho_{U'}(a)
+&amp;= \begin{pmatrix} \rho_V(a) &amp; f(a) \\
+0 &amp; \rho_W(a) \end{pmatrix}
+\begin{pmatrix} \Id_V &amp; X \\
+0 &amp; \Id_W \end{pmatrix} -
+\begin{pmatrix} \Id_V &amp; X \\
+0 &amp; \Id_W \end{pmatrix}
+\begin{pmatrix} \rho_V(a) &amp; f'(a) \\
+0 &amp; \rho_W(a) \end{pmatrix} \\
+&amp;= \begin{pmatrix} \rho_V &amp; \rho_V(a) X + f(a) \\
+0 &amp; \rho_W \\ \end{pmatrix} -
+\begin{pmatrix} \rho_V &amp; f'(a) + X\rho_W(a) \\
+0 &amp; \rho_W \\ \end{pmatrix} \\
+&amp;= \begin{pmatrix} 0 &amp; (\rho_V(a) X - X \rho_W(a)) - (f'(a) - f(a)) \\
+0 &amp; 0 \\ \end{pmatrix} \\
+&amp;= 0
+\end{align*}
+therefore \(\varphi_X : U \to U'\) is an isomorphism of representations if and
+only if \(\rho_V(a)X - X\rho_W(a) = f'(a) - f(a)\) for all \(a \in A\), or in
+other words if and only if \(f' - f = \mathrm{d}X\).</p>
+<p>Therefore, if \(f' - f \in B^1(W, V)\), then with the choice of \(X\) such
+that \(\mathrm{d}X = f' - f\), we obtain the isomorphism of representations
+\(\varphi_X : U \to U'\); conversely, if \(U\) and \(U'\) are
+isomorphic representations with the isomorphism of the form \(\varphi_X\) for
+some \(X\) then it must be that \(f' - f = \mathrm{d}X\), so that
+\(f' - f \in B^1(W, V)\).</p></li>
+<li><p>Suppose \(f, f' \in \mathrm{Ext}^1(W, V)\) with \(f' = \lambda f\) where
+\(\lambda \in k^\times\). We can choose representatives \(g, g' \in Z^1(W, V)\)
+of \(f, f'\) respectively so that \(g' = \lambda g\) also. Define
+\(\varphi : U_g \to U_{g'}\) by
+\[
+\varphi = \begin{pmatrix} \Id_V &amp; 0 \\ 0 &amp; \lambda \Id_W \end{pmatrix}
+\]
+It is easily verified that for each \(a \in A\), \(\varphi \circ
+\rho_{U_g}(a) = \rho_{U_{g'}}(a) \circ \varphi\), so \(\varphi\) is a
+homomorphism of representations. The matrix of \(\varphi\) is invertible, so
+the representations \(U_g, U_{g'}\) are isomorphic.</p>
+<p>Conversely, suppose \(g, g' \in Z^1(W, V)\) are given and that there is an
+isomorphism \(\varphi : U_g \to U_{g'}\). In block form, suppose
+\[
+\varphi = \begin{pmatrix} \varphi_1 &amp; \varphi_2 \\
+\varphi_3 &amp; \varphi_4 \end{pmatrix}
+\]
+The condition \(\varphi \circ U_g(a) = U_{g'}(a) \circ \varphi\) for all
+\(a \in A\) implies, after expanding both sides and equating blocks on each
+side,
+\begin{align}
+\varphi_1 \rho_V(a) &amp;= \rho_V(a) \varphi_1 + g'(a) \varphi_3
+\label{eqn:iso1} \\
+\varphi_1 g(a) + \varphi_2 \rho_W(a) &amp;= \rho_V(a) \varphi_2 +
+g'(a) \varphi_4 \label{eqn:iso2} \\
+\varphi_3 \rho_V(a) &amp;= \rho_W(a) \varphi_3 \label{eqn:iso3} \\
+\varphi_3 g(a) + \varphi_4 \rho_W(a) &amp;= \rho_W(a) \varphi_4
+\label{eqn:iso4}
+\end{align}
+for all \(a \in A\).</p>
+<p>\(\pref{eqn:iso3}\) implies that \(\varphi_3 : V \to W\) is a homomorphism
+of representations. By Schur's lemma, either \(\varphi_3 = 0\), or
+\(\varphi_3\) is an isomorphism.</p>
+<p>Consider first the case that \(\varphi_3 = 0\). Then \(\pref{eqn:iso1}\)
+and \(\pref{eqn:iso4}\) respectively simplify to
+\begin{align*}
+\varphi_1 \rho_V(a) &amp;= \rho_V(a) \varphi_1 \\
+\varphi_4 \rho_W(a) &amp;= \rho_W(a) \varphi_4
+\end{align*}
+so \(\varphi_1\) and \(\varphi_4\) are respectively endomorphisms of the
+representations \(V\) and \(W\). By Schur's lemma, each is a scalar operator,
+say, \(\varphi_1 = \lambda \Id_V\) and \(\varphi_4 = \mu \Id_W\). Then
+\(\pref{eqn:iso2}\) simplifies to
+\[
+\lambda g(a) + \varphi_2 \rho_W(a) = \rho_V(a) \varphi_2 + \mu g'(a)
+\]
+that is
+\[
+\rho_V(a) \varphi_2 - \varphi_2 \rho_W(a) = \mathrm{d}\varphi_2 = \lambda g(a)
+- \mu g'(a)
+\]
+so \(\lambda g - \mu g' \in B^1(W, V)\). Let \(f, f'\) denote the projections
+of \(g, g'\) onto \(\mathrm{Ext}^1(W, V)\); then \(f' =
+\frac{\lambda}{\mu}f\).</p>
+<p><em>(Travis Hance supplied this part of the proof.)</em> On the other hand,
+if \(\varphi_3\) is an isomorphism, then left-multiply
+both sides of \(\pref{eqn:iso4}\) by \(\varphi_3^{-1}\) to give
+\[
+g(a) + \varphi_3^{-1} \varphi_4 \rho_W(a) = \varphi_3^{-1}\rho_W(a)\varphi_4
+\]
+Now \(\varphi^{-1}\) is an isomorphism from \(W\) to \(V\), so
+\(\varphi_3^{-1}\rho_W(a) = \rho_V(a) \varphi_3^{-1}\). Consequently
+\[
+g(a) = \varphi_3^{-1} \rho_W(a) \varphi_4 - \varphi_3^{-1} \varphi_4 \rho_W(a)
+= \rho_V(a) \varphi_3^{-1}\varphi_4 - \varphi_3^{-1}\varphi_4 \rho_W(a) =
+\mathrm{d}(\varphi_3^{-1}\varphi_4)
+\]
+so \(g \in B^1(W, V)\). Similarly, \(\pref{eqn:iso1}\) will show that
+\(g' \in B^1(W, V)\). Therefore \(f = f' = 0\).</li>
+</ol>
+
+<p><span class="problem">Problem 3.9.2</span></p>
+<ol class="subproblems">
+<li><p>Suppose \(f\) is a cocycle,
+\begin{equation}
+f(PQ) = \rho_b(P)f(Q) + f(P)\rho_a(Q) = P(b)f(Q) + Q(a)f(P)
+\label{eqn:coc}
+\end{equation}
+where we have written \(\rho_a, \rho_b\) for \(\rho_{V_a}, \rho_{V_b}\) for
+brevity. To proceed, we analyze two cases.</p>
+<p>First, suppose that there exists some \(i\) with \(a_i \ne b_i\). Without
+loss of generality, say \(a_1 \ne b_1\). Let \(j \in \{1, \ldots, n\}\) be
+given. Then \(\pref{eqn:coc}\) implies
+\begin{align*}
+f(x_1 x_j) &amp;= b_1 f(x_j) + a_j f(x_1) \\
+f(x_j x_1) &amp;= b_j f(x_1) + a_1 f(x_j)
+\end{align*}
+Since \(x_1 x_j = x_j x_1\), rearranging yields
+\[
+f(x_j) = (b_j - a_j)\frac{f(x_1)}{b_1 - a_1}
+\]
+Let \(\lambda = f(x_1)/(b_1 - a_1)\). It follows that for all
+\(j \in \{1, \ldots, n\}\), we have
+\[
+f(x_j) = (b_j - a_j)\lambda
+\]
+The choice of the map \(\lambda : W \to V\) therefore suffices to determine the
+function \(f : A \to \Hom_{\mathbb{C}}(W, V)\). Define \(f' : A \to
+\Hom_{\mathbb{C}}(V_a, V_b)\) by
+\[
+f'(P) = (P(b) - P(a))\lambda
+\]
+Then \(f'\) is linear in its argument \(P\), agrees with \(f\) when \(P =
+x_i\) for some \(i\), and satisfies \(\pref{eqn:coc}\), so \(f = f'\). Since
+\(\Hom_{\mathbb{C}}(V_a, V_b)\) from which \(\lambda\) is drawn is
+one-dimensional, \(Z^1(V_a, V_b)\) is also one-dimensional. But observe that
+\(\mathrm{d}\lambda(P) = \rho_b(P) \lambda - \lambda \rho_a(P) =
+(P(b) - P(a))\lambda = f\), so every such \(f\) is a coboundary. Therefore
+\(\mathrm{Ext}^1(V_a, V_b)\) is trivial.</p>
+<p>On the other hand, if \(a_i = b_i\) for all \(i\), then in fact the \(n\)
+operators \(\lambda_i = f(x_i)\), which determine \(f\), can be chosen
+independently. The \(f\) that satisfies \(\pref{eqn:coc}\) and \(f(x_i) =
+\lambda_i\) for each \(i\) is given by
+\[
+f(P) = \sum_{i=1}^n \lambda_i P_i(a)
+\]
+where \(P_i\) denotes the (formal) partial derivative \(\d P/\d x_i\). The
+space \(Z^1(V_a, V_a)\) therefore
+has dimension \(n\). It is easy to check that \(B^1(V_a, V_a) = 0\) (indeed,
+\(B^1(V, V)\) must be trivial for any one-dimensional representation of any
+algebra), so
+\(\mathrm{Ext}^1(V_a, V_a)\) has dimension \(n\). Extensions of \(V_a\) by
+\(V_a\) are therefore parametrized by \([c_1 : \ldots : c_n] \in
+\mathbb{P}\mathbb{C}^n\) with
+\[
+f(P) = \sum_{i=1}^n c_i P_i(a) \Id
+\]</p>
+<p>With these results we can classify the two-dimensional representations of
+\(A\). Since \(A\) is commutative, only the one-dimensional representations are
+irreducible. Let \(V\) be a two-dimensional representation, let \(V_b\) be a
+one-dimensional subrepresentation, and let \(V_a = V/V_b\). If \(a \ne b\) then
+\(\mathrm{Ext}^1(V_a, V_b) = 0\) so the extension \(V\) is trivial, that is,
+\(V \cong V_a \oplus V_b\). In the case where \(a = b\), we likewise have the
+representations \(V_a \oplus V_a\). Write \(V_{ab} = V_a \oplus V_b\), where
+\(a, b\) may be the same or different.</p>
+<p>Since \(\mathrm{Ext}^1(V_a, V_a)\) is nontrivial, in the case \(a = b\) we
+also have indecomposable representations of the form
+\[
+\rho_V(x_i) = \begin{pmatrix} a_i &amp; c_i \\
+0 &amp; a_i \end{pmatrix}
+\]
+where \([c_1 : \ldots : c_n] \in \mathbb{P}\mathbb{C}^n\). Denote such a
+representation by \(U_{ac}\).</p>
+<p>We have therefore two kinds of two-dimensional representations,</p>
+<ol>
+<li>The representations \(V_{ab} = V_a \oplus V_b\) where \(a, b \in
+\mathbb{C}^n\)</li>
+<li>The representations \(U_{ac}\) where \(a \in \mathbb{C}^n, b \in
+\mathbb{P}\mathbb{C}^n \setminus \{0\}\)</li>
+</ol>
+<p>No \(V_{ab}\) is isomorphic to any \(U_{a'c}\) since the latter are all
+indecomposable while the former are not. The Krull&ndash;Schmidt theorem
+implies that \(V_{ab} \cong V_{a'b'}\) if and only if \(a, b\) is a permutation
+of \(a', b'\). The result of Problem 3.9.1(d) implies that \(U_{ac}\) and
+\(U_{ac'}\) are isomorphic only when \(c = c'\). Finally, when \(a \ne a'\),
+the representations \(U_{ac}\) and \(U_{a'c'}\) cannot be isomorphic since
+if \(a_i \ne a'_i\) then \(x_i\) will have a different eigenvalue in the two
+representations.</p></li>
+<li><p>The algebra \(B\) has a unique irreducible representation \(V\), in
+which \(\rho_V(x_i) = 0\) for all \(i\). Suppose \(f\) is a cocycle. Because
+\(x_i x_j = 0\) for all \(i, j\), the cocycle condition \(f(ab) = \rho_V(a)
+f(b) + f(b) \rho_W(a)\) doesn't constrain the values of \(f(x_i)\) at all, so
+each choice of \((c_1, \ldots, c_n) \in \mathbb{C}^n\) yields a cocycle
+\(f_c\) with \(f_c(x_i) = c_i \Id\). Again \(B^1(V, V) = 0\), so if
+\(c = [c_1 : \ldots : c_n]\) is understood projectively, then the result of
+Problem 3.9.1(d) implies that for \(n &gt; 1\) we have an
+infinite family of nonisomorphic indecomposable extensions of the form
+\[
+\rho(x_i) = \begin{pmatrix} 0 &amp; c_i \\
+0 &amp; 0 \end{pmatrix}
+\]
+where \(c\) ranges over the infinite set \(\mathbb{P}\mathbb{C}^n\).</p></li>
+</ol>
+
+<p><span class="problem">Problem 3.9.3</span> Obviously all one-dimensional
+representations of \(P_Q\) are irreducible. We claim that the converse is also
+true. Let \(V\) be a nonzero representation of \(P_Q\), so a vector space
+\(V_i\) is associated to each vertex of \(Q\), and \(V =
+\bigoplus_{i\in Q} V_i\). Let \(Q'\) be the set of vertices to which a nonzero
+vector space has been assigned. Let \(v\) be some member of \(Q'\) from which
+no other member of \(Q'\) is reachable. Then \(V_v\) is a subrepresentation of
+\(V\) in which \(p_v\) acts as the identity, \(p_w\) acts as zero for all
+vertices \(w \in Q \setminus \{v\}\), and \(a_e\) acts as zero for all edges
+\(e \in Q\). Each one-dimensional subspace of \(V_v\) is itself a
+subrepresentation. Therefore, if \(V\) is irreducible, then it must be
+one-dimensional.</p>
+<p>The one-dimensional representations of \(P_Q\) are obtained by choosing some
+vertex \(v \in Q\) and assigning a one-dimensional vector space to \(v\) and
+the zero vector space to all other vertices. Explicitly
+\begin{align*}
+\rho(p_w) &amp;= \delta_{vw} \Id \\
+\rho(a_e) &amp;= 0
+\end{align*}
+We will denote this representation by \((V_v, \rho_v)\). It is easy to see
+that \(V_v\) and \(V_w\) are nonisomorphic when \(v \ne w\), as the former
+has \(\rho_v(w) = 0\) and the latter has \(\rho_w(w) = \Id\).</p>
+<p>Let us now compute \(Z^1(V_w, V_v)\).
+Let \(f\) be a cocycle. Let \(x, y\) be vertices and \(a\) an
+edge. By the cocycle condition and the defining relations of \(P_Q\),
+\begin{gather}
+f(\delta_{xy} p_x) = f(p_x p_y) = \rho_v(p_x) f(p_y) + f(p_x) \rho_w(p_y) =
+\delta_{vx} f(p_y) + \delta_{wy} f(p_x) \label{eqn:q1} \\
+f(\delta_{a''v} a) = f(p_v a) = \rho_v(p_v) f(a) + f(p_v) \rho_w(p_v) =
+f(a) + \delta_{wv} f(p_v) \label{eqn:q2} \\
+f(\delta_{a'w} a) = f(a p_w) = \rho_v(a) f(p_w) + f(a) \rho_w(p_w) =
+f(a) + \delta_{vw} f(p_w) \label{eqn:q3}
+\end{gather}
+We proceed by cases. First, suppose \(v \ne w\). Then
+\(\pref{eqn:q2}\) and \(\pref{eqn:q3}\) become
+\[
+f(a) = f(\delta_{a'' v}a) = f(\delta_{a'w}a)
+\]
+which implies that \(f(a) = 0\) unless \(a\) is an edge from \(w\) to \(v\).
+In \(\pref{eqn:q1}\), substitute \(x = v, y = w\) to obtain
+\[
+0 = f(p_w) + f(p_v)
+\]
+Or, if \(x\) is different from both \(v\) and \(w\), substitute \(y = w\) to
+obtain
+\[
+0 = f(p_x)
+\]
+Thus \(Z^1(\rho_v, \rho_w)\) is parametrized by \(\lambda \in \Hom_k(V_w,
+V_v)\) and \(\mu_a \in \Hom_k(V_w, V_v)\) where \(a\) ranges over the edges
+from \(w\) to \(v\), with \(f(\rho_w) = \lambda, f(\rho_v) = -\lambda\),
+\(f(a) = \mu_a\) if \(a\) is an edge from \(w\) to \(v\), and \(f\) vanishes
+on any other path.</p>
+<p>If \(X \in \Hom_k(V_v, V_w)\) then the coboundary \(\d X\) is
+\(\d X(a) = \rho_W(a) X - X \rho_V(a)\), implying
+\begin{align*}
+\d X(p_w) &amp;= X \\
+\d X(p_v) &amp;= -X \\
+\end{align*}
+and \(\d X(a) = 0\) where \(a\) is any other path. So two cocycles differing
+only in the choice of \(\lambda\) become equivalent in
+\(\mathrm{Ext}^1(V_w, V_v)\), so the latter is
+parametrized by the \(\mu_a\)'s alone, and has dimension \(d(w, v)\) (the
+number of directed edges from \(w\) to \(v\)).</p>
+<p>Now consider the case where \(v = w\). In \(\pref{eqn:q1}\), substitute
+\(x = y = v\) to obtain
+\[
+f(p_v) = f(p_v p_v) = f(p_v) + f(p_v)
+\]
+therefore \(f(p_v) = 0\). Or, if \(x\) is different from \(v\), substitute
+\(y = v\) to obtain
+\[
+0 = f(p_x p_v) = f(p_x)
+\]
+so \(f\) vanishes for all vertices. Therefore, \(\pref{eqn:q2}\) and
+\(\pref{eqn:q3}\) become
+\[
+f(a) = f(\delta_{a''v}a) = f(\delta_{a'v}a)
+\]
+Since \(Q\) doesn't contain any oriented cycles, there is no self-edge from
+\(v\), so at least one of \(\delta_{a''v}\) and \(\delta_{a'v}\) must be zero
+for all \(a\). So in fact \(f\) vanishes identically. Therefore,
+\(Z^1(V_v, V_v)\) and \(\mathrm{Ext}^1(V_v, V_v)\) are trivial.</p>
+<p>The result that \(\mathrm{Ext}^1(V_v, V_v)\) is trivial can actually be seen
+as a special case of the result that \(\mathrm{Ext}^1(V_w, V_v)\) has dimension
+equal to \(d(w, v)\), since \(d(v, v) = 0\) in \(Q\), although the proofs of
+the two cases were slightly different</p>
+<p>We can now classify the two-dimensional representations of \(P_Q\). Let
+\(V\) be such a representation. It always has some one-dimensional
+subrepresentation, which is isomorphic to \(V_v\) for some vertex \(v\). The
+quotient \(V/V_v\) is a one-dimensional representation, which is isomorphic to
+\(V_w\) for some vertex \(w\). \(\mathrm{Ext}^1(V_w, V_v)\) has dimension equal
+to \(d(w, v)\), the number of directed edges from \(w\) to \(v\). Let
+\(\varphi : V_w \to V_v\) be an arbitrary nonzero linear map.
+The result of Problem 3.9.1(d) implies that all extensions of \(V_w\) by
+\(V_v\) are of the form \(U_{vwc}\), parametrized by
+\(c = [c_1 : \ldots : c_{d(w, v)}] \in \mathbb{P}k^{d(w, v)}\), with
+\[
+\rho_{vwc}(a) = \begin{pmatrix} \rho_v(a) &amp; f_{vwc}(a) \\
+0 &amp; \rho_w(a) \end{pmatrix}
+\]
+where \(f_{vwc}\) is the cocycle that assigns \(c_i \varphi\) to the
+\(i\)<sup>th</sup> edge from \(w\) to \(v\).</p>
+<p>Observe that \(U_{vwc}\) has the property that
+\(\rho(p_x)\) vanishes precisely when \(x\) is different from both \(v\) and
+\(w\). This implies that if \(U_{vwc} \cong U_{v'w'c'}\) then the two sets
+\(\{v, w\}\) and \(\{v', w'\}\) coincide. In the case where \(v = v'\) and
+\(w = w'\), the result of Problem 3.9.1(d) implies that \(U_{vwc} \cong
+U_{vwc'}\) if and only if \(c = c'\). We must still determine when
+\(U_{vwc}\) and \(U_{wvc'}\) can be isomorphic. If \(c = c' = 0\), then
+\(U_{vwc} \cong V_v \oplus V_w\) and \(U_{wvc'} \cong V_w \oplus V_v\) so they
+are isomorphic. If \(c \ne 0\), then there is at least one edge \(a\) from
+\(w\) to \(v\) such that \(c_a \ne 0\), implying \(\rho_{vwc}(a) \ne 0\), but
+then there cannot be an edge from \(v\) to \(w\), so in \(U_{wvc'}\) we must
+have \(\rho_{wvc}(a) = 0\). So in this case \(U_{vwc} \not\cong U_{wvc'}\). And
+similar reasoning shows that \(U_{vwc} \not\cong U_{wvc'}\) whenever \(c' \ne
+0\). So the nonisomorphic two-dimensional representations of \(P_Q\) are as
+follows:</p>
+<ul>
+<li>The direct sums \(V_v \oplus V_w\) where \(v\) and \(w\) may be the same or
+different from each other;</li>
+<li>The indecomposable representations \(U_{vwc}\) parametrized by
+\(c \in \mathbb{P}k^{d(w, v)} \setminus \{0\}\), which exist only when there is
+at least one edge from \(w\) to \(v\).</li>
+</ul>
+<p>The representations \(V_{vv}\) assign a two-dimensional vector space to
+the vertex \(v\) and the zero space to all vertices. The representations
+\(V_{vw}\) with \(v \ne w\) assign a one-dimensional vector space to \(v\), a
+one-dimensional vector space to \(w\), the zero space to all other vertices,
+and the zero map to all edges. The representations \(U_{vwc}\) with \(c \ne 0\)
+assign a one-dimensional vector space to each of \(v\) and \(w\), the zero
+space to all other edges, an arbitrary map to each edge from \(w\) to \(v\)
+as determined by the corresponding element of \(c\) (but subject to the
+restriction that at least one edge has a nonzero map) and zero to all other
+edges; such representations are indecomposable and the \(V_v\) subspace is
+clearly identifiable by reducing the space assigned to \(w\) to the zero
+space. Notice that scaling all the edges from \(w\) to \(v\) results in an
+isomorphic representation since it has the same effect as simply rescaling the
+basis vector for the space assigned to either \(v\) or \(w\).</p>
+
+<p><span class="problem">Problem 3.9.4</span></p>
+<ol class="subproblems"><li><p>We will state some useful facts
+here without proof:</p>
+<ul>
+<li>If \(R\) is any (possibly non-commutative) ring and \(R[[t]]\) is the ring
+of formal power series with
+coefficients in \(R\), and \(f, g \in R[[t]]\), and \(n \in \mathbb{N}\), then
+the coefficient of
+\(t^n\) in \(fg\) is determined by the coefficients of \(1, t, \ldots, t^n\) in
+\(f\) and \(g\).</li>
+<li>If \(f \in R[[t]]\) and the constant term of \(f\) is a unit in \(R\), then
+\(f\) is a unit in \(R[[t]]\), and for each \(n \in \mathbb{N}\), the
+coefficient of \(t^n\) in \(f^{-1}\) is determined by the coefficients of
+\(1, t, \ldots, t^n\) in \(f\).</li>
+</ul>
+<p>Now, suppose \(A\) and \((V, p)\) are given as in the problem, with
+\(\mathrm{Ext}^1(V, V) = 0\).</p>
+<p class="lemma">Suppose \(n \in \mathbb{N}\) and \(n \ge 1\). Suppose
+\(\tilde\rho = \rho + t\rho_1 + t^2\rho_2 + \ldots \) is a deformation of
+\(\rho\) such that the coefficient of \(t^i\) vanishes identically (that is,
+for all \(a\)\) whenever \(1 \le i \le n-1\); that is, \(\tilde\rho = \rho +
+t^n \rho_n + O(t^{n+1})\). Then there exists \(b \in
+\End V\) such that the coefficient of \(t^i\) in \((1 + t^n b)\tilde\rho
+(1 + t^n b)^{-1}\) vanishes whenever \(1 \le i \le n\).</p>
+<p class="proof">We have \(\tilde\rho(ab) = \tilde\rho(a)\tilde\rho(b)\) for
+all \(a, b \in A\). That is, \(\rho(ab) + t^n \rho_n(ab) + O(t^{n+1}) =
+(\rho(a) + t^n \rho_n(a) + O(t^{n+1}))(\rho(b) + t^n \rho_n(b) +
+O(t^{n+1}))\), and equating coefficients of \(t^n\), this
+implies
+\[
+\rho_n(ab) = \rho(a)\rho_n(b) + \rho_n(a)\rho(b)
+\]
+so \(\rho_n \in Z^1(V, V)\). Since \(\mathrm{Ext}^1(V, V) = 0\), this implies
+\(\rho_n \in B^1(V, V)\), so there exists \(b \in \End V\) such that
+\[
+\rho_n = \rho b - b \rho
+\]
+Then
+\begin{align*}
+(1 + t^n b)\tilde\rho(1 + t^n b)^{-1}
+&amp;= (1 + t^n b + O(t^{n+1}))(\rho + t^n \rho_n + O(t^{n+1}))
+(1 - t^n b + O(t^{n+1})) \\
+&amp;= (\rho + t^n(b\rho + \rho_n) + O(t^{n+1}))(1 - t^n b + O(t^{n+1})) \\
+&amp;= \rho + t^n(-\rho b + b\rho + \rho_n) + O(t^{n+1}) \\
+&amp;= \rho + O(t^{n+1})
+\end{align*}
+as required.</p>
+<p>Let \(\tilde\rho\) be any given deformation of \(\rho\). The Lemma implies
+that we can choose \(b_1 \in \End V\) so that \((1 + tb_1)\tilde\rho
+(1 + tb_1)^{-1}\) has vanishing linear term. Then, the Lemma implies that we
+can choose \(b_2 \in \End V\) so that \((1 + t^2 b_2)(1 + tb_1)\tilde\rho
+(1 + tb_1)^{-1}(1 + t^2 b_2)^{-1}\) has vanishing linear and quadratic terms,
+and so on. We will assume the axiom of dependent choice and assert that there
+is therefore an infinite sequence \(b_1, b_2, \ldots\) with \(b_i \in \End V\)
+such that for each \(n \in \mathbb{N}\), the coefficients of \(t^1, \ldots,
+t^n\) in \((\prod_{i=1}^n 1 + t^i b_i)\tilde\rho
+(\prod_{i=1}^n 1 + t^i b_i)^{-1}\) vanish identically.</p>
+<p>Let \(b = \prod_{i=1}^\infty 1 + t^i b_i\). This is well-defined because
+only factors with \(i \le n\) contribute to the coefficient of \(t^n\) in the
+product. Consider the representation \(\tilde{\tilde\rho} = b\tilde\rho
+b^{-1}\).  Clearly the constant term of \(\tilde{\tilde\rho}\) is \(\rho\). For
+\(n \ge 1\), the coefficient of \(t^n\) in \(\tilde{\tilde\rho}\) is determined
+by \(\tilde\rho\) and the coefficients of \(b\) and \(b^{-1}\) up to degree
+\(n\). But \(b = O(t^{n+1}) + \prod_{i=1}^n 1 + t^i b_i\) and
+\(b^{-1} = O(t^{n+1}) + (\prod_{i=1}^n 1 + t^i b^i)^{-1}\), therefore the
+coefficient of \(t^n\) in \(b\tilde\rho b^{-1}\) is 0 by construction of the
+\(b_i\)'s. This holds for all \(n\), therefore \(\tilde{\tilde\rho} =
+\rho\) and we conclude that \(\rho\) and \(\tilde\rho\) are
+isomorphic.</p><div class="qed"></div></li>
+<li><p>Let \(A = \mathbb{C}[x]/x^2\). This algebra is obtained by setting
+\(n = 1\) in the class of algebras described in Problem 3.9.2(b). We found that
+such an algebra has a unique irreducible representation \((V, \rho)\), of
+dimension one, in which \(x\) acts as the zero operator, and that the space
+\(\mathrm{Ext}^1(V, V)\) has dimension
+\(n\). In particular, for \(n = 1\), \(\mathrm{Ext}^1(V, V)\) is nonzero.</p>
+<p>Let \(\tilde\rho = \rho + t \rho_1 + t^2 \rho_2 + \ldots\) be a deformation
+of \(\rho\). We will show that \(\rho_i = 0\) for all \(i \ge 1\). The proof
+is by induction. For the inductive case, suppose that \(\rho_1 = \rho_2 =
+\ldots = \rho_{i-1} = 0\). Then we have \(\tilde\rho = \rho + t^i \rho_i +
+O(t^{i+1})\). Now
+\begin{align*}
+1 + t^i \rho_i(1) + O(t^{i+1}) &amp;= \tilde\rho(1) = \tilde\rho(1 \cdot 1) =
+\tilde\rho(1)^2 \\
+&amp;= (1 + t^i \rho_i(1) + O(t^{i+1}))^2 \\
+&amp;= 1 + 2 t^i \rho_i(1) + O(t^{i+1})
+\end{align*}
+which implies that \(\rho_i(1) = 0\). Also
+\begin{align*}
+0 &amp;= \tilde\rho(0) = \tilde\rho(x^2) = \tilde\rho(x)^2 \\
+&amp;= (\rho(x) + t^i \rho_i(x) + O(t^{i+1}))^2 =
+(t^i \rho_i(x) + O(t^{i+1}))^2 \\
+&amp;= t^{2i} \rho_i(x)^2 + O(t^{2i+1})
+\end{align*}
+therefore \(\rho_i(x)^2 = 0\), and since \(\rho_i(x) \in \End V \cong
+\mathbb{C}\), this means \(\rho_i(x)\) is just 0. As \(\{1, x\}\) is a basis of
+\(A\), we have established that \(\rho_i = 0\). For the base case, just put
+\(i = 1\) and this argument still works because the assumptions that
+\(\rho_1 = \rho_2 = \ldots = \rho_{i-1} = 0\) are vacuous.</p>
+<p>So \(\mathrm{Ext}^1(V, V)\) is nontrivial and yet all deformations of \(V\)
+are trivial. The converse to (a) does not hold.</p></li>
+</ol>
+
+<p><span class="problem">Problem 3.9.5</span></p>
+<ol class="subproblems">
+<li><p>If \(\dim V = m\), then a spanning set for \(\mathrm{Cl}(V)\) is given
+by monomials of the form \(x_{i_1} x_{i_2} \ldots x_{i_p}\)
+where \(1 \le i_1 &lt; i_2 &lt; \ldots &lt; i_p \le m\); the proof of this is
+not difficult, so we omit it, but the important consequence is that
+\(\dim\mathrm{Cl}(V) \le 2^m\).</p>
+<p>Suppose \(m = 2n\) and the bilinear form \(\langle \cdot, \cdot \rangle\)
+is nondegenerate. We use the fact that all nondegenerate symmetric bilinear
+forms can be diagonalized (we will not prove this here). Following the Hint,
+let \(e_1, \ldots, e_n, f_1, \ldots,
+f_n\) be an orthnormal basis of \(V\) with respect to \(\langle \cdot, \cdot
+\rangle\), and define
+\begin{align*}
+a_i &amp;= \frac{1}{2}(e_i + if_i) \\
+b_i &amp;= \frac{1}{2}(e_i - if_i)
+\end{align*}
+Then \(a_1, \ldots, a_n, b_1, \ldots, b_n\) form a basis of \(V\) in which
+\(\langle a_i, a_j \rangle = \langle b_i, b_j \rangle = 0\) and
+\(\langle a_i, b_j \rangle = \delta_{ij}/2\), as in the Hint. Let \(S\) be the
+vector space \(\wedge(a_1, \ldots, a_n)\). For each \(i\), define
+\begin{align*}
+\rho(a_i)(\omega) &amp;= a_i \wedge \omega \\
+\rho(b_i)(\omega) &amp;= \iota_{a_i} \omega
+\end{align*}
+and extend \(\rho\) to an algebra homomorphism \(\rho : \mathbb{C}\langle
+a_1, \ldots, a_n, b_1, \ldots, b_n \rangle \to \End S\). Observe that
+\begin{align*}
+\rho(a_i a_j + a_j a_i - 2\langle a_i, a_j \rangle)(\omega)
+&amp;= \rho(a_i)\rho(a_j)(\omega) + \rho(a_j)\rho(a_i)(\omega) \\
+&amp;= a_i \wedge (a_j \wedge \omega) + a_j \wedge (a_i \wedge \omega) \\
+&amp;= (a_i \wedge a_j) \wedge \omega + (a_j \wedge a_i) \wedge \omega \\
+&amp;= (a_i \wedge a_j + a_j \wedge a_i) \wedge \omega \\
+&amp;= 0
+\end{align*}
+and
+\begin{align*}
+\rho(b_i b_j + b_j b_i - 2\langle b_i, b_j \rangle)(\omega)
+&amp;= \rho(b_i)\rho(b_j)(\omega) + \rho(b_j)\rho(b_i)(\omega) \\
+&amp;= \iota_{a_i} \iota_{a_j} \omega + \iota_{a_j} \iota_{a_i}(\omega) \\
+&amp;= 0
+\end{align*}
+where we have used the identity \(\iota_X \iota_Y = -\iota_Y \iota_X\), and
+\begin{align*}
+\rho(a_i b_j + b_j a_i - 2\langle a_i, b_j\rangle)(\omega)
+&amp;= \rho(a_i)\rho(b_j)(\omega) + \rho(b_j)\rho(a_i)(\omega) -
+\delta_{ij}\omega \\
+&amp;= a_i \wedge \iota_{a_j}\omega + \iota_{a_j}(a_i \wedge \omega) -
+\delta_{ij}\omega \\
+&amp;= a_i \wedge \iota_{a_j}\omega + (\iota_{a_j}a_i) \wedge \omega -
+a_i \wedge \iota_{a_j}\omega - \delta_{ij}\omega \\
+&amp;= \delta_{ij} \omega - \delta_{ij}\omega \\
+&amp;= 0
+\end{align*}
+where we have used the graded Leibniz identity
+\[
+\iota_X(\omega_1 \wedge \omega_2) = (\iota_X \omega_1) \wedge \omega_2 +
+(-1)^k \omega_1 \wedge (\iota_X \omega_2)
+\]
+where \(\omega\) is a \(k\)-form. Since \(\rho\) vanishes on the ideal
+generated by the defining relations of \(\mathrm{Cl}(V)\), we can restrict
+the domain of \(\rho\) to \(\mathrm{Cl}(V)\), forming a representation.</p>
+<p>We now show that the representation \((S, \rho)\) is irreducible. Suppose
+\(\omega \in S \setminus \{0\}\). Express \(\omega\) in the basis of \(S\)
+induced by \(a_1, \ldots, a_n, b_1, \ldots, b_n\) and pick some \(k\)-form in
+\(S\) of maximal grade with nonzero coefficient, say, \(c a_{i_1} \wedge \ldots
+a_{i_p}\) where \(c \in \mathbb{C}\). Then
+\(c^{-1} b_{i_p} \ldots b_{i_1} \omega = 1\), so every nonzero
+subrepresentation of \(S\) contains the element \(1\). It is obvious that \(1\)
+is cyclic in \(S\), so \(S\) is irreducible. The dimension of \(S\) is \(2^n\).
+By Theorem 3.5.4, \(\dim \mathrm{Cl}(V) - \dim \mathrm{Rad}(\mathrm{Cl}(V))
+\ge 2^{2n}\). Since
+\(\dim \mathrm{Cl}(V) \le 2^{2n}\), this can only be satisfied if
+\(\dim \mathrm{Cl}(V) = 2^{2n}\) and
+\(\mathrm{Rad}(\mathrm{Cl}(V)) = 0\), so \(\mathrm{Cl}(V)\) is semisimple and
+\((S, \rho)\) is its only unique irreducible representation.</p>
+<p>In the case \(m = 2n + 1\), let the orthonormal basis be \(e_1, \ldots, e_n,
+f_1, \ldots, f_n, c\) and define \(a_i, b_i\) as before. Then \(a_1, \ldots,
+a_n, b_1, \ldots, b_n, c\) form a basis of \(V\) with \(\langle a_i, a_j
+\rangle = \langle b_i, b_j \rangle = 0\), \(\langle a_i, b_j\rangle =
+\delta_{ij}/2\), \(\langle a_i, c\rangle = \langle b_i, c\rangle = 0\), and
+\(\langle c, c \rangle = 1\), as in the Hint. Let \(S = \wedge(a_1, \ldots,
+a_n)\) as before. Define the maps \(\rho_+\) and \(\rho_-\) such that, when
+\(\omega\) is a \(k\)-form,
+\begin{align*}
+\rho_\pm(a_i)(\omega) &amp;= a_i \wedge \omega \\
+\rho_\pm(b_i)(\omega) &amp;= \iota_{a_i} \omega \\
+\rho_+(c)(\omega) &amp;= (-1)^k c \\
+\rho_-(c)(\omega) &amp;= (-1)^{k+1} c
+\end{align*}
+and extend \(\rho_\pm\) to algebra homomorphisms
+\(\mathrm{C}\langle a_1, \ldots, a_n, b_1, \ldots, b_n, c\rangle \to \End S\).
+\(\rho\) vanishes for the defining relations involving only \(a\)'s and \(b\)'s
+as in the even case; also, where \(\omega\) is a \(k\)-form,
+\begin{align*}
+\rho_+(c^2 - \langle c, c\rangle)(\omega)
+&amp;= \rho_+(c)(\rho_+(c)(\omega)) - \omega \\
+&amp;= (-1)^k(-1)^k \omega - \omega \\
+&amp;= 0
+\end{align*}
+and
+\begin{align*}
+\rho_+(a_i c + c a_i - \langle a_i, c \rangle)(\omega)
+&amp;= \rho_+(a_i)(\rho_+(c)(\omega)) + \rho_+(c)(\rho_+(a_i)(\omega)) \\
+&amp;= a_i \wedge ((-1)^k \omega) + (-1)^{k+1}(a_i \wedge \omega) \\
+&amp;= (-1)^k a_i \wedge \omega + (-1)^{k+1}a_i \wedge \omega \\
+&amp;= 0
+\end{align*}
+and
+\begin{align*}
+\rho_+(b_i c + c b_i - \langle b_i, c \rangle)(\omega)
+&amp;= \rho_+(b_i)(\rho_+(c)(\omega)) + \rho_+(c)(\rho_+(b_i)(\omega)) \\
+&amp;= \iota_{a_i}((-1)^k \omega) + (-1)^{k-1}(\iota_{a_i}\omega) \\
+&amp;= (-1)^k\iota_{a_i}\omega + (-1)^{k-1}\iota_{a_i}\omega \\
+&amp;= 0
+\end{align*}
+and similar relations hold for \(\rho_-\), and both can be extended by
+linearity to all of \(S\). As in the even case, \(\rho_+\) and
+\(\rho_-\) can therefore be restricted to \(\mathrm{Cl}(V)\) and become
+representations of the latter,
+which we respectively denote \(S_+\) and \(S_-\).</p>
+<p>The proof that \(S_\pm\) are irreducible is the same as in the even
+case.</p>
+<p>Define \(\gamma =
+c b_n \ldots b_2 b_1 a_1 a_2 \ldots a_n\). Then \(\gamma\) acts on \(S_+\) as
+\((-1)^n\) times the
+projection onto the one-dimensional subspace generated by the unit element of
+\(S_+\) while \(\gamma\) acts on \(S_-\) as \((-1)^{n+1}\) times the similar
+projection. Therefore \(\chi_{S_+}(\gamma) = (-1)^n\) and \(\chi_{S_-}(\gamma)
+= (-1)^{n+1}\). This establishes that \(S_+\) and \(S_-\) are
+nonisomorphic. Since \(S_+\) and \(S_-\) both have dimension \(2^n\), a
+dimension-counting argument similar to that of the even case establishes that
+\(\mathrm{Cl}(V)\) is semisimple and \(S_+\) and \(S_-\) are its only
+irreducible representations.</p></li>
+<li><p>If \(\langle \cdot, \cdot \rangle\) is nondegenerate, we proved in part
+(a) that the Clifford algebra is semisimple. If \(\langle \cdot, \cdot
+\rangle\) is degenerate, form a basis \(x_1, \ldots, x_m\) of \(V\) such that
+\(\langle x_i, x_j \rangle = 0\) when \(i \ne j\), and \(\langle x_i, x_i
+\rangle = 1\) for \(1 \le i \le d\), and \(\langle x_i, x_i \rangle = 0\)
+for \(d &lt; i \le n\), where \(d \in \{1, \ldots, n\}\). Consider the ideal
+\(I_n = \langle x_n \rangle \subseteq A\). Suppose \(a, b \in I_n\). Then
+\(a, b\) are linear combinations of terms of the form \(e x_n e'\) and
+\(f x_n f'\), where \(e, f, e', f' \in \mathrm{Cl}(V)\). The product of these
+two terms contributes a term \(e x_n e' f x_n f'\) to \(ab\).
+Write \(e' f = \sum_{i=1}^p c_i g_i\) where the \(g_i\)'s come from the
+spanning set of \(\mathrm{Cl}(V)\) described in part (a), and \(c_i \in
+\mathbb{C}\). Then
+\[
+e x_n e' f x_n f' = \sum_{i=1}^p c_i e x_n g_i x_n f'
+\]
+Consider a single term in this sum, \(c_i e x_n g_i x_n f'\). Note that
+\(x_n\) anticommutes with \(x_1, \ldots, x_{n-1}\), so if \(g_i\) contains
+\(x_n\) then we can swap the final \(x_n\) with factors in \(g_i\) to put the
+two \(x_n\)'s next to each other, showing that the product is 0. Otherwise,
+swapping the final \(x_n\) with all the factors in \(g_i\) puts the two
+\(x_n\)'s next to each other, so again the product is 0. Since this holds for
+all terms in \(e x_n e' f x_n f'\), we conclude that the latter vanishes. Each
+term in the product \(ab\) is of this form, so \(ab\) vanishes.
+Since this holds for all
+\(a, b \in I_n\), we conclude \(I_n^2 = 0\), so \(\mathrm{Cl}(V)\) is not
+semisimple.</p>
+<p>By similar reasoning, if \(I = \langle x_{d+1}, \ldots, x_n\rangle\) then
+we can show that \(I^{n-d+1} = 0\). (The idea is to apply the pigeonhole
+principle; each term in a product of \(n-d+1\) elements of \(I\) must contain
+at least one of \(x_{d+1}, \ldots, x_n\) at least twice, causing the term to
+vanish.) We pause here to prove a lemma that may seem obvious:</p>
+<p class="lemma">Let \(A\) be a finite-dimensional algebra and let
+\(I \subseteq A\) be a nilpotent (two-sided) ideal. If \(A/I\) is semisimple,
+then \(I = \mathrm{Rad}(A)\).</p>
+<p class="proof">Let \(\pi : A \to A/I\) be the quotient map. Suppose \(I'\) is
+a nilpotent ideal of \(A\). Then \(\pi(I')\) is a nilpotent ideal of
+\(A/I\). Since \(A/I\) is semisimple, Proposition 3.5.3 implies that
+\(\pi(I')\) is the zero ideal. Therefore \(I' \subseteq \ker\pi = I\). So \(I\)
+contains all nilpotent ideals of \(A\). By Proposition 3.5.3,
+\(I = \mathrm{Rad}(A)\).</p>
+<p>Returning to the problem, the quotient \(\mathrm{Cl}(V)/I\) is isomorphic
+to \(\mathrm{Cl}(V')\) where \(V'\) is the span of \(x_1, \ldots, x_d\); the
+restriction of \(\langle \cdot, \cdot \rangle\) is then the identity matrix
+on \(x_1, \ldots, x_d\), so \(\mathrm{Cl}(V')\) is semisimple.
+By the Lemma, \(\mathrm{Rad}(\mathrm{Cl}(V))
+= I\) and \(\mathrm{Cl}(V)/\mathrm{Rad}(\mathrm{Cl}(V)) \cong
+\mathrm{Cl}(V')\).</p></li>
+</ol>

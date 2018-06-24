@@ -1,0 +1,92 @@
+<h2>Section 11.2. Polynomial Rings</h2>
+<p><span class="problem">Exercise 11.2.1</span> Suppose \(x^2 + x + 1\) times
+some polynomial equals  \(x^4 + 3x^3 + x^2 + 7x + 5\). Clearly the other factor
+must be monic and quadratic, and its constant term must be 5. So we can write
+it in the form \(x^2 + ax + 5\). Expanding out the product \((x^2 + x + 1)
+(x^2 + ax + 5)\) yields \(x^4 + (a + 1)x^3 + (a + 6)x^2 + (a + 5)x + 5
+= x^4 + 3x^3 + x^2 + 7x + 5\). Equating terms of like powers yields
+\begin{align*}
+a + 1 &amp;= 3 \\
+a + 6 &amp;= 1 \\
+a + 5 &amp;= 7
+\end{align*}
+The second and third equations taken together imply that \(1 = -6\), which is
+only true in \(\mathbb{Z}/(7)\) and the degenerate case \(\mathbb{Z}/(1)\) (the
+zero ring). In the former case the solution \(a = 2\) exists, while in the
+latter case, both polynomials are simply zero, so one certainly divides the
+other. Therefore, the only solutions are \(n = 1\) and \(n = 7\).</p>
+
+<p><span class="problem">Exercise 11.2.2</span> The set \(F[[t]]\) can be
+given the structure of a ring by defining:</p>
+<ul>
+<li>\(\left[\sum_{i=0}^\infty a_i t^i\right] + \left[\sum_{i=0}^\infty
+b_i t^i\right] = \sum_{i=0}^\infty (a_i + b_i)t^i\)</li>
+<li>\(\left[\sum_{i=0}^\infty a_i t^i\right]
+\left[\sum_{i=0}^\infty b_i t^i\right] =
+\sum_{i=0}^\infty \sum_{j + k = i} a_j b_k t^i\)</li>
+</ul>
+<p>It is clear that
+\((F[[t]], +)\) is isomorphic to a direct product of countably many copies
+of \(F\) considered as a group, and therefore forms an abelian group with the
+zero power
+series \(0 + 0t + 0t^2 + \ldots\) as the identity. It is also clear that
+multiplication is commutative, from the way we have defined it.</p>
+<p>Suppose \(a_0 = 1\) and \(a_i = 0\) for all \(i \ge 1\). Then
+\[
+\left[\sum_{i=0}^\infty a_i t^i\right]
+\left[\sum_{i=0}^\infty b_i t^i\right] =
+\sum_{i=0}^\infty \sum_{j + k = i} a_j b_k t^i =
+\sum_{i=0}^\infty a_0 b_i t^i =
+\sum_{i=0}^\infty b_i t^i
+\]
+so the power series \(1 + 0t + 0t^2 + \ldots\) is the multiplicative
+identity.</p>
+<p>Let \(a = a_0 + a_1 t + \ldots, b = b_0 + b_1 t + \ldots, c = c_0 + c_1 t
++ \ldots\) be given. Then
+\begin{align*}
+ac &amp;= \sum_{i=0}^\infty \sum_{j + k = i} a_j c_k t^i \\
+bc &amp;= \sum_{i=0}^\infty \sum_{j + k = i} b_j c_k t^i \\
+ac + bc &amp;= \sum_{i=0}^\infty \left[\sum_{j + k = i} a_j c_k +
+\sum_{j+k = i} b_j c_k \right] t^i =
+\sum_{i=0}^\infty \sum_{j + k = i} (a_j c_k + b_j c_k) t^i
+= \sum_{i=0}^\infty \sum_{j+k = i} (a_j + b_j)c_k t^i \\
+a + b &amp;= \sum_{i=0}^\infty (a_i + b_i) t^i \\
+(a + b)c &amp;= \sum_{i=0}^\infty \sum_{j+k = i} (a_j + b_j)c_k t^i
+\end{align*}
+so we always have \((a + b)c = ac + bc\); \((F[[t]], +, \cdot)\) satisfies the
+distributive property.</p>
+<p>Finally, let \(a, b, c\) be given. Then
+\begin{align*}
+(ab)c &amp;= \left[\sum_{i=0}^\infty \sum_{j+k} a_j b_k t^i\right]
+\left[\sum_{i=0}^\infty c_i t^i \right] \\
+&amp;= \sum_{i=0}^\infty \sum_{m + n = i} \left[\sum_{j + k = m} a_j b_k\right]
+c_n t^i \\
+&amp;= \sum_{i=0}^\infty \sum_{m + n = i} \sum_{j + k = m} a_j b_k c_n t^i \\
+&amp;= \sum_{i=0}^\infty \sum_{j + k + n = i} a_j b_k c_n t^i \\
+a(bc) &amp;= (bc)a \\
+&amp;= \sum_{i=0}^\infty \sum_{j + k + n = i} b_j c_k a_n t^i \\
+&amp;= \sum_{i=0}^\infty \sum_{k + n + j = i} b_k c_n a_j t^i \\
+&amp;= (ab)c
+\end{align*}
+so multiplication is also associative. The above results establish that
+\((F[[t]], +, \cdot)\) is a ring.</p>
+<p>We claim that \(a_0 + a_1 t + \ldots\) is a unit in \(F[[t]]\) iff
+\(a_0 \ne 0\). One direction is easy: if \(a_0 = 0\) then the constant term
+will be 0 in any product, so \(a_0\) is not a unit. For the other direction,
+define \(b_0 = a_0^{-1}\) and for \(i \ge 1\), define
+\[
+b_i = -a_0^{-1} \sum_{j=0}^{i-1} b_j a_{i-j}
+\]
+where \(b_i\) depends on \(b_0, b_1, \ldots, b_{i-1}\). If
+\(c_0 + c_1 t + \ldots = (a_0 + a_1 t + \ldots)(b_0 + b_1 t + \ldots)\), then
+\(c_0 = a_0 b_0 = 1\) and for \(i \ge 1\),
+\begin{align*}
+c_i &amp;= \sum_{j + k = i} a_j b_k \\
+&amp;= \sum_{j=0}^i a_{i-j} b_j \\
+&amp;= a_0 b_i + \sum_{j=0}^{i-1} a_{i-j} b_i \\
+&amp;= -\sum_{j=0}^{i-1} b_j a_{i-j} + \sum_{j=0}^{i-1} a_{i-j} b_i \\
+&amp;= 0
+\end{align*}
+therefore \(c_0 + c_1 t + \ldots = 1\), and \(b_0 + b_1 t + \ldots\) is the
+inverse of \(a_0 + a_1 t + \ldots\). So the latter is a unit.</p>
+<div class="qed"></div>

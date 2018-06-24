@@ -1,0 +1,74 @@
+<div id="question_content">
+<h2>Hydrology: For a given column of water, is the water pressure at the center of the base greater in a vessel with a right conical bottom versus a flat bottom?</h2>
+</div>
+<div id="answer_content"><p>This problem is known as the "hydrostatic paradox".
+The problem is that if the pressure at a point inside a fluid depends only on
+its depth, then how can a conical flask filled with water weigh less than a
+beaker with the same base diameter, filled with water to the same height?
+Clearly the former must weigh less, since it contains less water, and yet both
+have the same pressure at the base and the same base area.</p>
+
+<p>If you search for "hydrostatic paradox" on Google, a lot of websites will
+tell you that the pressure really does only depend on the height of the column
+of water above, but I couldn't find any site that actually explains the
+resolution of the paradox. So, here it is.</p>
+
+<p>If you have a conical flask and a beaker with the same base surface area and
+filled with water to the same height, of of course the latter's weight will be
+greater. It's tempting to attribute the <i>entire</i> weight of the container
+to the force (pressure times area) exerted by the water on the inside base,
+which gives rise to the paradox. But that's wrong!<br><br>Why? Because consider
+the <i>sides</i> of the conical flask. Because of the way they are slanted, the
+net force exerted by the liquid on the side has an <i>upward</i> vertical
+component. There are two downward forces keeping the glass on the side in
+place: gravity, and internal forces within the glass. As we increase the slant
+of the conical flask, the internal forces within the glass have to provide more
+and more of the restraining force at any given depth, since the vertical
+component of the hydrostatic pressure increases while the gravitational force
+stays the same.  Ultimately, the internal forces transmit the upward pressure
+of the water on the sides of the conical flask to the base, which consequently
+feels lighter than the base of the beaker.</p>
+
+<p>Now, you might be skeptical. Everything I said should sound reasonable:
+the water pressure on the walls does indeed have an upward component when the
+walls are slanted as in a conical flask. But does the total upward force
+exerted by the water on the <em>walls</em> of the conical flask really
+<em>exactly</em> equal \(\rho g\) times the difference in <em>volume</em>
+between the conical flask and the beaker? How can it be that by just
+integrating over the walls of the container, we can get a result that's exactly
+consistent with the container's volume? Is this really the correct resolution
+to the paradox? And that suggests that we need to apply the divergence theorem
+somehow, because the divergence theorem relates integrals over the surface of
+a region to integrals over the region itself. And I'll do this calculation now,
+to convince you that it really does work out.</p>
+
+<p>Suppose we have a container filled with water (whose density I will denote
+by \(\rho\)). We'll use a coordinate system in which the top surface of the
+water (exposed to air) is at height \(z = 0\), with \(z\) increasing toward
+the bottom. Let the shape of the container be described by an oriented surface
+\(\partial V\) which denotes the boundary of the region \(V\) occupied by the
+water. Consider an infinitesimal element \(\mathrm{d}a\) of the container walls
+located at depth \(z\), where the water pressure is \(\rho gz\). Then the
+downward component of the force exerted by the water is
+\[\mathrm{d}F_z = \rho gz n_z \, \mathrm{d}a\]
+where \(\hat{\mathbf{n}}\) is the outward unit normal, and \(n_z =
+\hat{\mathbf{n}} \cdot \hat{\mathbf{z}}\). (You can sanity-check this by
+considering the flat base of the container: here \(\hat{\mathbf{n}} =
+(0, 0, 1)\) (remember, \(z\) increases downward) and so the force on an
+infinitesimal element of the base is simply \(\mathrm{d}F_z =
+\rho g z \, \mathrm{d}a\) as you would expect.) Now let's integrate over the
+entire surface,
+\begin{align*}
+F_z &amp;= \int_{\partial V} \rho g z n_z \, \mathrm{d}a \\
+&amp;= \int_{\partial V} \rho g z \hat{\mathbf{z}} \cdot \mathrm{d}\mathbf{a}
+\end{align*}
+Applying the divergence theorem, we then obtain:
+\begin{align*}
+F_z &amp;= \int_V \rho g \nabla \cdot (z\hat{\mathbf{z}}) \, \mathrm{d}^3x \\
+&amp;= \int_V \rho g \, \mathrm{d}^3 x
+\end{align*}
+which, of course, is precisely the total weight of the fluid. So it is indeed
+the case that the contact force of the pressure of the fluid upon the walls and
+base of the container precisely communicates the total weight of the fluid,
+which resolves the paradox.</p>
+</div>

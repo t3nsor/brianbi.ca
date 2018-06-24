@@ -1,0 +1,695 @@
+<h2>Section 2.16. Problems on Lie algebras</h2>
+<p><span class="problem">Problem 2.16.1</span> Following the Hint, we proceed
+by induction in dimension.</p>
+<p>If \(\mathfrak{g}\) is one-dimensional, and
+\(a \in \mathfrak{g}\) is nonzero, then let \(v \in V\) be an eigenvector of
+\(\rho(a)\); the span of \(v\) alone, a one-dimensional subspace of \(V\), is a
+one-dimensional subrepresentation of \(V\); so if \(V\) is irreducible then it
+must be one-dimensional.</p>
+<p>If \(d \geq 2\), assume that the Lie theorem holds for all Lie algebras of
+dimension strictly less than \(d\). Let \(\mathfrak{g}\) be a \(d\)-dimensional
+solvable Lie algebra. If \(K(\mathfrak{g})\) is trivial, then \(\mathfrak{g}\)
+is abelian and the only irreducible representations of \(\mathfrak{g}\) are
+one-dimensional, as desired. If \(K(\mathfrak{g})\) is nontrivial, then the
+following hold:</p>
+<ol>
+<li>\(K(\mathfrak{g})\) is a solvable Lie algebra of dimension strictly less
+than \(\mathfrak{g}\);</li>
+<li>\(Q = \mathfrak{g}/K(\mathfrak{g})\) is an abelian Lie algebra.</li>
+</ol>
+<p>Applying the inductive hypothesis to \(V\) considered as a representation of
+\(K(\mathfrak{g})\), we see that contained within \(V\) is an irreducible
+subrepresentation of \(K(\mathfrak{g})\) of dimension one. Let \(v\) be a
+nonzero vector belonging to this subrepresentation.
+If we define \(\chi: K(\mathfrak{g}) \to \mathbb{C}\) such
+that \(av = \chi(a)v\) for each \(a\), then \(\chi\) is a linear function.</p>
+<p>Suppose \(x \in \mathfrak{g}\) and \(a \in K(\mathfrak{g})\). Consider the
+smallest vector space \(U\) containing \(v\) and invariant under \(x\), that
+is, \(\span \{v, xv, x^2v, \ldots\}\). Since \(U\) is finite-dimensional, a
+basis for \(U\) is given by \(\{v, xv, \ldots, x^{\dim U - 1}v\}\). If \(n \in
+\mathbb{N}\), then
+\begin{equation}
+a x^n v = x^n a v + [a, x^n]v = \chi(a) x^n v + \chi([a, x^n])v
+\label{eqn:2.16.1}
+\end{equation}
+\((\ref{eqn:2.16.1})\) implies that \(a x^n v \in U\). Since this holds for
+any \(a \in K(\mathfrak{g})\), \(U\) is invariant under 
+\(K(\mathfrak{g})\). Furthermore, if
+\(1 \leq n &lt; \dim U\), then the coefficient of \(x^n v\) in \(a x^n v\) is
+\(\chi(a)\), while if \(n = 0\), then the coefficient is again \(\chi(a)\)
+since \([a, x^n] = [a, \Id] = 0\). Therefore \(a\) acts with trace
+\((\dim U) \chi(a)\) on \(U\). In particular, \(\tr([x, a]) = \tr(xa) -
+\tr(ax) = 0\), implying \(0 = \dim(U) \chi([x, a])\), so
+\begin{equation*}
+\chi([x, a]) = 0
+\end{equation*}</p>
+<p>Using this result, we find that \(0 = [x, a]v = xav - axv = \chi(a)xv -
+axv\), so if \(v\) is a common eigenvector of all \(a \in K(\mathfrak{g})\),
+then each \(xv\) is also a common eigenvector of \(K(\mathfrak{g})\). Although
+\(xv\) may not necessarily lie in \(\span(v)\), we can consider the subspace
+\(W \subseteq V\) such that \(aw = \chi(a)w\) for all \(w \in W\); then \(W\)
+is closed under the action of \(\mathfrak{g}\). Now \(Q\) acts linearly on
+\(W\) and is abelian, so \(W\) contains some common eigenvector of \(Q\),
+which is therefore a common eigenvector of \(\mathfrak{g}\).
+Therefore \(V\) can be irreducible only if it is
+one-dimensional.</p><div class="qed"></div>
+<p><em>(Note from Brian):</em> It's not clear to me whether this solution is
+the one intended by the text. The Hint leaves off after <q>show that
+\(\mathfrak{g}\) preserves common eigenspaces of \(K(\mathfrak{g})\)</q>.
+Taking the quotient \(\mathfrak{g}/K(\mathfrak{g})\) seems to be the
+cleanest way to proceed, but is not so obvious. A more common technique
+involves applying the inductive hypothesis to an ideal of codimension one, so
+there is only one <q>outside</q> element for which an eigenvector needs to be
+found.</p>
+<p><span class="problem">Problem 2.16.2</span> In the case of characteristic
+zero, Lie's theorem applies, and every finite-dimensional irreducible
+representation is one-dimensional. It's easy to see that \(Y\) must act as the
+zero operator, while \(X\) is any scalar multiple of \(\Id\). There is
+therefore one irreducible representation for each element of the ground
+field.</p>
+<p>We now focus on the case of characteristic \(p &gt; 0\). Use \(L\) to denote
+the Lie algebra described in the problem. Let \(V\) be a finite-dimensional
+irrep of \(L\) and let \(v\) be an eigenvector of \(x\), so that \(xv =
+\lambda v\). Observe that \(x(yv) = yxv + [x, y]v = (\lambda + 1)yv\), that is,
+\(yv\) is either zero or an eigenvector with eigenvalue \(\lambda + 1\). If the
+sequence \(v, yv, y^2 v, \ldots\) terminates in zero, then we have found a
+simultaneous eigenvector of \(x\) and \(y\), and hence a one-dimensional
+subrepresentation. So \(V\) itself must be one-dimensional, and consist only
+of \(v\), so that \(yv = 0\). So we have found one class of irreducible
+representations \(V_\lambda\) of the form \(Y = 0, X = \lambda \Id\) for some
+\(\lambda \in k\).</p>
+<p>If the sequence does not terminate in zero, note that \(y^p\) is central
+(the proof is left as an exercise for the reader),
+and if \(V\) is irreducible, then \(y^p\) acts as a scalar in \(V\), so
+\(\span\{v, yv, \ldots, y^{p-1}v\}\) is a subrepresentation of \(V\). Since
+\(V\) is irreducible, \(V = \span\{v, yv, \ldots, y^{p-1}v\}\). Furthermore,
+since \(y^k v\) is an eigenvector of \(x\) with eigenvalue \(\lambda + k\),
+the \(y^k v\) (\(0 \leq k \leq p-1\)) have different eigenvalues and are
+linearly independent. So they form a basis of \(V\). With respect to this
+basis, \(X\) takes the form
+\begin{equation*}
+X_\lambda = \begin{pmatrix}
+\lambda &amp; 0           &amp; \cdots &amp; 0 \\
+0       &amp; \lambda + 1 &amp; \cdots &amp; 0 \\
+\vdots  &amp; \vdots      &amp; \ddots &amp; \vdots \\
+0       &amp; 0           &amp; \cdots &amp; \lambda + p - 1
+\end{pmatrix}
+\end{equation*}
+If \(y^p = c \Id\), and \(\mu\) is the unique \(p\)<sup>th</sup> root of
+\(c\), then we can always normalize the eigenvectors of \(X\) so
+that \(Y\) takes the form
+\begin{equation*}
+Y_\mu = \begin{pmatrix}
+0 &amp; 0 &amp; \cdots &amp; 0 &amp; \mu \\
+\mu &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\
+0 &amp; \mu &amp; \cdots &amp; 0 &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
+0 &amp; 0 &amp; \cdots &amp; \mu &amp; 0
+\end{pmatrix}
+\end{equation*}
+Clearly different \(c\), and hence \(\mu\), yield nonisomorphic
+representations. The only constraint is that \(\mu \neq 0\) in order for the
+representation to be irreducible. Two \(\lambda\)'s will yield isomorphic
+representations if they differ by \(1 + 1 + \ldots\), otherwise the spectra of
+\(X\) will be different so the representations will be nonisomorphic.</p>
+<p>So all finite-dimensional irreps of \(L\) are given
+by the \(\{V_\lambda \mid \lambda \in k\}\) previously defined, and the
+\(\{W_{\lambda,\mu} \mid \lambda \in k/C_p, \mu \in k \setminus \{0\}\}\) given
+by \(\{X = X_\lambda, Y = Y_\mu\}\). (The notation \(k/C_p\) means the quotient
+with the cyclic group of order \(p\).)
+Evidently, the Lie theorem is not true in positive
+characteristic.</p>
+<p><span class="problem">Problem 2.16.3</span></p>
+<ol class="subproblems">
+<li><p>One useful fact is that if \(x\) and \(y\) generate a Lie algebra
+\(\mathfrak{g}\), and \([x, z] = [y, z] = 0\) for some \(z \in \mathfrak{g}\),
+then \([\mathfrak{g}, z] = \{0\}\). This is because the Jacobi identity allows
+us to <q>flatten</q> a Lie bracket of the form \([[a, b], c]\) as
+\([a, [b, c]] - [b, [a, c]]\). By iterating this process, whatever the form of
+\(a \in \mathfrak{g}\), we can flatten out \([a, z]\) into a linear combination
+of terms of the form \(\ad(a_1) \ad(a_2) \ldots \ad(a_n) z\) in which
+each \(a_i\) is either \(x\) or \(y\), so the result is zero.
+(We can formalize this using proof by induction.)</p>
+<p>Hence, the Lie algebra \(\mathfrak{g}_1\) can be no more than 3-dimensional
+since \([x, [x, y]] = [y, [x, y]] = 0\). To see that it is
+exactly 3-dimensional, we consider it as the Lie algebra spanned by
+\(e_1, e_2, e_3\) with \([e_1, e_2] = e_3\) and all other Lie brackets zero.
+This satisfies the Jacobi identity since all \([a, [b, c]]\) vanish, so it is a
+valid Lie algebra.</p>
+<p>In \(\mathfrak{g}_2\), \([y, [y, [x, y]]] = 0\) by definition while the
+Jacobi identity implies that
+\([x, [y, [x, y]]] = [y, [x, [x, y]]] + [[x, y], [x, y]] = 0\)
+so \(\mathfrak{g}_2\) can be no more than 4-dimensional. To show that it is
+exactly 4-dimensional, we use the same technique as with \(\mathfrak{g}_1\).
+Identifying \(e_1, e_2, e_3, e_4\) with \(x, y, [x, y], [y, [x, y]]\),
+respectively, we get the Lie brackets
+\begin{equation*}
+[e_1, e_2] = e_3; \qquad [e_2, e_3] = e_4
+\end{equation*}
+with all other Lie brackets zero. We only need to check the Jacobi identity
+for \([e_2, [e_1, e_2]]\) since this is the only nonzero double Lie bracket.
+Indeed \([e_2, [e_1, e_2]] + [e_1, [e_2, e_2]] + [e_2, [e_2, e_1]] = 0\) so
+\(\span\{e_1, e_2, e_3, e_4\}\) with these brackets forms a valid Lie
+algebra.</p>
+<p>In \(\mathfrak{g}_3\), we note that \([x, [y, [x, y]]]\) must still be zero
+since the proof of that only used the fact that \(\ad^2(x)(y) = 0\), which
+holds also in \(\mathfrak{g}_3\). To continue to explore \(\mathfrak{g}_3\), it
+suffices to keep on iterating the application of \(\ad(x)\) or \(\ad(y)\). Now
+\([y, [y, [x, y]]]\) is plausibly nonzero. From there we can continue to
+\([y, [y, [y, [x, y]]]]\), which is zero by definition, and
+\([x, [y, [y, [x, y]]]]\), which is also plausibly nonzero. Using the Jacobi
+identity at the outermost level, we can rewrite this in the form:
+\begin{equation*}
+[x, [y, [y, [x, y]]]] = [y, [x, [y, [x, y]]]] + [[x, y], [y, [x, y]]]
+= [[x, y], [y, [x, y]]]
+\end{equation*}
+since \([x, [y, [x, y]]]\) vanishes.
+Beyond that point, a further application of \(\ad(x)\) yields zero, which we
+can see by again applying the Jacobi identity at the outermost level:
+\begin{align*}
+[x, [[x, y], [y, [x, y]]]] = [[x, y], [x, [y, [x, y]]]] + [[x, [x, y]],
+[y, [x, y]]] = 0
+\end{align*}
+since \([x, [y, [x, y]]]\) and \([x, [x, y]]\) both vanish. Finally, the
+application of \(\ad(y)\) one final time also yields zero, which we can see by
+repeated application of the Jacobi identity:
+\begin{align*}
+[y, [[x, y], [y, [x, y]]]
+&amp;= [[y, [x, y]], [y, [x, y]]] + [[x, y], [y, [y, [x, y]]]] \\
+&amp;= [x, [y, [y, [y, [x, y]]]]] - [y, [x, [y, [y, [x, y]]]] \\
+&amp;= -[y, [y, [x, [y, [x, y]]]]] - [y, [[x, y], [y, [x, y]]]]
+\end{align*}
+(where, at each step, we use the fact that the first term on each RHS is zero).
+Thus, in characteristic other than 2, \([y, [[x, y], [y, [x, y]]]] = 0\). (In
+characteristic 2 it appears this problem has a different answer, but I assume
+the ground field is implied to be \(\mathbb{C}\).)</p>
+<p>So it appears that a basis of \(\mathfrak{g}_3\) is given by \(x, y, [x, y],
+[y, [x, y]], [y, [y, [x, y]]], [[x, y], [y, [x, y]]]\). To prove this, we again
+use the same technique as with \(\mathfrak{g}_1\) and \(\mathfrak{g}_2\).
+Identifying \(e_1, e_2, e_3, e_4, e_5, e_6\) with the purported basis vectors
+in the order previously given, we can compute that the only nonzero Lie
+brackets are:
+\begin{equation*}
+[e_1, e_2] = e_3; \qquad
+[e_1, e_5] = e_6; \qquad
+[e_2, e_3] = e_4; \qquad
+[e_2, e_4] = e_5; \qquad
+[e_3, e_4] = e_6;
+\end{equation*}
+(Note that the Lie brackets [16], [26], [34], [35], [36], [45], [46], and [56]
+vanish because they are too <q>deep</q>: by using the Jacobi identity to
+flatten out a nested Lie bracket expression with six or more generators, we can
+always see that it vanishes based on the work above.) We have to verify that
+this is a valid Lie algebra by verifying the Jacobi identity for all double Lie
+brackets. The only nonzero ones are \([1[24]], [2[12]], [2[23]], [3[23]]\).
+Antisymmetry automatically implies the Jacobi identity if any two of the three
+operands are the same. For the case [1[24]], we can easily check that
+\begin{equation*}
+[e_1, [e_2, e_4]] + [e_2, [e_4, e_1]] + [e_4, [e_1, e_2]] = [e_1, e_5] + 0
++ [e_4, e_3] = e_6 - e_6 = 0
+\end{equation*}
+so we are done; the dimension of \(\mathfrak{g}_3\) is 6.</p>
+</li>
+<li>See <a href="https://math.stackexchange.com/a/2294650/24692">here</a> for
+the write-up.</li>
+</ol>
+<p><span class="problem">Problem 2.16.4</span>
+We will use the letter \(K\) to denote the ground field. Let \(V\) be an
+irreducible finite-dimensional representation of \(\mathfrak{sl}_2(K)\).
+(Etingof has clarified that the problem is intended to be about the
+finite-dimensional irreps only, but adds that infinite-dimensional irreps do
+not exist here.)</p>
+<p>Recall a number of useful facts:</p>
+<ol><li>As we know from Problem 2.15.1, if \(v \in V\) is an eigenvector of
+\(H\) with eigenvalue \(\lambda\), then \(Ev\) (if nonzero) is an eigenvector
+of \(H\) as well, with eigenvalue \(\lambda + 2\), and \(Fv\) (if nonzero) is
+an eigenvector of \(H\) with eigenvalue \(\lambda -2\).</li>
+<li>We also have some results from parts (a) and (b) of Problem 2.15.1. We
+collect them here together with some similar results that can be proven by
+induction in a similar way:
+\begin{gather}
+[H, E^k] = 2k E^k \label{eqn:2.16.4.1} \\
+[E^k, F] = k E^{k-1} H + k(k-1) E^{k-1} \label{eqn:2.16.4.2} \\
+[H, F^k] = -2k F^k \tag{\ref{eqn:2.15.1b1}} \\
+[E, F^k] = kF^{k-1} H - k(k-1) F^{k-1} \tag{\ref{eqn:2.15.1b2}}
+\end{gather}</li>
+<li>From the above, we immediately see that in characteristic \(p\), the
+elements \(E^p\) and \(F^p\) are central.</li>
+<li>In part (g), we showed that \(C = EF + FE + H^2/2\) is central. Therefore,
+it acts as a scalar in \(V\), say, \(C = c \Id\). If \(v\) is an eigenvector
+of \(H\), then using \(Cv = cv\) together with \((EF - FE)v = Hv = \lambda v\),
+we obtain that \(EFv\) and \(FEv\) are scalar multiples of \(v\).</li>
+</ol>
+<p>Since \(V\) is irreducible, we know that \(E^p\) and \(F^p\) both act as
+scalars. Note that \(E^p\) being nonzero automatically implies that the
+dimension of \(V\) is at least \(p\). To see this, observe that \(E^p\) being
+nonzero would imply that \(E\) is nonsingular; and if \(v \in V\) were an
+eigenvector of \(H\), the sequence \(v, Ev, \ldots, E^{p-1}v\) would then be a
+sequence of eigenvectors of \(H\) with different eigenvalues, so they would be
+linearly independent, proving that the dimension is at least \(p\). A similar
+argument shows that \(F^p\) being nonzero would imply that
+\(\dim V \geq p\).</p>
+<p>This allows us to easily classify the irreducible representations of
+dimension strictly less than \(p\). For these, both \(E^p\) and \(F^p\) act as
+the zero operator on \(V\). Pick some eigenvector of \(H\). By
+iterating the action of \(E\) on this eigenvector, we obtain a sequence of
+eigenvectors of \(H\) that terminates in zero. So there exist \(v \in V
+\setminus \{0\}, \lambda \in K\) with \(Hv = \lambda v, Ev = 0\).
+Let \(n\) be the smallest integer such that \(F^n v = 0\). Obviously,
+\(n \leq \dim V &lt; p\). The results of 2.15.1(b)&ndash;(f) apply, and the
+vectors \(v, Fv, \ldots, F^{n-1}v\) form the basis of a \(n\)-dimensional
+irreducible representation of \(\mathfrak{sl}_2(K)\), where \(\lambda
+= n -1\), which we may again denote by \(V_\lambda\); and the \(V_\lambda\)
+exhaust the irreps of dimension less than \(p\), up to isomorphism.</p>
+<p>Now we come to the \(p\)-dimensional or higher irreps (we will see that the
+dimension cannot be greater than \(p\)). We begin with the case where
+\(\rho(E^p) = a \Id\) with \(a \neq 0\). Let
+\(v_0\) be an eigenvector of \(H\) with eigenvalue \(\lambda\) and let
+\(v_i = E^i v_0\) for \(i = 1, 2, \ldots, p-1\); then the \(v_i\)'s are all
+linearly independent, with \(Hv_i = (\lambda + 2i)v_i\). Obviously,
+\(Ev_{p-1} = av_0\). Since \(FEv\) is a scalar multiple of \(v\) for each
+\(v \in V\), it follows that \(Fv_i = FEv_{i-1}\) is a scalar multiple of
+\(v_{i-1}\) for \(i = 1, 2, \ldots, p-1\) and similarly \(Fv_0
+= a^{-1} FEv_{p-1}\) is a scalar multiple of \(v_{p-1}\). So the \(v_i\)'s form
+a basis for an invariant subspace of \(V\), which must be \(V\) itself if the
+latter is to be irreducible.  Now suppose \(Fv_0 = bv_{p-1}\). Then we can
+work out \(Fv_1 = FEv_0 = EFv_0 - Hv_0 = (ab - \lambda) v_0\). Continuing, we
+obtain \(Fv_2 = FEv_1 = EFv_1 - Hv_1 = (ab - 2\lambda - 2)v_1\) and so on.
+We must check that the commutation relations are also satisfied at the end,
+that is, that \((EF - FE)v_{p-1} = Hv_{p-1}\). Luckily, this turns out to be
+the case, so we have obtained a valid representation, in which:
+\begin{align}
+Hv_i &amp;= (\lambda + 2i) v_i \label{eqn:RH} \\
+Ev_i &amp;= \begin{cases}
+  v_{i+1} &amp; i &lt; p-1 \\
+  av_0 &amp; i = p-1
+\end{cases} \label{eqn:RE} \\
+Fv_i &amp;= \begin{cases}
+  bv_{p-1} &amp; i = 0 \\
+  (ab - i\lambda - i(i-1)) v_{i-1} &amp; i &gt; 0
+\end{cases} \label{eqn:RF} \\
+C &amp;= \left[\frac{\lambda^2}{2} - \lambda + 2ab\right]\Id
+\end{align}
+Denote this representation by \(R(a, b, \lambda)\). If \(R'\) is a
+proper subrepresentation of \(R(a, b, \lambda)\), then \(E^p\) must act as the
+zero operator on \(R'\) since \(R'\) is less than \(p\)-dimensional. But since
+\(E^p\) acts as a nonzero scalar on \(R(a, b, \lambda)\), \(R'\) must be the
+zero representation. Therefore all \(R(a, b, \lambda)\) are irreducible.</p>
+
+<p>Obviously any two \(R(a, b, \lambda)\)
+with different \(a\) are nonisomorphic. The representations
+\(R(a, b_1, \lambda_1), R(a, b_2, \lambda_2)\) where \(\lambda_1 - \lambda_2
+\notin \mathbb{F}_p\) are also nonisomorphic as the spectra of \(H\) differ.
+However, the representations \(R(a, b, \lambda)\) and \(R(a, b - a^{-1}\lambda,
+\lambda + 2)\) are isomorphic. If \(\{v_0, v_1, \ldots, v_{p-1}\}\) is a basis
+for \(R(a, b, \lambda)\) satisfying the above relations, and \(\{w_0, w_1,
+\ldots, w_{p-1}\}\) is a basis for \(R(a, b - a^{-1}\lambda, \lambda')\)
+with \(Hw_0 = \lambda' w_0\) and so on (\(\lambda' = \lambda + 2\)), then an
+isomorphism is given by
+\begin{equation*}
+\phi(v_i) = \begin{cases}
+  w_{i-1} &amp; i &gt; 0 \\
+  a^{-1} w_{p-1} &amp; i = 0
+\end{cases}
+\end{equation*}
+as can be easily verified. Moreover, in a pair of isomorphic
+representations, the Casimir operators must act as the same scalar. This scalar
+is linear in \(b\) so it follows
+that \(R(a, b, \lambda)\) cannot be isomorphic to \(R(a, b', \lambda + 2)\)
+for any \(b'\) other than \(b - a^{-1}\lambda\). Consequently, up to
+isomorphism, there is exactly one irrep of the form \(R(a, b, \lambda)\) for
+each \(a \in K \setminus \{0\}, b \in K\), and \(\lambda\) the representative
+of some element of the quotient group \(K/\mathbb{F}_p\), and all other
+representations of the form \(R(a, b, \lambda)\) with \(a \neq 0\) are
+isomorphic to one of these.</p>
+<p>By considering \(\rho(F^p) = a \Id\) with \(a \neq 0\) instead, we obtain an
+analogous set of \(p\)-dimensional irreducible representations
+\(S(a, b, \lambda)\) for which
+\begin{align}
+Hv_i &amp;= (\lambda - 2i) v_i \label{eqn:SH} \\
+Ev_i &amp;= \begin{cases}
+  bv_{p-1} &amp; i = 0 \\
+  (ab + i\lambda - i(i-1)) v_{i-1} &amp; i &gt; 0
+\end{cases} \label{eqn:SE} \\
+Fv_i &amp;= \begin{cases}
+  v_{i+1} &amp; i &lt; p-1 \\
+  av_0 &amp; i = p - 1
+\end{cases} \label{eqn:SF} \\
+C &amp;= \left[\frac{\lambda^2}{2} + \lambda + 2ab\right]\Id
+\end{align}
+The isomorphism situation is analogous to that of the \(R\)'s: by considering
+Casimir invariants we see that all possible isomorphisms between different
+\(S\)'s are generated by the isomorphism between \(S(a, b, \lambda)\) and
+\(S(a, b + a^{-1}\lambda, \lambda - 2)\).</p>
+<p>Note that if in a representation \(S(a, b, \lambda)\) the scalar operator
+\(\rho(E^p)\) is nonzero then \(S(a, b, \lambda)\) must be
+isomorphic to some \(R(a', b', \lambda')\) since the \(R\)'s comprise all
+irreducible \(p\)-dimensional representations where \(\rho(E^p)\) is nonzero.
+Therefore the only \(S\)'s that are not isomorphic to any \(R\) are those for
+which the product \(b(ab+\lambda)(ab+2\lambda-2) \ldots (ab-\lambda-2)\) is
+zero, namely the representations \(S_i(a, \lambda) =
+S(a, -ia^{-1}(\lambda-i+1), \lambda)\) where
+\(a \in K \setminus \{0\}, \lambda \in K, i \in \{0, 1, \ldots, p-1\}\).</p>
+<p>Using the fact that \(S(a, b, \lambda)\) is isomorphic to
+\(S(a, b + a^{-1}\lambda, \lambda - 2)\) we obtain that \(S_i(a, \lambda)\) is
+isomorphic to \(S_{i-1}(a, \lambda - 2)\). It follows that all the \(S_i\)'s
+are isomorphic to some \(S_0\). So we can restrict our attention to the
+representations of the form \(S_0(a, \lambda)\). For a given
+\(S_0(a, \lambda)\), all isomorphic \(S\)'s are given by
+\(\{S_i(a, \lambda+2i) \mid i \in \{1, 2, \ldots, p-1\}\}\) since these are the
+representations generated by the isomorphism previously noted between
+\(S(a, b, \lambda)\) and \(S(a, b + a^{-1}\lambda, \lambda-2)\). Therefore
+an isomorphism exists between \(S(a, 0, \lambda)\) and \(S(a, 0,
+\lambda + 2i)\) if and only if \(S(a, 0, \lambda + 2i) = S_i(a, \lambda +
+2i)\), that is, if \(0 = -ia^{-1}(\lambda + 2i - i + 1)\), which is solved to
+obtain \(i = 0\) or \(\lambda = -i-1\). Therefore for each \(a \in K \setminus
+\{0\}\), the only isomorphisms between different \(S(a, 0, \lambda)\)s are
+those between \(S(a, 0, -i-1)\) and \(S(a, 0, i-1)\) for each \(i \in
+\mathbb{F}_p\). These partition the \(S(a, 0, i)\)s into the isomorphism
+classes \(\{\{p-1\}, \{0, p-2\}, \{1, p-3\}, \ldots,
+\{(p-3)/2, (p-1)/2\}\}\) with respect to \(i\).</p>
+<p>Finally, it falls to us to consider any remaining representations (dimension
+\(p\) or greater)
+for which both \(E^p\) and \(F^p\) act as the zero operator. In such a
+representation, we can always find a common eigenvector of \(H\) and \(E\),
+that is, some \(v_0 \neq 0, \lambda\) with \(Ev_0 = 0, Hv_0 = \lambda v_0\).
+Writing \(v_i = F^i v_0\), and applying reasoning similar to that which we
+previously considered when \(F^p\) was nonzero, we obtain that \(\{v_0, v_1,
+\ldots, v_{p-1}\}\) form a basis for \(V\) and that \(Ev_i =
+(i\lambda - i(i-1))v_{i-1}\) for each \(i = 1, 2, \ldots, p-1\). Thus:
+\begin{align*}
+Hv_i &amp;= (\lambda - 2i)v_i \\
+Ev_i &amp;= \begin{cases}
+0 &amp; i = 0 \\
+(i\lambda-i(i-1))v_{i-1} &amp; i &gt; 0
+\end{cases} \\
+Fv_i &amp;= \begin{cases}
+v_{i+1} &amp; i &lt; p - 1 \\
+0 &amp; i = p - 1
+\end{cases}
+\end{align*}
+Note that this can be regarded as \(S(0, 0, \lambda)\).
+No two such representations can be isomorphic to each other since in
+\(S(0, 0, \lambda)\), we can uniquely determine \(\lambda\) using the fact
+that the unique eigenvector of \(F\) has the eigenvalue \(\lambda + 2\) with
+respect to \(H\). Note however that not all \(S(0, 0, \lambda)\)'s are
+irreducible. For \(\lambda \notin \mathbb{F}_p\) every nonzero
+vector is cyclic since we can iterate \(F\) until we are left with a multiple
+of \(v_{p-1}\) and then iterate \(E\) repeatedly to generate a basis, but for
+\(\lambda \in \{0, 1, \ldots, p-2\}\) the subspace spanned by
+\(\{v_{\lambda+1}, v_{\lambda+2}, \ldots, v_{\lambda+p-1}\}\) is invariant. For
+\(\lambda = p-1\), the representation \(S(0, 0, \lambda)\) is isomorphic to
+\(V_{p-1}\).</p>
+<p>In conclusion, all nonisomorphic irreducible
+representations of \(\mathfrak{sl}_2(K)\) are given by:</p>
+<ul>
+<li>The \(n\)-dimensional representation \(V_{n - 1}\) for each
+\(n = 1, 2, \ldots, p\), as defined in Problem 2.15.1,</li>
+<li>The \(p\)-dimensional representation \(R(a, b, \lambda)\) for each \(a \in
+K \setminus \{0\}\), \(b \in K\), \(\lambda\) the representative of some
+equivalence class of \(K\) modulo \(\mathbb{F}_p\), as defined by
+\((\ref{eqn:RH})\) through \((\ref{eqn:RF})\),
+</li>
+<li>The \(p\)-dimensional representation \(S(a, 0, \lambda)\) for each
+\(a \in K \setminus \{0\}\), \(\lambda \in (K \setminus \mathbb{F}_p)
+\cup \{-1, 0, 1, \ldots, (p-3)/2\}\), as
+defined by \((\ref{eqn:SH})\) through \((\ref{eqn:SF})\),</li>
+<li>The \(p\)-dimensional representation \(S(0, 0, \lambda)\) for each
+\(\lambda \in K\).</li>
+</ul>
+<p>There are no irreducible representations of dimension greater than
+\(p\).</p>
+<p><span class="problem">Problem 2.16.5</span>
+Etingof has clarified that this problem was intended to only be about the
+finite-dimensional irreps (but adds that there are no infinite-dimensional
+irreps). This problem turns out to be very similar to Problem 2.16.4, so some
+similar techniques will be abbreviated in this solution.</p>
+<p>First consider the case with \(q\) not a root of unity. Suppose \(V\) is an
+irreducible finite-dimensional representation of
+\(\mathcal{U}_q(\mathfrak{sl}(2))\). Let \(v\) be an eigenvector of
+\(\rho(K)\) be an eigenvector of \(K\) with eigenvalue \(\lambda\). Then
+\(K(ev) = \lambda Ke (K^{-1}v) = \lambda q^2 ev\), therefore \(ev\), if
+nonzero, is another eigenvector of \(\rho(K)\) with eigenvalue \(q^2\lambda\).
+Likewise, \(fv\) is either zero or an eigenvector of \(\rho(K)\) with
+eigenvalue \(q^{-2}\lambda\). By starting with some eigenvector of \(\rho(K)\)
+and iterating the action of \(e\), we must always eventually reach zero (we
+cannot get an infinite number of eigenvectors of \(\rho(K)\) all with different
+eigenvalues).</p>
+<p>So there is some \(v \in V\) that satisfies \(Hv = \lambda v, ev = 0,
+v \neq 0\). The sequence \(v, fv, f^2 v, \ldots\) must likewise terminate in
+zero. Suppose \(f^{n-1} v \neq 0\) and \(f^n v = 0\). Then we claim that
+\(\{v, fv, \ldots, f^{n-1}v\}\) span an invariant subspace (and hence form a
+basis of \(V\)). To do so it suffices to show that \(ef^i v\) is a scalar
+multiple of \(f^{i-1} v\) for each \(i = 1, 2, \ldots, n-1\). This can be done
+by induction:</p>
+<ol>
+<li>For \(i = 1\), \(ef^i v = efv = fev + [e, f]v = [e, f]v\) which is a scalar
+multiple of \(v\) since \(v\) is an eigenvector of \(\rho(K)\).</li>
+<li>For \(i &gt; 1\), \(ef^i v = ef(f^{i-1}v) = fe(f^{i-1}v) +
+[e, f](f^{i-1}v) = f(af^{i-2}v) + bf^{i-1}v = (a + b)f^{i-1}v\) where the
+scalar \(a\) is guaranteed to exist by the inductive hypothesis and \(b\) by
+the fact that \(f^{i-1}v\) is an eigenvector of \(\rho(K)\).</li>
+</ol>
+<p>Therefore, if \(N = \dim V\) and \(v_i\) denotes \(f^i v\) then
+\begin{align*}
+Kv_i &amp;= q^{-2i}\lambda v_i \\
+fv_i &amp;= \begin{cases}
+v_{i+1} &amp; i &lt; N-1 \\
+0 &amp; i = N-1
+\end{cases} \\
+ev_i &amp;= \begin{cases}
+0 &amp; i = 0 \\
+\frac{v_{i-1}}{q-q^{-1}} \sum_{j=0}^{i-1} (q^{-2j}\lambda -
+q^{2j} \lambda^{-1})
+&amp; i &gt; 0
+\end{cases}
+\end{align*}
+where the expression for \(ev_i\) has been obtained by induction using the
+commutation relation for \(e, f\). Taking this one step further and setting
+\(0 = efv_{N-1} = fev_{N-1} + [e,f]v_{N-1}\) yields the relation
+\begin{equation*}
+0 = \sum_{j=0}^N (q^{-2j}\lambda - q^{2j}\lambda^{-1})
+\end{equation*}
+which can be rearranged to yield \(\lambda^2 = q^{2N-2}\), therefore
+\(\lambda = \pm q^{N-1}\). Using this value of \(\lambda\) with the above
+relations and doing some algebra, we obtain
+\begin{align}
+Kv_i &amp;= \pm q^{N-2i-1} v_i \label{eqn:Kq1} \\
+fv_i &amp;= \begin{cases}
+v_{i+1} &amp; i &lt; N-1 \\
+0 &amp; i = N-1
+\end{cases} \label{eqn:fq1} \\
+ev_i &amp;= \begin{cases}
+0 &amp; i = 0 \\
+\pm \frac{v_{i-1}}{(q-q^{-1})^2} [q^N + q^{-N} - q^{N-2i} - q^{-N+2i}]
+&amp; i &gt; 0 \label{eqn:eq1}
+\end{cases}
+\end{align}
+Call the representations obtained by the two choices of sign \(V^+_{q,N}\) and
+\(V^-_{q,N}\). It is straightforward but tedious to verify that they are valid
+representations. To see that they are irreducible, note that we can start with
+any nonzero vector, iterate \(f\) repeatedly until we get a multiple of
+\(v_{N-1}\), then iterate \(e\) repeatedly to regenerate the basis. This latter
+procedure must work because \(q^N + q^{-N} - q^{N-2i} - q^{-N+2i}\) can't be
+zero unless \(q^{2i} = 1\) or \(q^{2(N-i)} = 1\), neither of which is possible
+for any \(0 &lt; i &lt; N\) unless \(q\) is a root of unity. Since \(v_0\) is
+the only eigenvector of \(\rho(K)\) that is annihilated by \(e\), and this
+eigenvector has two different eigenvalues in \(V^+_{q,N}\) and \(V^-_{q,N}\),
+these two irreps are nonisomorphic. So for \(q\) not a root of unity, there
+is a countably infinite series of finite-dimensional irreducible
+representations \(V^\pm_{q,N}\), two of each positive dimension \(N\).</p>
+<p>Consider now the case where \(q\) is a root of unity. Let \(M\) be the
+smallest positive integer such that \(q^{2M} = 1\). Suppose \(1 \leq N &lt;
+M\) and let \(V\) be an irrep of dimension \(N\).
+Suppose \(v \in V\) is an eigenvector of \(\rho(K)\).
+It must be the case that \(e^N v = 0\). For if this were
+not the case, then the vectors \(v, ev, \ldots, e^N v\) would have \(N+1\)
+distinct eigenvalues, which is a contradiction. Thus, we can always find some
+nonzero \(v_0 \in V\) with \(Kv_0 = \lambda v_0, ev_0 = 0\). As before, if
+\(v_i = f^i v\) with \(v_n = 0, v_{n-1} \neq 0\), then \(\{v_0, \ldots,
+v_{n-1}\}\) form a basis of an invariant subspace of \(V\), hence a basis of
+\(V\). So \(n = N\) and the basis is \(\{v_0, \ldots, v_{N-1}\}\) and the
+action of the generators is given by \((\ref{eqn:Kq1})\) through
+\((\ref{eqn:eq1})\), in other words, we have the two nonisomorphic irreps
+\(V^\pm_{q,N}\) where, as before, \(\lambda = \pm q^{N-1}\).</p>
+<p>Now consider \(N \geq M\). Observe that \(Ke^M K^{-1} = (KeK^{-1})^M
+= (q^2 e)^M = q^{2M} e^M = e^M\). Likewise \(Kf^M K^{-1} = f^M\).
+Furthermore \(K\) commutes with \(fe\) and hence shares a common eigenvector
+with it. We will
+also make use of the following results:</p>
+<p><em>Lemma 1:</em> For each positive integer \(i\), \(Ke^i = q^{2i}e^i K\)
+and \(e^i K^{-1} = q^{2i} K^{-1} e^i\).</p>
+<p><em>Proof:</em> Note that the defining relations imply \(Ke = q^2 eK\) and
+\(eK^{-1} = q^2 K^{-1}e\). The desired result immediately follows.
+</p><div class="qed"></div>
+<p><em>Lemma 2:</em> For each positive integer \(i\),
+\begin{equation*}
+[e^i, f] = \frac{1 - q^{2i}}{(1-q^2)(q-q^{-1})} (e^{i-1}K - K^{-1}e^{i-1})
+\end{equation*}</p>
+<p><em>Proof:</em> By induction. For \(i = 1\) this follows immediately from
+the defining relation for \([e,f]\). For \(i &gt; 1\), write
+\([e^i, f] = e[e^{i-1}f] + [e,f]e^{i-1}\) and apply the inductive
+hypothesis.</p><div class="qed"></div>
+<p><em>Corollary:</em> \([e^M, f] = 0\). Together with the fact that
+\(Ke^M K^{-1} = e^M\), this implies that \(e^M\) is central.</p>
+<p>Since \(e^M\) is central, it follows that in the irrep \(V\), it acts as a
+scalar. First assume this scalar is a nonzero value \(a\). Therefore if \(v_0\)
+is some common eigenvector of \(\rho(K)\) and \(\rho(fe)\), and
+\(v_i = e^i v_0\), then the vectors
+\(v_0, v_1, \ldots, v_{M-1}\) have distinct eigenvalues with respect to \(K\),
+and therefore form a basis of a subspace invariant under \(e\) and \(K\).
+We claim that it is invariant under \(f\) as well, which is proven by
+induction:</p>
+<ol>
+<li>\(fv_1 = fev_0\) is a scalar multiple of \(v_0\) since \(v_0\) was assumed
+an eigenvector of \(\rho(fe)\).</li>
+<li>For \(2 \leq i &lt; M\), we have that \(fv_i = fev_{i-1} =
+efv_{i-1} - [e,f]v_{i-1}\) which is a scalar multiple of \(v_{i-1}\) by the
+inductive hypothesis and the relation for \([e,f]\).</li>
+<li>Furthermore, \(fv_0 = a^{-1}fev_{M-1} = a^{-1}(efv_{M-1} - [e,f]v_{M-1})\)
+which is similarly a scalar multiple of \(v_{M-1}\).</li>
+</ol>
+<p>Therefore \(V\) is precisely \(M\)-dimensional with basis \(\{v_0, v_1,
+\ldots, v_{M-1}\}\). Let \(b \in k\) be such that \(fv_0 = bv_{M-1}\) and let
+\(\lambda\) be the eigenvalue of \(v_0\) with respect to \(K\). Then, by using
+Lemma 2 to compute \(fe^i v_0\), we obtain:
+\begin{align}
+Kv_i &amp;= q^{2i} \lambda v_i \label{eqn:KqR} \\
+ev_i &amp;= \begin{cases}
+v_{i+1} &amp; i &lt; M - 1 \\
+av_0 &amp; i = M - 1
+\end{cases} \label{eqn:eqR} \\
+fv_i &amp;= \begin{cases}
+bv_{M-1} &amp; i = 0 \\
+\left[ab - \frac{(1-q^{2i})(\lambda - q^{-2i+2}\lambda^{-1})}
+{(1-q^2)(q-q^{-1})}\right] v_{i-1} &amp; i &gt; 0
+\end{cases} \label{eqn:fqR}
+\end{align}
+This turns out to be a valid representation for any \(\lambda \neq 0\) (we omit
+some algebra). We call this representation \(R(a,b,\lambda)\). If \(R'\) is a
+proper subrepresentation of \(R(a,b,\lambda)\), then \(e^M\) must act as the
+zero operator on \(R'\) since \(R'\) is less than \(M\)-dimensional. But since
+\(e^M\) acts as a nonzero scalar on \(R(a,b,\lambda)\), \(R'\) must be the
+zero representation. Therefore all \(R(a,b,\lambda)\) are irreducible.</p>
+<p>To investigate isomorphisms we will use the quadratic Casimir element for
+\(\mathcal{U}_q(\mathfrak{sl}(2))\)
+[<a href="https://arxiv.org/pdf/hep-th/9402017.pdf">Kerler, 1995</a>]:
+\begin{equation}
+C = ef + \frac{qK^{-1} + q^{-1}K}{(q-q^{-1})^2}
+\end{equation}
+The element \(C\) is central, so it acts as a scalar in an irrep. For
+\(R(a,b,\lambda)\) that scalar is given by \(c = ab + (q\lambda^{-1} +
+q^{-1}\lambda)/(q-q^{-1})^2\), which is linear in \(b\). Now two \(R\)'s can
+only be isomorphic when they have equal \(a\) and the ratio of their
+\(\lambda\)'s is a power of \(q^2\) (to ensure that the spectra are equal).
+Because the scalar \(c\) is linear in \(b\), it's not possible for
+\(R(a,b,\lambda)\) to be isomorphic to \(R(a,b',\lambda)\) unless \(b = b'\).
+Indeed, by equating \(c\) between \(R(a,b,\lambda)\) and \(R(a,b',
+q^2\lambda)\) we see that the only possible isomorphism must be obtained by
+setting \(b' = b - a^{-1}(\lambda - \lambda^{-1})/(q - q^{-1})\). Explicitly,
+the isomorphism between \(R(a, b, \lambda)\) and \(R(a, b', q^2\lambda)\) is
+given by
+\begin{equation*}
+\phi(v_i)  = \begin{cases} a^{-1} w_{M-1} &amp; i = 0 \\
+w_{i-1} &amp; i &gt; 0
+\end{cases}
+\end{equation*}
+where \(\{v_0, \ldots, v_{N-1}\}\) and \(\{w_0, \ldots, w_{N-1}\}\) are 
+respectively bases of \(R(a,b,\lambda)\) and \(R(a, b', q^2\lambda)\)
+satisfying Eqns \((\ref{eqn:KqR})\) through \((\ref{eqn:fqR})\). It is
+straightforward but tedious to verify that \(\phi\) is indeed an isomorphism.
+So all nonisomorphic \(R\)'s are given by
+\(\{R(a, b, \lambda) \mid a \in k \setminus \{0\}, b \in k,
+\lambda \in k/\langle q^2\rangle\}\).</p>
+<p>As in Problem 2.16.4, we can likewise investigate \(M\)-dimensional irreps
+where \(\rho(f^M) = a \Id\) with \(a \neq 0\). We omit a lot of analogous
+calculations here, observing only that it suffices to swap \(e\) and \(f\) and
+replace \(q\) by its inverse in the calculations above. This gives irreducible
+representations with basis \(\{v_0, \ldots, v_{M-1}\}\) parametrized by
+\(b, \lambda \in k\) where
+\begin{align}
+Kv_i &amp;= q^{-2i} \lambda v_i \label{eqn:KqS} \\
+fv_i &amp;= \begin{cases}
+v_{i+1} &amp; i &lt; M-1 \\
+av_0 &amp; i = M-1
+\end{cases} \label{eqn:fqS} \\
+ev_i &amp;= \begin{cases}
+bv_{M-1} &amp; i = 0 \\
+\left[ab + \frac{(1 - q^{-2i})(\lambda - q^{2i-2}\lambda^{-1})}
+{(1 - q^{-2})(q - q^{-1})}\right] v_{i-1} &amp; i &gt; 0
+\end{cases} \label{eqn:eqS} \\
+Cv_i &amp;= \left[ab + \frac{q\lambda + q^{-1}\lambda^{-1}}{(q-q^{-1})^2}
+\right] v_i
+\end{align}
+We shall denote this representation by \(S(a, b, \lambda)\); it can be
+verified that
+\begin{equation}
+S(a, b, \lambda) \cong S(a, b + a^{-1}(\lambda - \lambda^{-1})/(q-q^{-1}),
+q^{-2}\lambda) \label{eqn:Siso}
+\end{equation}
+where the \(\cong\) symbol denotes isomorphism; and that (since the Casimir
+invariant is linear in \(b\)) this isomorphism generates all isomorphisms
+between different \(S\)'s.</p>
+<p>Now, any \(S(a, b, \lambda)\) in which \(\rho(e^M)\) is nonzero must be
+isomorphic to one of the \(R\)'s, so we consider only those where
+\(\rho(e^M) = 0\). For these, one of the coefficients in \((\ref{eqn:eqS})\)
+must vanish, therefore these representations are given by
+\begin{equation*}
+S_i(a, \lambda) = S\left(a, -\frac{a^{-1}(1-q^{-2i})(\lambda -
+q^{2i-2} \lambda^{-1})}{(1-q^{-2})(q-q^{-1})}, \lambda\right)
+\end{equation*}
+for some \(i \in \{0, 1, \ldots, M-1\}\). With a bit of algebra, we can show
+that \((\ref{eqn:Siso})\) is equivalent to the statement that
+\(S_i(a, \lambda)\) is isomorphic to \(S_{i-1}(a, q^{-2}\lambda)\) for all
+\(i \in \{0, 1, \ldots, M-1\}\). Therefore all \(S_i\)'s can be put
+into isomorphism with some \(S_0(a, \lambda) = S(a, 0, \lambda)\), and for a
+given \(S_0(a, \lambda)\), all isomorphic \(S\)'s are given by
+\(\{S_i(a, q^{2i}\lambda) \mid i \in \{1, 2, \ldots, M-1\}\}\). An isomorphism
+between \(S(a, 0, \lambda)\) and \(S(a, 0, q^{2i} \lambda)\) with
+\(i \in \{1, 2, \ldots, M-1\}\) will therefore occur if and only if
+\(S(a, 0, q^{2i} \lambda) = S_i(a, q^{2i}\lambda)\), that is, when
+\begin{equation*}
+0 = -\frac{a^{-1} (1 - q^{-2i})(q^{2i}\lambda -
+q^{2i-2} q^{-2i} \lambda^{-1})}{(1-q^{-2})(q-q^{-1})}
+\end{equation*}
+which implies \(q^{2i} = 1\) or \(\lambda = \pm q^{-i-1}\). By definition of
+\(M\), the former cannot happen. So all the isomorphisms between different
+\(S_0\)'s are those between \(S(a, 0, \pm q^{-i-1})\) and \(S(a, 0,
+\pm q^{i-1})\) for \(i \in \mathbb{Z}\). For example, if \(M\) is odd and \(q\)
+is a primitive \(M\)<sup>th</sup> root of unity, then all pairs of isomorphic
+\(S_0\)'s are given by \(\{S(a, 0, q^0), S(a, 0, q^{M-2})\}, \{S(a, 0, q^1),
+S(a, 0, q^{M-3})\}, \ldots, \{S(a, 0, q^{(M-3)/2}), S(a, 0, q^{(M-1)/2})\}\),
+and similarly with each \(q^i\) replaced by \(-q^i\). We will skip the explicit
+construction of the isomorphism classes for the other cases (\(M\) odd with
+\(q\) a primitive \(2M\)<sup>th</sup> root of unity, or \(M\) even).</p>
+<p>We now turn our attention to \(M\)-dimensional representations in which
+both \(e^M\) and \(f^M\) act as the zero operator. We proceed in a similar
+manner as in Problem 2.16.4, starting with \(v_0\) a common eigenvector of
+\(\rho(K)\) and \(\rho(e)\) with eigenvalues \(\lambda\) and 0, respectively,
+and writing \(v_i = f^i v_0\). The resulting representation is then
+\(S(0, 0, \lambda)\) for some \(\lambda \neq 0\). No two such representations
+can be isomorphic since in \(S(0, 0, \lambda)\) we can uniquely determine
+\(\lambda\) using the fact that the unique eigenvector of \(\rho(f)\) has
+the eigenvalue \(q^2\lambda\) with respect to \(K\). However, some of these
+representations are not irreducible, namely precisely those in which the
+coefficient in \((\ref{eqn:eqS})\) vanishes for some \(1 \leq i \leq M-1\).
+Using some algebra we see that this happens when \(\lambda = \pm q^{i-1}\).</p>
+<p>In conclusion, the nonisomorphic irreducible representations are given
+by:</p>
+<ul>
+<li>The \(N\)-dimensional representations \(V^\pm_{q,N}\), where
+\(1 \leq N &lt; M\), as defined by \((\ref{eqn:Kq1})\) through
+\((\ref{eqn:eq1})\);</li>
+<li>The \(M\)-dimensional representation \(R(a,b,\lambda)\) for each
+\(a \in k^\times, b \in k, \lambda \in k^\times\), as defined
+by \((\ref{eqn:KqR})\) through \((\ref{eqn:fqR})\);</li>
+<li>The \(M\)-dimensional representation \(S(a, 0, \lambda)\) for each
+\(a \in k^\times, \lambda \in k^\times\), as defined by \((\ref{eqn:KqS})\)
+through \((\ref{eqn:eqS})\), subject to the fact that for each
+\(i \in \mathbb{Z}\), the representations \(S(a, 0, q^{-i-1})\) and
+\(S(a, 0, q^{i-1})\) are isomorphic, and the representations
+\(S(a, 0, -q^{-i-1})\) and \(S(a, 0, -q^{i-1})\) are isomorphic;</li>
+<li>The \(M\)-dimensional representations \(S(0, 0, \lambda)\) for each
+\(\lambda \in k^\times \setminus \{\pm q^i \mid i \in \{0, 1, \ldots,
+M-2\}\}\).</li>
+</ul>

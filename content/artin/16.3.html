@@ -1,0 +1,57 @@
+<h2>Section 16.3. Splitting Fields</h2>
+<p><span class="problem">Exercise 16.3.1</span> We prove the claim by
+induction on degree. In the base case, the polynomial has degree 1 and the
+claim is obvious. Now assume the claim is proved for all degrees smaller than
+\(n\) and suppose \(f\) has degree \(n\).</p>
+<p>Suppose first that \(f\) is irreducible. Let \(\alpha \in K\) be one of the
+roots of \(f\), so that \(f(x) = (x - \alpha)g(x)\). Clearly,
+\([F(\alpha) : F] = n\) and \(g(x) \in F(\alpha)[x]\). There exists a field
+\(L\) with \(F(\alpha) \subseteq L \subseteq K\) that is a splitting field of
+\(g\), since \(g\) splits completely in \(K\), and by the inductive hypothesis,
+\([L : F(\alpha)] \divides (n-1)!\). In fact, since \(L\) contains all the
+roots of \(g\) as well as \(\alpha\), it contains all the roots of \(f\),
+therefore \(K \subseteq L\). This implies \(K = L\). Thus,
+\([K : F] = [K : F(\alpha)][F(\alpha) : F] = n[K : F(\alpha)] \divides
+n(n-1)! = n!\).</p>
+<p>Now consider the case where \(f\) isn't irreducible. Write \(f = gh\), where
+\(g\) and \(h\) both have positive degree.
+Let \(F'\) be the subfield of \(K\) obtained by
+adjoining the roots of \(g\) to \(F\); then \(F'\) is a splitting field for
+\(g\), and by the induction hypothesis, \([F' : F] \divides (\deg g)!\).
+Furthermore, adjoining the roots of \(h\) to \(F'\) must yield \(K\), so
+\(K\) is a splitting field for \(h\) when considered as a polynomial over
+\(F'\); the induction hypothesis implies \([K : F'] \divides (\deg h)!\).
+Thus, \([K : F] = [K : F'][F' : F] \divides (\deg g)!(\deg h)! \divides
+(\deg g + \deg h)! = n!\).</p>
+<div class="qed"></div>
+
+<p><span class="problem">Exercise 16.3.2</span></p>
+<ol class="subproblems">
+<li>It is clear that \(x^3 - 2\) is irreducible, so that adjoining the root
+\(\sqrt[3]{2}\) to \(\Q\) produces a field extension of degree 3. But
+\(\Q(\sqrt[3]{2})\) is still a subfield of \(\R\), so it doesn't contain the
+two complex roots of \(x^3 - 2\). Therefore 3 is a proper divisor of the degree
+of the splitting field of \(x^3 - 2\). But Exercise 16.3.1 implies that the
+degree of the splitting field divides 6. Therefore, it must be equal to 6.</li>
+<li>We have the factorization \(x^4 - 1 = (x^2 + 1)(x + 1)(x - 1)\) and clearly
+\(x^2 + 1\) is irreducible over \(\Q\). It is easy to see that \(\Q(i)\) is a
+splitting field for \(x^2 + 1\) and thus for \(x^4 - 1\). Therefore the degree
+of the splitting field is 2.</li>
+<li>The roots of \(x^4 + 1\) are \(\omega, \omega^3, \omega^5, \omega^7\) where
+\(\omega\) is a primitive eighth root of unity. Any field extension of \(\Q\)
+that contains one of the four roots also contains the other three; therefore,
+\(\Q(\omega)\) is a splitting field for \(x^4 + 1\).  We showed in
+<a href="/artin/15.3">Exercise 15.3.4(c)</a> that the minimal polynomial for
+\(\omega\) over \(\Q\) has degree 4, therefore \([\Q(\omega) : \Q] = 4\).</li>
+</ol>
+
+<p><span class="problem">Exercise 16.3.3</span> Let \(K\) be a splitting field
+for \(x^2 - u\). In \(K\), this polynomial must factor as \((x - f)(x - g)\),
+so \(f + g = 0\) and \(fg = -u\), thus, \(f^2 = u\). Suppose \(f \in F\). Then
+write \(f = g/h\) where \(g, h \in \mathbb{F}_2(u)\). Then \(f^2 h^2 = g^2\),
+but \(f^2 = u\), so \(uh^2 = g^2\). Obviously both sides are nonzero, so their
+degrees must be equal, which is a contradiction since the degree of \(uh^2\) is
+odd and that of \(g^2\) is even. Our assumption that \(f \in F\) must therefore
+be wrong, and \(x^2 - u\) is irreducible over \(F\). Note that since \(K\) has
+characteristic 2, we have \(x^2 - u = (x + f)(x - f) = (x - f)(x - f)\), so
+\(f\) is a double root.</p>

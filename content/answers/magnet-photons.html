@@ -1,0 +1,40 @@
+<div id="question_content">
+<h2>How many photons are produced by waving a magnet in the air?</h2>
+</div>
+<div id="answer_content"><p>This can be calculated, but is a lot of work. Brace yourself.</p>
+<ol><li>First, we're going to apply the duality transformation to the magnet and imagine it as an electret instead. If you're not familiar with what this means, the basic idea is that there's a symmetry between the electric and magnetic fields that guarantees that a magnetic dipole with dipole moment \(m\) produces the same radiation as an electric dipole with dipole moment \(p = m/c\) (except with its polarization rotated by 90 degrees, which doesn't affect the power).</li><li>We'll treat the electret as a point dipole and assume that it's oriented in the z direction and moves sinusoidally along the x axis (i.e. executes simple harmonic motion). This sinusoidally oscillating dipole has an oscillating quadrupole moment, so we're going to calculate the power radiated by an oscillating quadrupole.</li><li>Finally, we know the radiation will be emitted with the same frequency as the oscillation of the magnet, so we're going to divide the power by \(\hbar \omega\) in order to get the number of photons radiated per second.</li></ol>
+<h3>Step 1</h3>
+<p>Surprisingly, I was unable to find the magnetic dipole moment of a typical bar magnet online, so we will have to estimate it.</p>
+
+<p><i><u>Exercise</u></i><i>:</i> show that for a rectangular bar magnet of length \(L\) with a square cross-section of side length \(X\) and a uniform magnetization \(M\) along its length, the magnetic field at the end (the centre of one of the square faces) is \[B = \frac{2\mu_0 M}{\pi} \tan^{-1} \frac{L}{\sqrt{L^2 + X^2/2}}\](Hint: Replace the magnetization with a surface bound current, so you only have to do two integrations instead of three.)</p>
+
+<p>Using this result, we can see that in the limit \(L \gg X\), we get \(B \approx \mu_0 M/2\). Say a typical bar magnet has a strength of 0.01&nbsp;T (found this figure online) and a size of 10&nbsp;cm by 1&nbsp;cm. Then the dipole moment is obtained by solving for the magnetization and multiplying by the volume:</p>
+<p style="text-align: center">\(m\) = 2 (0.01 T) &times; (10 cm) &times; (1 cm) &times; (1 cm) &div; \(\mu_0\) \(\sim\) 0.16 A &middot; m<sup>2</sup></p>
+
+<p>Such a magnet radiates the same power as an electret with electric dipole moment</p>
+<p style="text-align: center">\(p\) = (0.16 A &middot; m<sup>2</sup>) &div; \(c\) \(\sim\) 5.3&times;10<sup>-10</sup> C &middot; m</p>
+
+<h3>Step 2</h3>
+<p>The traceless quadrupole moment tensor is defined as \[Q_{ab} = \sum q (3x_a x_b - \delta_{ab} r^2)\] or \[Q_{ab} = 3\left(\sum q x_a x_b\right) - \delta_{ab} \left(\sum q r^2\right)\] For a point dipole located anywhere, note that the second term vanishes and we get \[Q = 3\mathbf{r} \otimes \mathbf{p}.\] If we take the oscillation to be in the x direction then only two terms survive: \[Q_{xz} = Q_{zx} = 3xp = Q_0 \sin(\omega t)\] where \(Q_0 = 3x_0 p\). Say the amplitude of oscillation is 5 cm. We thus obtain the maximum quadrupole moment of the system</p>
+
+<p style="text-align: center">\(Q_0\) \(\sim\) 3 &times; (5 cm) &times; (5.3&times;10<sup>-10</sup> C &middot; m) \(\sim\) 8.0&times;10<sup>-11</sup> C &middot; m<sup>2</sup></p>
+
+<p>The formula for the radiation emitted by an oscillating quadrupole is given in Jackson (§9.3). I will just rewrite the formula slightly: \[P = \frac{\mu_0 \omega^6}{1440 \pi c^3} \sum_{a,b} Q_{ab}^2\]</p>
+
+<p>How fast can you wave the magnet? Say, three cycles per second? Okay. So let's plug in the numbers and get the result...</p>
+
+<p style="text-align: center">\(P\) \(\sim\) 5.9&times;10<sup>-48</sup> W</p>
+
+<h3>Step 3</h3>
+
+<p>The photons emitted will also have the frequency of three cycles per second, so each photon has an energy of (3&nbsp;Hz)&nbsp;&times;&nbsp;\(h\)&nbsp;\(\sim\)&nbsp;2.0&times;10<sup>-33</sup>&nbsp;J. So the number of photons emitted per second is... *drum roll*</p>
+
+<p style="font-weight: bold; text-align: center">\(f\) = 3&times;10<sup>-15</sup> Hz</p>
+
+<p>Yep, that's right, you'd have to wave the magnet around for about 10 million years before the first photon is emitted. [1]</p>
+
+<p>What happens if we vary our parameters? If you follow the derivation you'll see that:</p>
+
+<ul><li>Increasing the dipole moment of the magnet by a factor of \(A\) will increase the photon emission rate by a factor of \(A^2\). Note that the dipole moment is volume times magnetization. (NB: A rare earth magnet is maybe an order of magnitude more powerful than a typical bar magnet, so it has maybe 10 times the magnetization, or 10 times the dipole moment at a fixed size.)</li><li>Increasing the oscillation amplitude by a factor of \(A\) will increase the photon emission rate by a factor of \(A^2\).</li><li>Increasing the oscillation frequency by a factor of \(A\) will increase the power by a factor of \(A^6\) but the photon emission rate by a factor of \(A^5\) (since each individual photon now carries more energy).</li></ul><p>But there's no way you're going to get a significant photon emission rate just by waving the magnet around with your hands.</p>
+
+<p>[1] Of course, this is not really the way quantum electrodynamics works. If you surrounded the lab with a detector, the first photon could be detected at any point, but it would take 10 million years before the <i>expected</i> number of photons seen so far becomes 1.</p></div>

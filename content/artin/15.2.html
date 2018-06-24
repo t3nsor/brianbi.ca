@@ -1,0 +1,48 @@
+<h2>Section 15.2. Algebraic and Transcendental Elements</h2>
+<p><span class="problem">Exercise 15.2.1</span> A straightforward way to solve
+this problem uses Gaussian elimination. Observe that
+\begin{align*}
+(1 + \alpha + \alpha^2)1 &amp;= 1 + \alpha + \alpha^2 \\
+(1 + \alpha + \alpha^2)\alpha &amp;= \alpha + \alpha^2 + \alpha^3 \\
+&amp;= \alpha + \alpha^2 + (3\alpha - 4) \\
+&amp;= -4 + 4\alpha + \alpha^2 \\
+(1 + \alpha + \alpha^2)\alpha^2 &amp;= (-4 + 4\alpha + \alpha^2)\alpha \\
+&amp;= -4\alpha + 4\alpha^2 + \alpha^3 \\
+&amp;= -4\alpha + 4\alpha^2 + (3\alpha - 4) \\
+&amp;= -4 - \alpha + 4\alpha^2
+\end{align*}
+so that the equation \((\alpha^2 + \alpha + 1)(a + b\alpha + c\alpha^2) = 1\)
+can be written as the linear system
+\[
+\begin{pmatrix}
+1 \\ 0 \\ 0
+\end{pmatrix} =
+\begin{pmatrix} 
+1 &amp; -4 &amp; -4 \\
+1 &amp;  4 &amp; -1 \\
+1 &amp;  1 &amp;  4
+\end{pmatrix}
+\begin{pmatrix} 
+a \\ b \\ c
+\end{pmatrix}
+\]
+After row reduction, we find \(a = \frac{17}{49}, b = -\frac{5}{49}, c =
+-\frac{3}{49}\).</p>
+
+<p><span class="problem">Exercise 15.2.2</span> I don't know why Artin decided
+to alternate the signs, but this just makes the problem more annoying, so let's
+assume \(f(x) = x^n + a_{n-1}x^{n-1} + \ldots + a_0\). Observe that
+\(\alpha(\alpha^{n-1} + a_{n-1}\alpha^{n-2} + \ldots + a_1) =
+\alpha^n + a_{n-1}\alpha^{n-1} + \ldots + a_1\alpha = -a_0\). Since \(f\) is
+irreducible, it follows that \(a_0 \ne 0\), so we may multiply both sides by
+\(-\frac{\alpha^{-1}}{a_0}\) to obtain \(\alpha^{-1} =
+-\frac{1}{a_0}(\alpha^{n-1} + a_{n-1}\alpha^{n-2} + \ldots + a_1)\).</p>
+
+<p><span class="problem">Exercise 15.2.3</span> The minimal polynomial for
+\(\omega \sqrt[3]{2}\) over \(\Q\) is \(x^3 - 2\). This is also the minimal
+polynomial for \(\sqrt[3]{2}\). By Proposition 15.2.8, there is an
+isomorphism of
+field extensions \(\varphi : \Q(\omega \sqrt[3]{2}) \to \Q(\sqrt[3]{2})\) that
+is the identity on \(\Q\). If \(\sum_{i=1}^n x_i^2 = -1\), then applying
+\(\varphi\) to both sides yields \(\sum_{i=1}^n \varphi(x_i)^2 = -1\). But
+each \(\varphi(x_i)\) is real, so a contradiction has been reached.</p>

@@ -1,0 +1,47 @@
+<h2>Section 16.4. Isomorphisms of Field Extensions</h2>
+<p><span class="problem">Exercise 16.4.1(a)</span>
+Every isomorphism of a field extension of \(\Q\) fixes \(\Q\). By Lemma
+16.4.2(a), an automorphism of \(\Q(\sqrt[3]{2})\) must take
+\(\sqrt[3]{2}\) to another root of \(x^3 - 2\). But \(\sqrt[3]{2}\) is the only
+real root, so it must be mapped to itself. By Lemma 16.4.2(c), since \(x^3 -
+2\) is irreducible, the \(\Q\)-automorphism of \(\Q(\sqrt[3]{2})\) is unique,
+therefore it can only be the identity.</p>
+<p>Lemma 16.4.2(a) implies that an automorphism of \(\Q(\sqrt[3]{2},\omega)\)
+must map \(\sqrt[3]{2}\) to one of the three roots of the polynomial \(x^3 -
+2\). Likewise \(\omega\), a root of the polynomial \(x^2 + x + 1\), must be
+mapped to either itself or the other root, namely \(\omega^2\). Lemma 16.4.2(b)
+implies that the automorphism will be completely determined by the choice of
+these two mappings; so there are at most six distinct automorphisms of
+\(\Q(\sqrt[3]{2},\omega)\).</p>
+<p>Now, any
+\(\Q(\sqrt[3]{2})\)-automorphism will also be a \(\Q\)-automorphism, and since
+the polynomial \(x^2 + x + 1\) remains irreducible over \(\Q(\sqrt[3]{2})\),
+Lemma 16.4.2(c) tells us that there are two automorphisms of
+\(\Q(\sqrt[3]{2},\omega)\) that fix \(\Q(\sqrt[3]{2})\), one of which sends
+\(\omega\) to \(\omega^2\); these form a subgroup \(\{1, \sigma\}\) of the full
+automorphism group of \(\Q(\sqrt[3]{2},\omega)\).
+By similar reasoning, and
+the fact that \(x^3 - 2\) remains irreducible over \(\Q(\omega)\), we find
+that there are three automorphisms of \(\Q(\sqrt[3]{2},\omega)\) that fix
+\(\Q(\omega)\), which therefore form a subgroup \(\{1, \tau, \tau^2\}\) of
+order 3.  The full automorphism
+group of \(\Q(\sqrt[3]{2},\omega)\) must therefore have order divisible by 6,
+therefore it is exactly 6, and the six automorphisms are
+\(1, \sigma, \tau, \tau\sigma, \tau^2, \tau^2\sigma\).</p>
+
+<p>The problem doesn't ask us to identify the isomorphism class of the
+automorphism group. However, it's easy to do so. Say \(\tau(\sqrt[3]{2}) =
+\omega\sqrt[3]{2}\). Then \(\sigma(\tau(\sqrt[3]{2})) =
+\sigma(\omega\sqrt[3]{2}) = \sigma(\omega)\sigma(\sqrt[3]{2}) =
+\omega^2\sqrt[3]{2}\), and \(\tau(\sigma(\sqrt[3]{2})) =
+\tau(\sqrt[3]{2}) = \omega\sqrt[3]{2}\). Therefore \(\sigma\tau \ne
+\tau\sigma\), and the automorphism group is nonabelian; therefore it is
+isomorphic to \(S_3\).</p>
+
+<p><span class="problem">Exercise 16.4.1(b)</span> The given polynomial splits
+completely in \(\Q(\sqrt{2})\) since its four roots in \(\C\) are
+\(1 \pm \sqrt{2}\) and \(1 \pm 2\sqrt{2}\). It is also clear that
+\(\Q(1 + \sqrt{2}) = \Q(\sqrt{2})\), so \(\Q(\sqrt{2})\) is the splitting
+field. By Lemma 16.4.2(a) and (c), there are exactly two automorphisms of
+this field: the identity, and one other that sends \(\sqrt{2}\) to
+\(-\sqrt{2}\).</p>

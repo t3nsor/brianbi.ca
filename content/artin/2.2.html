@@ -1,0 +1,63 @@
+<h2>Section 2.2. Groups and Subgroups</h2>
+<p><span class="problem">Exercise 2.2.1</span> Using Artin's notation,</p>
+<table class="mult">
+<tr><td></td><td>1</td><td>\(x\)</td><td>\(x^2\)</td>
+  <td>\(y\)</td><td>\(xy\)</td><td>\(x^2y\)</td></tr>
+<tr><td>1</td><td>1</td><td>\(x\)</td><td>\(x^2\)</td>
+  <td>\(y\)</td><td>\(xy\)</td><td>\(x^2y\)</td></tr>
+<tr><td>\(x\)</td><td>\(x\)</td><td>\(x^2\)</td><td>1</td>
+  <td>\(xy\)</td><td>\(x^2y\)</td><td>\(y\)</td></tr>
+<tr><td>\(x^2\)</td><td>\(x^2\)</td><td>1</td><td>\(x\)</td>
+  <td>\(x^2y\)</td><td>\(y\)</td><td>\(xy\)</td></tr>
+<tr><td>\(y\)</td><td>\(y\)</td><td>\(x^2y\)</td><td>\(xy\)</td>
+  <td>1</td><td>\(x^2\)</td><td>\(x\)</td></tr>
+<tr><td>\(xy\)</td><td>\(xy\)</td><td>\(y\)</td><td>\(x^2y\)</td>
+  <td>\(x\)</td><td>1</td><td>\(x^2\)</td></tr>
+<tr><td>\(x^2y\)</td><td>\(x^2y\)</td><td>\(xy\)</td><td>\(y\)</td>
+  <td>\(x^2\)</td><td>\(x\)</td><td>1</td></tr>
+</table>
+
+<p><span class="problem">Exercise 2.2.2</span> Clearly 1 is invertible since
+\(1\cdot 1 = 1\). If \(a \in S\) is invertible with inverse \(a^{-1}\), then
+\(a\) is also the inverse of \(a^{-1}\), so \(a^{-1}\) is invertible too. And
+if \(a, b \in S\) are invertible, then \(ab\) is invertible with inverse
+\(b^{-1} a^{-1}\). This establishes that the set of invertible elements of
+\(S\) with law of composition inherited from \(S\) is a group.</p>
+
+<p><span class="problem">Exercise 2.2.3</span></p>
+<ol class="subproblems">
+<li>Multiply both sides by \(x^{-1}\) on the left and \(w^{-1}z\) on the right
+to obtain \(y = x^{-1}w^{-1}z\).</li>
+<li>Yes, \(yzx = x^{-1}(xyz)x = x^{-1}(1)x = 1\). No, it isn't necessarily the
+case that \(yxz = 1\). For example, in \(S_3\), we have \(x \cdot y \cdot
+xy = 1\), but \(y \cdot x \cdot xy = x \neq 1\).</li>
+</ol>
+
+<p><span class="problem">Exercise 2.2.4</span></p>
+<ol class="subproblems">
+<li>Yes. \(H\) is itself a group under the same operation as \(G\) and is a
+subset of \(G\), therefore \(H\) is a subgroup of \(G\).</li>
+<li>Yes. \(H\) contains the identity element 1; the elements 1 and
+-1 are their own inverses; and \(H\) is closed under multiplication.</li>
+<li>No. \(H\) doesn't contain the identity element 0.</li>
+<li>Yes. \(H\) contains the identity element 1; the inverse of a positive real
+is another positive real; and the positive reals are closed under 
+multiplication.</li>
+<li>No. \(H\) doesn't contain the identity matrix.</li>
+</ol>
+
+<p><span class="problem">Exercise 2.2.5</span> If \(1_H\) is the identity of
+\(H\), then it must be the case that \(1_H 1_H = 1_H\). When this is regarded
+as an equality in \(G\), we can cancel \(1_H\) from both sides to obtain
+\(1_H = 1_G\). Analogously, if \(a \in H\) and \(a^*\) denotes the inverse of
+\(a\) in \(H\), then \(aa^* = 1_H = 1_G\). Left-multiplying both sides by the
+element \(a^{-1}\) (the inverse of \(a\) in \(G\)) yields \(a^* = a^{-1}\).
+</p><div class="qed"></div>
+
+<p><span class="problem">Exercise 2.2.6</span> The element 1 is the identity in
+\(G^\circ\) since \(1*a = a1 = a\) and \(a*1 = 1a = a\) for all \(a \in
+G^\circ\). If \(a \in G^\circ\) then the inverse element \(a^{-1}\) in \(G\)
+is also the inverse in \(G^\circ\) since \(a*a^{-1} = a^{-1}a = 1\) and
+\(a^{-1}*a = aa^{-1} = 1\). If \(a, b, c \in G^\circ\) then
+\(a*(b*c) = (b*c)a = (cb)a = c(ba) = (ba)*c = (a*b)*c\), so \(*\) is
+associative. We conclude that \((G^\circ, *)\) is a group.</p>

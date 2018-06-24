@@ -1,0 +1,104 @@
+<h2>Section 16.1. Symmetric Functions</h2>
+<p><span class="problem">Exercise 16.1.1</span></p>
+<ol class="subproblems">
+<li>The polynomial is not symmetric because it is not invariant under a
+tranposition; the other polynomial in the orbit is
+\(u_2^2 u_1 + u_3^2 u_2 + u_1^2 u_3\). But it is invariant under a 3-cycle, so
+the orbit has size 2.</li>
+<li>The polynomial is symmetric. According to the systematic procedure, we
+first set \(u_3 = 0\), leaving \((u_1 + u_2)u_2 u_1\), which is just the
+product \(s_1 s_2\) with \(n = 2\). For \(n = 3\), we have
+\(s_1 s_2 = (u_1 + u_2 + u_3)(u_1 u_2 + u_2 u_3 + u_3 u_1)\). We know this
+differs from our target polynomial by a multiple of \(s_3 = u_1 u_2 u_3\).
+Since the target polynomial and \(s_1 s_2\) both have degree 3, the multiple of
+\(s_3\) must be a constant multiple. By inspection, the target polynomial
+contains the term \(u_1 u_2 u_3\) twice and \(s_1 s_2\) contains it three
+times. Therefore \((u_1 + u_2)(u_2 + u_3)(u_3 + u_1) = s_1 s_2 - s_3\).</li>
+<li>Similarly to (a), this polynomial is invariant under 3-cycles but not
+transpositions. (This is more obvious once we replace \(u_1 - u_3\) by
+\(-(u_3 - u_1)\).) The other polynomial in the orbit is
+\((u_2 - u_1)(u_1 - u_3)(u_2 - u_3)\), which is the additive inverse of the
+original polynomial.</li>
+<li>Similarly to (c), this polynomial is invariant under 3-cycles but not
+transpositions, and a transposition converts it to its additive inverse.</li>
+<li>It is obvious that this polynomial is symmetric. Instead of the systematic
+procedure described earlier in the text, which requires a number of steps
+equal to the number of variables, we will take a different approach. Observe
+that
+\[
+s_1^3 = (u_1 + \ldots + u_n)^3 = \sum_i u_i^3 + 3\sum_{i &lt; j}
+(u_i^2 u_j + u_i u_j^2) + 6\sum_{i &lt; j &lt; k} u_i u_j u_k
+\]
+To eliminate the second term we look at:
+\[
+s_1 s_2 = (\sum_i u_i)(\sum_{i &lt; j} u_i u_j) =
+\sum_{i &lt; j} (u_i^2 u_j + u_i u_j^2) + 3\sum_{i &lt; j &lt; k} u_i u_j u_k
+\]
+therefore,
+\[
+s_1^3 - 3s_1 s_2 = \sum_i u_i^3 - 3\sum_{i &lt; j &lt; k} u_i u_j u_k
+\]
+so
+\[
+\sum_i u_i^3 = s_1^3 - 3s_1 s_2 + 3s_3
+\]
+</li>
+</ol>
+
+<p><span class="problem">Exercise 16.1.2</span> As mentioned in the text, the
+orbit sums form one basis. Another basis is given by monomials evaluated at
+elementary symmetric polynomials; this follows from Theorem 16.1.6 and the
+fact that monomials form a basis for polynomials.</p>
+
+<p><span class="problem">Exercise 16.1.3</span></p>
+<ol class="subproblems">
+<li><p>We will explicitly compute the coefficient of each monomial in
+\(P = ks_k + \sum_{i=1}^k (-1)^i w_i s_{k-i}\) when expanded in terms of
+the \(u_i\)'s, and show that all such coefficients vanish, therefore \(P = 0\).
+(Note that \(s_i = 0\) for \(i &gt; n\), and \(s_0 = 1\), and \(P\) is equal to
+\((-1)^k\) times the polynomial given in the problem text.)</p>
+<p>Let \(d_1, \ldots, d_n\) be nonnegative integers. We now compute the
+coefficient \(c\) of \(\prod_{j=1}^n u_j^{d_j}\). First, observe that \(P\) is
+homogeneous of degree \(k\), so if \(\sum_j d_j \ne k\), then \(c = 0\).</p>
+<p>Now,
+consider a term in \(w_i\), namely some \(u_j^i\). When this is
+multiplied by a term in \(s_{k-i}\), either the degree of \(u_j\) in the latter
+is 0, or it is 1. If it is 0, then in the product term, \(u_j\) has exponent
+\(i\), \(k-i\) other variables have exponent 1, and the remaining \(n-i-1\)
+variables have exponent 0, for a total of \(k-i+1\) variables with nonzero
+exponents. Otherwise, in the product term, \(u_j\) has
+exponent \(i+1\), \(k-i-1\) other variables have exponent 1, and the
+remaining \(n-i\) variables have exponent 0, for a total of \(k-i\) variables
+with nonzero exponents. Therefore, (1) if more than one of
+the \(d_j\)'s exceeds 1, then \(c\) vanishes; and (2) a monomial in which
+exactly \(i\) variables have nonzero exponents only occurs in
+\(w_{k-i}s_i\) and \(w_{k-i+1} s_{i-1}\).</p>
+<p>Suppose all \(d_j\)'s are equal to 0 or 1. Then exactly \(k\) of them are
+equal to 1 and the monomial occurs \(k\) times in \(ks_k\) and \(k\)
+times in \(s_{k-1}w_1\). These two terms have opposite signs in \(P\), so
+\(c = 0\).</p>
+<p>Suppose on the other hand that there is some \(j\) such that \(d_j\) exceeds
+1. We have already argued that there can only be one such \(j\) or else \(c =
+0\). Thus, \(k - d_j\) other variables have exponent 1, and a total of
+\(k - d_j + 1\) variables have nonzero exponent. This monomial therefore only
+occurs in \(w_{d_j - 1} s_{k- d_j + 1}\) and \(w_{d_j} s_{k - d_j}\). In the
+former, it occurs once, and in the latter it also occurs once. These two terms
+have opposite sign in \(P\), so \(c = 0\).</p>
+<div class="qed"></div>
+</li>
+<li><p>Yes, if the ground ring for the symmetric polynomials is a field.
+Newton's identity with \(k = 1\) shows that \(s_1 = w_1\).
+Substituting this into the identity with \(k = 2\) shows that \(2s_2\) lies in
+the ideal generated by \(w_1, w_2\), so if 2 has an inverse, then \(s_2\) lies
+in this ideal. Substituting the expressions for \(s_1\) and \(s_2\) into the
+identity with \(k = 3\) shows that \(3s_3\) lies in the ideal generated by
+\(w_1, w_2, w_3\), and so on. Thus, the subring generated by \(w_1, \ldots,
+w_n\) contains \(s_1, \ldots, s_n\), so it is the entire ring of symmetric
+functions.</p>
+<p>If the ground ring is not a field, then the power sums might not generate
+the ring of symmetric functions. The simplest example is that in \(\Z/2\Z\)
+with \(n = 2\), there is no way to write \(s_2 = u_1 u_2\) in terms of the
+power sums \(w_1 = u_1 + u_2, w_2 = u_1^2 + u_2^2\), since \(w_1(1, 1) =
+w_2(1, 1) = 0\) but \(s_2(1, 1) \ne 0\). If 2 had an inverse, we would
+write \(s_2 = \frac{1}{2}(w_1^2 - w_2)\).</p>
+</ol>

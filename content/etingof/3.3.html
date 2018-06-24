@@ -1,0 +1,87 @@
+<h2>Section 3.3. Representations of direct sums of matrix algebras</h2>
+<p><span class="problem">Problem 3.3.3</span></p>
+<ol class="subproblems">
+<li><p>We will prove the following:</p>
+<p><em>Lemma:</em> If \(V\) is a representation of \(A\), where \(A =
+\bigoplus_{i=1}^n A_n\), then \(V\) can be written as the direct sum of
+representations \(V = \bigoplus_{i=1}^n 1_i V\).</p>
+<p><em>Proof:</em> Suppose \(v \in V\) is given. Since \(1 =
+\sum_{i=1}^n 1_i\), it follows that \(v = \sum_{i=1}^n 1_i v\). Also, suppose
+\(v = \sum_{i=1}^n v_i\) where \(v_i \in 1_i V\) for all \(i\). Then, let
+\(j \in \{1, 2, \ldots, n\}\); left-multiplying by \(1_j\) yields \(1_j v =
+\sum_{i=1}^n 1_j v_i = \sum_{i=1}^n 1_j 1_i v_i = v_i\). Therefore, \(V\) is
+the direct sum of the \(1_i V\)'s as vector spaces. But each \(1_i V\) is also
+a subrepresentation of the full \(A\) (where the \(A_j\) components act as zero
+for all \(j \neq i\)), which proves the desired result.</p>
+<div class="qed"></div>
+<p><em>Corollary:</em> \(V\) is irreducible if and only if there is exactly
+one \(i\) for which \(1_i V\) is nonzero, and that \(1_i V\) is
+an irrep of \(A_i\).</p>
+<p><em>Proof of corollary:</em> Write \(V = \bigoplus_{i=1}^n 1_i V\). If
+there is a unique \(i\) with \(1_i V\) nonzero, then \(V = 1_i V\). Since
+\(A\) acts on \(1_i V\) exactly as its \(A_i\) component does, it follows that
+\(V\) is an irrep of \(A\) iff \(1_i V\) is an irrep of \(A_i\). If, on the
+other hand, there are
+multiple \(i\)'s with \(1_i V\) nonzero, then \(V\) is not irreducible, since a
+nonzero proper subrepresentation is constructed by removing one \(1_i V\)
+component from the direct sum.</p>
+<div class="qed"></div>
+<p>Therefore, we can find all irreps of \(A\) by considering each \(i\) in
+turn as the \(i\) for which \(1_i V \neq \{0\}\). For each such pair \((i, V)\)
+where \(V\) is an irrep of \(A_i\), \(V\) is also an irrep of \(A\) with
+\((a_1, \ldots, a_n)v = a_i v\); and all irreps of \(A\) are of this form.</p>
+</li>
+<li><p>Following the Hint, for every \((i, j) \in \{1, 2, \ldots, d\}^2\), let
+\(E_{ij} \in \mathrm{Mat}_d(k)\) be the matrix with 1 in the \(i\)<sup>th</sup>
+row of the \(j\)<sup>th</sup> column and 0's everywhere else. Let \(V\) be a
+finite-dimensional representation of \(\mathrm{Mat}_d(k)\), and let
+\(v \in V\). Now since \(E_{11} + \ldots + E_{dd}\) is the identity, it
+follows that \(v = E_{11}v + \ldots + E_{dd}v\). So each \(v \in V\) can be
+written as \(v = \sum_{i=1}^d v_i\) where \(v_i \in E_{ii}V\) for every
+\(i\). Furthermore, this decomposition is unique since left-multiplying by
+\(E_{jj}\) yields \(E_{jj} v = v_j\) for each \(j\).
+We conclude that
+\begin{equation}
+V = \bigoplus_{i=1}^d E_{ii}V \label{eqn:matdirectsum}
+\end{equation}</p>
+<p>Also, for every \(v \in E_{11}V\), and for every \(i \in \{1, 2, \ldots,
+d\}\), we have \(E_{ii}E_{i1}v = E_{i1}v\), so \(E_{i1}v \in E_{ii}V\). Let
+\(\Phi_i: E_{11}V \to E_{ii}V\) be defined by \(\Phi_i(v) = E_{i1}v\). Observe
+that if \(w \in E_{ii}V\), then the equation \(w = E_{i1}v\)  has exactly one
+solution: left-multiplying by \(E_{1i}\) yields \(v = E_{1i}w\), and indeed
+\(E_{i1}(E_{1i}w) = E_{ii}w = w\). Therefore \(\Phi_i\) is one-to-one and
+onto.</p>
+<p>Fix \(v \in E_{11}V \setminus \{0\}\), and let \(S(v) = \langle E_{11}v,
+E_{21}v, \ldots, E_{d1}v\rangle\). Since each \(\Phi_i\) is one-to-one, it
+follows that none of the \(E_{i1}v\)'s vanish, and since each lies in
+\(E_{ii}V\), it follows from \((\ref{eqn:matdirectsum})\) that they are all
+linearly independent. So \(S(v)\) has
+dimension \(d\), and can be put into isomorphism with \(k^d\) (with standard
+basis \(\{e_1, \ldots, e_d\}\)), with the mapping given by
+\(E_{i1}v \mapsto e_i\). If
+\(a \in \mathrm{Mat}_d(k)\), write \(a = \sum_{j,k} c_{jk} E_{jk}\); then for
+each \(i\), \(a E_{i1} v =
+\sum_{j,k} c_{jk} E_{jk} E_{i1}v = \sum_j c_{ji} E_{j1}v \in S(v)\), so
+\(S(v)\) is a subrepresentation of \(V\); also, since \(a e_i =
+\sum_{j,k} c_{jk} E_{jk} e_i = \sum_j c_{ji} e_j\), it follows that \(S(v)\)
+and \(k^d\) are in fact isomorphic as representations. So \(V\) is irreducible
+iff \(V\) is isomorphic to \(k^d\) as a representation of
+\(\mathrm{Mat}_d(k)\). (Since
+\(\mathrm{Mat}_d(k)\) is finite-dimensional, it cannot, of course, have any
+infinite-dimensional irreps either.)</p>
+<p>Fix a basis \(\{v_1, v_2, \ldots, v_k\}\) of \(E_{11}V\). Suppose \(v \in
+V\) is given. Using \((\ref{eqn:matdirectsum})\) and the fact that each
+\(\Phi_i\) is an isomorphism, we see that there is a unique set of coefficients
+\(c_{ij}\) such that \(v = \sum_{j=1}^k \sum_{i=1}^d c_{ij} E_{i1} v_j\).
+Therefore \(V = S(v_1) \oplus S(v_2) \oplus \ldots \oplus S(v_k)\) as vector
+spaces. And since each \(S(v_j)\) is a subrepresentation of \(V\), we conclude
+that \(V = S(v_1) \oplus \ldots \oplus S(v_k)\) as representations.</p></li>
+<li>Let \(A = \bigoplus_{i=1}^r A_i\) where \(A_i = \mathrm{Mat}_{d_i}(k)\). By
+part (a), every irrep of \(A\) is obtained as an irrep of one of the \(A_i\)'s.
+By part (b), the only irrep of \(A_i\) is \(k^i\). Therefore all irreps of
+\(A\) are given by \(V_1 = k^{d_1}, V_2 = k^{d_2}, \ldots, V_r = k^{d_r}\).
+If \(V\) is a general finite-dimensional representation of \(A\), then by the
+Lemma proven in part (a), we can write \(V = \oplus_{i=1}^r 1_i V\). Each
+\(1_i V\) is a representation of \(A_i\) so by part (b), it decomposes as a
+direct sum of \(k^{d_i}\)'s, and we are done.</li>
+</ol>

@@ -1,0 +1,473 @@
+<h2>Miscellaneous problems for Chapter 7</h2>
+<p><span class="problem">Problem 7.M.1</span> Every element can be written as
+some product of alternating \(x\)'s and \(y\)'s: we never need to use
+\(x^{-1}\) or \(y^{-1}\) since these are just \(x\) and \(y\) respectively, and
+any two adjacent \(x\)'s or \(y\)'s can be cancelled. The analysis proceeds by
+cases:</p>
+<ul>
+<li>Case 1: The group is infinite. The none of the nontrivial
+alternating words can be equal to the identity, because if for example
+\(xyxy = 1\), then conjugation by \(y\) implies that \(yxyx = 1\) as well, and
+all longer words would then just be equal to one of the shorter words.
+Furthermore, two different alternating words must represent different elements:
+if \(W_1 = W_2\) then \(W_1 W_2^{-1} = 1\) and we could derive a contradiction.
+So \(G\) consists precisely of the elements \(1, x, y, xy, yx, xyx,
+yxy, \ldots\), which are all distinct; because the multiplication rule is
+known, there is at most one isomorphism class of such groups.
+This group can be explicitly constructed using the generators
+\[
+x = \begin{pmatrix} 0 &amp; t \\ t^{-1} &amp; 0 \end{pmatrix}, \qquad
+y = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}
+\]
+where \(t\) is a formal symbol (but can be replaced by any nonzero number that
+isn't a root of unity); it consists of all diagonal matrices with the
+elements \(t^n\) and \(t^{-n}\) for each \(n \in \mathbb{Z}\) as well as all
+antidiagonal matrices of this form.</li>
+<li>Case 2: The group is finite. Then some alternating word has
+to equal the identity. Say the shortest alternating
+word that equals the identity has length \(n\). If \(n\) is odd, then the first
+and last factor are the same, for example, \(xyxyx = 1\). Conjugation first by
+\(x\) and then by \(y\) yields \(x = 1\), a contradiction. This occurs for all
+odd \(n\), therefore \(n\) must be even. Write \(z = xy\); clearly \(z^{-1} =
+yx\). Write \(n = 2m\). By assumption, the element \(z\) has order \(m\);
+furthermore, it is easy to see by direct conjugation with \(x\) and \(y\) that
+\(\langle z \rangle\) is a normal subgroup of \(G\). Now each alternating word
+of odd length that starts with \(x\) can be written as \(xz^{-i}\) where \(i\)
+is half of one less than the length of the word. If an alternating word \(W\)
+of odd length starts with \(y\), say \(W = yz^i\), then \(xW =
+xyz^i = z^{i+1}\) so that \(W = xz^{i+1}\). This establishes that \(G =
+\langle x \rangle \langle z \rangle\). Note that \(x \notin \langle z
+\rangle\) because if \(x = z^i\) for some \(i\) then multiplying both sides by
+\(x\) would give an odd-length word equal to 1, which we already argued can't
+happen. By Theorem 2.11.4, \(G = \langle x\rangle \langle z \rangle\), and by
+direct calculation, \(xz^ix^{-1} = z^{-i}\). So \(G \cong D_m\). The generators
+\(x\) and \(y\) could be two reflections with the angle \(\pi/m\) between their
+lines.</li>
+</ul>
+
+<p><span class="problem">Problem 7.M.2</span> We can do this by direct
+calculation. Suppose \(g = x^i\) for some \(i\). Then \(HgH\) consists of
+the elements \(1x^i 1, rx^i 1, 1x^i r, rx^i r\), which respectively equal
+\(x^i, x^{-i}r, x^i r, x^{-i}\). If \(n \divides 2i\), then this is really only
+two elements \(x^i, x^i r\); otherwise it is four elements. Since these
+double cosets already contain among them all elements of the form \(x^j r\) as
+well, we are done.</p>
+
+<p><span class="problem">Problem 7.M.3(a)</span>
+Let \(H\backslash G/H\) denote the set of double cosets of \(H\) in \(G\)
+and let \(\mathcal{O}\) denote the orbits of \(S \times S\). Define \(f:
+H\backslash G/H \to \mathcal{O}\) as follows: \(f(HgH)\) is the orbit
+containing the element \((s_0, gs_0)\). We will first show that this is
+well-defined. Suppose \(g, g' \in G\) with \(HgH = Hg'H\). Then \(g' \in HgH\),
+so write \(g' = h_1 g h_2\) for some \(h_1, h_2 \in H\). Then \((s_0, g's_0) =
+(s_0, h_1 g h_2 s_0) = (s_0, h_1 g s_0) = h_1 (s_0, gs_0)\), so \((s_0,
+g's_0)\) belongs to the same orbit as \(s_0, gs_0\). So \(f\) is well-defined.
+Next, since \(G\) acts transitively on \(S\), the image of \(f\) contains all
+orbits that contain an element of the form \((s_0, s)\) where \(s \in S\), and
+again, since \(G\) acts transitively on \(S\), every orbit of \(S \times S\)
+under \(G\) contains some element of this form; therefore \(f\) is surjective.
+Finally, we will show that \(f\) is injective too. Suppose \(f(Hg_1 H) =
+f(Hg_2 H)\). Then \((s_0, g_2 s_0) = g'(s_0, g_1 s_0)\) for some \(g' \in G\).
+But then \(g' s_0 = s_0\), so \(g' \in H\). Write \(h_1 = g'\). Then
+\((s_0, g_2 s_0) = (s_0, h_1 g_1 s_0)\). Since \(g_2 s_0 = h_1 g_1 s_0\), it
+follows that \(s_0 = g_2^{-1} h_1 g_1 s_0\). This implies \(g_2^{-1} h_1 g_1 =
+h_2\) for some \(h_2 \in H\), whence \(g_2 = h_1 g_1 h_2^{-1}\). That is,
+\(g_2 \in Hg_1 H\), so the two double cosets \(Hg_1 H\) and \(Hg_2 H\) are the
+same. This establishes that \(f\) is injective. So \(f\) is a bijection.</p>
+
+<p><span class="problem">Problem 7.M.4</span> \(H\) is not necessarily normal
+in \(G\). For example, let \(G\) be \(A_4\), let \(K\) be the normal
+Klein four-subgroup of \(G\), and let \(H\) be a subgroup of \(K\) of order
+two. Then \(H\) is not normal in \(G\). For example, \(\{1, (1\ 2)(3\ 4)\}\) is
+not normal in \(A_4\).</p>
+
+<p><span class="problem">Problem 7.M.5</span></p>
+<ol class="subproblems">
+<li>Since \(\ker \pi = N\), it is obvious that \(\ker \pi|_H\) is just
+\(H \cap N\), and \(\ker \pi|_{HN}\) is just \(HN \cap N\), which is just
+\(N\) since \(N \subseteq HN\).</li>
+<li>By the first isomorphism theorem, \(H/(H \cap N) = H/\ker \pi|_H \cong
+\pi(H)\) and \(HN/N = HN/\ker \pi|_{HN} \cong \pi(HN)\). But \(\pi(H) =
+\pi(HN)\) since \(N = \ker \pi\). Therefore \(H/(H \cap N) \cong HN/N\).</li>
+</ol>
+<div class="qed"></div>
+
+<p><span class="problem">Problem 7.M.6</span></p>
+<ol class="subproblems">
+<li>For every \([h N] \in \overline{H}\) and \([gN] \in \overline{G}\), we have
+that \([gN][hN][gN]^{-1} = [ghg^{-1}N] = [h'N]\) where \(h' = ghg^{-1}\). Since
+\(H\) is normal in \(G\), \(h' \in H\), and \([h'N] \in \overline{H}\).
+Therefore \(\overline{H}\) is normal in \(\overline{G}\).</li>
+<li>Let \(\pi_1 : G \to \overline{G}\) and \(\pi_2 : \overline{G} \to
+\overline{G}/\overline{H}\) be the canonical homomorphisms. If \(h \in H\),
+then \(\pi_2(\pi_1(h)) = \pi_2([hN]) = 1\) since \([hN] \in \overline{H}\).
+Conversely, if \(g \in G\) satisfies \(\pi_2(\pi_1(g)) = 1\), then
+\(\pi_1(g) \in \ker \pi_2 = \{[hN] \mid h \in H\}\), that is, \(\pi_1(g) =
+[hN]\) for some \(h \in H\). But \(\pi_1(g) = [gN] = [hN]\) so \(g \in hN\)
+implying \(g \in H\) since \(N \subseteq H\). So \(\ker(\pi_2 \circ \pi_1) =
+H\). By the first isomorphism theorem, \(\overline{G}/\overline{H} =
+\im(\pi_2 \circ \pi_1) \cong G/\ker(\pi_2 \circ \pi_1) = G/H\).</li>
+</ol>
+<div class="qed"></div>
+
+<p><span class="problem">Problem 7.M.7</span></p>
+<ol class="subproblems">
+<li>\(p_1\) can be written as a product of cycles involving only elements in
+\(U_1\), <i>i.e.,</i> \(p_1 = C_1 C_2 \ldots C_m\). Likewise \(p_2 =
+D_1 D_2 \ldots D_n\) where all the \(C\)'s and \(D\)'s are disjoint. Therefore
+\(p_1 p_2 = p_2 p_1 = C_1 C_2 \ldots C_m D_1 D_2 \ldots D_n\).</li>
+<li>Let \(x\) be the single element in \(U_1 \cap U_2\). Let \(C_1\) be the
+cycle in \(p_1\) that contains \(x\) and let \(D_1\) be the cycle in \(p_2\)
+that contains \(x\). Then \(p_1 p_2 = C_1 D_1 (C_2 C_3 \ldots C_m D_2 D_3
+\ldots D_n)\) and \(p_1^{-1} p_2^{-1} = C_1^{-1} D_1^{-1}
+(C_2 C_3 \ldots C_m D_2 D_3 \ldots D_n)^{-1}\) and the commutator is simply
+that of \(C_1\) and \(D_1\). Write \(C_1 = (x\ a_1\ a_2 \ldots a_q), D_1 =
+(x\ b_1\ b_2 \ldots b_r)\). Then direct calculation shows
+\begin{align*}
+C_1 D_1 &amp;= (x\ b_1\ b_2 \ldots b_r\ a_1\ a_2 \ldots a_q) \\
+C_1^{-1} D_1^{-1} &amp;= (x\ b_r\ b_{r-1} \ldots
+b_1\ a_q\ a_{q-1} \ldots a_1) \\
+[C_1, D_1] &amp;= (x\ a_1\ b_1)
+\end{align*}</li>
+</ol>
+
+<p><span class="problem">Problem 7.M.8</span> Let \(C\) be a left coset of
+\(H\) in \(G\). Then there is some \(g\) such that \(C = gH\), and the set
+\(C^{-1}\) consisting of the inverses of elements of \(C\) is equal to
+\(H^{-1}g^{-1} = Hg^{-1}\), which is a right coset. It is easy to see that the
+inverse of a right coset is similarly a left coset. This establishes a
+bijection between the set of left cosets and the set of right cosets.</p>
+<div class="qed"></div>
+
+<p><span class="problem">Problem 7.M.9</span> Suppose \(x\) is conjugate to
+\(x^{-1}\). Let \(C\) denote the conjugacy class of \(x\). Whenever \(C\)
+contains the element \(y = gxg^{-1}\), it also contains
+the element \(g^{-1}x^{-1}g\), which is the inverse of \(y\). Since the group
+is of odd order, no element other than the identity equals its own inverse.
+Obviously \(C\) doesn't contain the identity, so the elements of \(C\) can all
+be placed into pairs with their inverses.
+Therefore \(|C|\) is even. A group of odd order can't contain a conjugacy class
+of even cardinality, so a contradiction has been reached.</p>
+<div class="qed"></div>
+
+<p><span class="problem">Problem 7.M.10</span> Let \(S^g\) denote the number of
+elements of \(S\) that are fixed by \(g \in G\). Since \(G\) acts transitively,
+by Burnside's lemma, \(|G| = \sum_{g\in G} S^g\). But \(S^1 \ge 2\), so
+\(\sum_{g \in G \setminus \{1\}} S^g \le |G| - 2\). By the pigeonhole
+principle, at least one of the \(|G| - 1\) summands must be zero.</p>
+<div class="qed"></div>
+
+<p><span class="problem">Problem 7.M.11</span> Most of the work involves the
+matrices of order two with determinant &minus;1. The following two Lemmas
+involve such matrices:</p>
+<p><em>Lemma 1:</em> Suppose
+\[
+M = \begin{pmatrix} a &amp; b \\ c &amp; -a \end{pmatrix}
+\]
+where \(\det M = -1\). Then \(M\), regarded as an element of
+\(GL_2(\mathbb{Z})\), is conjugate to one of the following matrices:
+\[
+J = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}, \qquad
+K = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix}
+\]
+where \(x \in \mathbb{Z}\).</p>
+<p><em>Proof:</em> If \(a \lt 0\), replace \(M\) by its conjugate \(JMJ^{-1}\).
+We will therefore assume from this point on that \(a \ge 0\).  Let
+\[
+E = \begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}, \qquad
+E' = \begin{pmatrix} 1 &amp; 0 \\ 1 &amp; 1 \end{pmatrix}
+\]
+and consider the following conjugates of \(M\):
+\begin{alignat*}{2}
+M_1 &amp;= E^{-1} M E
+&amp;&amp;=
+\begin{pmatrix} a - c &amp; 2a + b - c \\ c &amp; -a + c \end{pmatrix} \\
+M_2 &amp;= E M E^{-1}
+&amp;&amp;=
+\begin{pmatrix} a + c &amp; -2a + b - c \\ c &amp; -a - c \end{pmatrix} \\
+M_3 &amp;= E' M E'^{-1}
+&amp;&amp;=
+\begin{pmatrix} a - b &amp; b \\ 2a - b + c &amp; -a + b \end{pmatrix} \\
+M_4 &amp;= E'^{-1} M E'
+&amp;&amp;=
+\begin{pmatrix} a + b &amp; b \\ -2a - b + c &amp; -a - b \end{pmatrix}
+\end{alignat*}
+If \(c \ne 0\) and \(|c| \le a\), then at least one of \(M_1\) and \(M_2\)
+has a top-right entry which is nonnegative and strictly less than \(a\).
+If \(b \ne 0\) and \(|b| \le a\), then at least one of \(M_3\) and \(M_4\) has
+a top-right entry which is nonnegative and strictly less than \(a\).
+If any of
+these four conjugates has this property, call it \(M'\). Note that \(M'\) has
+the same properties as \(M\), that is, \(M'_{11} \ge 0\), \(M'_{22} =
+-M'_{11}\), and \(\det M' = -1\). Let us suppose that
+repeated conjugation is used to reduce the absolute value of the diagonal
+entries, giving a sequence of conjugates \(M, M', M'', \ldots, M_0\) where
+\(M_0\) is a matrix for which no further reduction is possible. Write
+\[
+M_0 = \begin{pmatrix} a_0 &amp; b_0 \\ c_0 &amp; -a_0 \end{pmatrix}
+\]
+where \(a_0 \ge 0\) and \(\det M_0 = -1\). One of the following must now
+hold:</p>
+<ul>
+<li>Case 1:
+Both \(b_0\) and \(c_0\) are nonzero. Then it must be that \(|b_0| \ge
+a_0 + 1\) and \(|c_0| \ge a_0 + 1\), otherwise a further reduction would be
+possible. Then \(|b_0c_0| \ge a_0^2 + 2a_0 + 1\), so
+\(1 = |\det M_0| = |-a_0^2 - b_0c_0| \ge 2a_0 + 1\) implying \(a_0 = 0\).
+Since \(b_0, c_0 \in \mathbb{Z}\), the condition \(\det M_0 = -1\) implies that
+either \(M_0 = J\) or \(M_0 = -J\). If \(M_0 = J\) then \(M\) is conjugate to
+\(J\). If \(M_0 = -J\) then \(KM_0K^{-1} = J\), and again \(M\) is conjugate to
+\(J\).</li>
+<li>Case 2: \(b_0 = 0\) and \(c_0\) is even. Then the condition \(\det M_0 =
+-1\) implies \(a_0 = 1\). Then \(E'^{-c_0/2}M_0E'^{c_0/2} = K\). Therefore
+\(M\) is conjugate to \(K\).</li>
+<li>Case 3: \(c_0 = 0\) and \(b_0\) is even. This is similar to Case 2. Here
+\(E^{b_0/2} M_0 E^{-b_0/2} = K\). Again \(M\) is conjugate to \(K\).</li>
+<li>Case 4: \(b_0 = 0\) and \(c_0\) is odd. As in Case 2, repeated conjugation
+by \(E'\) or \(E'^{-1}\) can be used to change the value of \(c_0\) by 2 at a
+time, yielding the conjugate
+\[
+M_1 = \begin{pmatrix} 1 &amp; 0 \\ 1 &amp; -1 \end{pmatrix}
+\]
+Then \(E^{-1} M_1 E = J\), so \(M\) is conjugate to \(J\).</li>
+<li>Case 5: \(c_0 = 0\) and \(b_0\) is odd. As in Case 3, repeated conjugation
+by \(E\) or \(E^{-1}\) can be used to obtain a conjugate
+\[
+M_1 = \begin{pmatrix} 1 &amp; 1 \\ 0 &amp; -1 \end{pmatrix}
+\]
+Then \(E' M_1 E'^{-1} = J\), so \(M\) is conjugate to \(J\).</li>
+</ul>
+<div class="qed"></div>
+<p><em>Lemma 2:</em> Say a matrix \(M\) is of <em>K-type</em> if \(M \in
+GL_2(\mathbb{Z})\), the two diagonal entries are odd, and the other two entries
+are odd. All conjugates of a K-type matrix are of K-type.</p>
+<p><em>Proof:</em> We showed in
+<a href="/artin/2.M">Problem 2.M.14</a> that the matrices \(E, E'\) generate
+\(SL_2(\mathbb{Z})\). This implies that \(E, E'\) together with a matrix of
+determinant &minus;1, such as \(J\), are sufficient to generate
+\(GL_2(\mathbb{Z})\).  From the explicit expressions given in
+the proof of Lemma 1, observe that the conjugate of a K-type matrix by any of
+\(E, E^{-1}, E', E'^{-1}\) is also of K-type. The conjugate of a K-type matrix
+by \(J\) is also of K-type (note that \(J\) is its own inverse). Since
+\(E, E', J\) generate \(GL_2(\mathbb{Z})\), the desired result follows.</p>
+<div class="qed"></div>
+<p><em>Corollary:</em> The matrices \(J\) and \(K\) are not conjugate to each
+other in \(GL_2(\mathbb{Z})\).</p><div class="qed"></div>
+<p>We are now ready to prove the main result. Suppose \(M\) is of order 2 in
+\(GL_2(\mathbb{Z})\). If \(\det M = 1\) then
+\begin{align*}
+M &amp;= \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} \\
+M^{-1} &amp;= \begin{pmatrix} d &amp; -b \\ -c &amp; a \end{pmatrix}
+\end{align*}
+Now \(M = M^{-1}\) so \(a = d, b = 0, c = 0\), and the condition \(\det M = 1\)
+then gives \(a = \pm 1\). So \(M = \pm I\).</p>
+<p>If on the other hand \(\det M = -1\) then
+\[
+M^{-1} = \begin{pmatrix} -d &amp; b \\ c &amp; -a \end{pmatrix}
+\]
+whence \(a = -d\) and \(M\) is of the form described in Lemma 1. This implies
+that \(M\) belongs to the conjugacy class of either \(J\) or \(K\). By Lemma 2,
+if \(M\) is of K-type then it's conjugate to \(K\), otherwise it's conjugate
+to \(J\).</p>
+<p>Using the fact that scalar matrices are similar only to themselves, and that
+conjugation preserves the determinant, we conclude that there are four
+conjugacy classes of elements of \(GL_2(\mathbb{Z})\) of order 2:
+<ol>
+<li>The conjugacy class consisting only of \(I\);</li>
+<li>The conjugacy class consisting only of \(-I\);</li>
+<li>The conjugacy class of elements of order 2 with determinant &minus;1 that
+are of K-type;</li>
+<li>The conjugacy class of elements of order 2 with determinant &minus;1 that
+are not of K-type.</li>
+</ol>
+</p>
+
+<p><span class="problem">Problem 7.M.12</span></p>
+<ol class="subproblems">
+<li>Let \(M_a = \begin{pmatrix} 0 &amp; -1 \\ 1 &amp; a\end{pmatrix}\). Suppose
+\begin{equation}
+M_a \begin{pmatrix} b &amp; c \\ d &amp; e \end{pmatrix} =
+\begin{pmatrix} b &amp; c \\ d &amp; e \end{pmatrix} M_a
+\label{eqn:M_a_comm}
+\end{equation}
+By multiplying out both sides, we arrive at the system of equations
+\begin{align*}
+-d &amp;= c \\
+-e &amp;= -b + ac \\
+b + ad &amp;= e \\
+c + ae &amp;= -d + ae
+\end{align*}
+The first and second equations together imply the third and fourth. It is clear
+that choosing values of \(b\) and \(d\) is sufficient to determine unique
+values for \(c\) and \(e\), but the condition \(be - cd = 1\) must be satisfied
+for the matrix to lie in \(SL_2(\mathbb{F}_5)\). Substituting the expressions
+for \(c\) and \(e\) in terms of \(b\) and \(d\) yields
+\begin{equation*}
+b^2 + abd + d^2 = 1
+\end{equation*}
+For all \(a\), the solutions \((b, d) = (0, \pm 1), (\pm 1, 0)\) exist,
+corresponding to \(\pm M_a\) and \(\pm I\). For either \(b\) or \(d\) zero, it
+is easy to see that no other solutions exist for any \(a\).
+If \(b\) and \(d\) are nonzero, then \(bd\) is nonzero and there is exactly one
+\(a\) for which \(abd = 1 - b^2 - d^2\), giving the solutions:
+<ul>
+<li>\(a = 0\): no other solutions.</li>
+<li>\(a = 1\): \((1, 4), (4, 1)\)</li>
+<li>\(a = 2\): \((1, 3), (2, 2), (2, 4), (3, 1), (3, 3), (4, 2)\)</li>
+<li>\(a = 3\): \((1, 2), (2, 1), (2, 3), (3, 2), (3, 4), (4, 3)\)</li>
+<li>\(a = 4\): \((1, 1), (4, 4)\)</li>
+</ul>
+So the centralizers have orders 4, 6, 10, 10, 6 in those respective cases. We
+now determine the subgroup structure.
+<ul>
+<li>\(a = 0\): The matrix \(M\) has order 4, so the centralizer \(Z(M)\), which
+is known to have order 4, must simply be \(\langle M\rangle \cong C_4\).</li>
+<li>\(a = 1\): The matrix \(M\) has order 6 and \(Z(M)\) has order 6,
+therefore \(Z(M) = \langle M \rangle \cong C_6\).</li>
+<li>\(a = 2\): The matrix \(-M\) has order 10 and \(Z(M)\) has order 10,
+therefore \(Z(M) = \langle -M \rangle \cong C_{10}\).</li>
+<li>\(a = 3\): The matrix \(M\) has order 10 and \(Z(M)\) is known to have
+order 10, therefore \(Z(M) = \langle M \rangle \cong C_{10}\).</li>
+<li>\(a = 4\): The matrix \(-M\) has order 6 and is known to belong to
+\(Z(M)\), which has order 4, so \(Z(M) = \langle -M \rangle \cong C_6\).</li>
+</ul>
+</li>
+<li><p>The order of \(SL_2(\mathbb{F}_5)\) is \(\frac{1}{4}(5^2 - 1)(5^2 - 5) =
+120\). The result of part (a) implies the existence of conjugacy classes of
+orders 30, 20, 12, 12, and 20, which are necessarily disjoint since conjugation
+preserves the trace. The matrices \(I\) and \(-I\) belong to
+singleton conjugacy classes. This leaves 24 elements unaccounted for.</p>
+<p>We know that the conjugacy class of \(M_2\)
+contains only elements of trace 2, yet case analysis shows that there are 25
+elements in \(SL_2(\mathbb{F}_p)\) of trace 2, of which 13 have been
+accounted for, namely the 12 belonging to the conjugacy class of \(M_2\), and
+the identity.  We therefore look for 12 additional elements of trace 2. We will
+make use of the following Lemmata:</p>
+<p><em>Lemma 1:</em> Let \(a, b \in \mathbb{F}_p \setminus \{0\}\). Then the
+following matrices in \(SL_2(\mathbb{F}_p)\),
+\[
+N_a = \begin{pmatrix} 1 &amp; a \\ 0 &amp; 1 \end{pmatrix}, \qquad
+N_b = \begin{pmatrix} 1 &amp; b \\ 0 &amp; 1 \end{pmatrix}
+\]
+are conjugate to each other iff \(a/b\) is the square of some element of
+\(\mathbb{F}_p\).</p>
+<p><em>Proof:</em> Expand out the equation \(AN_a = N_bA\) and use the
+condition \(\det N = 1\). The details are left as an exercise.</p>
+<div class="qed"></div>
+<p><em>Lemma 2:</em> The centralizer of the matrix \(N_a\) defined in Lemma 1
+is the set of matrices of the form \(\begin{pmatrix} x &amp; y \\
+0 &amp; x \end{pmatrix}\) with determinant 1. The number of such matrices is
+\(2p\) whenever \(p \ne 2\).</p>
+<p><em>Proof:</em> Expand out the equation \(AN_a = N_aA\) and solve. Once the
+form of the matrices in \(Z(N_a)\) has been found, observe that \(y\) can be
+chosen arbitrarily while \(x\) can be \(\pm 1\); this proves that there are
+\(2p\) such matrices. The details are left as an exercise.</p>
+<div class="qed"></div>
+<p>According to Lemma 1, the matrices \(N_1\) and \(N_2\) are not conjugate in
+\(SL_2(\mathbb{F}_p)\) but both have trace 2. According to Lemma 2, both have
+a centralizer of order 10 and therefore a conjugacy class of size 12.
+At least one of the two conjugacy classes is not that of \(M_2\) (we don't
+bother to determine which; it doesn't matter), so it is a conjugacy class of
+size 12 that hasn't previously been accounted for.
+The matrices \(-N_1\) and \(-N_2\) are also not conjugate to
+each other and each has trace 3; this gives us an additional conjugacy class of
+size 12 that doesn't contain \(M_3\). We conclude that the class equation of
+\(SL_2(\mathbb{F}_5)\) is \(1 + 1 + 12 + 12 + 12 + 12 + 20 + 20 + 30\).</p>
+</li>
+<li><p><em>This solution is based on hints provided by a contributor who
+prefers to remain anonymous.</em></p>
+<p>We will assume that \(p\) is an odd prime; the special case \(p = 2\) can be
+dealt with separately. The order of \(SL_2(\mathbb{F}_p)\) is
+\(\frac{1}{p-1}(p^2 - 1)(p^2 - p) = p(p+1)(p-1)\).</p>
+<p>As we saw in Problem 7.M.12, the number of solutions to the equation
+\(x^2 + axy + y^2 = 1\) in \(\mathbb{F}_p\) is equal to the order of the
+centralizer of the matrix
+\[
+M_a = \begin{pmatrix} 0 &amp; -1 \\ 1 &amp; a \end{pmatrix}
+\]
+as ordered pairs \((x, y)\) satisfying \(x^2 + axy + y^2 = 1\) (then called
+\((b, d)\)) are in one-to-one correspondence with solutions to
+one-to-one correspondence with solutions to \eqref{eqn:M_a_comm}.
+To find \(|Z(M_a)|\), we note that the characteristic
+polynomial of \(M_a\) is \(\lambda^2 - a\lambda + 1\) and analyze the following
+cases into which \(M_a\) might fall:</p>
+<ul>
+<li><p>Case 1: \(M_a\) has two distinct eigenvalues in \(\mathbb{F}_p\). Since
+\(\det M_a = 1\), these two eigenvalues must be \(\lambda\) and
+\(\lambda^{-1}\) for some \(\lambda \in \{2, \ldots, p - 2\}\). In this case,
+\(M_a\) is similar to the matrix \(\diag(\lambda, \lambda^{-1})\), so
+\(|Z(M_a)| = |Z(\diag(\lambda, \lambda^{-1}))|\). But the latter matrix
+commutes only with diagonal matrices, so its centralizer in
+\(SL_2(\mathbb{F}_p)\) has order \(p - 1\).</p>
+<p>This case occurs when the discriminant of the characteristic polynomial,
+namely \(a^2 - 4\), is a nonzero perfect square in \(\mathbb{F}_p\). Although
+it's difficult to characterize the values of \(a\) for which this happens, for
+the purposes of part (d), we will only be interested in the total number of
+such \(M_a\) that fall into Case 1. Indeed, when we rewrite the characteristic
+polynomial in the form \(\lambda(\lambda - a) + 1\), we see that each
+\(\lambda \in \{2, \ldots, p-2\}\) has exactly one value of \(a\) for which
+the characteristic polynomial vanishes, giving a total of \((p-3)/2\) values of
+\(a\) for which \(M_a\) falls into Case 1, since each such \(a\) is shared by
+two values of \(\lambda\).</p></li>
+<li><p>Case 2: \(M_a\) has a single eigenvalue in \(\mathbb{F}_p\) and is
+diagonalizable. Then \(M_a\) is a diagonal matrix, which is
+impossible.</p></li>
+<li><p>Case 3: \(M_a\) has a single eigenvalue in \(\mathbb{F}_p\) and is
+defective. Again, this single eigenvalue must be 1 or -1. Suppose it is 1.
+Then \(N_1\) is the Jordan form of \(M_a\), so by Lemma 2,
+\(|Z(M_a)| = |Z(N_1)| = 2p\).  If the single eigenvalue is -1, then the
+Jordan form of \(M_a\) is \(-N_{-1}\), and a similar result holds.</p>
+<p>This case occurs when the discriminant vanishes, that is, \(a^2 - 4 = 0\),
+which occurs precisely when \(a = \pm 2\).
+When \(a = +2\) we get the double eigenvalue \(-1\), while when
+\(a = -2\) we get the double eigenvalue \(+1\).</p></li>
+<li><p>Case 4: \(M_a\) has no eigenvalues in \(\mathbb{F}_p\), that is, there
+is no \(\lambda \in \mathbb{F}_p\) for which \(\lambda^2 - a\lambda + 1 = 0\),
+because \(a^2 - 4\) is not a perfect square in \(\mathbb{F}_p\). The number of
+values of \(a\) for which this occurs is obtained by subtracting the counts
+from Case 1 and Case 3 from \(p\), giving \((p-1)/2\).</p>
+<p>For this case, in order
+to count the solutions to \(x^2 + axy + y^2 = 1\), we use Artin's hint, setting
+\(y = kx + 1\), which will be possible whenever \(x \ne 0\). The equation then
+becomes \((k^2 + ak + 1)x^2 + (a + 2k)x = 0\), which potentially has a nonzero
+solution \(x = -\frac{a + 2k}{k^2 + ak + 1}\). Indeed, the denominator cannot
+vanish for any value of \(k\), for if it did, then \(\lambda = -k\) would be a
+solution to the equation \(\lambda^2 - a\lambda + 1 = 0\), which by assumption
+does not occur. Thus, each value of \(k\) other than \(-a/2\) yields a nonzero
+value of \(x\) and a corresponding value of \(y\) solving \(x^2 + axy + y^2 =
+1\), for a total of \(p - 1\) such solutions. When \(x = 0\), there are
+obviously exactly two solutions, namely \((0, \pm 1)\). Thus, the total number
+of solutions is \(p + 1\).</p></li>
+</ul>
+</li>
+<li><p>Case 1 above yields \((p-3)/2\) conjugacy classes, each of order
+\(|SL_2(\mathbb{F}_p)|/(p-1) = p(p+1)\).  Case 3 yields 2 further
+conjugacy classes of order \(|SL_2(\mathbb{F}_p)|/(2p) = (p+1)(p-1)/2\). Case
+4 yields \((p-1)/2\) further conjugacy classes of order
+\(|SL_2(\mathbb{F}_p)|/(p+1) = p(p-1)\). These \(p\) conjugacy classes are all
+disjoint since no two \(M_a\)'s are similar to each other, as they have
+unique traces. They therefore account for a total of
+\(p(p+1)(p-3)/2 + (p+1)(p-1) + p(p-1)^2/2 = p^3 - p^2 - p - 1\) elements. There
+are also two singleton conjugacy classes \(\{+I\}\) and \(\{-I\}\). This
+leaves \(p(p+1)(p-1) - (p^3 - p^2 - p + 1) = p^2 - 1\) elements unaccounted
+for.</p>
+<p>Recalling part (b), let \(b\) be some element of \(\mathbb{F}_p\) that is
+not a quadratic residue; it's easy to see that such an element always exists.
+By Lemma 1, the matrices \(N_1\) and \(N_b\) are not conjugate in
+\(SL_2(\mathbb{F}_p)\). Both have trace 2, so at most one of them can be
+conjugate to one of the \(M_a\)'s, namely \(M_2\). Again, we won't need to
+determine which it is; Lemma 2 implies that the other, also having a
+centralizer of order \(2p\), belongs to a separate conjugacy class of size
+\((p+1)(p-1)/2\). Finally, \(-N_1\) and \(-N_b\) are likewise not conjugate to
+each other but each has a centralizer of order \(2p\) and trace \(-2\), so at
+least one of them is not conjugate to \(M_{-2}\) and belongs to a separate
+conjugacy class of size \((p+1)(p-1)/2\).</p>
+<p>This accounts for all elements; the class equation of \(SL_2(\mathbb{F}_p)\)
+is:
+\[
+p(p+1)(p-1) = 1 + 1 + 4 \times \frac{(p+1)(p-1)}{2} + \frac{p-1}{2} \times
+p(p-1) + \frac{p-3}{2} \times p(p+1)
+\]
+where the notation \(m \times n\) indicates \(m\) conjugacy classes of size
+\(n\).</p></li>
+</ol>

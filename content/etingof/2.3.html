@@ -1,0 +1,95 @@
+<h2>Section 2.3. Representations</h2>
+<p><span class="problem">Parenthetical to example 2.3.3</span> We are asked to
+explain why a representation of \(A = k\langle x_1, \ldots, x_n\rangle\) is just
+a vector space \(V\) over \(k\) with a collection of arbitrary linear operators
+\(\rho(x_1), \ldots, \rho(x_n): V \to V\).</p>
+
+<p>This follows from the universal property of the free algebra: for every
+assignment of operators \(\rho_1, \ldots, \rho_n\) to the generators, there is a
+unique algebra homomorphism \(\rho : A \to \End V\) such that
+\(\rho(x_i) = \rho_i\) for each \(i\). But this is precisely a representation of
+\(A\).</p>
+<div class="qed"></div>
+
+<p><span class="problem">Parenthetical to example 2.3.6</span> We are asked to
+check that if \(\phi : V_1 \to V_2\) is an isomorphism of representations, then
+\(\phi^{-1} : V_2 \to V_1\) is also.</p>
+
+<p>Since \(\phi\) is an isomorphism of vector spaces, so is \(\phi^{-1}\). We
+need only show that \(\phi^{-1}\) is a homomorphism of representations. Let
+\(a \in A, v \in V_2\) where \(A\) is the algebra being represented. Then,
+\(\phi(\phi^{-1}(av)) = av = a\phi(\phi^{-1}(v)) = \phi(a\phi^{-1}(v))\),
+therefore, since \(\phi\) is an isomorphism,
+\(\phi^{-1}(av) = a\phi^{-1}(v)\).</p>
+<div class="qed"></div>
+
+<p><span class="problem">Problem 2.3.15</span> For finite dimensional
+representations, we perform induction on the dimension. For dimension 1, \(V\)
+itself is irreducible. For dimension \(n\), either \(V\) is irreducible itself,
+or it has a nonzero proper subrepresentation, \(V'\). Since \(\dim V' &lt; n\),
+by the inductive hypothesis, \(V'\) has an irreducible subrepresentation, which
+is also an irreducible subrepresentation of \(V\).</p>
+<div class="qed"></div>
+
+<p>For the infinite dimensional case, let \(A = k[x]\), the polynomial algebra
+with one generator. Let \(V = \mathbb{R}^\infty\), and let \(x\) act on \(V\)
+by a right shift, that is, \(x(v_1, v_2, \ldots) = (0, v_1, v_2, \ldots)\).
+We claim that this algebra has no irreducible subrepresentations. To see this,
+let \(V'\) be a nonzero subrepresentation of \(V\). Then \(V'\) contains some
+nonzero vector, say, \(v\), and therefore necessarily contains as a
+subrepresentation \(Av\) (which may be \(V'\) itself). Consider now \(Axv\),
+which is a nonzero subrepresentation of \(Av\). If the first nonzero entry of
+\(v\) is located at index \(i\), then \(xv\)'s first nonzero entry is located
+at index \(i+1\), and therefore \(v \notin Axv\). Therefore \(Axv\) is a
+nonzero proper subrepresentation of \(Av\) and of \(V'\), so \(V'\) is not
+irreducible.</p>
+<div class="qed"></div>
+
+<p><em>Remark:</em> Note that for a representation to have no irreducible
+subrepresentation, it must have no nonzero finite-dimensional
+subrepresentations, otherwise the first part of the problem would apply.</p>
+
+<span class="problem">Problem 2.3.16</span>
+<ol class="subproblems">
+<li>The operator \(\rho(z)\) is automatically an intertwining operator since
+\((az)v = (za)v\). By the corollary to Schur's lemma for algebraically closed
+fields, \(\rho(z)\) is a scalar operator. Since \(\chi_V : Z(A) \to k\) is just
+the map \(\lambda \, \mathrm{Id} \mapsto \lambda\), it is obviously a
+homomorphism.
+<div class="qed"></div></li>
+<li>Fix \(z\). Then \(V\) has a basis of generalized eigenvectors and is a
+direct sum of generalized eigenspaces of \(z\). Let \(\lambda\) be an
+eigenvalue, and suppose \((z - \lambda \, \mathrm{Id})^m v = 0\). Then
+\((z - \lambda \, \mathrm{Id})^m av = a(z - \lambda \, \mathrm{Id})^m v = 0\),
+since \((z - \lambda \, \mathrm{Id})^m\) is central. That is, the generalized
+eigenspaces are subrepresentations of \(V\). Since \(V\) is indecomposable,
+there can only be one of these, and hence a single eigenvalue of \(z\). That
+this is the scalar by which \(z\) acts on an irreducible subrepresentation
+follows from problem 2.3.15 and part (a) of this problem.
+<div class="qed"></div></li>
+<li>No, for example, for \(A = k[x]\), \(\rho(x)\) can be any Jordan block, as
+in example 2.3.14.</li>
+</ol>
+
+<p><span class="problem">Problem 2.3.17</span> Let \(a^*\) denote the element
+in \(A^{\mathrm{op}}\) corresponding to \(a \in A\). Let \(\phi \in
+\End_A{A}\). Then assign to \(\phi\) the element \((\phi(1))^*\), which belongs
+to the opposite algebra. Likewise, to an element of the opposite algebra
+\(a^*\), assign the endomorphism \(x \mapsto xa\). One can then easily verify
+that this establishes an algebra isomorphism between \(A^{\mathrm{op}}\) and
+\(\End_A{A}\).</p>
+<div class="qed"></div>
+
+<p><span class="problem">Problem 2.3.18</span> By the usual Schur's lemma,
+each \(\phi \in D\) is an isomorphism, therefore it has an inverse in the
+algebra \(D\). Since \(D\) is a division ring, \(V\) is a free \(D\)-module.
+This implies that \(\dim V \geq \dim D\) and in particular \(D\) is at most
+countably dimensional. If \(\phi\) is not a scalar, it is transcendental in
+\(\mathbb{C}\) since the latter is algebraically closed. The set of all
+elements of \(\mathbb{C}(\phi)\) of the form \(\frac{1}{\phi - k}\) with
+\(k \in \mathbb{C}\) are then linearly independent, so \(\mathbb{C}(\phi)\) is
+uncountably dimensional, and so is \(D \supseteq \mathbb{C}(\phi)\). We have
+arrived at a contradiction,
+so our assumption that some \(\phi \in D\) exists which is not a scalar must be
+false.</p>
+<div class="qed"></div>

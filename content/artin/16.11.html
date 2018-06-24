@@ -1,0 +1,50 @@
+<h2>Section 16.11. Kummer Extensions</h2>
+<p><span class="problem">Exercise 16.11.1</span> If the discriminant is not a
+square, Theorem 16.8.5 tells us that the splitting field has degree 6 over
+\(F\), therefore it cannot be obtained by adjoining a cube root.</p>
+
+<p><span class="problem">Exercise 16.11.2</span></p>
+<ol class="subproblems">
+<li><p>If \(b\) has a \(p\)<sup>th</sup> root \(\beta\) that lies in \(F\),
+then \(\beta, \zeta\beta, \ldots, \zeta^{p-1}\beta\) are \(p\) distinct roots
+of \(g\) that lie in \(F\), therefore \(g\) splits completely in \(f\).</p>
+<p>If not, let \(\beta\) denote a \(p\)<sup>th</sup> root of \(F\) in a
+splitting field \(K\). Again, the roots of \(g\) are \(\beta, \zeta\beta,
+\ldots, \zeta^{p-1}\beta\). Suppose \(g = PQ\) where \(P\) and \(Q\) are monic
+polynomials with coefficients in \(F\). One of \(P\) and \(Q\) must have
+\(\zeta^{p-1} \beta\) as a root; let us say it is \(P\). Let \(d = \deg Q\);
+the roots of \(Q\) are \(\zeta^{a_1} \beta,
+\ldots, \zeta^{a_d} \beta\) where \(a_1, \ldots, a_d\) are some distinct
+integers between 0 and \(p-2\), inclusive. The coefficient \(c\) of \(x^{d-1}\)
+in \(Q\) lies in \(F\) and is equal to \(-\beta\sum_{i=1}^d \zeta^{a_i}\).
+Since \(-\beta \notin F\), this equality can only be satisfied if
+\(\sum_{i=1}^d \zeta^{a_i} = 0\). However, since \(\{1, \zeta, \ldots,
+\zeta^{p-2}\}\) are linearly independent over \(\Q\), it follows that there are
+no terms on the left-hand side; that is, \(Q = 1\). Therefore, \(g\) is
+irreducible.</p></li>
+<li><p>A solution is given <a href="https://math.stackexchange.com/a/403963/24692">here</a>.</p></li>
+</ol>
+
+<p><span class="problem">Exercise 16.11.3</span> The conjecture is true;
+indeed, a fundamental result in Kummer theory is the generalization of Theorem
+16.11.1 to non-prime powers. However, we will only consider the case \(n = 4\)
+here, as the problem asks.</p>
+<p>By the fundamental theorem of Galois theory, the extension \(K/F\) has
+exactly one proper intermediate field \(L\), of which \(K\) is a quadratic
+extension. Thus, there is an element \(\beta \in K\) such that
+\(K = L(\beta)\) and \(\beta^2 \in L\). Let \(\sigma\) be a generator of
+\(\Gal(K/F)\). Then \(\sigma^2\) fixes \(L\), so \(\sigma^2(\beta)^2 =
+\sigma^2(\beta^2) = \beta^2\), thus \(\sigma^2(\beta) = -\beta\). Write
+\(\beta' = \sigma(\beta)\), so the \(\sigma\)-orbit of \(\beta\) is
+\(\beta \to \beta' \to -\beta \to -\beta'\).</p>
+<p>If \(\beta' = i\beta\), then let \(\alpha = \beta\). Otherwise, if
+\(\beta' = -i\beta\), then replace \(\sigma\) by \(\sigma^{-1}\) and let
+\(\alpha = \beta\). Otherwise, let \(\alpha = \beta - i\beta'\), so that
+\(\sigma(\alpha) = \beta' - i(-\beta) = i(\beta - i\beta') = i\alpha\), and
+\(\alpha \ne 0\). Thus, the orbit of \(\alpha\) under \(\sigma\) is
+\(\alpha \to i\alpha \to -\alpha \to -i\alpha\).</p>
+<p>Since \(\alpha\) isn't fixed by \(\sigma^2\), \(\alpha \notin L\), so the
+intermediate field \(F(\alpha)\) must be all of \(K\). However,
+\(\alpha^4 = (i\alpha)^4 = \sigma(\alpha)^4 = \sigma(\alpha^4)\), therefore
+\(\alpha^4\) is in the fixed field of \(\sigma\), which is \(F\).</p>
+<div class="qed"></div>

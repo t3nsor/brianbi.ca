@@ -1,0 +1,36 @@
+<p><span class="problem">Exercise 4.3.1</span> Etingof confirmed that the book
+contains an error and the condition that \(f(xi) = \sqrt{-1}f(x)\) should be
+replaced by \(f(ix) = \sqrt{-1}f(x)\).<p>
+<p>Let \(V\) denote the space of
+functions defined in the exercise. The action of
+left-multiplication by \(i\) in \(Q_8\) splits the latter into two orbits,
+\(A = \{1, i, -1, -i\}\) and \(B = \{k, -j, k, j\}\). If \(f \in V\), then
+\(f\) is uniquely determined by the value it takes on one element from each
+orbit, say \(1\) and \(k\). Therefore \(V\) is a vector space with dimension 2
+and has a basis given by \(f_1, f_2\) where \(f_1(1) = f_2(k) = 1\) and
+\(f_1(k) = f_2(1) = 0\).</p>
+<p>Suppose \(f \in V, g \in Q_8\). Then for each \(x \in Q_8\), we have
+\(g \circ f(ix) = f(ixg) = \sqrt{-1} f(xg) = \sqrt{-1} g \circ f(x)\), thus
+\(g \circ f \in V\) also. It is
+clear that \(1 \circ f = 1\) and \(gh \circ f = g \circ (h \circ f)\). So \(V\)
+is a valid representation of \(Q_8\).</p>
+<p>Direct computation shows that
+\begin{align*}
+i \circ f_1 &amp;= if_1 \\
+i \circ f_2 &amp;= -if_2 \\
+j \circ f_1 &amp;= -if_2 \\
+j \circ f_2 &amp;= -if_1 \\
+k \circ f_1 &amp;= -f_2 \\
+k \circ f_2 &amp;= f_1
+\end{align*}
+so in matrix form,
+\[
+\rho(i) = \begin{pmatrix} i &amp; 0 \\ 0 &amp; -i \end{pmatrix} \qquad
+\rho(j) = \begin{pmatrix} 0 &amp; -i \\ -i &amp; 0 \end{pmatrix} \qquad
+\rho(k) = \begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix}
+\]
+By inspection, there is no nontrivial common eigenspace of these matrices, so
+\(V\) is irreducible. (Note that (4.3.1) involves the same set of three
+matrices, but assigned differently. This can be viewed as a consequence of the
+fact that \(Q_8\) has an automorphism
+that sends \(i, j, k\) to \(j, k, i\) respectively.)</p>

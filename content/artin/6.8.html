@@ -1,0 +1,31 @@
+<h2>Section 6.8. The Operation on Cosets</h2>
+<p><span class="problem">Exercise 6.8.1</span> Yes. \(I * A = I A I^t
+= A\) and \((PQ) * A = (PQ)A(PQ)^t = PQAQ^tP^t = P(QAQ^t)P^t =
+P * (Q * A)\).</p>
+
+<p><span class="problem">Exercise 6.8.2</span> If \(g\) is in the stabilizer
+of some subset \(S \subseteq G\), then it's not hard to see that \(aga^{-1}\)
+is in the stabilizer of \(aS\). Conversely, every element \(g'\) that
+stabilizes \(aS\) must have this form, since \(a^{-1}g'a\) would stabilize
+\(S\), implying that \(g' = aga^{-1}\) where \(g\) stabilizes \(S\). By
+Proposition 6.8.1, the stabilizer of the coset \(aH\) is therefore the
+conjugate subgroup \(aHa^{-1}\).</p>
+
+<p><span class="problem">Exercise 6.8.3</span> Let \(s\) be some vertex in
+\(S\). The stabilizer of \(s\) consists of the identity operation and the
+reflection across the diagonal containing \(s\). Call this reflection \(r\),
+so \(H = \{1, r\}\). The orbit is all of \(S\). There are \(8 \div 2 = 4\) left
+cosets \(aH\), namely \(\{1, r\}, \{\rho, \rho r\}, \{\rho^2, \rho^2 r\},
+\{\rho^3, \rho^3 r\}\), which are respectively mapped by \(\epsilon\) to the
+vertices \(1s = rs = s, \rho s = \rho r s, \rho^2 s = \rho^2 r s, \rho^3 s =
+\rho^3 r s\), thus hitting all four vertices exactly once. That is,
+\(\epsilon\) is bijective as expected.</p>
+
+<p><span class="problem">Exercise 6.8.4</span> The subgroup \(H\) consists of
+all \((n-1)!\) permutations on the indices \(\{2, 3, \ldots, n\}\). Let
+\(a \in S_n\). Then the coset \(aH\) consists of permutations \(\sigma\) such
+that \(\sigma(1) = a(1)\), since \(ah(1) = a(1)\) for all \(h \in H\), since
+\(h(1) = 1\). Since the coset \(aH\) contains \((n-1)!\) elements and there
+are \((n-1)!\) permutations with \(\sigma(1) = a(1)\), the coset \(aH\) must
+contain all of them. The map (6.8.4) sends the coset \(aH\) to \(a(1)\), by
+definition.</p>

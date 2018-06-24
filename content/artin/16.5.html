@@ -1,0 +1,37 @@
+<h2>Section 16.5. Fixed Fields</h2>
+<p><span class="problem">Exercise 16.5.1</span></p>
+<ol class="subproblems">
+<li>The automorphism \(\sigma\) is an involution; the group it generates
+consists of only itself and the identity. Following Example 16.5.5, let
+\(K = \C(t + t^{-1})\). Clearly \(K\) is a subfield of the fixed field.
+Furthermore, \(t\) is a root of the polynomial \((x - t)(x - t^{-1}) =
+x^2 - (t + t^{-1})x + 1\), which has coefficients in \(K\), so the
+degree \([\C(t) : K]\) is at most 2. Since \(K\) is a subfield of the fixed
+field and the fixed field has degree 2 (by the Fixed Field Theorem), \(K\)
+itself is the fixed field.</li>
+<li>The orbit of \(t\) under \(\sigma\) is \(t, it, -t, -it, t, \ldots\), so
+\(\sigma\) generates a cyclic group of order 4. Let \(K = \C(t^4)\). Clearly
+the degree \([\C(t) : K]\) is at most 4, and \(K\) is a subfield of the fixed
+field, over which \(\C(t)\) has degree 4.
+Therefore \(K\) is itself the fixed field. </li>
+<li>Both \(\sigma\) and \(\tau\) are involutions, so the automorphism group is
+the Klein four-group. We claim that
+the fixed field is \(K = \C(t^2 + t^{-2})\). This follows from the fact that
+\(K\) is fixed by both \(\sigma\) and \(\tau\) and that \(t\) is a root of the
+polynomial \(x^4 - (t^2 + t^{-2})x^2 + 1\), so \([\C(t) : K]\) is at most
+4.</li>
+<li>\(\sigma\) has order 3 and \(\tau\) has order 2, with \(\sigma(\tau(t)) =
+\omega^{-1} t^{-1} = \omega^2 t^{-1} = \tau(\sigma^2(t))\). Therefore the
+automorphism group is the symmetric group \(S_3\) and the degree of
+\(\C(t)\) over the fixed field is 6. By similar reasoning to part (c), we find
+that the fixed field is \(\C(t^3 + t^{-3})\).</li>
+</ol>
+
+<p><span class="problem">Exercise 16.5.3</span> Since \(\C\) is algebraically
+closed, any element of an extension field of \(\C\) that is not in \(\C\) is
+automatically transcendental over \(\C\). Explicitly, suppose \(u \in \C(t)\)
+and \(u\) is algebraic over \(\C\). Then \(g(u) = 0\) for some monic polynomial
+\(g \in \C[z]\). By the fundamental theorem of calculus, we can write
+\(g(z) = (z - z_1) \ldots (z - z_n)\) where \(n = \deg g\) and \(z_i \in \C\)
+for each \(i\). Since \(g(u) = 0\), this implies \(u = z_i\) for some \(i\),
+therefore \(u \in \C\).</p>

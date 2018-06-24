@@ -1,0 +1,26 @@
+<p><em>Remark:</em> In the proof of Proposition 4.7.1 it was not obvious to me
+at first what was going on&mdash;what does \(\langle xw_i^*, w_j^*\rangle\)
+mean? After some thought, I realize the induced inner product had to be
+\(\langle w_i^*, w_j^*\rangle = \overline{\langle w_i, w_j\rangle}\); the
+complex conjugation is needed in order to ensure conjugate linearity in the
+<em>second</em> argument. Also, as pointed out in the previous section, since
+we are taking the dual here with respect to the invariant Hermitian form, it
+provides the isomorphism between the dual representation and the complex
+conjugate representation; thus \(xw_i^* = (xw_i)^*\). Combining these facts, we
+seee that \(\langle xw_i^*, w_j^*\rangle = \langle (xw_i)^*, w_j^* \rangle =
+\overline{\langle xw_i, x_j\rangle}\), as required.</p>
+<p>On \(V \otimes W^*\), the
+inner product is the obvious one induced by the inner products
+on \(V\) and \(W^*\).</p>
+<p>The proof asserts that if \(V \ne W\), then the trivial representation
+doesn't occur in \(V \otimes W^*\). This follows from the fact that
+\(\dim \Hom_G(\mathbb{C}, V \otimes W^*) = \dim \Hom_G(W, V)\), which
+was mentioned in the proof of Theorem 4.5.1; the right-hand side vanishes by
+Schur's lemma. On the other hand, if \(V = W\), then Schur's lemma for
+algebraically closed fields implies that \(\dim \Hom_G(W, V) = 1\), so there
+is exactly one copy of the trivial representation inside \(V \otimes V^*\);
+this is how we know that \(P\) projects onto the first summand.</p>
+<p>The formula for the projection of \(v_i \otimes v_{i'}^*\) to
+the subspace of \(V \otimes V^*\) isomorphic to \(\mathbb{C}\) is just the
+usual decomposition of endomorphisms into a scalar component (corresponding to
+\(\mathbb{C}\)) and a traceless component (corresponding to \(L\)).</p>

@@ -1,0 +1,79 @@
+<h2>Section 7.3. \(p\)-Groups</h2>
+<p><span class="problem">Exercise 7.3.1</span> The action of \(G\) partitions
+\(S\) into orbits. Since \(|S|\) is not divisible by \(p\), there must be some
+orbit \(O\) whose size is not divisible by \(p\). But by the orbit-stabilizer
+theorem, \(|O| \divides |G|\). Therefore \(|O|\) can only be 1, and the sole
+element of \(O\) is therefore fixed by \(G\).</p>
+
+<p><span class="problem">Exercise 7.3.2</span> We are given that \(G/Z\) is
+cyclic, so there is some coset \(xZ\) that generates \(G/Z\). That is, for
+every \(g \in G\), there is some \(n\) such that \(g \in (xZ)^n\). Now
+\((xZ)^n\) is just the coset \(x^n Z\), so \(g = x^n z\) for some \(z \in Z\).
+For every \(g' \in G\), we can likewise write \(g' = x^{n'} z'\) for some
+\(n'\) and some \(z' \in Z\). By inspection, \(g\) and \(g'\) commute. We
+conclude that \(G\) is abelian.</p>
+<div class="qed"></div>
+
+<p><span class="problem">Exercise 7.3.3</span></p>
+<ol class="subproblems">
+<li>\(|Z|\) must divide \(p^3\). It cannot be 1 according to Proposition 7.3.1.
+It also cannot be \(p^3\) because we are given that \(G\) is nonabelian.
+The case \(|Z| = p^2\) is ruled out by the <a href="/artin/7.2">Lemma from
+Section 7.2 exercises</a> since all remaining conjugacy classes (besides those
+of the central elements) would have to have size \(p\). Therefore the only
+possible order of the centre is \(p\).</li>
+<li>Since the order of the centre is \(p\), the Lemma rules out the existence
+of any conjugacy classes of size \(p^2\). So all non-central elements belong to
+a conjugacy class of size \(p\), for which the centralizer has order
+\(p^2\).</li>
+<li>The class equation can only be \(p \times 1 + (p^2 - 1) \times p\) by the
+above reasoning, where \(m \times n\) denotes \(m\) conjugacy classes of size
+\(n\).</li>
+</ol>
+
+<p><span class="problem">Exercise 7.3.4</span> All elements of \(G\) other than
+the identity must have order 2, 4, or 8. Choose some \(x \in G\) of maximal
+order and let \(H = \langle x \rangle\). The classification is by cases:</p>
+<ol>
+<li>\(x\) has order 8. Thus, \(G \cong C_8\).</li>
+<li>\(x\) has order 4. By <a href="/artin/2.8">Exercise 2.8.10</a>, \(H\) is
+normal in \(G\). Then,
+<ol>
+<li>Suppose there exists \(y \in G \setminus H\) such that \([x, y] = 1\). If
+\(y^2 = x^2\), then set \(y' = yx^{-1}\) so that \(y'^2 = y^2 x^{-2} =
+x^2 x^{-2} = 1\) and use \(y'\) in place of \(y\). Let \(K = \langle y
+\rangle\); now we know that \(H \cap K = \{1\}\). By Proposition 2.11.4(a),
+\(HK\) consists of \(4|K|\) distinct elements. Therefore \(|K| = 2, HK = G\),
+and the elements \(x\) and \(y\) generate \(G\). By Proposition 2.11.4(b),
+\(G \cong H \times K \cong C_4 \times C_2\).</li>
+<li>Otherwise, suppose there exists \(y \in G \setminus H\) with order 4.
+Then \(y^3 = y^{-1}\) also isn't in \(H\). The element \(xy\) can't be in
+\(H\) or \(\langle y \rangle\), and neither can \(yx\), which is also distinct
+from \(xy\). So \(G = \{1, x, x^2, x^3, y, y^3, xy, yx\}\). Now \(yxy^{-1}\)
+lies in \(H\) since \(H\) is normal, and it must have the same order as \(x\),
+so it can only be \(x^3\). This completely determines the multiplication table
+of \(G\). Now the quaternion group \(Q_8\) has the aforementioned properties
+with \(x = i, y = j\). Therefore \(G \cong Q_8\).</li>
+<li>Otherwise, all remaining elements of \(G \setminus H\) have order 2. Let
+\(y\) be such an element and let \(K = \{1, y\}\). By Proposition 2.11.4(a),
+the set \(HK\) consists of 8 distinct elements, so \(HK = G\) as sets. That is,
+\(G = \{1, x, x^2, x^3, y, xy, x^2 y, x^3 y\}\). Since \(H\) is normal and
+since \(yxy^{-1}\) has the same order as \(x\), we must have \(yx = xy^3\).
+This completely determines the multiplication table of \(G\). Now the
+dihedral group \(D_4\) has the aforementioned properties with \(x = \rho, y
+= r\). Therefore \(G \cong D_4\).</li>
+</ol>
+</li>
+<li>\(x\) has order 2. Since all non-identity elements have order 2, \(G\) is
+abelian. Pick \(y \in G \setminus H\). Then we have a subgroup
+\(I = \{1, x, y, xy\}\) and it is easy to see that \(I \cong C_2 \times C_2\).
+Pick \(z \in G \setminus I\). Then, by Proposition 2.11.4(c),
+\(I\langle z\rangle\) is a subgroup of \(G\) which is larger than \(I\),
+therefore it is equal to \(G\). By
+Proposition 2.11.4(d), \(G \cong I \times \langle z\rangle \cong C_2 \times C_2
+\times C_2\).</li>
+</ol>
+<p>There are thus a total of five isomorphism classes for groups of order 8,
+namely \(C_8, C_2 \times C_4, C_2 \times C_2 \times C_2, D_4, Q_8\). (The
+division into cases makes it clear that these five groups are pairwise
+nonisomorphic.)</p>

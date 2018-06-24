@@ -1,0 +1,73 @@
+<h2>Section 2.11. Product Groups</h2>
+<p><span class="problem">Exercise 2.11.1</span> \((x, y)^n = 1\)
+\(\Leftrightarrow\) (\(x^n = 1\) in \(G\) and \(y^n = 1\) in \(H\))
+\(\Leftrightarrow\) (\(n\) is a multiple of both \(r\) and \(s\))
+\(\Leftrightarrow\) \(n\) is a multiple of the LCM or \(r\) and \(s\).
+Therefore the order of \((x, y)\) is exactly the LCM of \(r\) and \(s\).</p>
+<p><span class="problem">Exercise 2.11.3</span> Let \(G\) and \(H\) be
+infinite cyclic groups. Then \(G\) and \(H\) are each isomorphic to the
+additive group of integers and their product is isomorphic to
+\(\mathbb{Z}^2\) with elementwise addition. This group is not cyclic, since
+each nonzero element generates a subgroup of \(\mathbb{Z}^2\) consisting only
+of those lattice points that lie on the line joining the generator to the
+origin. So \(G \times H\) is not cyclic either.</p>
+<p><span class="problem">Exercise 2.11.4</span></p>
+<ol class="subproblems">
+<li>Yes. \(H \cap K = \{1\}\), \(HK = G\), \(H\) and \(K\) are closed under
+multiplication and under inverses, making them subgroups of \(G\), and they
+are normal subgroups since \(G\) is abelian. Therefore the conditions of
+Proposition 2.11.4(d) are satisifed.</li>
+<li>No. The condition of Proposition 2.11.4(b) is violated. For example,
+the matrices \(\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 2 \end{pmatrix}\) and
+\(\begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}\), which lie in \(H\)
+and \(K\), respectively, don't commute with each other.</li>
+<li>Yes. \(H \cap K = \{1\}\), \(HK = G\) since a nonzero complex number
+\(z\) can always be written as \((z/|z|)|z|\), and \(H\) and \(K\) are again
+subgroups of \(G\), which are automatically normal as \(G\) is abelian. So
+again Proposition 2.11.4(d) applies.</li>
+</ol>
+<p><span class="problem">Exercise 2.11.5</span> \((z_1, z_2) \in Z_1
+\times Z_2\) \(\Leftrightarrow\) \(\forall (g_1, g_2) \in G_1 \times G_2,
+(z_1, z_2)(g_1, g_2) = (z_1 g_1, z_2 g_2) = (g_1 z_1, g_2 z_2) =
+(g_1, g_2)(z_1, z_2)\) \(\Leftrightarrow\) (\((z_1, z_2)\) is central).
+Therefore, \(Z_1 \times Z_2\) is the centre of \(G_1 \times G_2\).</p>
+<p><span class="problem">Exercise 2.11.6</span> A subgroup of order 3 must be
+cyclic; we can write it in the form \(H = \{1, x, x^2\}\) for some \(x\).
+Likewise a subgroup of order 5 must take the form \(K = \{1, y, y^2, y^3,
+y^4\}\).  The intersection of these subgroups is necessarily \(\{1\}\) since
+all non-identity elements of the former have order 3 and all non-identity
+elements of the latter have order 5. According to Proposition
+2.11.4(c), \(HK\) is a subgroup of \(G\). Since \(H\) and \(K\) are normal in
+\(G\), they are also normal in \(HK\).
+By Proposition 2.11.4(d), \(HK \cong H \times K \cong C_3 \times C_5\) and
+therefore contains elements of order 15.</p>
+<p><span class="problem">Exercise 2.11.7</span> We know that \(H \cap N =
+\{1\}\), so Proposition 2.11.4(a) applies and the map is injective; also
+since \(N\) is a normal subgroup of \(G\), Proposition 2.11.4(c) tells us
+that the image is a subgroup of \(G\). However, the product map is not
+necessarily a homomorphism since elements of \(H\) may not commute with
+elements of \(N\).</p>
+<p><span class="problem">Exercise 2.11.8</span> If \(\varphi, \varphi'\)
+are homomorphisms \(H \to G\) and \(H \to G'\) respectively, then the pair
+\((\varphi, \varphi')\) is mapped to the homomorphism \(\Phi(h) =
+(\varphi(h), \varphi'(h))\). We can easily verify that \(\Phi\) is a
+homomorphism whenever \(\varphi\) and \(\varphi'\) are. Conversely, if
+\(\Phi : H \to G \times G'\) is a homomorphism, then there is exactly one pair
+of functions \(\varphi : H \to G, \varphi' : H \to G'\) such that
+\(\Phi(h) = (\varphi(h), \varphi'(h))\), namely, \(\varphi(h)\) must be the
+first element of \(\Phi(h)\) and \(\varphi'(h)\) the second; the properties
+of homomorphisms as applied to \(\Phi\) then imply that these properties are
+satisfied for \(\varphi\) and \(\varphi'\) as well.</p>
+<p><span class="problem">Exercise 2.11.9</span> Suppose first that \(HK = KH\).
+Obviously \(1 \in HK\). Also for all \(h \in H, k \in K\), we have that
+\((hk)^{-1} = k^{-1} h^{-1} \in KH = HK\), so \(HK\) is closed under
+inverses; also, for all \(h_1, h_2 \in H, k_1, k_2 \in K\), we have that
+\((h_1 k_1)(h_2 k_2) \in h_1 KH k_2 = h_1 HK k_2 \subseteq HK\), so \(HK\) is
+closed under the operation of \(G\); therefore \(HK\) is a subgroup.</p>
+<p>In the other direction, suppose \(HK\) is a subgroup of \(G\). Then for all
+\(h \in H, k \in K\), we have \(kh = (h^{-1} k^{-1})^{-1} \in (HK)^{-1} =
+HK\); therefore \(KH \subseteq HK\). Also for all \(x \in HK\), we have that
+\(x^{-1} \in HK\), so \(x^{-1} = hk\) for some \(h \in H, k \in K\), whence
+\(x = k^{-1} h^{-1} \in KH\); therefore \(HK \subseteq KH\). We conclude that
+\(HK = KH\).</p>
+<div class="qed"></div>

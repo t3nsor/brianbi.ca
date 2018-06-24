@@ -1,0 +1,103 @@
+<h2>Section 2.6. Isomorphisms</h2>
+<p><span class="problem">Exercise 2.6.2</span> The homomorphism \(\varphi\) is
+completely determined by the image of 1, since 1 generates the domain. If
+\(\varphi(1) = 0\), then \(\varphi\) is neither surjective nor injective. If
+\(\varphi(1) = \pm 1\), then \(\varphi(n) = \pm n\), and \(\varphi\) is both
+surjective and injective (hence, an isomorphism). If \(\varphi(1) = k\) where
+\(k \neq \pm 1\), then \(\varphi(n) = kn\) and \(\varphi\) is injective, but
+not surjective as 1 is not in the image.</p>
+<p><span class="problem">Exercise 2.6.4</span> \(ba = b(ab)b^{-1}\), the
+conjugate of \(ab\) by \(b\).</p><div class="qed"></div>
+<p><span class="problem">Exercise 2.6.5</span> The eigenvalues of \(B\) are
+2 and 3. Since \(B\) is a 2&times;2 matrix, the multiplicity of each eigenvalue
+is exactly 1, therefore \(A\) is the Jordan form of \(B\) (up to the order of
+diagonal elements). Therefore \(A\) and \(B\) are similar, which is the same
+as saying that they are conjugate in \(GL_2(\mathbb{R})\).</p>
+<p><span class="problem">Exercise 2.6.6</span> Denote the two given matrices
+by \(A, B\). They are conjugate by the matrix \(\begin{pmatrix} 0 &amp; 1 \\
+1 &amp; 0 \end{pmatrix}\), so they are conjugates in \(GL_2(\mathbb{R})\).
+In general, \(M = \begin{pmatrix} p &amp; q \\
+r &amp; s \end{pmatrix}\), then solving the equation \(BM = MA\) yields the
+constraints \(p = 0, q = r\), implying \(\det M = -q^2\), which is not
+possible when \(\det M = 1\) and \(q\) is real. Therefore \(A\) and \(B\) are
+not conjugate elements in \(SL_2(\mathbb{R})\).</p>
+<p><span class="problem">Exercise 2.6.7</span> Since \(1 \in H\), it follows
+that \(g(1)g^{-1} = 1\) is in \(gHg^{-1}\). For all \(k \in gHg^{-1}\), there
+eixsts some \(h \in H\) with \(k = ghg^{-1}\), whence \(k^{-1} =
+gh^{-1}g^{-1}\), which lies in \(gHg^{-1}\) since \(h^{-1} \in H\). Finally,
+for all \(k_1, k_2 \in gHg^{-1}\), there exist some \(h_1, h_2 \in H\) with
+\(k_1 = gh_1 g^{-1}, k_2 = gh_2 g^{-1}\), implying \(k_1 k_2 =
+gh_1 g^{-1} g h_2g^{-1} = g(h_1 h_2)g^{-1} \in gHg^{-1}\) since
+\(h_1 h_2 \in H\). Therefore \(gHg^{-1}\) is a subgroup of \(G\).</p>
+<p><span class="problem">Exercise 2.6.8</span> For all
+\(A, B \in GL_n(\mathbb{R})\), we have \(\varphi(AB) = ((AB)^t)^{-1} =
+(B^t A^t)^{-1} = (A^t)^{-1} (B^t)^{-1} = \varphi(A)\varphi(B)\). Therefore
+\(\varphi\) is an endomorphism of \(GL_n(\mathbb{R})\). It is easy to see that
+the kernel of \(\varphi\) is trivial, making \(\varphi\) an automorphism.</p>
+<p><span class="problem">Exercise 2.6.9</span> We claim that the map
+\(\varphi\) from \(G\) to \(G^\circ\) given by \(\varphi(g) = g^{-1}\) is an
+isomorphism. (We established in
+<a href="/artin/2.2">Exercise 2.2.6</a> that \(G^\circ\) is indeed a group.)
+Let \(a, b \in G\). Then
+\(\varphi(ab) = (ab)^{-1} = b^{-1} a^{-1} = a^{-1} * b^{-1} = \varphi(a) *
+\varphi(b)\).  Therefore \(\varphi\) is a homomorphism. Its kernel is trivial,
+so it is an isomorphism.</p>
+<div class="qed"></div>
+<p><span class="problem">Exercise 2.6.10</span></p>
+<ol class="subproblems">
+<li>Let \(\varphi : C_{10} \to C_{10}\) be an automorphism. Since \(C_{10}\) is
+cyclic, the homomorphism \(\varphi\) is entirely determined by \(\varphi(1)\),
+since \(\varphi(2) = \varphi(1) + \varphi(1)\) and so on; in general, every
+valid endomorphism must take the form \(\varphi(n) = kn\). For such
+\(\varphi\), we have  \(\varphi(a+b) = k(a+b) = ka + kb =
+\varphi(a) + \varphi(b)\) for all \(a, b\), so \(\varphi\) preserves the group
+operation. Therefore the set of such \(\varphi\) is exactly the set of
+endomorphisms of \(C_{10}\). Note that \(\varphi\) can only take on values that
+are divisible by \(\gcd(k, 10)\), so \(k\) must be congruent to 1, 3, 7, or 9
+in order for \(\varphi\) to be an automorphism. As proven in
+<a href="/artin/2.4">the solution to Exercise 2.4.6</a>, the elements 1, 3, 7,
+and 9 generate \(C_{10}\), so \(\varphi(n) = kn\) for \(k \in \{1, 3, 7, 9\}\)
+maps a generator to a generator, implying that it is surjective, and hence, in
+this case, also injective, therefore an automorphism. Therefore, the
+automorphisms of \(C_{10}\) are \(n \mapsto n, n \mapsto 3n, n \mapsto 7n\),
+and \(n \mapsto 9n\).</li>
+<li><p>An endomorphism \(\varphi : S_3 \to S_3\) is completely determined by
+the images of the generators \(x, y\); there will be exactly one valid
+extension to all of \(S_3\) provided that \(\varphi(x)\) and \(\varphi(y)\) are
+chosen so that
+\begin{equation}
+\varphi(y)\varphi(x) = \varphi(x)^2 \varphi(y) \label{eqn:e2}
+\end{equation}
+that is, \(\varphi\) also preserves the defining relation of \(S_3\).
+If \(\varphi\) is additionally
+an automorphism, it must preserve the orders of elements. Referring to the
+table from <a href="/artin/2.2">Exercise 2.2.1</a>, we see that \(x\) and
+\(x^2\) have order 3 while \(x^j y\) has order 2 for \(j \in \{0, 1, 2\}\).
+Therefore each valid automorphism must take the form \(\varphi_{ij}\) which
+satisfies \(\varphi_{ij}(x) = x^i, \varphi_{ij}(y) = x^j y\), with
+\(i \in \{1, 2\}\) and \(j \in \{0, 1, 2\}\). Then
+\begin{align}
+\varphi(y)\varphi(x) &amp;= x^j y x^i \label{eqn:e1} \\
+\varphi(x)^2\varphi(y) &amp;= x^{2i} x^j y
+\end{align}
+Since \(yx = x^2 y\), we can move the \(y\) factor \(i\) positions to the right
+in \((\ref{eqn:e1})\) to obtain \(\varphi(y)\varphi(x) = x^{2i+j} y\);
+therefore \((\ref{eqn:e2})\) is always satisfied, so the 6 different possible
+maps \(\varphi_{ij}\) are all valid endomorphisms of \(S_3\).</p>
+<p>The general formula for \(\varphi_{ij}\) is, of course,
+\begin{equation}
+\varphi_{ij}(x^m y^n) = \varphi_{ij}(x^m) \varphi_{ij}(y^n) = x^{im} (x^j y)^n
+\end{equation}
+Suppose this is equal to 1.  Now \(x^j y\) has order
+2 so a factor of \(y\) will be left in the result unless \(n\) is even. In the
+case where \(n\) is even, \(\varphi_{ij}(x^m y^n) = x^{im}\), so \(im\) must be
+divisible by 3, and since \(i\) is either 1 or 2, this implies \(m\) is
+divisible by 3. Therefore, if \(\varphi_{ij}(g) = 1\) then \(g = 1\), that is,
+each of the 6 \(\varphi_{ij}\)'s is an automorphism of \(S_3\), and there are
+no other automorphisms.</p></li>
+</ol>
+<p><span class="problem">Exercise 2.6.11</span> Since \(\{1, a\}\) is a normal
+subgroup, for all \(g \in G\), \(gag^{-1} \in \{1, a\}\). But \(gag^{-1}\)
+cannot be equal to 1 unless \(a = 1\), therefore \(gag^{-1} = a\) for all
+\(g \in G\), that is, \(a\) is central.</p>
+<div class="qed"></div>

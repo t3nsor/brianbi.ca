@@ -1,0 +1,326 @@
+<h2>Section 6.7. Abstract Symmetry: Group Operations</h2>
+<p><span class="problem">Exercise 6.7.1</span></p>
+<ol class="subproblems">
+<li>\(D_4\) consists of the identity, three non-identity rotations, two
+reflections across diagonals, and two reflections across lines parallel to two
+sides. By inspection, the stabilizer of a vertex consists only of the identity
+and the single reflection across the diagonal that contains that point, and
+the stabilizer of an edge consists only of the identity and the single
+reflection across a line perpendicular to that edge.</li>
+<li>By inspection, the stabilizer consists of the identity operation, the
+180 degree rotation, and the reflections across the two diagonals.</li>
+</ol>
+
+<p><span class="problem">Exercise 6.7.2</span> Pick some point \(P\) on
+\(\ell\) arbitrarily. Every plane isometry can then be uniquely written in
+the form \(m = t_a \rho_\theta r^k\) where \(k\) is 0 or 1, the rotation is
+considered to be around the point \(P\), and the reflection is considered to be
+across the line \(\ell\). Since \(r^k\) itself stabilizes \(\ell\) for either
+choice of \(k\), the orientation-preserving part \(t_a\rho_\theta\) must also
+stabilize \(\ell\) for \(m\) to stabilize \(\ell\) overall. In the
+orientation-preserving part, the rotation must be through an angle of either
+0 or \(\pi\), otherwise it would change the line's slope. Since \(P\) lies on
+\(\ell\), either \(\rho_0\) or \(\rho_\pi\) itself stabilizes \(\ell\), so
+the translation part must stabilize \(\ell\) also. We therefore conclude that
+the stabilizer of \(\ell\) is \(\{t_a \rho_{i\pi} r^k \mid a \parallel \ell,
+i \in \{0, 1\}, k \in \{0, 1\}\}\).</p>
+
+<p><span class="problem">Exercise 6.7.3</span></p>
+<ol class="subproblems">
+<li>The action of \(S_3\) on \(U\) is a homomorphism \(S_3 \to S_3\) since
+\(|U| = 3\). The kernel of this homomorphism can only be the trivial group or
+the normal subgroup \(A_3\). In the latter case the image would have order 2
+so it would have to consist of the identity and a transposition, and the
+element not involved in the transposition would be a fixed point. We are told
+that the action on \(U\) is transitive, so this latter possibility is ruled
+out. The action of \(S_3\) on \(U\) is therefore an automorphism \(S_3 \to
+S_3\) that maps the three transpositions \((1\ 2), (2\ 3), (3\ 1)\) to three
+different transpositions of \(U\). Label the elements of \(U\) fixed by these
+three transpositions, respectively, as \(u_3, u_2, u_1\). Then each
+transposition \(\tau \in S_3\) acts by sending \(u_i\) to \(u_{\tau(i)}\) for
+each \(i\), and since the transpositions generate \(S_3\), the same is true for
+general permutations \(\sigma \in S_3\). We can use
+the action of \(S_3\) on \(V\) to label the elements of \(V\) in the same
+manner. The diagonal action of \(\sigma\) on \(U \times V\) therefore maps
+\((u_i, v_j)\) to \((u_{\sigma(i)}, v_{\sigma(j)})\). If \(i = j\), the orbit
+therefore consists of the three elements \((u_1, v_1), (u_2, v_2),
+(u_3, v_3)\). On the other hand, if \(i \neq j\) and \(i' \neq j'\), then
+we can always find a permutation \(\sigma\) with \(\sigma(i) = i',
+\sigma(j) = j'\), which would therefore map \((u_i, v_j)\) to
+\((u_{i'}, v_{j'})\). This implies that the other 6 elements of \(U \times
+V\), that is, the elements of the form \((u_i, v_j)\) with \(i \neq j\), form
+a single orbit.</li>
+<li>Label the elements of \(U\) as in part (a). The action of \(S_3\) on
+\(V\) is a homomorphism \(S_3 \to G\) where \(G\) is a subgroup of \(S_3\) that
+fixes the index 1 and does not fix 2 and 3; \(G\) can only be \(\{1,
+\tau_{23}\}\). Since \(G\) has order 2, the kernel of this homomorphism is
+\(A_3\), and therefore even permutations of \(S_3\) act as the identity on
+\(V\) while odd permutations interchange \(v_2\) and \(v_3\). Obviously the
+orbit of \((u_i, v_1)\) under the diagonal action can only contain elements of
+the form \((u_j, v_1)\), and
+since \(S_3\) acts transitively on \(U\), one of the orbits is \(U \times
+\{v_1\}\). On the other hand, suppose \(i, i' \in \{1, 2, 3\}\) and
+\(j, j' \in \{2, 3\}\). Then we can always find \(\sigma \in S_3\) with
+\(\sigma(u_i, v_j) = (u_{i'}, v_{j'})\), since there are two permutations
+sending \(i\) to \(i'\) of different parities and we choose the even or odd
+one depending on whether \(j\) and \(j'\) are equal or unequal. Therefore the
+other 6 elements \(\{(u, v) \mid u \in U, v \in V \setminus \{v_1\}\}\) form
+a single orbit.</li>
+</ol>
+
+<p><span class="problem">Exercise 6.7.5</span> Assume the cube is positioned so
+that each of its faces is parallel to one of the coordinate planes.</p>
+<p>There are 24 orientation-preserving symmetries of the cube, which can be
+described as follows:
+<ul>
+<li>the identity operation,</li>
+<li>4 rotations through each of the angles \(2\pi/3\) and \(4\pi/3\), taken
+around body diagonals, for a total of 8 operations,</li>
+<li>3 rotations through each of the angles \(\pi/2, \pi, 3\pi/2\), taken
+around the coordinate axes, for a total of 9 operations,</li>
+<li>6 rotations through the angle \(\pi\), taken around the lines joining
+midpoints of opposite edges, for a total of 6 operations.</li>
+</ul>
+<p>We know that these \(1 + 9 + 8 + 6 = 24\) symmetries
+are distinct since two rotations around different axes are different rotations,
+as are two rotations around the same axis with different angles. So we have
+described all 24 orientation-preserving symmetries.</p>
+<p>The 24 orientation-reversing symmetries can be classified as:</p>
+<ul>
+<li>reflections across the (3) coordinate planes and across the (6) planes that
+contain corresponding face diagonals on opposite faces, for a total of 9
+operations,</li>
+<li>the inversion operation,</li>
+<li>8 rotoreflections consisting of a reflection across a plane perpendicular
+to a body diagonal followed by a rotation through angle \(\pi/6\) or \(5\pi/6\)
+around that body diagonal, and 6 rotoreflections consisting of a reflection
+across a coordinate plane followed by a rotation through angle \(\pi/2\) or
+\(3\pi/2\) around the perpendicular axis, for a total of 14 operations.</li>
+</ul>
+<p>We argue that these \(9 + 1 + 14 = 24\) orientation-reversing
+symmetries are distinct (and therefore account for all the
+orientation-reversing symmetries) as follows. A reflection fixes all points on
+the plane of reflection, while the inversion and rotoreflection operations have
+only a single fixed point at the origin. An inversion has the entirety of
+\(\mathbb{R}^3\) as an eigenspace, while a rotoreflection where the angle of
+rotation is neither 0 nor \(\pi\) has only a single
+eigenvector, which is parallel to the axis. So the three categories in the
+list above are disjoint. Two reflections in different planes are distinct, so
+there are indeed 9 reflections among the symmetries of the cube.
+Two rotoreflections with different axes are also distinct since they have
+different eigenvectors, as are two rotoreflections with the same axis and
+different angles. So there are indeed 14 rotoreflections among the symmetries
+of the cube.</p>
+
+<p><span class="problem">Exercise 6.7.6</span> Assume the prism is placed so
+that its centroid lies at the origin and the triangular faces are parallel to
+the xy plane.</p>
+
+<p>Consider first the
+orientation-preserving symmetries, which consist of the identity operation and
+pure rotations. A rotation that is a symmetry of the prism must stabilize the
+z-axis, since the latter is determined by the centroids of the two triangular
+faces. The rotation must therefore have \(\hat{z}\) as an eigenvector.
+There are two cases:</p>
+<ol>
+<li>The eigenvalue of \(\hat{z}\) is \(+1\). This implies that the rotation is
+around the z-axis itself. If it is not the identity, then it must be by 120
+or 240 degrees.</li>
+<li>The eigenvalue of \(\hat{z}\) is \(-1\). This implies that:
+<ul>
+<li>the angle of rotation is 180 degrees;</li>
+<li>the axis of rotation is perpendicular to the z-axis;</li>
+<li>the two rays that constitute the z-axis are exchanged by the rotation, and
+therefore so are the two triangular faces.</li>
+</ul>
+In order for such a rotation to map a vertex of the prism to another vertex
+(which, as stated, will be on the opposite triangular face), the axis of
+rotation must contain the midpoint of the two vertices. By considering the
+three possible target vertices of a single vertex under such a rotation, we
+see that the axis must pass through the centroid of one of the rectangular
+faces; and a rotation of 180 degrees around either of these three axes is
+a symmetry of the prism. So there are 3 rotational symmetries in this
+category.</li>
+</ol>
+<p>This makes a total of 6 orientation-preserving symmetries of the triangular
+prism. The prism also has at least one plane of symmetry, such as the plane
+parallel to and equidistant from the two triangular faces; let \(r\) denote the
+reflection across this plane. Then the map \(g \mapsto rg\) is a bijection
+between orientation-preserving symmetries to orientation-reversing symmetries,
+so there are also exactly 6 orientation-reversing symmetries, for a total of
+12. A rectangular face is stabilized by 4 of these symmetries: the identity,
+the rotation around an axis that passes through its centroid, and the
+composition of \(r\) with these two symmetries.</p>
+
+<p><span class="problem">Exercise 6.7.7</span></p>
+<ol>
+<li>Obviously one orbit consists of
+the zero vector alone. We claim that all other vectors lie in a single orbit.
+To see this, first observe that all \(n\) standard basis vectors lie in a
+single orbit (they are mapped to each other by permutation matrices). Now
+let \(v \in \mathbb{R}^n \setminus \{0\}\). Pick \(i\) such that \(v_i
+\neq 0\). Then \(v = Av'\) where \(v' = 1\) and \(A\) is an elementary matrix
+of the third kind that scales entry \(i\) by the factor \(v_i\). And
+\(v'\) can be written as a product of elementary matrices of the first kind
+and \(e_i\) where each elementary matrix of the first kind is used to add
+a multiple of element \(i\) to one of the other elements. Since all elementary
+matrices are invertible, this establishes that every nonzero vector lies in
+the orbit of some standard basis vector, and since all standard basis vectors
+lie in a single orbit as well, this implies that all nonzero vectors form a
+single orbit.</li>
+<li>\(Me_1 = e_1\) if and only if the first column of \(M\) is \(e_1\). The
+stabilizer of \(e_1\) therefore consists of all invertible matrices that have
+\(e_1\) as their first column. Using expansion by minors, we can characterize
+this set as the set of \(n \times n\) matrices with \(e_1\) as their first
+column, arbitrary elements in the other entries in the first row, and an
+invertible matrix for the remaining \((n-1) \times (n - 1)\) entries.</li>
+</ol>
+
+<p><span class="problem">Exercise 6.7.8</span></p>
+<ol class="subproblems">
+<li>If \(A, B\) are invertible, then they lie in the same orbit, since
+\(A = (AB^{-1})B\) and \(AB^{-1} \in GL_2(\mathbb{C})\). It is also clear that
+an invertible matrix is not in the same orbit as any singular matrix. So one
+orbit consists of precisely the invertible matrices. The zero matrix also forms
+its own orbit. The remaining matrices in \(\mathbb{C}^{2\times 2}\) have
+rank 1 and we claim that the matrices
+\[
+A_x = \begin{pmatrix} 1 &amp; x \\ 0 &amp; 0 \end{pmatrix},
+\qquad
+B = \begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix},
+\]
+all belong to different orbits and that these orbits exhaust the matrices of
+rank 1. To see this, observe that
+\[
+\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}
+\begin{pmatrix} e &amp; f \\ 0 &amp; 0 \end{pmatrix}
+= \begin{pmatrix} ae &amp; af \\ ce &amp; cf \end{pmatrix}
+\]
+so left-multiplication won't change the ratio of the entries in the first row.
+Furthermore an arbitrary rank 1 matrix can be row-reduced to the form
+\(A_x\) or \(B\) as follows. If the first column of \(M\) vanishes, the second
+column must not vanish; the rows can be swapped if needed to make the top-right
+entry nonzero, then the first row can be scaled to make the top-right entry 1,
+and a multiple of the first row can be added to the second row to zero out the
+lower-right entry, resulting in matrix \(B\). Performing elementary row
+operations is equivalent to left-multiplying by an invertible matrix, so \(M\)
+lies in the same orbit as \(B\). If on the other hand the first column of
+\(M\) doesn't vanish, then we can swap the rows as need to make the top-left
+entry nonzero, then scale the first row to make the top-left entry equal to 1,
+then add a multiple of the first row to the second row to zero out the
+bottom-left entry. These elementary row operations don't change the rank of
+the matrix, so the resulting matrix must have 0 in its bottom-right entry in
+order to still have rank 1. Therefore the resulting matrix is some \(A_x\),
+and \(M\) and \(A_x\) lie in the same orbit.</li>
+<li>According to the Jordan normal form theorem, there is one orbit for each
+Jordan form up to permutation of the blocks. Therefore, there is a separate
+orbit for every pair of <em>distinct</em> complex numbers \(\lambda_1,
+\lambda_2\), with \(\diag(\lambda_1, \lambda_2)\) as a representative, and
+for every complex number \(\lambda\) there are additionally two distinct
+orbits: one with \(\lambda I\) as a representative, and one whose
+representative is \(\lambda I\) plus a 1 in the upper-right corner.</li>
+</ol>
+
+<p><span class="problem">Exercise 6.7.9</span></p>
+<ol class="subproblems">
+<li>The identity element of \(G\) is \((I, I)\), and \((I, I) * A = IAI^{-1}
+= A\). Also, \(((P_1, Q_1)(P_2, Q_2))A = (P_1 P_2)A(Q_1 Q_2)^{-1} =
+P_1 P_2 A Q_2^{-1} Q_1^{-1} = P_1(P_2 A Q_2^{-1}) Q_1^{-1} =
+(P_1, Q_1) * ((P_2, Q_2) * A)\). So \(*\) is a valid group action.</li>
+<li>The action of \(G\) allows us to multiply by any invertible matrix on
+either the left or right, therefore the orbit of a matrix consists of those
+matrices that can be reached by any sequence of elementary row operations
+and elementary column operations, in any order; left-multiplication performs
+row operations while right-multiplication performs column operations. Each
+matrix of rank \(r\) can be converted to reduced row echelon form with
+\(r\) leading coefficients and then column operations can be used to move
+each leading coefficient onto the diagonal and clear all remaining entries.
+Thus every \(m \times n\) matrix of rank \(r\) lies in the same orbit as the
+matrix that has \(1\) for the first \(r\) entries of the diagonal and 0 at all
+other entries. This, together with the fact that row and column operations
+preserve rank, implies that there is one orbit of \(*\) for each possible rank
+\(r = 0, 1, \ldots, \min(m, n)\).</li>
+<li>Write \(Q\) in block form
+\[
+Q = \left[\begin{array}{c|c}
+A &amp; B \\ \hline
+C &amp; D
+\end{array}\right]
+\]
+where \(A\) is an \(m \times m\) matrix, \(B\) is an \(m \times (n - m)\)
+matrix, \(C\) is an \(m \times (n - m)\) matrix, and \(D\) is an \((n - m)
+\times (n - m)\) matrix.
+We want to find \(P, Q\) such that
+\[
+P \left[\begin{array}{c|c} I &amp; 0\end{array}\right]
+\left[\begin{array}{c|c}
+A &amp; B \\ \hline
+C &amp; D
+\end{array}\right]^{-1} = 
+\left[\begin{array}{c|c} I &amp; 0\end{array}\right]
+\]
+Multiply both sides on the right by \(Q\) to obtain
+\[\left[\begin{array}{c|c} P &amp; 0\end{array}\right] =
+\left[\begin{array}{c|c} I &amp; 0\end{array}\right]
+\left[\begin{array}{c|c}
+A &amp; B \\ \hline
+C &amp; D
+\end{array}\right]
+\]
+therefore \(P = A\) and \(B = 0\). The stabilizer therefore consists of pairs
+of an invertible \(m \times m\) matrix \(P\) and an \(n \times n\) matrix of
+the form
+\[
+Q = \left[\begin{array}{c|c}
+P &amp; 0 \\ \hline
+C &amp; D
+\end{array}\right]
+\]
+where \(C\) is an arbitrary \((n - m) \times m\) matrix and, in order for
+\(Q\) to be invertible, \(D\) is an invertible but otherwise arbitrary
+\((n - m) \times (n - m)\) matrix.</li>
+</ol>
+
+<p><span class="problem">Exercise 6.7.10</span></p>
+<ol class="subproblems">
+<li>According to the Jordan normal form theorem, the orbit consists of those
+matrices that have the given matrix as their Jordan normal form, namely, those
+whose eigenvalues are 1 and 2. As for the stabilizer, consider conjugation by
+some matrix \(M\) with determinant \(\Delta \neq 0\),
+\begin{align*}
+M\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 2 \end{pmatrix} M^{-1}
+&amp;= \frac{1}{\Delta}
+\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}
+\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 2 \end{pmatrix}
+\begin{pmatrix} d &amp; -b \\ -c &amp; a \end{pmatrix} \\
+&amp;= \frac{1}{\Delta}
+\begin{pmatrix} ad - 2bc &amp; ab \\ -cd &amp; 2ad-bc \end{pmatrix} \\
+&amp;= 
+\begin{pmatrix} 1 - \frac{bc}{\Delta} &amp; \frac{ab}{\Delta} \\
+-\frac{cd}{\Delta} &amp; 1 + \frac{ad}{\Delta} \end{pmatrix}
+\end{align*}
+so in order to get the original matrix back we must have \(bc = ab = cd = 0,
+ad = \Delta\). That is, the stabilizer consists of the invertible diagonal
+matrices.</li>
+<li>This is fairly straightforward to do using the counting formula. The
+order of \(GL_2(\mathbb{F}_5)\) is 480: the first column can be one of 24
+nonzero vectors, and each choice excludes 5 possible choices for the vector in
+the second column, namely those that are multiples of the first column, leaving
+20.  According to part (a), the stabilizer consists of the 16 invertible
+diagonal matrices. (Note that the argument for the form of the stabilizer did
+not depend on the Jordan normal form theorem, which only holds in algebraically
+closed fields.)  So the order of the orbit is \(480 \div 16 = 30\). I'm not
+sure how Artin expects us to do the problem without using the counting formula
+(which is not introduced until section 9), though.</li>
+</ol>
+
+<p><span class="problem">Exercise 6.7.11</span> According to
+<a href="/artin/2.8">Exercise 2.8.10</a>, any subgroup \(G\) of order 12 of
+\(S_4\) must be normal, therefore it must be the kernel of some homomorphism
+\(\varphi : S_4 \to H\) where \(H\) is a group of order 2 and therefore has
+the form \(\{+1, -1\}\). Let \(\sigma\) be a 3-cycle in \(S_4\). Then
+\(+1 = \varphi(1) = \varphi(\sigma^3) = \varphi(\sigma)^3\), so
+\(\varphi(\sigma) = +1\). But according to
+<a href="/artin/2.4">Exercise 2.4.11(b)</a>, the 3-cycles generate \(A_4\).
+Therefore every even permutation in \(S_4\) is mapped to \(+1\); that is,
+\(A_4 \subseteq G\). But \(A_4\) has order 12, so \(G = A_4\).</p>

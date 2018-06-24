@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.brianbi\.ca
+RewriteRule ^(.*)$ http://brianbi.ca/$1 [R=permanent,L]
+RewriteCond $1 !^(index\.php|images|css|files|robots\.txt)
+RewriteRule ^(.*)$ /index.php?path=$1

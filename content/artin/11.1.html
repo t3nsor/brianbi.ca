@@ -1,0 +1,139 @@
+<h2>Section 11.1. Definition of a Ring</h2>
+<p><span class="problem">Exercise 11.1.1</span> Let \(x = 7 + \sqrt[3]{2}\).
+Then \((x - 7)^3 - 2 = 0\), so \(x\) is the root of a polynomial. Let \(y =
+\sqrt{3} + \sqrt{-5}\). Then \(y^2 = 3 + 2\sqrt{-15} + (-5)\). So
+\(y^2 +2 = 2\sqrt{-15}\), or \((y^2 + 2)^2 = -60\). So \(y\) satisfies the
+polynomial equation \((y^2 + 2)^2 + 60 = 0\). Therefore both \(x\) and \(y\)
+are algebraic.</p>
+
+<p><span class="problem">Exercise 11.1.2</span> The proof is based on the
+following well-known result that we will state and prove here:</p>
+<p><em>Lemma:</em> For all \(n \in \mathbb{N}\), \(\cos(n\theta)\) can be
+written as \(P_n(\cos\theta)\) where \(P_n\) is a polynomial with integer
+coefficients.</p>
+<p><em>Proof:</em> By induction. The base cases of \(n = 0, n = 1\) are
+obvious. Assume \(n \ge 2\).
+Using the identity \(2\cos a \cos b = \cos(a - b) + \cos(a + b)\),
+we find \(2\cos((n-1)\theta) \cos \theta = \cos((n-2)\theta) + \cos(n\theta)\).
+By the induction hypothesis, \(\cos((n-1)\theta) = P_{n-1}(\cos\theta)\) and
+\(\cos((n-2)\theta) = P_{n-2}(\cos\theta)\). Therefore
+\(2P_{n-1}(\cos\theta)\cos\theta = P_{n-2}\cos\theta + \cos(n\theta)\), or
+\(\cos(n\theta) = 2(\cos\theta) P_{n-1}(\cos\theta) -
+P_{n-2}(\cos\theta)\). The RHS is now a polynomial in \(\cos\theta\).</p>
+<div class="qed"></div>
+<p>Now let \(z = \cos(2\pi/n)\). By the Lemma, \(P_n(z) = \cos(2\pi) = 1\).
+So \(z\) satisfies the polynomial \(P_n(z) - 1 = 0\) and is algebraic.</p>
+
+<p><span class="problem">Exercise 11.1.3</span> Certainly
+\(\mathbb{Q}[\sqrt{2}, \sqrt{3}]\) contains \(\sqrt{2} + \sqrt{3}\) and
+therefore \(\mathbb{Q}[\sqrt{2} + \sqrt{3}] \subseteq \mathbb{Q}[\sqrt{2},
+\sqrt{3}]\). If we can show that \(\sqrt{2}, \sqrt{3} \in
+\mathbb{Q}[\sqrt{2} + \sqrt{3}]\), then this will establish that
+\(\mathbb{Q}[\sqrt{2} + \sqrt{3}] = \mathbb{Q}[\sqrt{2}, \sqrt{3}]\). Write
+\(\gamma = \sqrt{2} + \sqrt{3}\) as in the problem statement. Observe
+that \(\gamma^3 = 11\sqrt{2} + 9\sqrt{3}\), so \(\mathbb{Q}[\gamma]\) contains
+\(\frac{1}{2}\gamma^3 - \frac{9}{2}\gamma = \sqrt{2}\) and
+\(-\frac{1}{2}\gamma^3 + \frac{11}{2}\gamma = \sqrt{3}\). Therefore
+\(\mathbb{Q}[\gamma] = \mathbb{Q}[\sqrt{2}, \sqrt{3}]\).</p>
+<p>We will show that \(\mathbb{Z}[\gamma]\) does <em>not</em> contain the
+numbers \(\sqrt{2}, \sqrt{3}\), so it is not equal to \(\mathbb{Z}[\sqrt{2},
+\sqrt{3}]\). We will assume that \(\{1, \sqrt{2}, \sqrt{3}, \sqrt{6}\}\) are
+linearly independent over \(\mathbb{Q}\) although we do not prove it here.
+We will state and prove a Lemma:</p>
+<p><em>Lemma:</em> Let \(n \in \mathbb{N}\). If \(n\) is even, then
+\(\gamma^n = a + b\sqrt{6}\) where \(a\) is odd and \(b\) is even. If \(n\) is
+odd, then \(\gamma^n = a\sqrt{2} + b\sqrt{3}\) where \(a\) and \(b\) are both
+odd.</p>
+<p><em>Proof:</em> By induction on \(n\). The base cases \(n = 0, n = 1\) are
+easily verified. For \(n = 2\) use \(\gamma^n = (\sqrt{2} + \sqrt{3})
+\gamma^{n-1}\) and expand.</p>
+<div class="qed"></div>
+<p>Let \(x \in \mathbb{Z}[\gamma]\). Then \(x = \sum_{i=0}^n c_i \gamma^i\)
+for some integers \(c_i\). The RHS can be written as \(p + q\sqrt{2} +
+r\sqrt{3} + s\sqrt{6}\) for some integers \(p, q, r, s\), where, by the Lemma,
+the \(\sqrt{2}\) and \(\sqrt{3}\) terms come only from odd powers. Since each
+\(\gamma^i\) for odd \(i\) has odd coefficients for both \(\sqrt{2}\) and
+\(\sqrt{3}\), arbitrary integer combinations of the \(\gamma^i\) must have
+both coefficients even or both odd. The number \(\sqrt{2}\) has one unique
+representation \(0 + 1\sqrt{2} + 0\sqrt{3} + 0\sqrt{6}\) by the linear
+independence property we stated earlier; since 1 and 0 do not have the same
+parity, \(\sqrt{2} \notin \mathbb{Z}[\gamma]\). A similar argument applies to
+\(\sqrt{3}\).</p>
+
+<p><span class="problem">Exercise 11.1.4</span> Suppose \(x = p/2^q\) where
+\(p \in \mathbb{Z}, q \in \mathbb{N}\). We have \(\alpha^{4n} = 2^{-4n},\)
+therefore
+\(\mathbb{Z}[\alpha]\) contains some number of the form \(1/2^{4n}\) where
+\(4n \ge q\), therefore it also contains \(x = (p 2^{4n-q})(1/2^{4n})\).
+That is, \(\mathbb{Z}[\alpha]\) contains all real dyadic fractions. A similar
+argument shows that \(\mathbb{Z}[\alpha]\) contains all imaginary dyadic
+fractions, that is, numbers of the form \(ip/2^q\). Since the dyadic fractions
+are dense in \(\mathbb{R}\), the desired result follows from bounding the
+distance along the real and imaginary axes separately.</p>
+
+<p><span class="problem">Exercise 11.1.5</span> Obviously the zero ring is one
+possibility. In the following we assume that the subring
+\(R \subseteq \mathbb{R}\) is not the zero ring; therefore it contains 1, and
+therefore it contains all integers. If \(R\) contains any nonzero
+number \(\alpha\) such that
+\(0 &lt; |\alpha| &lt; 1\), then the powers of that number get arbitrarily
+close to 0, so \(R\) is not discrete. If \(R\) contains a positive number
+\(\beta\) that is not an integer, then since \(R\) contains the integer
+\(\lfloor \beta \rfloor\), it must contain the number \(\beta -
+\lfloor \beta \rfloor\), which is strictly between 0 and
+1, and again the powers of that number get arbitrarily close to 0 so \(R\) is
+not discrete.
+If \(R\) contains a negative number \(\beta\) that's not an integer, then 
+the previous argument applies to \(-\beta\). So \(R\) can only be discrete if
+all its elements are integers. The only two possibilities are therefore the
+zero ring and the ring of integers.</p>
+
+<p><span class="problem">Exercise 11.1.6</span></p>
+<ol class="subproblems">
+<li>Presumably the intent was that \(S\) contains the rationals such in the
+<em>reduced</em> form \(a/b\), the denominator \(b\) is not divisible by 3. Let
+\(a/b\), \(c/d\) be two rationals of this form. Then \((a/b)(c/d) = (ac)/(bd)\)
+has a denominator that isn't divisible by 3, so the same will be true after
+reducing to lowest terms. Also \((a/b) + (c/d) = (ad + bc)/(bd)\) and again the
+denominator isn't divisible by 3. So \(S\) is closed under addition and
+multiplication, and is therefore a subring of \(\mathbb{Q}\).</li>
+<li>\(S\) is not a subring of \(R\) because it's not closed under
+multiplication; the function \(\sin t \cos t\) is not in \(R\). To see this,
+observe that this function can be written as \(\frac{1}{2}\sin 2t\). The
+functions \(1, \sin t, \cos t, \sin 2t, \cos 2t, \ldots\) are linearly
+independent over \(\mathbb{R}\) (this can be proven using the integration trick
+used to compute Fourier coefficients), so \(\frac{1}{2}\sin 2t\) can't be
+written as any other real linear combination of the basis functions, including
+any integer combination.</li>
+</ol>
+
+<p><span class="problem">Exercise 11.1.7</span></p>
+<ol class="subproblems">
+<li>\(R\) is a ring. To see this, observe that \((R, +, \cdot)\) is
+isomorphic to \(((\mathbb{Z}/2\mathbb{Z})^U, +, \times)\) where
+the entry indexed by \(u \in U\) is 1 if \(u\) is in the subset and 0
+otherwise, and the operations \(+\) and \(\times\) act element-wise; that this
+is a ring follows from the fact that \(\mathbb{Z}/2\mathbb{Z}\) is.</li>
+<li>\(R\) is not a ring because the \(\circ\) operation isn't commutative.
+However, \(\circ\) is associative, and \((R, +)\) does form an abelian group.
+(In fact even the distributive law holds in the form given in the text, which
+requires right-distributivity only.)</li>
+</ol>
+
+<p><span class="problem">Exercise 11.1.8</span> In \(\mathbb{Z}/n\mathbb{Z}\)
+the element \(m\) is a unit iff there is some \(a\) with \(am \equiv 1
+\pmod{n}\), or in other words \(am - bn = 1\) for some \(a, b \in
+\mathbb{Z}\). This equation has solutions iff \(\gcd(m, n) = 1\). Therefore the
+units in \(\mathbb{Z}/n\mathbb{Z}\) are the equivalence classes of integers
+that are relatively prime to \(n\). For \(n = 8\) these are the equivalence
+classes of 1, 3, 5, and 7; for \(n = 12\) these are the equivalence classes of
+1, 5, 7, and 11.</p>
+
+<p><span class="problem">Exercise 11.1.9</span> Let \(a, b \in R\). Using the
+distributive property and the commutativity of multiplication, we obtain
+\((a + 1)(b + 1) = a(b+1) + 1(b+1) = (b+1)a + (b+1)1 = ba + 1a + b1 + 11
+= ba + a + b + 1\). Similarly we can show \((b+1)(a+1) = ab + b + a + 1\). But
+these are equal by commutativity of multiplication, so
+\(ba + a + b + 1 = ab + b + a + 1\).
+Cancelling \(ab\) on the left and \(1\) on the right, we are left with
+\(a + b = b + a\).</p>

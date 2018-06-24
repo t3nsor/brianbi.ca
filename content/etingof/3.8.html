@@ -1,0 +1,238 @@
+<p><span class="problem">Problem 3.8.3</span> I found this problem rather
+difficult and was not able to solve it by myself. However, the proof of this
+result (known as <em>Fitting's lemma</em>) is quite intuitive. Although the
+proof given in the text only covers the
+case of algebraically closed fields (for which it's possible to write \(W\) as
+a direct sum of generalized eigenspaces), the basic idea of the proof carries
+over to the general case. Instead of considering generalized eigenspaces with
+eigenvalue zero, we consider the subspace of \(W\) which is eventually
+annhilated by \(\theta\) (these concepts coincide in the case of an
+algebraically closed field). Instead of considering generalized eigenspaces
+with nonzero eigenvalue, we consider the subspace of \(W\) which is eventually
+reachable under iteration of \(\theta\) (again they coincide for an
+algebraically closed field since a Jordan block with \(\lambda \neq 0\) is
+invertible).</p>
+
+<p>Thus the proof is as follows. Let \(n = \dim W\). We claim that \(W\) is the
+direct sum \(\ker \theta^n \oplus \im \theta^n\), from which the desired result
+will follow.</p>
+
+<p>To see this, first observe
+that \(\ker \theta \subseteq \ker \theta^2 \subseteq \ldots \subseteq W\). If
+an inclusion in this sequence is strict, the dimension must increase by at
+least 1. If one of the inclusions in this sequence is an equality, then all
+subsequent inclusions must be equalities as well. So there are at most \(n\)
+strict inclusions, implying \(\ker \theta^n = \ker \theta^{n+1} = \ldots\).
+Likewise, since \(W \supseteq \im \theta \supseteq \im \theta^2 \supseteq
+\ldots\), we can similarly conclude that \(\im \theta^n = \im \theta^{n+1} =
+\ldots\).</p>
+
+<p>Now let \(w \in W\) be given. We want to write \(w\) in the form
+\(w = u + \theta^n(v)\), where \(u \in \ker \theta^n\). If such \(u, v \in W\)
+did in fact exist, then then it would necessarily be the case that
+\(\theta^n(w) =
+\theta^{2n}(v)\). In fact, it suffices to simply choose \(v\) such that this
+equation holds (which is possible since \(\im \theta^{2n} = \im \theta^n\)) and
+put \(u = w - \theta^n(v)\). For then \(\theta^n(u) = \theta^n(w) -
+\theta^{2n}(v) = 0\) by definition of \(v\). So indeed \(w \in \ker \theta^n +
+\im \theta^n\).</p>
+
+<p>Now suppose \(t \in \ker \theta^n \cap \im \theta^n\). Pick \(s \in W\)
+such that \(\theta^n(s) = t\). Then \(\theta^{2n}(s) = 0\). But \(\ker
+\theta^{2n} = \ker \theta^n\), so \(\theta^n(s) = 0\), that is, \(t = 0\). So
+in fact \(W = \ker \theta^n \oplus \im \theta^n\) as vector spaces.</p>
+
+<p>It is evident that \(\ker \theta^n\) is a subrepresentation since for all
+\(w \in W, a \in A\), we have \(\theta^n(av) = a\theta^n(v) = 0\). Similarly
+\(\im \theta^n\) is also a subrepresentation, since if \(w = \theta^n(v)\),
+then \(aw = a\theta^n(v) = \theta^n(av)\). Thus the claim that \(W =
+\ker \theta^n \oplus \im \theta^n\) as representations is proven.</p>
+
+<p>At this point we finally use the fact that \(W\) is indecomposable, which
+implies that either \(\ker \theta^n = 0\) or \(\im \theta^n = 0\). If the
+former, then since \(\ker \theta \subseteq \ker \theta^n\), it follows that
+\(\theta\) is an automorphism. If the latter, then \(\theta\) is nilpotent.</p>
+<div class="qed"></div>
+
+<p><span class="problem">Problem 3.8.4</span> The solution is described in
+<a href="https://math.stackexchange.com/q/243669/24692">a math.SE post</a>.
+Here are the pieces in order:</p>
+<ol class="subproblems">
+<li>
+<p class="lemma">Let \(V\) be a vector space over a field \(K\). Let \(L\) be
+an extension field of \(K\). If \(B\) is a \(K\)-basis for \(V\), then
+\(B' = \{b \otimes_K 1 \mid b \in B\}\) is an \(L\)-basis for
+\(V \otimes_K L\).</p>
+<p class="proof">Since the \(K\)-span of \(B\) is already all of \(V\), the
+\(L\)-span of \(B'\) certainly contains all vectors of the form \(v \otimes_K
+1\). But the \(L\)-span of this latter set is all of \(V \otimes L\), so
+\(B'\) is enough to generate \(V \otimes L\). Now, suppose \(0 = \sum_{i=1}^n
+c_i (b_i \otimes_K 1)\) where the \(c_i\)'s are taken from \(L\) and the
+\(b_i\)'s are distinct elements of \(B\). Then we can rewrite this as
+\(0 = \sum_{i=1}^n b_i \otimes_K c_i\). But as the \(b_i\)'s are linearly
+independent over \(K\), this can only hold if all \(c_i\)'s vanish, so \(B'\)
+is also linearly independent over \(L\). This establishes that \(B'\) is an
+\(L\)-basis for \(V \otimes_K L\).</p>
+
+<p>First, we reduce to the finitely generated case. Let \(V, W, A, K, L\) be
+given as in the problem. Let \(\varphi : V \otimes_K L \to W \otimes_K L\) be
+an isomorphism of \(A \otimes_K L\)-algebras. As \(L\) is a subalgebra of
+\(A \otimes_K L\), this implies that \(\varphi\) induces an isomorphism between
+\(V \otimes_K L\) and \(W \otimes_K L\) as \(L\)-modules, or equivalently
+\(L\)-vector spaces as \(L\) is a field. According to the Lemma, the domain and
+codomain both have finite \(L\)-bases \(\{v_1 \otimes_K 1, \ldots,
+v_n \otimes_K 1\}\) and \(\{w_1 \otimes_K 1, \ldots, w_n \otimes_K 1\}\) where
+\(v_1, \ldots, v_n\) and \(w_1, \ldots, w_n\) are respectively \(K\)-bases of
+\(V\) and \(W\). The isomorphism \(\varphi\) can be written as a matrix \(X\)
+with entries in \(L\) with respect to these two bases, so that
+\[
+\varphi\left[\sum_{i=1}^n c_i (v_i \otimes_K 1)\right] =
+\sum_{j=1}^n c_i X_{ij} (w_j \otimes_K 1)
+\]
+Let \(M\) be the subfield of \(L\) generated by \(K\) and the elements of
+\(X\), that is, \(M = K(X_{11}, X_{12}, \ldots, X_{nn})\). Denote the
+restriction of the map \(\varphi\) to \(V \otimes_K M\) by \(\varphi'\).
+Now</p>
+<ul>
+<li>Whenever \(m \in M, w \in W\), we have that \(m(w \otimes_K 1) =
+w \otimes_K m \in W \otimes_K M\). This implies that the map \(\varphi'\) is an
+\(M\)-linear homomorphism to \(W \otimes_K M\);</li>
+<li>\(V \otimes_K M\) and \(W \otimes_K M\) are \(A \otimes_K M\)-modules;</li>
+<li>Since \(A \otimes_K M\) acts on \(V \otimes_K M\) and \(W \otimes_K M\) as
+the restrictions of the actions of \(A \otimes_K L\) on \(V \otimes_K L\) and
+\(W \otimes_K L\), respectively, it follows that \(\varphi'\) is also a
+homomorphism of representations;</li>
+<li>As \(\varphi'\) is described by the same matrix \(A\) as \(\varphi\), and
+\(A\) is invertible over \(L\), it is also invertible over \(M\), implying that
+\(\varphi'\) is an isomorphism.</li>
+</ul>
+<p>We therefore have that
+\(V \otimes_K M\) and \(W \otimes_K M\) are isomorphic as
+\(A \otimes_K M\)-modules and that \(M\) is finitely generated over \(K\).
+Therefore, it suffices to establish the desired result for finitely generated
+field extensions.</p>
+<p>(The reduction from the finitely generated case to the finite case is
+currently missing. Feel free to email me to contribute a solution.)</p>
+<p>Suppose now that \(L/K\) is finite with degree \(n\). \(V \otimes_K L\)
+has a natural \(A\)-module structure inherited from \(V\), namely, such that
+\(a(v \otimes_k \ell) = (av) \otimes_k \ell\) and so on, which is compatible
+with the \(A \otimes_K L\)-module structure when \(A\) is identified as a
+subalgebra of \(A \otimes_K L\) in the obvious way. Let \(\ell_1, \ldots,
+\ell_n\) be a basis for \(L\) over \(K\). Define \(\gamma : V \otimes_K L \to
+V^n\) by
+\[
+\gamma(v \otimes_k \ell_i) = (0, 0, \ldots, v, \ldots, 0, 0)
+\]
+where \(v\) is the \(i\)<sup>th</sup> entry of the RHS. This is an isomorphism
+of the \(K\)-vector spaces \(V \otimes_K L\) and \(V^n\), and
+\[
+\gamma(a(v \otimes_k \ell_i)) = \gamma((av) \otimes_k \ell_i) = (0, 0, \ldots,
+av, \ldots, 0, 0)
+\]
+showing that \(\gamma\) is an isomorphism of \(A\)-modules. Since we are given
+that \(V \otimes_K L\) and \(W \otimes_K L\) are isomorphic as
+\(A \otimes_K L\)-modules, they are also isomorphic as \(A\)-modules, and since
+\(V \otimes_K L\) and \(W \otimes_K L\) are respectively isomorphic to
+\(V^n\) and \(W^n\) as \(A\)-modules, it follows that \(V^n\) and \(W^n\) are
+isomorphic as \(A\)-modules.</p>
+<p>Write \(V = V_1 \oplus \ldots \oplus V_p\) and \(W = W_1 \oplus \ldots
+\oplus W_q\) where the summands are indecomposable. Then
+\(V^n = V_1^n \oplus \ldots \oplus V_p^n\) and \(W^n = W_1^n \oplus \ldots
+\oplus W_q^n\). By the Krull&ndash;Schmidt theorem, these decompositions are
+unique. Since \(V^n \cong W^n\), this implies that \(V_1\) is isomorphic to
+some \(W_i\), so the \(n\) copies of \(V_1\) in \(V\) can be identified with
+the \(n\) copies of \(W_i\) in \(W\). Then the remaining summands in \(V\) are
+isomorphic to the remaining summands in \(W\) in some order, so \(V_2 \cong
+W_j\) for some \(j \ne i\), and so on. This establishes that \(p = q\) and that
+there exists a permutation \(\sigma\) such that \(V_i \cong W_{\sigma(i)}\) for
+each \(i\), so that \(V \cong W\) as desired.</p>
+</li>
+<li><p>Here \(W \otimes_K L \cong V \otimes_K L \oplus Y\), but we can
+do the reduction from arbitrary \(L/K\) to finitely generated \(L/K\) in a
+similar way. If \(\dim_K W = m\) and \(\dim_K V = n\), then \(\dim_L
+W \otimes_K L = m\) and \(\dim_L V \otimes_K L = n\), which implies
+\(\dim_L Y = m - n\). Thus,</p>
+<ul>
+<li>If \(\{w_1, \ldots, w_m\}\) is a \(K\)-basis for \(W\), then an \(L\)-basis
+for \(W \otimes_K L\) is given by \(\{w_1 \otimes_K 1, \ldots,
+w_m \otimes_K 1\}\) as in part (i)</li>
+<li>If \(\{v_1, \ldots, v_n\}\) is a \(K\)-basis for \(V\) and \(\{y_1, \ldots,
+y_{m-n}\}\) is an \(L\)-basis for \(Y\), then an \(L\)-basis for
+\(V \otimes_K L \oplus Y\) is given by \(\{(v_1 \otimes_K
+1, 0), \ldots, (v_n \otimes_K 1, 0), (0, y_1), \ldots, (0, y_{m-n})\}\)</li>
+</ul>
+<p>Using these bases we can write the isomorphism \(\varphi : W \otimes_K L \to
+V \otimes_K L \oplus Y\) as an \(m\) by \(m\) matrix \(X\) and we can again
+form the finitely generated field extension \(M/K\) generated by the entries of
+this matrix. The matrix \(X\) has an inverse \(X^{-1}\) whose entries also all
+lie in \(M\). Letting \(\varphi'\) be the restriction of \(\varphi\) to the
+domain \(W \otimes_K M\), we find as in part (i) that the image is contained
+within \(V \otimes_K M \oplus Y\).</p>
+<p>To study the form that \(\im \varphi'\) takes, let \(v \in V\) be arbitrary.
+Write \(v = k_1 v_1 + \ldots + k_n v_n\) where \(k_1, \ldots, k_n \in K\). Let
+\(\mu \in M\). Then,
+with respect to the basis of \(V \otimes_K L \oplus Y\) given above,
+\((v \otimes_K \mu, 0)\) can be written in coordinates as
+\((\mu k_1, \ldots, \mu k_n, 0, \ldots, 0)\). As all entries of this coordinate
+vector lie in \(M\), this implies that \(\varphi^{-1}((v \otimes_K \mu, 0))
+= X^{-1}(\mu k_1, \ldots, \mu k_n, 0, \ldots, 0)\)
+lies in \(W \otimes_K M\). As this holds for all pure tensors \(v \otimes_K
+\mu\), by linearity, the image of
+\(\varphi'\) contains \((t, 0)\) for all \(t \in V \otimes_K M\). This implies
+that \(\im \varphi'\), in fact, takes the form \(V \otimes_K M \oplus Y'\)
+where \(Y'\) is a subspace of \(Y\). As \(A \otimes_K M\) is a subalgebra of
+\(A \otimes_K L\), the map \(\varphi'\) is compatible with the
+\(A \otimes_K M\)-module structures of \(W \otimes_K M\) and its image
+\(V \otimes_K M \oplus Y'\), and \(Y'\) has the \(A \otimes_K M\)-module
+structure inherited from that of \(V \otimes_K M \oplus Y'\) by projection. So
+the hypotheses of the theorem hold for \(M\), a finitely generated extension of
+\(K\).</p>
+<p>(Again the reduction from the finitely generated case to the finite case is
+missing.)</p>
+<p>As in part (i), assume \(L/K\) is a finite extension with degree \(n\). The
+\(A\)-module isomorphism between \(V \otimes_K L\) and \(V^n\), and between
+\(W \otimes_K L\) and \(W^n\), imply that \(V^n \oplus Y \cong W^n\) as
+\(A\)-modules. Write \(V = V_1 \oplus \ldots \oplus V_p, W = W_1 \oplus \ldots
+\oplus W_q, Y = Y_1 \oplus \ldots \oplus Y_r\) where the summands are
+indecomposable (here \(Y\) is regarded as an \(A\)-module), so that by the
+Krull&ndash;Schmidt theorem, the summands on the right-hand sides of the
+following two equations are the same up to isomorphism and reordering:
+\begin{align*}
+V \otimes_K L \oplus Y &amp;\cong V_1^n \oplus \ldots \oplus V_p^n \oplus
+Y_1 \oplus \ldots \oplus Y_r \\
+W \otimes_K L &amp;\cong W_1^n \oplus \ldots \oplus W_q^n
+\end{align*}
+Using similar arguments as in part (i), we find that \(r = n(q - p)\), that
+the sum \(Y_1 \oplus \ldots \oplus Y_r\) can be grouped as
+\(Y_1^n \oplus \ldots
+Y_{q-p}^n\), and that there is a permutation of \(\{W_1, \ldots, W_q\}\) such
+that each element is isomorphic to a corresponding element in
+\(\{V_1, \ldots, V_p, Y_1, \ldots, Y_{q-p}\}\). Therefore,
+\(W_1 \oplus \ldots \oplus W_q \cong
+V_1 \oplus \ldots \oplus V_p \oplus Y_1 \oplus \ldots \oplus Y_{q-p}\), or
+\(W \cong V \oplus Y'\) as desired (where \(Y' \cong Y_1 \oplus \ldots \oplus
+Y_{q-p}\)).</p></li>
+</ol>
+
+<p><span class="problem">Problem 3.8.5</span></p>
+<ol class="subproblems">
+<li><p>Suppose \(A\) is the internal direct sum of submodules \(A_1, A_2\). Let
+\(a_1 \in A_1, a_2 \in A_2\). Then \(a_1 a_2 \in A_2\) and \(a_2 a_1 \in A_1\),
+but \(a_1 a_2 = a_2 a_1\) and \(A_1 \cap A_2 = \{0\}\), so \(a_1 a_2 = 0\).
+The constant function 1 belongs to \(A\), so write \(1 = f + g\) where
+\(f \in A_1, g \in A_2\). Since \(fg = 0\), it follows that for all \(x \in
+\mathbb{R}\), we have either \(f(x) = 0\) and \(g(x) = 1\), or \(f(x) = 1\) and
+\(g(x) = 0\). Since \(f, g\) are continuous, it follows that one of \(f\) is
+the constant function 1 while the other is identically 0. Without loss of
+generality, suppose \(f = 1\). Since \(1 \in A_1\) and \(A_1\) is a submodule,
+this easily implies \(A_1 = A\), hence \(A_2 = \{0\}\). Therefore \(A\) is
+indecomposable.</p>
+<p>A proof that \(M\) is indecomposable can be found
+<a href="https://math.stackexchange.com/a/166450/24692">here</a>.</p></li>
+<li><p>\(A\) contains a cyclic vector (for example the constant function 1) but
+the intermediate value theorem implies that every element of \(M\) vanishes at
+some point, so no element of \(M\) can be cyclic. Therefore \(A \not\cong
+M\).</p>
+<p>An explicit isomorphism between \(A \oplus A\) and \(M \oplus M\) is given
+<a href="https://math.stackexchange.com/a/912015/24692">here</a>.</p></li>
+</ol>

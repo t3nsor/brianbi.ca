@@ -1,0 +1,200 @@
+<h2>Section 15.3. The Degree of a Field Extension</h2>
+
+<p class="lemma">Suppose \(F \subseteq K \subseteq L\) is a tower of fields
+where \(K\) is a finite extension of \(F\), and suppose \(\alpha \in L\)
+has degree \(m\) over \(F\), where \(m\) is relatively prime to \([K : F]\).
+Then \(\alpha\) has degree \(m\) over \(K\).</p>
+<p class="proof">Clearly \([K(\alpha) : F] = [K(\alpha) : K][K : F]\). Also, by
+Corollary 15.3.8, \([K(\alpha) : F] = m[K : F]\). Therefore,
+\([K(\alpha) : K] = m\).</p>
+
+<p><span class="problem">Exercise 15.3.1</span> Since \(\alpha\) has degree 5
+over \(F\), \(\alpha^2 \notin F\). Obviously, \(\alpha^2 \in F(\alpha)\). By
+Corollary 15.3.7, \(F(\alpha^2) = F(\alpha)\).</p>
+
+<p><span class="problem">Exercise 15.3.2</span> By the Eisenstein criterion,
+the polynomial \(x^4 + 3x + 3\) is irreducible over \(\Q\). Let \(\alpha\)
+be a root of \(x^4 + 3x + 3\); then \([\Q(\alpha) : \Q] = 4\). We also have
+\([\Q(\sqrt[3]{2}) : \Q] = 3\). By the Lemma, \(\alpha\) also has degree 4
+over \(\Q(\sqrt[3]{2})\), so \(x^4 + 3x + 3\) is also irreducible over
+\(\Q(\sqrt[3]{2})\).</p>
+
+<p><span class="problem">Exercise 15.3.3</span> By irreducibility of the
+cyclotomic polynomials, the field \(\Q(\zeta_7)\) has degree 6 as an extension
+of \(\Q\), while the number \(\zeta_5\) has degree 4 over
+\(\Q\). Since 4 does not divide 6, Corollary 15.3.6 implies that
+\(\zeta_5 \notin \Q(\zeta_7)\).</p>
+<p><em>Note from Brian:</em> The irreducibility of the cyclotomic polynomials
+\(\Phi_n(x)\) with \(n\) a prime power was Exercise 12.4.18, so it should be
+assumed to be background knowledge at this point. However, for general \(n\),
+all known proofs are fairly involved.</em></p>
+
+<p><span class="problem">Exercise 15.3.4</span>
+<em>Feel free to email me to contribute better solutions.</em></p>
+<ol class="subproblems">
+<li><p>\(\zeta_4 = i\) so clearly the minimal polynomial over \(\Q\) is
+\(x^2 + 1\).</p>
+<p>Suppose for the sake of contradiction that \(i \in \Q(\zeta_3)\). Then we
+have the chain of field extensions
+\(\Q \subseteq \Q(i) \subseteq \Q(\zeta_3)\). Since \([\Q(\zeta_3) : \Q] = 2\),
+and the first inclusion is proper, we have \(\Q(\zeta_3) = \Q(i)\). But
+\(\zeta_3\) has irrational imaginary part, so \(\zeta_3 \notin \Q(i)\), and a
+contradiction has been reached. So we conclude that \(i \notin \Q(\zeta_3)\).
+The polynomial \(x^2 + 1\) is therefore minimal for \(i\) over
+\(\Q(\zeta_3)\) as well.</p></li>
+<li><p>\(\zeta_6\) is a root of the polynomial \(x^6 - 1\), but we may divide
+out the factors \(x^3 - 1\) and \(x + 1\) to obtain \(x^2 - x + 1\). Since
+\(\zeta_6\) is not a root of either of these factors, \(\zeta_6\) is still a
+root of \(x^2 - x + 1\). The only possible rational roots of this quadratic
+are \(\pm 1\), which are not roots,
+so this polynomial is irreducible. So \(x^2 - x + 1\) is the minimal
+polynomial for \(\zeta_6\) over \(\Q\).</p>
+<p>Notice that \(\zeta_6 = -\zeta_3^2\), so the minimal polynomial of
+\(\zeta_6\) over \(\Q(\zeta_3)\) is just \(x - \zeta_6\).</p></li>
+<li><p>We have \(\zeta_8^4 = -1\), so \(\zeta_8\) is a root of \(x^4 + 1\).
+This is irreducible by Exercise 12.4.18, so it is the minimal
+polynomial for \(\zeta_8\) over \(\Q\).</p>
+<p>We now turn to the question of whether \(x^4 + 1\) is irreducible over
+\(\Q(\zeta_3)\) as well. The four roots of this polynomial are \(\zeta_8,
+\zeta_8^3, \zeta_8^5, \zeta_8^7\) and their squares are \(\pm i\). We already
+argued in part (a) that \(i \notin \Q(\zeta_3)\), so it must be that none of
+the roots of \(x^4 + 1\) are in \(\Q(\zeta_3)\) either, or, in other words,
+\(x^4 + 1\) doesn't have any linear factor in \(\Q(\zeta_3)[x]\). If
+\(x^4 + 1\) is a product of two irreducible quadratics in \(\Q(\zeta_3)[x]\),
+the factor of which \(\zeta_8\) is a root is one of
+\((x-\zeta_8)(x-\zeta_8^3) = x^2 - i\sqrt{2}x - 1\),
+\((x-\zeta_8)(x-\zeta_8^5) = x^2 - i\), or \((x-\zeta_8)(x-\zeta_8^7) =
+x^2 - \sqrt{2}x + 1\). Since
+\(\Q(\zeta_3) \subseteq \Q(\sqrt{3}, i)\), it is clear that \(\sqrt{2}\) and
+\(i\sqrt{2}\) don't lie in \(\Q(\zeta_3)\), so in fact \(x^4 + 1\) cannot
+split over \(\Q(\zeta_3)\) at all, and is the minimal polynomial for
+\(\zeta_8\) over \(\Q(\zeta_3)\).</p></li>
+<li><p>\(\zeta_9\) is a root of \(x^9 - 1\), but is not a root of
+\(x^3 - 1\). So it is a root of the quotient \(\frac{x^9 - 1}{x^3 - 1} =
+x^6 + x^3 + 1\). According to Exercise 12.4.18, this polynomial is irreducible
+over \(\Q\), so it is the minimal polynomial for \(\zeta_9\).</p>
+<p>Now \(\Q(\zeta_3) \subseteq \Q(\zeta_9)\) so we can write
+\([\Q(\zeta_9) : \Q] = [\Q(\zeta_9) : \Q(\zeta_3)][\Q(\zeta_3) : \Q]\) which
+establishes that \([\Q(\zeta_9) : \Q(\zeta_3)] = 6/2 = 3\); the minimal
+polynomial for \(\zeta_9\) over \(\Q(\zeta_3)\) is cubic. Obviously that
+polynomial must be \(x^3 - \zeta_3\).</p></li>
+<li><p>\(\zeta_{10}\) is a root of \(x^{10} - 1\), but we may divide out
+factors of \(x^5 - 1\) and \(x + 1\), leaving \(x^4 - x^3 + x^2 - x + 1\).
+There is an automorphism of polynomial rings that maps \(x\) to \(-x\), so this
+polynomial is irreducible iff \(x^4 + x^3 + x^2 + x + 1\) is. This latter
+polynomial is indeed irreducible by Exercise 12.4.18. So the minimal polynomial
+for \(\zeta_{10}\) over \(\Q\) is \(x^4 - x^3 + x^2 - x + 1\).</p>
+<p>It's possible to show that \(x^4 + x^3 + x^2 + x + 1\) is also irreducible
+over \(\Q(\zeta_3)\), although I am not sure how Artin intended for this to be
+done at this point in the book. A fairly simple method uses the
+techniques of Chapter 16. On Galois-theoretic grounds, the field
+\(\Q(\zeta_5)\) contains a single quadratic subfield, namely \(\Q(\sqrt{5})\);
+it does not contain \(\Q(\sqrt{-3})\), therefore it does not contain
+\(\zeta_3\). Therefore \(\zeta_3\) has degree 2 over \(\Q(\zeta_5)\), which
+in turn implies that \(\zeta_5\) has degree 4 over \(\Q(\zeta_3)\), so its
+minimal polynomial over \(\Q(\zeta_3)\) is indeed \(x^4 + x^3 + x^2 + x + 1\).
+Thus, this polynomial is irreducible, and so is \(x^4 - x^3 + x^2 - x + 1\), so
+the latter is also the minimal polynomial for \(\zeta_{10}\) over
+\(\Q(\zeta_3)\). See <a href="/artin/16.10">Exercise 16.10.1</a> for more
+details on this approach.</p></li>
+<li><p>By similar techniques as in previous parts we find the polynomial
+\(x^4 - x^2 + 1\) which is satisfied by \(\zeta_{12}\). If any of the primitive
+twelfth roots of unity had degree 1 then so would \(\zeta_6\), which we already
+know not to be the case by part (b). If any of them had degree 2, then we would
+have \(\Q(\zeta_{12}) = \Q(\zeta_6)\), but we already know that
+\(i \notin \Q(\zeta_3) = \Q(\zeta_6)\) by parts (a) and (b), yet
+\(i \in \Q(\zeta_{12})\), so this
+is impossible. Therefore \(x^4 - x^2 + 1\) is irreducible over \(\Q\) and is
+the minimal polynomial for \(\zeta_{12}\).</p>
+<p>Now \(\Q(\zeta_3) \subseteq \Q(\zeta_{12})\) so
+\([\Q(\zeta_{12}) : \Q] = [\Q(\zeta_{12}) : \Q(\zeta_3)][\Q(\zeta_3) : \Q]\)
+whereupon we find \([\Q(\zeta_{12}) : \Q(\zeta_3)] = 2\). The minimal
+polynomial for \(\zeta_{12}\) over \(\Q(\zeta_3)\) is therefore
+\(x^2 + \zeta_3\).</p></li>
+</ol>
+
+<p><span class="problem">Exercise 15.3.5</span> By Exercise 12.4.18, the degree
+of \(\zeta_p\) over \(\Q\) is \(p - 1\) whenever \(p\) is prime. In general
+\(\Q(\zeta_m) \subseteq \Q(\zeta_n)\) whenever \(m \divides n\), so the degree
+of \(\zeta_n\) is at least \(p - 1\) for each prime \(p\) that divides \(n\).
+The only possibilities if the degree is to be at most 3 are therefore
+\(n = 2^a 3^b\). As argued in Exercise 15.3.4, \([\Q(\zeta_8) : \Q] = 4\) and
+\([\Q(\zeta_9) : \Q] = 6\), so in fact we must have \(0 \le a \le 2\) and
+\(0 \le b \le 1\), that is, \(n \in \{1, 2, 3, 4, 6, 12\}\). By the results in
+Exercise 15.3.4, the solutions are \(n \in \{1, 2, 3, 4, 6\}\) while
+\(\zeta_{12}\) has degree 4.</p>
+
+<p><span class="problem">Exercise 15.3.6</span> We are given that \(\sqrt{a}
+\notin \Q\), so \(\Q(\sqrt{a})\) is a quadratic extension of \(\Q\). Clearly
+\(\Q(\sqrt[4]{a})\) is an extension of \(\Q(\sqrt{a})\). Is it possible that
+\(\sqrt[4]{a} \in \Q(\sqrt{a})\)? No. Suppose \(\sqrt[4]{a} = p + q\sqrt{a}\)
+with \(p, q \in \Q\). Then \((p + q\sqrt{a})^2 = \sqrt{a}\), and
+expanding out the LHS gives \(p^2 + aq^2 + 2pq\sqrt{a} = \sqrt{a}\).
+Since \(\{1, \sqrt{a}\}\) is a \(\Q\)-basis of \(\Q(\sqrt{a})\), this implies
+\(p^2 + aq^2 = 0\). But \(a, p^2, q^2 \ge 0\), so \(p = q = 0\), but obviously
+this is not a solution. Therefore, \(\sqrt[4]{a} \notin \Q(\sqrt{a})\), so that
+\(\Q(\sqrt[4]{a})\) is a quadratic extension of \(Q(\sqrt{a})\). Therefore
+\([\Q(\sqrt[4]{a}) : \Q] = [\Q(\sqrt[4]{a}) : \Q(\sqrt{a})]
+[\Q(\sqrt{a}) : \Q] = 4\).</p>
+
+<p><span class="problem">Exercise 15.3.7</span></p>
+<ol class="subproblems">
+<li>Suppose for the sake of contradiction that \(i \in \Q(\sqrt[4]{-2})\).
+Then we have the inclusions
+\(\Q \subseteq \Q(\sqrt{-2}) \subseteq \Q(\sqrt[4]{-2})\) and
+\(\Q \subseteq \Q(i) \subseteq \Q(\sqrt[4]{-2})\). Now, \(\sqrt{-2} =
+i\sqrt{2} \notin \Q(i)\) so \(\Q(i, \sqrt{-2})\) is a subfield of
+\(\Q(\sqrt[4]{-2})\) that is strictly larger than \(\Q(i)\). But
+\([\Q(\sqrt[4]{-2}) : \Q(i)] = [\Q(\sqrt[4]{-2}) : \Q]/[\Q(i) : \Q] = 2\), so
+this subfield must be \(\Q(\sqrt[4]{-2})\) itself. This implies that
+\(\sqrt[4]{-2} \in \Q(i, \sqrt{-2})\). We can therefore write
+\((x + y\sqrt{-2})^2 = \sqrt{-2}\) where \(x, y \in \Q(i)\).
+Expanding gives \(x^2 - 2y^2 + 2xy\sqrt{-2} = \sqrt{-2}\). As
+\(\{1, \sqrt{-2}\}\) is a basis for \(Q(i, \sqrt{-2})\) over \(\Q(i)\), this
+implies \(x^2 - 2y^2 = 0\), which can be factorized to yield
+\((x + \sqrt{2}y)(x - \sqrt{2}y) = 0\). This is clearly impossible to
+satisfy when \(x, y \in \Q(i)\), unless \(x = y = 0\), which doesn't give a
+solution to the original equation. So we have reached a contradiction, and we
+conclude that \(i \notin \Q(\sqrt[4]{-2})\).</li>
+<li>Some approaches to showing that \(\sqrt[3]{5} \notin \Q(\sqrt[3]{2})\) are
+given <a href="https://math.stackexchange.com/q/1106670/24692">here</a>. It is
+not clear what the intended solution is, given that Galois theory hasn't been
+covered yet at this point in the text.</li>
+</ol>
+
+<p><span class="problem">Exercise 15.3.8</span> By Corollary 15.3.6(d), the
+element \((\alpha + \beta)^2 - 4(\alpha\beta)\) is algebraic. But this is
+just \((\alpha - \beta)^2\). Since \((\alpha - \beta)^2\) is algebraic, so is
+\(\alpha - \beta\). By adding and subtracting \(\alpha + \beta\) and applying
+Corollary 15.3.6(d), we find that \(\alpha\) and \(\beta\) are both
+algebraic.</p>
+
+<p><span class="problem">Exercise 15.3.9</span> Observe that
+\begin{align*}
+[\Q(\alpha, \beta) : \Q] &amp;= [\Q(\alpha, \beta) : \Q(\alpha)]
+[\Q(\alpha) : \Q] \\
+[\Q(\alpha, \beta) : \Q] &amp;= [\Q(\alpha, \beta) : \Q(\beta)]
+[\Q(\beta) : \Q]
+\end{align*}
+from which it follows that
+\begin{equation*}
+\frac{[\Q(\alpha, \beta) : \Q(\alpha)]}{[\Q(\beta) : \Q]} =
+\frac{[\Q(\alpha, \beta) : \Q(\beta)]}{[\Q(\alpha) : \Q]}
+\end{equation*}
+\(f\) is irreducible over \(L[x]\) if and only if the RHS equals 1, which will
+be true if and only if the LHS equals 1, which will be true if and only if
+\(g\) is irreducible over \(K[x]\).</p>
+
+<p><span class="problem">Exercise 15.3.10</span> Let \(\lambda \in L\). We are
+given that \(L/K\) is algebraic, so we can write
+\(f(\lambda) = 0\) where \(f(x) = k_0 + k_1 x + \ldots + k_n x^n\)
+with \(k_0, \ldots, k_n \in K\) and \(k_n \ne 0\). Then
+\begin{equation*}
+[F(\lambda) : F] \le [F(\lambda, k_0, \ldots, k_n) : F] =
+[F(\lambda, k_0, \ldots, k_n) : F(k_0, \ldots, k_n)]
+[F(k_0, \ldots, k_n) : F]
+\end{equation*}
+Now \([F(\lambda, k_0, \ldots, k_n) : F(k_0, \ldots, k_n)] \le n\) and
+\([F(k_0, \ldots, k_n) : F]\) is finite by Corollary 15.3.6(c) since \(K/F\) is
+algebraic. Therefore \([F(\lambda) : F]\) is finite, that is, \(\lambda\) is
+algebraic over \(F\).</p>

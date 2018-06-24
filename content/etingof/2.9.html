@@ -1,0 +1,69 @@
+<h2>Section 2.9. Lie algebras</h2>
+<p><span class="problem">Parentheticals to remark 2.9.4</span>
+Fix \(a, b \in A\) and regard \(g\) as a function of \(t\) only so that we have
+\begin{equation*}
+\frac{\d}{\d t} (g(t)(ab)) = g'(t)(ab)
+\end{equation*}
+Then
+\begin{align*}
+g'(t)(ab) &amp;= \frac{\d}{\d t} (g(t)(ab)) \\
+&amp;= \frac{\d}{\d t} (g(t)(a)g(t)(b)) \\
+&amp;= \frac{\d}{\d t}(g(t)(a)) \cdot g(t)(b) +
+g(t)(a) \frac{\d}{\d t}(g(t)(b)) \\
+&amp;= g'(t)(a) g(t)(b) + g(t)(a) g'(t)(b)
+\end{align*}
+At \(t = 0\) we have \(g(t) = \operatorname{Id}\) and \(g'(t) = D\) so
+\begin{equation*}
+D(ab) = D(a)b + aD(b)
+\end{equation*}</p>
+<div class="qed"></div>
+<p>For the other direction, we first observe that \(D^n(ab)
+= \sum_{i=0}^n \binom{n}{i} D^i(a) D^{n-i}(b)\), which is easily proven by
+induction on \(n\). Then it becomes clear that
+\begin{align*}
+e^{tD}(ab) &amp;= ab + tD(ab) + \frac{t^2}{2!} D^2(ab) + \frac{t^3}{3!} D^3(ab)
++ \ldots \\
+&amp;= \sum_{i=0}^\infty \left[\frac{t^i}{i!} \sum_{j=0}^i \binom{i}{j}
+D^j(a)D^{i-j}(b)\right] \\
+&amp;= \sum_{j=0}^\infty \sum_{i=j}^\infty \frac{t^i}{i!} \binom{i}{j}
+D^j(a)D^{i-j}(b) \\
+&amp;= \sum_{j=0}^\infty \sum_{k=0}^\infty \frac{t^{j+k}}{(j+k)!}
+\binom{j+k}{j} D^j(a) D^k(b) \\
+&amp;= \sum_{j=0}^\infty \sum_{k=0}^\infty \frac{t^{j+k}}{j!k!} D^j(a) D^k(b)
+\\
+&amp;= \left[\sum_{j=0}^\infty \frac{t^j}{j!} D^j(a)
+\sum_{k=0}^\infty \frac{t^k}{k!} D^k(b)\right] \\
+&amp;= e^{tD}(a) e^{tD}(b)
+\end{align*}
+so \(e^{tD}\) is an algebra homomorphism, which is an isomorphism since it has
+an inverse given by \(e^{-tD}\).</p>
+<div class="qed"></div>
+
+<p><span class="problem">Exercise 2.9.5</span> The Lie algebra of vectors in
+\(\mathbb{R}^3\) with the cross product is isomorphic to the matrix Lie algebra
+\(\mathfrak{so}(3)\) if we identify \((x, y, z)\) with the skew-symmetric
+matrix
+\begin{pmatrix}
+0 &amp; -z &amp; y \\
+z &amp; 0 &amp; -x \\
+-y &amp; x &amp; 0
+\end{pmatrix}
+Verification is tedious but straightforward.</p>
+
+<p><span class="problem">Exercise 2.9.11</span> If \(x \in \mathfrak{g}\), and
+\(x = \sum_i c_i x_i\) with \(c_i \in K\), then we can identify \(x\) with the
+element \(\sum_i c_i x_i\) in \(\mathcal{U}(\mathfrak{g})\). Call this
+\(\iota(x)\). A representation
+\(\rho\) of \(\mathfrak{g}\) assigns a linear operator to each \(x \in
+\mathfrak{g}\) that preserves linearity and the Lie bracket, so that
+\(\rho([x_i, x_j]) = [\rho(x_i), \rho(x_j)]\). If we define \(\rho'\) on the
+image of \(\iota\) (that is, the <q>copy</q> of \(\mathfrak{g}\) in
+\(\mathcal{U}(\mathfrak{g})\)) such that \(\rho'(\iota(x)) = \rho(x)\), the
+defining relations of \(\mathcal{U}(\mathfrak{g})\) imply that
+\(\rho'(\iota(x_i)\iota(x_j) - \iota(x_j)\iota(x_i)) =
+\sum_k c^k_{ij} \rho(\iota(x_k))\), so \(\rho'\) can be uniquely extended to a
+representation of \(\mathcal{U}(\mathfrak{g})\). In a very similar way, if we
+have a representation on the universal enveloping algebra, its restriction to
+the image of the injection map \(\iota\) induces a representation of the Lie
+algebra. (We do not give a formal proof since the question says <q>explain</q>
+rather than <q>prove</q> or <q>show</q>.)</p>

@@ -1,0 +1,22 @@
+<h2>Section 6.10. Operations on Subsets</h2>
+<p><span class="problem">Exercise 6.10.2</span> Let \(s_1, s_2 \in S\). Since
+\(G\) acts transitively on \(S\), there is some \(g\) such that \(gs_1 = s_2\).
+Let \(H_1 = \{h \mid h \in G, s_1 \in hU\}\) and likewise \(H_2 =
+\{h \mid h \in G, s_2 \in hU\}\). We are asked to show that \(|H_1| = |H_2|\).
+Suppose \(h \in H_1\). Then \(s_2 = gs_1 \in ghU\), so \(gh \in H_2\). The
+map \(h \mapsto gh\) is one-to-one, so \(|H_2| &gt; |H_1|\). We can similarly
+show that if \(h \in H_2\) then \(g^{-1}h \in H_1\) so \(|H_1| &gt; |H_2|\).
+Therefore \(|H_1| = |H_2|\).</p>
+
+<p><span class="problem">Exercise 6.10.3</span> The orbit of \(U\) is also the
+orbit of \(H\), so we can simply replace \(U\) with \(H\) in the description.
+That is, we are given that \(H\) is a subset of \(G\) such that the sets
+\(gH\) partition \(G\) and that \(1 \in H\). So suppose \(h \in H\). Then
+the two subsets \(hH\) and \(1H\) must either be disjoint or else coincide.
+But \(hH\) and \(1H\) both contain the element \(h\), implying they coincide.
+But \(1H\) contains 1, so \(hH\) must contain 1 as well; that is, \(h^{-1} \in
+H\). Now suppose \(a, b \in H\). Again, the two subsets \(aH\) and \(1H\)
+must either be disjoint or coincide, but both contain \(a\), so they coincide.
+And \(aH\) contains \(ab\), so \(1H\) must also contain \(ab\), that is,
+\(ab \in H\). So \(H\) contains 1 and is closed under inverses and the
+operation of \(G\); \(H\) is a subgroup of \(G\).</p>

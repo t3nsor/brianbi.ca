@@ -1,0 +1,15 @@
+<p><span class="problem">Exercise 4.2.3</span> Let \(V_1, \ldots, V_n\) be the
+irreducible representations of \(G\).
+Let \(f : G \to k\) be the function that sends the identity element to 1 and
+all other elements to 0. Then \(f \in F_c(G, k)\). 
+Let \(P \in k[G]\) be the element \(\sum_{g\in G} g\). Then
+\(gP = P\) for all \(g \in G\), therefore \(P^2 =
+|G|P = 0\), so \(\rho(P)^2 = \rho(P^2) = 0\) in all representations of \(G\).
+Since \(\rho(P)\) is nilpotent, it is also traceless, that is,
+\(\chi_V(P) = 0\) for all representations \(V\). However,
+\(f(P) = 1\). Therefore \(f \notin \span(\chi_{V_1}, \ldots, \chi_{V_n})\).
+But the \(\chi_{V_1}, \ldots, \chi_{V_n}\) are linearly independent according
+to Theorem 3.6.2, so their span is an \(n\)-dimensional subspace of
+\(F_c(G, k)\) which is a strict subset of \(F_c(G, k)\). Therefore
+\(n\) is strictly less than \(\dim F_c(G, k)\), which is the number of
+conjugacy classes of \(G\).</p>

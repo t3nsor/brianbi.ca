@@ -1,0 +1,349 @@
+<h2>Section 7.10. Generators and Relations</h2>
+<p><span class="problem">Exercise 7.10.1</span> Let \(\mathcal{F}\) be the
+free group on a set of generators \(S\), and let \(f : S \to G\) be a function
+from \(S\) to a group \(G\). It is clear that there is at most one way to
+extend \(f\) to a group homomorphism \(\varphi : \mathcal{F} \to G\), since
+\(S\) generates \(\mathcal{F}\), namely,
+by writing each element of \(\mathcal{F}\) as a reduced word, replacing each
+instance of a generator \(s \in S\) by \(f(s)\), and replacing each instance
+of \(s^{-1}\) by \(f(s)^{-1}\), where \(s \in S\). We need to show that this is
+indeed a valid homomorphism.
+Let \(g_1, g_2\) be arbitrary elements of \(\mathcal{F}\); write them as
+reduced words:
+\begin{align*}
+g_1 &amp;= s_1^{d_1} \ldots s_m^{d_m} \\
+g_2 &amp;= t_1^{e_1} \ldots t_n^{e_n}
+\end{align*}
+so that
+\begin{align}
+\varphi(g_1) &amp;= f(s_1)^{d_1} \ldots f(s_m)^{d_m} \nonumber \\
+\varphi(g_2) &amp;= f(t_1)^{e_1} \ldots f(t_n)^{e_n} \nonumber \\
+\varphi(g_1) \varphi(g_2) &amp;= f(s_1)^{d_1} \ldots f(s_m)^{d_m}
+f(t_1)^{e_1} \ldots f(t_n)^{e_n} \label{eqn:phig1g2}
+\end{align}
+Suppose that in forming the product \(g_1 g_2\) and reducing, we need to cancel
+\(k\) factors from the right of \(g_1\) and \(k\) factors from the left of
+\(g_2\). Then the reduced word form of \(g_1 g_2\) is
+\[
+g_1 g_2 = s_1^{d_1} \ldots s_{m-k}^{d_{m-k}} t_{k+1}^{e_{k+1}} \ldots t_n^{e_n}
+\]
+and
+\[
+\varphi(g_1 g_2) = f(s_1)^{d_1} \ldots f(s_{m-k})^{d_{m-k}}
+f(t_{k+1})^{e_{k+1}} f(t_n)^{e_n}
+\]
+The cancellation implies that for each \(j\) from 1 to \(n\), we had
+\(s_{m-j+1} = t_j\) and \(d_{m-j+1} = -e_j\). If that's the case, then it's
+also true that \(f(s_{m-j+1})^{d_{m-j+1}} f(t_j)^{e_j} =
+f(t_j)^{-e_j} f(t_j)^{e_j} = 1\). So we may cancel \(k\) pairs of factors in
+\((\ref{eqn:phig1g2})\) to obtain
+\[
+\varphi(g_1)\varphi(g_2) = f(s_1)^{d_1} \ldots f(s_{m-k})^{d_{m-k}}
+f(t_{k+1})^{e_{k+1}} \ldots f(t_n)^{e_n} = \varphi(g_1 g_2)
+\]
+as required. So \(\varphi\) is indeed a homomorphism.</p>
+<p>We now turn our attention to the mapping property for free groups. Using the
+notation in Proposition 7.10.13, we will prove that there is a unique
+homomorphism \(\overline{\varphi} : \overline{G}' \to G\) such that
+\(\varphi = \overline{\varphi} \circ \pi\).
+The group \(\overline{G}'\) is the group of cosets of \(N\) in \(G'\).
+For each \(C \in \overline{G}'\), there is some \(a \in G'\) such
+that \(C = [aN]\), so that \(C = \pi(a)\). Since we have \(\varphi(a) =
+\overline{\varphi}(\pi(a))\), this implies \(\overline{\varphi}(C) =
+\varphi(a)\). So knowing \(\varphi\) allows us to deduce what
+\(\overline{\varphi}\) must be. This is well-defined, because if
+\(a, b \in G'\) belong to the same coset, then \(ab^{-1} \in N \subseteq K\),
+so \(\varphi(a) = \varphi(b)\). By construction, it is therefore the case that
+\(\varphi = \overline{\varphi} \circ \pi\) as required. It remains to show
+that \(\overline{\varphi}\) is a homomorphism.
+Let \(C_1, C_2 \in \overline{G}'\) and write \(C_1 = [a_1 N], C_2 =
+[a_2 N]\). Then \(C_1 C_2 = [a_1 a_2 N]\), so \(\overline{\varphi}(C_1 C_2) =
+\varphi(a_1 a_2) = \varphi(a_1) \varphi(a_2) = \overline{\varphi}(C_1)
+\overline{\varphi}(C_2)\), as required. We have verified that
+\(\overline{\varphi}\) is a homomorphism.</p>
+
+<p><span class="problem">Exercise 7.10.2</span> Let \(g \in G\). Then
+\(\varphi(g)\) is a product of the generators \(\varphi(S)\), say,
+\(\varphi(g) = \varphi(s_1)^{d_1} \ldots \varphi(s_m)^{d_m}\) where each
+\(s_i\) is some element of \(S\) and each \(d_i\) is \(\pm 1\). This implies
+\(\varphi(g) = \varphi(s_1^{d_1} \ldots s_m^{d_m})\). Since the elements
+\(g\) and \(s_1^{d_1} \ldots s_m^{d_m}\) have the same image, it must be that
+\(g = k s_1^{d_1} \ldots s_m^{d_m}\) for some \(k \in \ker \varphi\). But then
+\(k = t_1^{e_1} \ldots t_n^{e_n}\) where each \(t_i \in T\) and each \(e_i\) is
+\(\pm 1\). So \(g = t_1^{e_1} \ldots t_n^{e_n} s_1^{d_1} \ldots s_m^{d_m}\).
+Since every \(g \in G\) can be written in this form,
+\(S \cup T\) generates \(G\).</p>
+
+<p><span class="problem">Exercise 7.10.3</span> Yes. If \(G = \{g_1, \ldots,
+g_n\}\) and the composition law is \(g_i g_j = g_{a_{ij}}\) for some matrix
+\(a\), then a presentation of \(G\) is given by \(\langle g_1, \ldots,
+g_n \mid g_i g_j g_{a_{ij}}^{-1} \rangle\) where \(i, j\) range over all pairs
+of indices from 1 to \(n\). The assumption that \(G\) exists and satisfies
+these relations establishes that
+this presentation does indeed describe a group with at least \(n\) distinct
+elements, and the relations themselves imply that that group is isomorphic to
+\(G\).</p>
+
+<p><span class="problem">Exercise 7.10.4</span> We solve this problem in three
+parts. First, we determine the normal closure \(N\) of \(xyx^{-1}y^{-1}\) in
+\(\mathcal{F}\), the free group over two generators. Second, we characterize
+the group \(G = \mathcal{F}/N\). Finally, we prove the universal property.</p>
+
+<p>Define \(w : \mathcal{F} \to \mathbb{Z}^2\) as the homomorphism
+with \(w(x) = (1, 0), w(y) = (0, 1)\). By the universal property, this
+homomorphism exists and is unique, and simply counts occurrences of each
+generator minus its inverse in the reduced word. We claim that \(\ker w
+\subseteq N\),
+that is, \(N\) contains all <em>balanced words</em>, which are reduced words
+that have
+the same number of \(x\)'s as \(x^{-1}\)'s and the same number of \(y\)'s as
+\(y^{-1}\)'s. We prove the claim by induction on the length of the balanced
+word, which must obviously be even.</p>
+
+<p><em>Base case:</em> The only balanced word of length zero is the identity,
+which is of course in \(N\). There are no balanced words of length two. We are
+given that \(xyx^{-1}y^{-1} \in N\); successive conjugation by \(x^{-1},
+y^{-1}, x\) yields the elements \(yx^{-1}y^{-1}x, x^{-1}y^{-1}xy,
+y^{-1}xyx^{-1}\). The inverses of these four elements must also be in \(N\),
+namely \(yxy^{-1}x^{-1}, x^{-1}yxy^{-1}, y^{-1}x^{-1}yx, xy^{-1}x^{-1}y\).
+These eight words exhaust the balanced words of length four.</p>
+
+<p><em>Inductive case:</em> Assume all balanced words of length less than
+\(2n\) are in \(N\). We will use this to prove that all balanced words of
+length \(2n\) are in \(N\) in the following steps:</p>
+<ol>
+<li>Let \(a\) denote \(x\), \(y\), \(x^{-1}\), or \(y^{-1}\). If a balanced
+word of length \(2n\) has the form \(aWa^{-1}\), then \(W\) must also be
+balanced; by the
+induction hypothesis, \(W \in N\); therefore \(aWa^{-1} \in N\) also. That is,
+all balanced words of the form \(aWa^{-1}\) of length \(2n\) are in \(N\).</li>
+<li>If a balanced word of length \(2n\) has the form \(a W_1 a^{-1} W_2\) where
+the length of
+\(W_2\) is at most \(n-2\), then \(a W_1 a^{-1} W_2 =
+(a W_1 W_2 a^{-1})(a W_2^{-1} a^{-1} W_2)\). By step 1, the left factor is in
+\(N\). The right factor is balanced, and has length at most \(2(n-1)\). By the
+induction hypothesis, the right factor is in \(N\). Therefore all balanced
+\(a W_1 a^{-1} W_2 \in N\).</li>
+<li>If a balanced word of length \(2n\) has the form \(a W_1 a^{-1} W_2\) where
+the length of \(W_1\) is at most \(n-2\), then note that by step 2, the
+balanced word \(a^{-1} W_2 a W_1^{-1}\) is in \(N\), and
+\(a W_1 a^{-1} W_2\) is the conjugate of that element by \(a W_1\). Therefore
+\(a W_1 a^{-1} W_2 \in N\).</li>
+<li>If a balanced word of length \(2n\) has the form \(W_1 a W_2 a^{-1} W_3\),
+where the length of \(W_2\) is not \(n-1\), then note that by steps 1 and 2,
+the balanced word \(a W_2 a^{-1} W_3 W_1^{-1}\) is in \(N\), and the word
+\(W_1 a W_2 a^{-1} W_3\) is the conjugate of that word by \(W_1\). Therefore
+\(W_1 a W_2 a^{-1} W_3 \in N\).</li>
+<li>If a balanced word of length \(2n\) is not covered by case 4, it can only
+take the form \(W = a_1 a_2 \ldots a_n a_1^{-1} a_2^{-1} \ldots
+a_n^{-1}\). Note that the word \(W'\) formed by swapping the initial \(a_1\)
+and \(a_2\) is then covered by case 4 so \(W' \in N\); finally
+\(W = (a_1 a_2 a_1^{-1} a_2^{-1})W'\), and \(a_1 a_2 a_1^{-1} a_2^{-1} \in N\)
+by the base case \(n = 2\), therefore \(W \in N\).</li>
+</ol>
+<p>We have proven that \(\ker w \in N\). But \(\ker w\) is normal, so
+\(N = \ker w\).</p>
+
+<p>Now let's turn our attention to the structure of \(G\). By the first
+isomorphism theorem, \(G = \mathcal{F}/N\) is isomorphic to \(\im w\), which is
+simply \(\mathbb{Z}^2\) itself. Explicitly, the elements of \(G\) are fibers
+of \(w\), so this isomorphism maps \([xN]\) to \((1, 0)\) and \([yN]\) to
+\((0, 1)\). In the group \(G\), the symbol \(x\) denotes the coset \([xN]\)
+and \(y\) denotes \([yN]\). So we can also say that \(G\) is isomorphic to
+\(\mathbb{Z}^2\) with \(x\) mapped to \((1, 0)\) and \(y\) mapped to
+\((0, 1)\).</p>
+
+<p>We can finally prove the universal property. Let an abelian group \(A\) be
+given and let \(u, v \in A\). We know that \(x, y\) generate \(G\) because
+\((1, 0), (0, 1)\) generate \(\mathbb{Z}^2\). Therefore there is at most one
+homomorphism \(\varphi : G \to A\) with \(\varphi(x) = u, \varphi(y) = v\). To
+show that \(\varphi\) actually exists and is a homomorphism, define it as
+\(\varphi = \gamma \circ \varphi'\) where
+\(\varphi'\) is the isomorphism from \(G\) to \(\mathbb{Z}^2\) and
+\(\gamma\) is the homomorphism defined by \(\gamma((1, 0)) = u,
+\gamma((0, 1)) = v\). It is obvious that \(\gamma\) is a valid homomorphism,
+therefore \(\varphi\) is also a valid homomorphism, as required.</p>
+<div class="qed"></div>
+
+<p><span class="problem">Exercise 7.10.5</span> Idea: Let \(G\) denote the
+group specified. Notice that the defining
+relation \(yxyz^{-2} = 1\) is equivalent to \(x = y^{-1}z^2y^{-1}\). Define a
+homomorphism \(\varphi : G \to \mathcal{F}(y, z)\) as follows: to compute
+\(G(w)\) for some reduced word \(w\), replace every occurrence of \(x\) with
+\(y^{-1}z^2 y^{-1}\) and every occurrence of \(x^{-1}\) with \(yz^{-2}y\), and
+cancel to obtain a reduced word. Argue that the result doesn't depend on the
+order of substitutions and cancellations, and use this to show that
+\(\varphi\) is a homomorphism. Argue that the normal closure \(N\) of the
+defining relation \(x^{-1}y^{-1}z^2y^{-1}\) is \(\ker \varphi\), and by the
+first isomorphism theorem, \(G = \mathcal{F}(x, y, z)/N \cong \im \varphi =
+\mathcal{F}(y, z)\). Details are left as an exercise.</p>
+
+<p><span class="problem">Exercise 7.10.6</span></p>
+<ol class="subproblems">
+<li>Let \(H\) be a characteristic subgroup of \(G\). Then \(H\) is carried to
+itself by all inner automorphisms, which are simply conjugation by the various
+elements of \(G\). Therefore \(H\) is normal. To see that the centre is normal,
+observe that if \(x\) is central and \(\varphi\) is an automorphism, then for
+all \(y \in G\), \(\varphi(x)y =
+\varphi(x)\varphi(\varphi^{-1}(y)) = \varphi(x\varphi^{-1}(y)) =
+\varphi(\varphi^{-1}(y)x) = y\varphi(x)\), therefore \(\varphi(x)\) is also
+central. Applying this logic using the inverse automorphism establishes that
+the converse is also true, so the centre must be carried to itself.</li>
+<li><p>\(Q_8\) has the trivial group and \(Q_8\) itself as normal subgroups. We
+can classify the remaining normal subgroups based on whether they contain an
+element of order 4. If such a subgroup doesn't contain an element of order 4,
+it can only be the \(C_2\) subgroup consisting of \(\pm 1\). If it does contain
+an element of order 4, it must either be the group generated by that element or
+the entire group, by Lagrange's theorem. But all subgroups generated by an
+element of order 4 are
+normal since they have index 2 in \(Q_8\). So all six subgroups of \(Q_8\),
+namely the trivial group, \(Q_8\), \(\langle -1\rangle\),
+\(\langle i \rangle\), \(\langle j \rangle\), and \(\langle k \rangle\), are
+normal.</p>
+<p>Only three of those subgroups are characteristic. Obviously the trivial
+group and \(Q_8\) itself are characteristic; \(\{1, -1\}\) is characteristic
+because \(-1\) is the only element of order 2. The subgroups of order 4 are
+not characteristic; for example, the automorphism that sends \(i, j, k\) to
+\(j, k, i\) respectively permutes those three subgroups in a 3-cycle.</p>
+</li>
+</ol>
+
+<p><span class="problem">Exercise 7.10.7</span> Let \([x, y]\) denote the
+commutator of \(x\) and \(y\). It is easy to see that if \(\varphi\) is any
+homomorphism, then \(\varphi([x, y]) = [\varphi(x), \varphi(y)]\). Also note
+that \([x, y] = [y, x]^{-1}\). Suppose
+now that \(\varphi\) is an automorphism and that \(g \in C\). Then we can write
+\(g\) in the form \([x_1, y_1][x_2, y_2] \ldots [x_n, y_n]\) where all
+\(x_i\)'s and \(y_i\)'s are elements of \(G\). (We don't need any inverses here
+since we can just exchange the two elements in the commutator, but the
+argument doesn't depend on this.) Then \(\varphi(g) =
+\varphi([x_1, y_1]) \ldots \varphi([x_n, y_n]) = [\varphi(x_1), \varphi(y_1)]
+\ldots [\varphi(x_n), \varphi(y_n)]\), therefore \(\varphi(g) \in C\) also.
+By applying this logic to the inverse automorphism \(\varphi^{-1}\) we can
+establish the converse also. So \(C\) is characteristic in \(G\).</p>
+<p>To show that \(G/C\) is abelian, we will work with the cosets directly.
+Let \([xC], [yC]\) be two elements of \(G/C\). Then \([xC][yC] = [xyC]\) and
+\([yC][xC] = [yxC]\). But \(C\) contains the element \([x^{-1}, y^{-1}] =
+x^{-1}y^{-1}xy\), so \([yxC]\) contains \(yxx^{-1}y^{-1}xy = xy\), so these
+two cosets are equal. Since \([xC], [yC]\) were arbitrary, \(G/C\) is
+abelian.</p>
+
+<p><span class="problem">Exercise 7.10.8</span></p>
+<ol class="subproblems">
+<li>The group \(SO(2)\) is abelian, so its derived subgroup is trivial.</li>
+<li>Let \(x, y \in O(2)\). The commutator \([x, y]\) must lie in the
+\(SO(2)\) subgroup because in \(xyx^{-1}y^{-1}\) any reversal of orientation
+caused by \(x\) will be undone by \(x^{-1}\) and likewise with \(y\) and
+\(y^{-1}\). If \(z = \rho_{\theta}\), then a quick calculation shows that
+\(z = [\rho_{\theta/2}, r]\). So \([SO(2), SO(2)] = SO(2)\).</li>
+<li>As in part (b), it is clear that all commutators are
+orientation-preserving, and according to part (b), \([M, M]\) contains all
+rotations. Let \(t_a\) be a rotation and let \(r\) be the reflection
+that maps \(a\) to \(-a\), that is, a reflection across the line perpendicular
+to the vector \(a\).
+ A quick calculation shows that \([t_a, r] = t_{2a}\), so \([M, M]\)
+contains all translations too. Since the translations and
+rotations generate the orientation-preserving subgroup of \(M\), that subgroup
+is \([M, M]\).</li>
+<li>The cases \(n = 1\) and \(n = 2\) are trivial. By a similar argument to
+that of part (b), the commutators of \(S_n\) must
+all be even permutations, so \([S_n, S_n] \subseteq A_n\).
+Let \(x = (1\ 2), y = (2\ 3)\). Then \([x, y] = (1\ 2)(2\ 3)
+(1\ 2)(2\ 3) = (1\ 2\ 3)(1\ 2\ 3) = (1\ 3\ 2)\). It is clear by analogy that
+every 3-cycle is a commutator in \(S_n\). By Lemma 7.5.5(a), \(A_n\) is
+generated by the 3-cycles. So \([S_n, S_n] = A_n\).</li>
+<li>Let
+\[
+X = \begin{pmatrix}
+\cos \theta &amp; -\sin\theta &amp; 0 \\
+\sin\theta &amp; \cos\theta &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{pmatrix} \qquad
+Y = \begin{pmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; -1 &amp; 0 \\
+0 &amp; 0 &amp; -1
+\end{pmatrix}
+\]
+That is, \(X\) is a rotation of angle \(\theta\) around the z-axis, while
+\(Y\) is a rotation of 180 degrees around the x-axis. Calculation shows that
+\[
+[X, Y] = \begin{pmatrix}
+\cos 2\theta &amp; -\sin 2\theta &amp; 0 \\
+\sin 2\theta &amp; \cos 2\theta &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{pmatrix}
+\]
+So we see that \([SO(3), SO(3)]\) contains all rotations around the z-axis.
+But by Exercises 7.10.7 and 7.10.6(a), the derived subgroup is normal, so it
+contains all conjugates of rotations around the z-axis, and by Corollary
+5.1.28(b), this includes all rotations in \(SO(3)\). Therefore
+\([SO(3), SO(3)] = SO(3)\).</li>
+</ol>
+
+<p><span class="problem">Exercise 7.10.9</span> We found in
+<a href="/artin/2.12">Exercise 2.12.2</a> that the centre of the group \(G\)
+consists of all those matrices of the form
+\[
+\begin{pmatrix} 1 &amp; 0 &amp; x \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1 \end{pmatrix}
+\]
+where \(x\) is an arbitrary element of the ground field; this did not depend on
+choice of field.</p>
+<p>Direct calculation shows that
+\[
+\left[\begin{pmatrix} 1 &amp; a &amp; b \\
+0 &amp; 1 &amp; c \\
+0 &amp; 0 &amp; 1 \end{pmatrix},
+\begin{pmatrix} 1 &amp; d &amp; e \\
+0 &amp; 1 &amp; f \\
+0 &amp; 0 &amp; 1 \end{pmatrix} \right] =
+\begin{pmatrix} 1 &amp; 0 &amp; af - cd \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1 \end{pmatrix}
+\]
+so in fact \([G, G] = Z(G)\).</p>
+<p>Finally, direct calculation shows, and induction can easily be used to
+prove, that
+\[
+\begin{pmatrix} 1 &amp; a &amp; b \\
+0 &amp; 1 &amp; c \\
+0 &amp; 0 &amp; 1 \end{pmatrix}^n =
+\begin{pmatrix} 1 &amp; na &amp; nb + \binom{n}{2}ac \\
+0 &amp; 1 &amp; nc \\
+0 &amp; 0 &amp; 0 \end{pmatrix}
+\]
+For
+\(p &gt; 2\), the order of any element where either \(a\) or \(c\) is nonzero
+is at least \(p\) since we need \(na = nc = 0\), and \(p\) divides
+\(\binom{p}{2}\) so
+the condition that \(nb + \binom{n}{2}ac = 0\) is then satisfied as well, and
+the order
+is exactly \(p\). Also if \(a = c = 0\) then it is clear the order is also
+\(p\). So for \(p &gt; 2\), all elements have order \(p\) except the identity.
+For \(p = 2\), this argument fails since \(\binom{2}{2} = 1\), which isn't a
+multiple of 2.
+This only matters in the case where \(ac \neq 0\). So the two matrices
+\[
+\begin{pmatrix} 1 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; 1 \end{pmatrix}, \qquad
+\begin{pmatrix} 1 &amp; 1 &amp; 1 \\
+0 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; 1 \end{pmatrix}
+\]
+have order 4 while all other non-identity matrices have order 2.
+</p>
+
+<p><span class="problem">Exercise 7.10.10</span></p>
+<ol class="subproblems">
+<li>We showed in Exercise 7.10.4 that \(\mathcal{R}\) consists of the balanced
+words; and \(x^2 y^2 x^{-2} y^{-2}\) is a balanced word.</li>
+<li>By Exercises 7.10.7 and 7.10.6(a), \([\mathcal{F}, \mathcal{F}]\) is a
+normal subgroup. Since it contains \([x, y]\), it must contain all of
+\(\mathcal{R}\). Also, it is easy to see that a commutator is always a
+balanced word, so \([\mathcal{F}, \mathcal{F}] \subseteq \mathcal{R}\). Putting
+the two results together, we see that the derived subgroup is exactly
+\(\mathcal{R}\).</li>
+</ol>

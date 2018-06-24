@@ -1,0 +1,91 @@
+<h2>Section 11.5. Adjoining Elements</h2>
+<p><span class="problem">Exercise 11.5.1</span> This is just an application of
+Proposition 11.5.5(c), although we will want to reduce \(\alpha^5 + 1\) first
+before the multiplication. Since \(x^5 - 1 = (x - 1)(x^4 + x^3 + x^2 + x +
+1)\), it follows that \(x^5 + 1\) leaves the remainder 2 upon division by
+\(x^4 + x^3 + x^2 + x + 1\). So \((x^5 + 1)(x^3 + x^2 + x)\) leaves the
+remainder \(2x^3 + 2x^2 + 2x\). So the element in question is \(2\alpha^3 +
+2\alpha^2 + 2\alpha\).</p>
+
+<p><span class="problem">Exercise 11.5.2</span> We are being asked to show that
+the ring \(R[\alpha]\), which is defined to be \(R[x]/(x - a)\), is isomorphic
+to \(R\). Define the homomorphism \(\varphi : R[x] \to R\) by \(\varphi(f) =
+f(a)\). Then \(\varphi\) is surjective and its kernel is \((x - a)\). The
+desired result follows from the first isomorphism theorem.</p>
+
+<p><span class="problem">Exercise 11.5.3</span> This is the ring
+\((\mathbb{Z}/12\mathbb{Z})[x]/(2x - 1)\), which is isomorphic to
+\(\mathbb{Z}[x]/(12, 2x - 1)\) according to the Correspondence Theorem.
+Notice that \(x(12) - 6(2x - 1) = 6\), so the ideal \((12, 2x - 1)\) is the
+same as the ideal \((6, 2x - 1)\). We determined in
+<a href="/artin/11.4">Exercise 11.4.3(c)</a> that the ring obtained by
+quotienting out this ideal is isomorphic to \(\mathbb{Z}/3\mathbb{Z}\).</p>
+
+<p><span class="problem">Exercise 11.5.4</span></p>
+<ol class="subproblems">
+<li>\(R' \cong \Z[x]/I\) where \(I = (2x - 6, 6x - 15)\). Evidently
+\(3 = (6x - 15) - 3(2x - 6) \in I\). Define \(\varphi : \Z[x] \to \Z_3[x]\) to
+be a homomorphism with \(\varphi(x) = x\). Then \(\varphi\) is surjective and
+its kernel contains \((3)\), so \(\Z[x]/I \cong \Z_3[x]/\varphi(I) =
+\Z_3[x]/(2x) = \Z_3[x]/(x) \cong \Z_3\).</li>
+<li>\(R' \cong \Z[x]/I\) where \(I = (2x - 6, x - 10)\). We kill \(x - 10\)
+first to obtain a ring isomorphic to \(\Z\), and then kill the residue of
+\(2x - 6\) in the resulting ring, which is \(2\cdot 10 - 6 = 14\), yielding
+\(\Z_{14}\).</li>
+<li>\(R' \cong \Z[x]/I\) where \(I = (x^3 + x^2 + 1, x^2 + x)\). Now
+\(1 = (x^3 + x^2 + 1) - x(x^2 + x) \in I\), so \(I = (1)\). Therefore \(R'\) is
+the zero ring.</li>
+</ol>
+
+<p><span class="problem">Exercise 11.5.5</span> Yes; it's true when \(F =
+\Z/2\Z\), since \((\Z/2\Z)[x]/(x^2) \cong (\Z/2\Z)[x+1]/((x + 1)^2) =
+(\Z/2\Z)[x]/(x^2 + 2x + 1) = (\Z/2\Z)[x]/(x^2 - 1)\). More generally this will
+be true whenever \(F\) has characteristic 2.</p>
+
+<p><span class="problem">Exercise 11.5.6</span></p>
+<ol class="subproblems">
+<li>Every element \(\beta \in R'\) can be written in the form \(b_0 +
+b_1 \alpha + \ldots + b_k \alpha^k\) since it's the image of some element of
+\(R[x]\). But for each \(i \in \{0, 1, \ldots, k\}\), we have
+\(b_i \alpha^i = \alpha^k (b_i a^{k - i})\). So
+\(\beta = \alpha^k b\) where \(b = \sum_{i=0}^k b_i a^{k - i}\) and \(b \in
+R\).</li>
+<li>Let \(\varphi\) denote the map from \(R\) to \(R'\). Since \(\varphi\) is
+the composition of the natural inclusion map from \(R\) to \(R[x]\) and the
+quotient map from
+\(R[x]\) to \(R'\), the kernel of \(\varphi\) is the set of constant
+polynomials \(b\) such that \(b = P(x)(ax - 1)\) where \(P \in R[x]\). Write
+\(P(x) = c_0 + c_1 x + \ldots + c_n x\); then we have \(b = (ax - 1)
+(c_0 + c_1 x + \ldots + c_n x)\). Expanding and equating terms of like powers,
+we obtain:
+\begin{align*}
+-c_0 &amp;= b \\
+ac_0 - c_1 &amp;= 0 \\
+\vdots \\
+ac_{n-1} - c_n &amp;= 0 \\
+ac_n &amp;= 0
+\end{align*}
+This set of equations has a solution iff \(a^{n+1}b = 0\), from which the
+desired result follows.</li>
+<li>If \(a\) is nilpotent, then part (b) implies that \(\ker \varphi\)
+contains all of \(R\), so all constant polynomials in \(R[x]\) are mapped to
+zero, so all of \(R[x]\) is mapped to zero. Conversely, if \(a\) isn't
+nilpotent, then there is no \(n\) such that \(a^n 1 = 0\), so \(1 \notin
+\ker \varphi\), so \(R'\) is not the zero ring.</li>
+</ol>
+
+<p><span class="problem">Exercise 11.5.7</span>
+It is clear that \(R'\) is spanned by the residues of the elements
+\(t^i x^j\) where \(i, j \in \N\) (with coefficients in \(F\)). It's also clear
+that \(tx = 1\), so the set \(B = \{\ldots, t^2, t, 1, x, x^2, \ldots\}\) spans
+\(R'\). We now show that they're linearly independent in \(R'\). If
+\(P(x, t) = 0\) in \(R'\), then \(P(x, t) = Q(x, t)(tx - 1)\) for some \(Q \in
+F[x, t]\), but every nonzero polynomial of the form \(Q(x, t)(tx - 1)\)
+contains some term with both \(x\) and \(t\), so it can't be any nonzero
+linear combination of the elements of \(B\). So \(B\) is a basis for \(R'\),
+that is, every element of \(R'\) can be uniquely written in the form
+\(a_n t^n + a_{n-1} t^{n-1} + \ldots + a_1 t + a_0 + a_{-1}x + \ldots +
+a_{-m} x^m\), so \(R'\) is in bijection with the Laurent polynomials if we
+identify \(x\) with \(t^{-1}\). Finally, since \(xt = 1\), the multiplication
+rule for \(R'\) is the same as that of the Laurent polynomials under this
+identification.</p>

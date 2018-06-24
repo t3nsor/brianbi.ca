@@ -1,0 +1,257 @@
+<p><span class="problem">Problem 5.1.2</span></p>
+<ol class="subproblems">
+<li><p>We follow the Hint.</p>
+<p><em>Lemma 1:</em> \(V_\mathbb{C} \cong V \oplus V^*\).</p>
+<div class="proof"><p>The complexification of \(V\) is defined as
+\(V_{\mathbb{C}} = \mathbb{C} \otimes_{\mathbb{R}} V\) where elements of \(G\)
+act on the second factor and elements of \(\mathbb{C}\) act on the first. It is
+clear that \(V_{\mathbb{C}} = 1 \otimes_{\mathbb{R}} V \oplus
+i \otimes_{\mathbb{R}} V\). We can write \((v, w)\) for the element
+\(1 \otimes v + i \otimes w\). It's clear that \(x(v, w) = (xv, xw)\) when
+\(x \in \mathbb{R}[G]\), and \(i(v, w) = (-w, v)\).</p>
+<p>The representation \(V_\mathbb{C}\) has two invariant subspaces
+\(V_+ = \{(v, iv) \mid v \in V\}\) and \(V_- = \{(v, -iv) \mid v \in V\}\).
+It is not hard to see that \(V_{\mathbb{C}} = V_+ \oplus V_-\). We have an
+isomorphism of vector spaces \(V \to V_-\) given by \(\varphi_-(v) =
+(v, -iv)\). This is also an isomorphism of representations since for all
+\(x \in \mathbb{C}[G]\), we have
+\begin{align*}
+\varphi_-(xv)
+&amp;= (xv, -ixv) \\
+&amp;= (x_r v + ix_i v, -i(x_r v + ix_iv)) \\
+&amp;= (x_r v, -ix_r v) + (i x_i v, x_i v) \\
+&amp;= x_r(v, -iv) + ix_i(v, -iv) \\
+&amp;= x\varphi_-(v)
+\end{align*}
+where \(x_r = \Re(x), x_i = \Im(x)\). There is also
+an isomorphism of representations \(\varphi_+ : \overline{V} \to V_+\) given by
+\(\varphi_+(v) = (v, iv)\); we verify this below:
+\begin{align*}
+\varphi_+(\rho_{\overline{V}}(x)v)
+&amp;= \varphi_+(\rho_V(\overline{x})v) \\
+&amp;= (\rho_V(\overline{x})v, i\rho_V(\overline{x})v) \\
+&amp;= (x_r v - ix_i v, i(x_r v - ix_i v)) \\
+&amp;= (x_r v, ix_r v) + (-ix_i v, x_i v) \\
+&amp;= x_r(v, iv) + ix_i(v, iv) \\
+&amp;= x\varphi_+(v)
+\end{align*}
+Therefore \(V_\mathbb{C} \cong V \oplus \overline{V} \cong V \oplus V^*\).</p>
+</div>
+<p><em>Lemma 2:</em> \(\End_{\mathbb{C}[G]}(V_\mathbb{C})\) and
+\(\End_{\mathbb{R}[G]}(V)^2\) are isomorphic as \(\mathbb{R}\)-vector
+spaces.</p>
+<div class="proof"><p>Suppose \(\varphi_1, \varphi_2 \in
+\End_{\mathbb{R}[G]}(V)\). We claim that there is a unique
+\(\varphi \in \End_{\mathbb{C}[G]}\) such that
+\(\pi_1(\varphi(v, 0)) = \varphi_1(v)\) and
+\(\pi_2(\varphi(v, 0)) = \varphi_2(v)\) for all \(v \in V\). We will first show
+that \(\varphi\) is unique if it exists. Let \(v \in V\); then
+\(\varphi(0, v) = \varphi(i(v, 0)) = i\varphi(v, 0) = i(\varphi_1(v),
+\varphi_2(v)) = (-\varphi_2(v), \varphi_1(v))\). By linearity, \(\varphi\) is
+completely determined. Now we will show that the \(\varphi\) so constructed is
+indeed an endomorphism. It is clear that the formula for \(\varphi\) is
+\(\varphi(v, w) = (\varphi_1(v) - \varphi_2(w), \varphi_2(v) + \varphi_1(w))\).
+Let \(x \in \mathbb{C}[G]\), with real part \(x_r\) and imaginary part \(x_i\).
+Then,
+\begin{align*}
+\varphi(x(v, w))
+&amp;= \varphi(x_r v - x_i w, x_r w + x_i v) \\
+&amp;= (\varphi_1(x_r v - x_i w) - \varphi_2(x_r w + x_i v),
+\varphi_2(x_r v - x_i w) + \varphi_1(x_r w + x_i v)) \\
+&amp;= (x_r\varphi_1(v) - x_i \varphi_1(w) - x_r \varphi_2(w) -
+x_i \varphi_2(v), x_r \varphi_2(v) - x_i \varphi_2(w) + x_r\varphi_1(w) +
+x_i \varphi_1(v)) \\
+&amp;= (x_r(\varphi_1(v) - \varphi_2(w)) - x_i(\varphi_2(v) + \varphi_1(w)),
+x_r(\varphi_2(v) + \varphi_1(w)) + x_i(\varphi_1(v) - \varphi_2(w))) \\
+&amp;= x (\varphi_1(v) - \varphi_2(w), \varphi_2(v) + \varphi_1(w)) \\
+&amp;= x \varphi(v, w)
+\end{align*}
+therefore \(\varphi\) is indeed an endomorphism of \(V_\mathbb{C}\).</p>
+<p>Conversely, if \(\varphi \in \End_{\mathbb{C}[G]}(V_{\mathbb{C}})\), then
+we claim that the functions \(\varphi_1(v) = \pi_1(\varphi(v, 0))\) and
+\(\varphi_2(v) = \pi_2(\varphi(v, 0))\) are endomorphisms of \(V\) as a
+\(\mathbb{R}[G]\)-module. To see this, let \(x \in \mathbb{R}[G]\) and observe
+that \(\varphi_1(xv) = \pi_1(\varphi(xv, 0)) = \pi_1(x\varphi(v, 0)) =
+x\pi_1(\varphi(v, 0)) = x\varphi_1(v)\), and similarly with \(\varphi_2\).</p>
+<p>Thus, there is a bijective correspondence between
+\(\End_{\mathbb{C}[G]}(V_{\mathbb{C}})\) and \(\End_{\mathbb{R}[G]}(V)^2\). As
+we have defined it, it is also clear that it is \(\mathbb{R}\)-linear.</p>
+</div>
+<p><em>Corollary:</em> \(\dim_{\mathbb{C}} \End_{\mathbb{C}[G]}(V_{\mathbb{C}})
+= \frac{1}{2} \dim_{\mathbb{R}} \End_{\mathbb{C}[G]}(V_{\mathbb{C}}) =
+\dim_{\mathbb{R}} \End_{\mathbb{R}[G]}(V)\).</p>
+<p>We now return to the problem. Lemma 1 gives us the decomposition
+\(V_{\mathbb{C}} \cong V \oplus V^*\). The representation \(V\) was given to be
+irreducible, so \(V^*\) is also irreducible. If \(V \not\cong V^*\), then
+Schur's lemma for algebraically closed fields implies that
+\(\End_{\mathbb{C}[G]}(V_{\mathbb{C}})\) is parametrized by \(z, z' \in
+\mathbb{C}\), the factors by which the endomorphism scales the
+\(V\) and \(V^*\) components in \(V_{\mathbb{C}}\). Therefore we have
+\(\dim_{\mathbb{C}} \End_{\mathbb{C}[G]}(V_{\mathbb{C}}) = 2\), and by the
+Corollary, \(\dim \End_{\mathbb{R}[G]}(V) = 2\).
+In the case where \(V \cong V^*\), Schur's lemma implies that
+\(\dim_{\mathbb{C}} \End_{\mathbb{C}[G]}(V_{\mathbb{C}}) = 4\), as such
+endomorphisms are
+parametrized by four complex numbers, each of which is the scaling factor from
+one of the two copies of \(V\) to one of the two copies of \(V\). Therefore, by
+the Corollary, \(\dim \End_{\mathbb{R}[G]}(V) = 4\).</p>
+<p>Now, every endomorphism of
+\(V\) as a \(\mathbb{C}[G]\)-module is also an endomorphism of \(V\) as an
+\(\mathbb{R}[G]\)-module, therefore \(\mathbb{C} \subseteq
+\End_{\mathbb{R}[G]}(V)\). In the complex case (\(V \not\cong V^*\)), since
+\(\dim \End_{\mathbb{R}[G]} = 2\) and \(\dim_{\mathbb{R}}\mathbb{C} = 2\), we
+conclude that in fact \(\mathbb{C} = \End_{\mathbb{R}[G]}(V)\).</p>
+<p>We now have to distinguish between the real and quaternionic cases.</p>
+<p>Let \(\langle \cdot, \cdot \rangle\) be the invariant positive Hermitian
+form on \(V\),
+which is unique up to a positive real scaling factor by Theorem 4.6.2.
+(See <a href="/etingof/4.6">here</a> for a refresher.)</p> A
+similar argument shows that the invariant nondegenerate form \(B\) described in
+Definition 5.1.1 is unique up to a nonzero complex scaling factor. By
+nondegeneracy, there is a unique \(j \in \operatorname{Aut}_{\mathbb{R}}(V)\)
+such that \(B(v, w) = \langle v, j(w)\rangle\) for all \(v, w \in V\).</p>
+<p>Let us investigate the properties of \(j\). First,
+\[
+B(v, iw) = iB(v, w) = i\langle v, j(w)\rangle =
+\langle v, -ij(w)\rangle
+\]
+so \(j(iw) = -ij(w)\); in other words, \(j\) is antilinear. In addition, for
+each \(g \in G\),
+\[
+B(v, gw) = B(g^{-1}v, w) = \langle g^{-1}v, j(w)\rangle =
+\langle v, gj(w) \rangle
+\]
+so \(j(gw) = gj(w)\). It follows that \(j \in
+\operatorname{Aut}_{\mathbb{R}[G]}(V)\), and
+if \(x \in \mathbb{C}[G]\), then \(j(xw) = \overline{x}(jw)\). Since
+\(j\) is antilinear, \(j^2\) is linear, and \(j^2(xw) = j(\overline{x}j(w)) =
+xj^2(w)\), so \(j^2 \in
+\operatorname{Aut}_{\mathbb{C}[G]}(V)\). By Schur's lemma,
+\(j^2 = \lambda \Id\) for some
+nonzero \(\lambda \in \mathbb{C}\).</p>
+<p>Choose some nonzero \(v \in V\). Then
+\[
+\overline{\lambda} \langle v, v \rangle = \langle v, j^2(v) \rangle =
+B(v, j(v)) = \pm B(j(v), v) = \pm \langle j(v), j(v)\rangle
+\]
+where the plus sign is for \(B\) symmetric and the minus sign for
+\(B\) skew-symmetric. Write
+\(\overline{\lambda} = \pm \langle j(v), j(v)\rangle/\langle v, v \rangle\).
+Since \(\langle v, v\rangle\) and
+\(\langle j(v), j(v)\rangle\) are both positive real, it follows that
+\(\lambda\) is positive real for \(B\) symmetric (\(V\) real)
+and negative real for \(B\) skew-symmetric (\(V\) quaternionic). In the real
+case, we can rescale \(B\) by \(\lambda^{-1/2}\) so that \(j^2 = 1\), and in
+the quaternionic case, we can rescale \(B\) by \((-\lambda)^{-1/2}\) so that
+\(j^2 = -1\); we will assume that this has been done.</p>
+<p>We know that \(\End_{\mathbb{R}[G]}(V)\)  contains a copy of
+\(\mathbb{C}\), but since \(j\) is nonzero antilinear, \(j\) is not contained
+within
+\(\mathbb{C}\). For each \(z \in \mathbb{C}\), \(zj \in
+\End_{\mathbb{R}[G]}(V)\), and if \(z\) is nonzero, then \(zj\) is also nonzero
+antilinear, so it is also not contained in \(\mathbb{C}\). Since
+\(\mathbb{C}\) and \(\mathbb{C}j\) have trivial intersection and each has
+(real) dimension 2, and \(\End_{\mathbb{R}[G]}(V)\) has dimension 4, it
+follows that \(\End_{\mathbb{R}[G]}(V) = \mathbb{C} \oplus \mathbb{C}j\) (as
+vector spaces). This implies that the rules \(j^2 = \pm 1\), \(ji =
+-ij\) completely determine the isomorphism class of the algebra
+\(\End_{\mathbb{R}[G]}(V)\); this algebra is isomorphic to any 4-dimensional
+real associative algebra \(A\) such that \(A\) contains a copy of the
+complex numbers and an element \(J\) such that \(J^2 = \pm 1\) and
+\(Ji = -iJ\).</p>
+<p>In the quaternionic case, where \(j^2 = -1\), the quaternions
+\(\mathbb{H}\) form an algebra with the above properties (where we take
+\(J\) to be the element \(j\), although \(j \cos \theta + k \sin \theta\) would
+also do for any \(\theta\)). Thus \(\End_{\mathbb{R}[G]}(V) \cong \mathbb{H}\).
+In the real case, we can take \(A = \operatorname{Mat}_2(\mathbb{R})\). To see
+this, recall the well-known fact that \(A\) contains a copy of the complex
+numbers, with the correspondence
+\[
+x + yi \longleftrightarrow \begin{pmatrix} x &amp; y \\
+-y &amp; x \end{pmatrix} 
+\]
+and we can take
+\[
+J = \begin{pmatrix} 1 &amp; 0 \\
+0 &amp; -1 \end{pmatrix}
+\]
+whereupon
+\[
+Ji = \begin{pmatrix} 1 &amp; 0 \\
+0 &amp; -1 \end{pmatrix} \begin{pmatrix} 0 &amp; 1 \\
+-1 &amp; 0 \end{pmatrix} = \begin{pmatrix} 0 &amp; 1 \\
+1 &amp; 0 \end{pmatrix} = -\begin{pmatrix} 0 &amp; -1 \\
+-1 &amp; 0 \end{pmatrix} = -\begin{pmatrix} 0 &amp; 1 \\
+-1 &amp; 0 \end{pmatrix}\begin{pmatrix} 1 &amp; 0 \\
+0 &amp; -1 \end{pmatrix} = -iJ
+\]
+as claimed.</p>
+<div class="qed"></div>
+</li>
+<li><p>First, let \(V_\mathbb{R}\) be a real representation. Choose \(B\) to
+be a positive definite symmetric bilinear form on \(V_{\mathbb{R}}\). The
+construction of Theorem 4.6.2 then gives an invariant positive definite
+symmetric form \(\overline{B}\), which is automatically nondegenerate. On the
+complexification \(V\), define
+\[
+\overline{B}(v + iw, v' + iw') =
+\overline{B}(v, v') - \overline{B}(w, w') +
+i(\overline{B}(w, v') + \overline{B}(v, w'))
+\]
+This is a symmetric \(G\)-invariant \(\mathbb{C}\)-bilinear form on
+\(V\) (we omit the proof since it is straightforward but tedious).
+Additionally, if \(v, w\) are fixed and at least one is nonzero, there is
+always \(v', w'\) such that \(\overline{B}(v + iw, v' + iw') \ne 0\). To wit,
+if \(v\) is nonzero we could for example choose \(v'\) so that
+\(\overline{B}(v, v')\) is nonzero and set \(w' = 0\), or if \(w\) is nonzero
+then we could choose \(w'\) so that \(\overline{B}(w, w')\) is nonzero and set
+\(v' = 0\). Therefore
+\(\overline{B}\) is a symmetric \(G\)-invariant \(\mathbb{C}\)-bilinear form
+on \(V\), and \(V\) is of real type.</p>
+<p>Conversely, suppose \(V\) is of real type. Let \(B\) be the nondegenerate
+\(G\)-invariant symmetric \(\mathbb{C}\)-bilinear form on \(V\). There exists
+\(v \in V\) such that \(B(v, v) \ne 0\), and we may normalize \(v\) so that
+\(B(v, v) = 1\); we assume this has been done. Let \(V_{\mathbb{R}} =
+\mathbb{R}[G]v\). \(G\)-invariance implies that \(B(gv, gv) = 1\) for all
+\(g \in G\), and bilinearity then implies that \(B(w, w)\) is real and positive
+for all nonzero \(w \in V_{\mathbb{R}}\) and that \(B(w, w)\) is real and
+negative for all nonzero \(w \in iV_{\mathbb{R}}\). Therefore
+\(V_{\mathbb{R}} \cap iV_{\mathbb{R}} = \{0\}\). But \(V_{\mathbb{R}} +
+iV_{\mathbb{R}} = \mathbb{R}[G]v + i\mathbb{R}[G]v = \mathbb{C}[G]v\), which is
+all of \(V\) since \(V\) is irreducible. Therefore, \(V =
+V_{\mathbb{R}} \oplus iV_{\mathbb{R}}\) where the two components are
+\(\mathbb{R}[G]\)-modules; that is, \(V\) is the complexification of
+\(V_{\mathbb{R}}\).</p>
+<div class="qed"></div></li>
+</ol>
+
+<p><em>Remark:</em> Etingof's proof of Theorem 5.1.5 (the Frobenius&ndash;Schur
+involution formula) leaves out some steps.</p>
+<p>First, the elements of \(S^2 V\) are the symmetric bilinear forms on
+\(V^*\), and for all \(g \in G, B \in S^2 V\), we have \(B(g\varphi_1,
+g\varphi_2) = g^{-1}B(\varphi_1, \varphi_2)\). Therefore \(B\) is
+\(G\)-invariant on \(V^*\) if and only if \(gB = B\) for all \(g \in G\). If
+such nonzero \(B\) exists, it is necessarily nondegenerate (the proof is left
+as an exercise) and therefore unique up to a scaling factor. Thus,
+\(\dim (S^2 V)^G\) is 1 when \(V^*\) has a nondegenerate \(G\)-invariant
+symmetric bilinear form,
+and 0 otherwise. But \(V^*\) is real if and only if \(V\) is real, which
+implies that \(\dim (S^2 V)^G\) is 1 when \(V\) is real and 0 otherwise. A
+similar argument shows that \(\dim (\wedge^2 V)^G\) is 1 when \(V\) is
+quaternionic and 0 otherwise. This establishes the claim that
+\(FS(V) = |G|^{-1}\sum_{g\in G} \chi_V(g^2)\).</p>
+<p>Second, Etingof immediately concludes that the number of involutions in
+\(G\) is \(\sum_V \dim V\ FS(V)\), which is not at all obvious. A proof of
+this fact is given <a href="https://publish.wm.edu/cgi/viewcontent.cgi?article=2087&context=honorstheses">here</a>
+(section 2.4). The key is to recognize that the function \(\theta : G \to
+\mathbb{N}\) where \(\theta(g)\) is
+the number of elements that square to \(g\) is a class function, and can
+therefore be written as \(\theta = \sum_V \chi_V \langle \theta,
+\chi_V\rangle\). Some computation then gives the desired result.</p>
+
+<p><span class="problem">Exercise 5.1.7</span> Suppose \(|G|\) is odd and all
+representations of \(\mathbb{C}[G]\) are real. Then
+\(G\) has no elements of order 2, so its only involution is the identity. By
+Corollary 5.1.6, the sum of the dimensions of all irreps of \(G\) is 1. This
+implies that \(G\) has only one irrep, with dimension 1 (namely the trivial
+representation).  Maschke's theorem then implies that \(|G| = 1\).</p>

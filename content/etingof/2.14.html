@@ -1,0 +1,36 @@
+<h2>Section 2.14. Tensor products and duals of representations of Lie
+algebras</h2>
+<p><span class="problem">Problem 2.14.3</span> Let \(k\) denote the ground
+field of \(\mathfrak{g}\). Let \(f \in \Hom_{\mathfrak{g}}(V, U \otimes W^*)\).
+Then we can define \(\varphi(f) \in \Hom_{\mathfrak{g}}(V \otimes W, U)\) by
+setting \(\varphi(f)(v \otimes w) = f(v)w\) and extending by linearity, where
+\(f(v) \in U \otimes W^*\) is taken to act on \(w \in W\) the natural way as
+in Problem 2.11.3, that is, \((u \otimes \lambda)(w) = \lambda(w) u\) where
+\(\lambda \in W^*\). The \(\varphi(f)\) defined in this manner is well-defined
+since it's bilinear in \(v\) and \(w\). It's also a linear function of \(f\).
+Note that for \(\varphi(f)\) to be the zero map, it has to take all
+\(v \otimes w\) to zero, which is only possible if every \(f(v)\) is the
+zero tensor in \(U \otimes W^*\); therefore \(f\) is the zero map.
+Since \(\ker \varphi\) is trivial, \(\varphi\) is one-to-one, and since the
+domain and codomain have equal (finite) dimension, \(\varphi\) is onto.</p>
+<p>Furthermore, fix \(a \in \mathfrak{g}\); then we have
+\begin{align*}
+\varphi(f)(a(v \otimes w)) &amp;= \varphi(f)(av \otimes w + v \otimes aw) \\
+&amp;= f(av) w + f(v)(aw) \\
+&amp;= (a f(v))w + f(v)(aw)
+\end{align*}
+and using the definitions of the tensor product and dual of representations,
+if \(f(v) = u \otimes \lambda\), then:
+\begin{align*}
+(a(f(v)))w &amp;= (a(u \otimes \lambda))w \\
+&amp;= (au \otimes \lambda)w + (u \otimes a \lambda)w \\
+&amp;= \lambda(w)(au) + (u \otimes (w \mapsto -\lambda(aw)))w \\
+&amp;= a(f(v)w) - f(v)(aw)
+\end{align*}
+which can be extended by linearity to conclude that this equality is true
+regardless of the form of \(f(v)\); and so, continuing from before, we have
+that \(\varphi(f)(a(v \otimes w)) = a(f(v)w) = a(\varphi(f)(v \otimes w))\).
+Extending this by linearity, we conclude that \(\varphi(f)\) is
+\(\mathfrak{g}\)-linear when \(f\) is, so the isomorphism
+also takes \(\Hom_\mathfrak{g}(V, U \otimes W)\) to
+\(\Hom_\mathfrak{g}(V \otimes W, U)\).</p><div class="qed"></div>

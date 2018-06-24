@@ -1,0 +1,40 @@
+<p><em>Remark:</em> I found the proof of Proposition 4.1.2 difficult to
+understand, so I am recording some notes here in case I forget how to interpret
+it and need something to refer to. According to the notes,
+\(\Hom_{k[G]}(k, k[G])\) and \(\Hom_{k[G]}(k[G], k)\) are one-dimensional
+vector spaces. The reason for this is that \(k[G]\), being semisimple, has a
+decomposition into irreducibles which contains exactly one copy of the trivial
+representation \(k\) (any other one-dimensional irreps of \(k[G]\) would be
+nonisomorphic to this one). By Schur's lemma, every nonzero module homomorphism
+from \(k\) to
+\(k[G]\) must map \(k\) isomorphically to the single copy of \(k\) in \(k[G]\)
+and every nonzero module homomorphism from \(k[G]\) to \(k\) must act by
+projecting from \(k[G]\) to the single copy of \(k\) and then mapping that
+subspace to \(k\). The text also skips over the proof that the \(\epsilon\) and
+\(\Lambda\) chosen are actually homomorphisms.</p>
+
+<p><span class="problem">Problem 4.1.4</span> We assume as usual that \(k\) is
+algebraically closed. We will prove the given statement by induction on
+\(n\).</p>
+<p>If \(n = 0\), then \(G\) is just the identity, so any one-dimensional
+subspace of \(V\) is a subrepresentation isomorphic to \(k\). Since \(V\) is
+irreducible, \(V \cong k\).</p>
+<p>Now suppose \(n \ge 1\). Since \(V\) is irreducible, it must be
+finite-dimensional. Since \(G\) is a \(p\)-group, \(Z(G)\) is nontrivial. For
+each \(z \in
+Z(G)\), we have by Schur's lemma that \(\rho(z)\) is a scalar operator,
+\(\lambda \Id\) for some \(\lambda \in k\). The
+order of \(z\) is \(p^k\) for some \(k\), so \(\rho(z^{p^k}) = \lambda^{p^k}
+\Id = \Id\), that is, \(\lambda^{p^k} = 1\). Since \(p\)<sup>th</sup> roots are
+unique in characteristic \(p\), it follows that \(\lambda = 1\). Thus,
+\(\rho(z) = \Id\) for all \(z \in Z(G)\). Let \(G' = G/Z(G)\). Since
+\(Z(G) \subseteq \ker \rho\), we can write \(\rho = \rho' \circ \pi\) for some
+unique homomorphism \(\rho' : G' \to GL(V)\) where \(\pi : G \to G'\) is the
+quotient map. Since \(\im \rho = \im \rho'\), the representation \((V, \rho')\)
+of \(G'\) is also irreducible. Now \(G'\) is a \(p\)-group of smaller order,
+so by the induction hypothesis, \(\rho'\) is the
+trivial homomorphism, therefore \(\rho\) is also.</p>
+<div class="qed"></div>
+<p><em>Remark:</em> For a version of the proof that does not require the
+assumption that \(k\) is algebraically closed, see
+<a href="https://math.stackexchange.com/a/1211431/24692">here</a>.

@@ -1,0 +1,262 @@
+<h2>Section 2.15. Representations of \(\mathfrak{sl}(2)\)</h2>
+<p><span class="problem">Problem 2.15.1</span></p>
+<ol class="subproblems">
+<li>Let \(v \in V, \lambda \in \mathbb{C}\). Then, using the commutation
+relations for \(E\) and \(H\),
+\begin{equation*}
+(H - (\lambda + 2)I)(Ev) = E(H - (\lambda + 2)I)v + 2Ev = E(H - \lambda I)v
+\end{equation*}
+It follows that
+\begin{equation*}
+(H - (\lambda + 2)I)^n (Ev) = E(H - \lambda I)^n v
+\end{equation*}
+so if \(v\) is a generalized eigenvector of \(H\) with eigenvalue \(\lambda\),
+then \(Ev\) is either a generalized eigenvector of \(H\) with eigenvalue
+\(\lambda + 2\), or zero. If \(\lambda\) is the eigenvalue with maximum real
+part, then \(Ev\) must be zero.<div class="qed"></div></li>
+<li><p><em>Lemma 1:</em> If \(k \geq 1\) is an integer, then
+\begin{equation}
+[H, F^k] = -2k F^k \label{eqn:2.15.1b1}
+\end{equation}</p>
+<p><em>Proof:</em> Use the formula \([A, BC] = B[A, C] + [A, B]C\) with
+\(A = H, B = F^{k-1}, C = F\) together with induction on \(k\).</p>
+<div class="qed"></div>
+<p><em>Lemma 2:</em> If \(k \geq 1\) is an integer, then
+\begin{equation}
+[E, F^k] = kF^{k-1}H - k(k-1) F^{k-1} \label{eqn:2.15.1b2}
+\end{equation}</p>
+<p><em>Proof:</em> By induction. The base case \(k = 1\) is easily verified.
+For \(k \geq 2\),
+\begin{align*}
+[E, F^k] &amp;= F[E, F^{k-1}] + [E, F]F^{k-1} \\
+&amp;= F((k-1) F^{k-2} H - (k-1)(k-2)F^{k-2}) + HF^{k-1} \\
+&amp;= (k-1)F^{k-1}H - (k-1)(k-2) F^{k-1} + F^{k-1} H + [H, F^{k-1}] \\
+&amp;= k F^{k-1}H - (k-1)(k-2) F^{k-1} - 2(k-1) F^{k-1} \\
+&amp;= k F^{k-1}H - k(k-1) F^{k-1}
+\end{align*}
+</p><div class="qed"></div>
+<p><em>Lemma 3:</em> If \(k \geq 0\) is an integer, then
+\begin{equation*}
+EH^k w = 0
+\end{equation*}</p>
+<p><em>Proof:</em> Use the fact that \(EH^k = (HE + [E,H])H^{k-1}\) together
+with induction on \(k\).</p><div class="qed"></div>
+<p>It immediately follows that \(EP(H)w = 0\) where \(P\) is any
+polynomial.</p>
+<p>Now we are ready to prove the main result. Let \(P\) be a polynomial. Then
+\begin{align*}
+E^k F^k P(H) w &amp;= E^{k-1} (E F^k) P(H) w \\
+&amp;= E^{k-1} (F^k E + [E, F^k]) P(H) w \\
+&amp;= E^{k-1} (k F^{k-1}H - k(k-1) F^{k-1}) P(H) w \\
+&amp;= E^{k-1} F^{k-1} k(H - (k-1)) P(H) w
+\end{align*}
+Therefore
+\begin{equation*}
+E^k F^k w = k! H (H - 1) (H - 2) \ldots (H - (k-1)) w
+\end{equation*}</p></li>
+<li>This is very similar to part (a), but \(F\) acts to lower the real part of
+the eigenvalue by 2, in contrast to \(E\) which raises it. Since \(V\) is
+finite-dimensional, it can only have finitely many eigenvalues, so the sequence
+\(v, Fv, F^2v, \ldots\) must end in zero. Indeed, we can make the stronger
+statement that \(F^{\dim V}v = 0\).</li>
+<li><p><em>Lemma:</em> If \(v\) is a generalized eigenvector of \(H\) with
+eigenvalue \(\lambda\), and \(a_1, \ldots a_n \in \mathbb{C}\), and
+\((H-a_1)(H-a_2) \ldots (H-a_n)v = 0\), then there
+is some \(i\) such that \(a_i = \lambda\).</p>
+<p><em>Proof:</em> By induction. For \(n = 1\), \(v\) is just an ordinary
+eigenvector with eigenvalue \(a_1\). If \(n \geq 2\), then either
+\((H - a_n)v = 0\), in which case \(\lambda = a_n\), or \((H - a_n)v\) is a
+generalized eigenvector with eigenvalue \(\lambda\), and by the inductive
+hypothesis, there is some \(i \leq n - 1\) with \(a_i = \lambda\).
+</p><div class="qed"></div>
+<p>Now use the Hint from the problem. Take \(N = \dim V\). From (b), we have
+\begin{equation}
+\label{eqn:2.15.1.d}
+0 = E^N F^N v = N! H(H-1)(H-2)\ldots(H-N+1) v
+\end{equation}
+By the Lemma, \(\lambda\) is an integer between 0 and \(N-1\). Since
+polynomials of \(H\) commute with each other, we can rewrite
+\((\ref{eqn:2.15.1.d})\) as
+\begin{equation*}
+0 = \left(\prod_{0 \leq i &lt; N, i \neq \lambda} H-i\right) (H-\lambda)v
+\end{equation*}
+Let \(v' = (H-\lambda)v\). By the contrapositive of the Lemma, \(v'\) cannot
+be a generalized eigenvector of \(H\) with eigenvalue \(\lambda\), since none
+of the \(i\)'s can equal \(\lambda\). Therefore
+\(v' = 0\), and \(v\) is an ordinary eigenvector. Since this holds for all
+\(v \in \overline{V}(\lambda)\), it follows that \(H\) is diagonalizable on
+\(\overline{V}(\lambda)\).</p><div class="qed"></div></li>
+<li>This follows immediately from the Lemma proven in (d).</li>
+<li><p>Suppose \(V\) is an irreducible finite-dimensional representation of
+\(\mathfrak{sl}(2)\).  Let \(\lambda\) be as in (a) and \(v \in V\) be an
+eigenvector of \(H\) with eigenvalue \(\lambda\). From (e), we have that
+\(F^{\lambda+1}v = 0\) and \(F^\lambda v \neq 0\). Therefore
+\(v, Fv, \ldots, F^\lambda v\) are eigenvectors of \(H\) with eigenvalues
+\(\lambda, \lambda-2, \ldots, 2, 0, -2, \ldots, -\lambda\), respectively, which
+implies that they are all linearly independent. Furthermore,
+\(\span\{v, Fv, \ldots, F^\lambda v\}\) is obviously invariant under \(F\)
+and \(H\), and is also invariant under \(E\) since, by
+\((\ref{eqn:2.15.1b2})\), for any positive integer \(k\),
+\begin{equation*}
+EF^k v = F^k Ev + kF^{k-1}Hv -k(k-1)F^{k-1}v = k(\lambda-k+1) F^{k-1}v
+\end{equation*}
+Since \(V\) is irreducible, this span must equal \(V\).</p>
+<p>With respect to the basis \(\{v, Fv, \ldots, F^\lambda v\}\), the action of
+\(H\) on \(V'\) takes the matrix form
+\(\diag(N-1, N-3, \ldots, -(N-3), -(N-1))\), while \(F\) obviously has ones on
+the subdiagonal and zeroes everywhere else. The raising property of \(E\)
+implies that it is nonzero only along the superdiagonal, and the equation
+\([E, F] = H\) then fixes \(E\) as well, so that the superdiagonal entries are
+easily seen to be \(1(N-1), 2(N-2), \ldots, (N-1)(N-(N-1)) = N-1\). Call this
+irreducible representation \(V_\lambda\). It has dimension
+\(N = \lambda + 1\); thus, the value of \(\lambda\) fixes the dimension of the
+irreducible representation and also fixes the representation itself up to
+isomorphism.</p>
+<p>We have not proven that \(V_\lambda\) is actually irreducible. Let us do so
+now. Suppose \(w \in V_\lambda\) is nonzero. Write \(w = \sum_i c_i F^i v\),
+where \(Hv = \lambda v\) as above. Let \(m\) be the smallest integer such that
+\(c_m\) is nonzero. Then \(\frac{1}{c_m} F^{\lambda - m} w = F^\lambda v\) and
+by applying \(E\) to \(F^\lambda v\) we can regenerate the basis. We conclude
+that there is exactly one irreducible representation of each positive finite
+dimension up to isomorphism, namely \(V_\lambda\) where \(\lambda\) is one less
+than the dimension.</p></li>
+<li>Using the identity \([A, BC] = B[A, C] + [A, B]C\):
+\begin{align*}
+[E, C] &amp;= [E, EF + FE + H^2/2] \\
+&amp;= [E, EF] + [E, FE] + [E, H^2/2] \\
+&amp;= [E, E]F + E[E, F] + F[E, E] + [E, F]E + \frac{1}{2}H[E, H] +
+\frac{1}{2}[E, H]H \\
+&amp;= EH + HE - HE - EH \\
+&amp;= 0 \\
+[F, C] &amp;= [F, EF + FE + H^2/2] \\
+&amp;= [F, EF] + [F, FE] + [F, H^2/2] \\
+&amp;= E[F, F] + [F, E]F + F[F, E] + [F, F]E + \frac{1}{2}H[F, H] +
+\frac{1}{2}[F, H]H \\
+&amp;= -HF -FH + HF + FH \\
+&amp;= 0 \\
+[H, C] &amp;= [H, EF + FE + H^2/2] \\
+&amp;= [H, EF] + [H, FE] + [H, H^2/2] \\
+&amp;= E[H, F] + [H, E]F + F[H, E] + [H, F]E \\
+&amp;= -2EF + 2EF + 2FE - 2FE \\
+&amp;= 0
+\end{align*}
+Since \(C\) commutes with all the generators, it is central, and by the result
+of Problem 2.3.16(a), it therefore acts as a scalar on \(V_\lambda\). If we
+take \(v\) such that \(Ev = 0\), we can readily compute \(Cv =
+\frac{\lambda(\lambda+2)}{2}v\) using the result of the previous part.</li>
+<li>Since \(V\) is assumed indecomposable, we can use the result of Problem
+2.3.16(b) to conclude that \(C\) must act in \(V\) as an operator with only one
+eigenvalue, namely, the scalar by which it acts on some irreducible
+subrepresentation. If that irreducible subrepresentation is \(V_\lambda\), then
+that single eigenvalue is \(\lambda(\lambda+2)/2\) by the result of the
+previous part.</li>
+<li>Since \(W\) is reducible and finite-dimensional, it has to have some
+irreducible proper subrepresentation, and if \(C\)'s single eigenvalue is
+\(\lambda(\lambda+2)/2\), then that subrepresentation is isomorphic to
+\(V_\lambda\). The quotient representation \(V/W\) is also a nonzero
+representation of \(\mathfrak{sl}(2)\) but is of lower dimension than \(V\).
+Either \(V/W\) is irreducible, in which case it must also be isomorphic to
+\(V_\lambda\) since \(C\) has only one eigenvalue, so that \(n = 1\); or else,
+if \(V/W\) is reducible, then since \(V\) was assumed to be the smallest
+reducible representation which is not a direct sum of irreps, then \(V/W\) must
+be a direct sum of irreps, and again, since \(C\) has only the single
+eigenvalue, each of those irreps must be isomorphic to \(V_\lambda\). In this
+case \(n \ge 2\).</li>
+<li><p>If the eigenspace \(V(\lambda)\) of \(H\) is \(m\)-dimensional, then,
+since the eigenspace \(W(\lambda)\) is one-dimensional,
+it follows that the eigenspace \((V/W)(\lambda)\) is \((m-1)\)-dimensional.
+If \(V/W = nV_\lambda\), then \(m - 1 = n\), so \(V(\lambda)\) is
+\((n+1)\)-dimensional.</p>
+<p>Let \(\{v_1, \ldots, v_{n+1}\}\) be a basis for \(V(\lambda)\). The result
+of part (e) guarantees that for each \(j\) in \(\{0, \ldots, \lambda\}\), the
+vectors in the set \(S_j = \{F^j v_1, \ldots, F^j v_{n+1}\}\) are all nonzero.
+We also know that the elements of \(S_j\) are all eigenvectors of \(H\) with
+eigenvalue \(\lambda - 2j\). The result of part (b) implies that each of
+\(E^j F^j v_i\) is a nonzero scalar multiple of \(v_i\), so that
+\(\span\{E^j S_j\}\) is \((n+1)\)-dimensional, which implies that
+\(\span S_j\) is likewise \((n+1)\)-dimensional; so \(S_j\) is linearly
+independent. Since eigenvectors with different eigenvalues are always linearly
+independent, the union \(S = \cup_j S_j\) is linearly independent. Since
+\(|S| = (n+1)(\lambda+1) = \dim V\), \(S\) is a basis of \(V\).</p></li>
+<li>As \(i\) ranges from 1 to \(n+1\) and \(j\) ranges from 0 to \(\lambda\),
+the \(F^j v_i\) range through all distinct basis vectors of \(V\) as found in
+the previous part. By partitioning these basis vectors into the subsets
+\(T_i = \{F^j v_i \mid 0 \leq j \leq \lambda\}\) for each \(i\), we obtain
+the subspaces \(W_i = \span T_i\) whose direct sum equals \(V\). By the
+argument given in the solution to part (f), each of these subspaces is
+invariant under \(E\), \(F\), and \(H\), and is therefore a subrepresentation
+of \(V\). So we have derived a contradiction with the assumption that \(V\) is
+not the direct sum of subrepresentations.</li>
+<li>The Jordan form of \(E\) in the irrep \(V_\lambda\), as found in (f), is a
+single Jordan block with eigenvalue zero (and size \(\lambda + 1\), of course).
+Therefore, the Jordan form of \(E\) in the general representation
+\(V = \large\oplus_i V_{\lambda_i}\) is the direct sum of Jordan blocks with
+eigenvalue zero and sizes \(\lambda_i + 1\); since all finite-dimensional
+representations of \(\mathfrak{sl}(2)\) are of this form, we can conclude that
+for every direct sum of Jordan blocks with eigenvalue zero, there is exactly
+one representation of \(\mathfrak{sl}(2)\) in which \(E\) takes that Jordan
+normal form. Given a nilpotent operator \(A : V \to V\), its Jordan normal form
+is a direct sum of Jordan blocks with eigenvalue zero, so there is exactly one
+representation, up to isomorphism, in which \(E = A\).</li>
+<li><p>Following the Hint, we define the character of a finite-dimensional
+representation \(V\) as \(\chi_V(x) = \tr(e^{xH})\). If \(V\) and \(W\) are two
+representations, then
+\begin{align*}
+\chi_{V \oplus W}(x) &amp;= \tr \exp(x\rho_{V\oplus W}(H)) \\
+&amp;= \tr \exp(x\rho_V(H) \oplus x\rho_W(H)) \\
+&amp;= \tr(\exp(x\rho_V(H)) \oplus \exp(x\rho_W(H))) \\
+&amp;= \tr \exp(x\rho_V(H)) + \tr \exp(x\rho_W(H)) \\
+&amp;= \chi_V(x) + \chi_W(x)
+\end{align*}
+Also,
+\begin{align*}
+\chi_{V \otimes W}(x) &amp;= \tr \exp(x(\rho_V(H) \otimes \Id_W +
+\Id_V \otimes \rho_W(H))) \\
+&amp;= \tr[\exp(x\rho_V(H) \otimes \Id_W) \exp(x\Id_V \otimes \rho_W(H))] \\
+&amp;= \tr[(\exp(x \rho_V(H)) \otimes \Id_W )
+(\Id_V \otimes \exp(x \rho_W(H)))] \\
+&amp;= \tr[\exp(x \rho_V(H)) \otimes \exp(x \rho_W(H))] \\
+&amp;= \tr \exp(x \rho_V(H)) \tr \exp(x \rho_W(H)) \\
+&amp;= \chi_V(x) \chi_W(x)
+\end{align*}
+where between the first and second lines we have used the fact that
+\(\rho_V(H) \otimes \Id_W\) and \(\Id_V \otimes \rho_W(H)\) commute; and
+between the second and third lines we have used the identity that \(\exp(A
+\otimes \Id) = \exp(A) \otimes \Id\), which follows from the power series
+expansion of the operator exponential.</p>
+<p>The character of \(V_\lambda\) is easily seen to be \(e^{\lambda x} +
+e^{(\lambda - 2)x} + \ldots + e^{-\lambda x}\) from the result of part (f).
+Using the formula derived in the previous paragraph, the character of
+\(V_\lambda \otimes V_\mu\) is \(\chi_{V_\lambda}\chi_{V_\mu}\). If we
+assume without loss of generality that \(\lambda \geq \mu\), then
+\begin{equation*}
+(e^{\lambda x} + \ldots + e^{-\lambda x})(e^{\mu x} + \ldots + e^{-\mu x})
+= e^{(\lambda + \mu)x} + 2e^{(\lambda + \mu - 2)x} + \ldots
++ \mu e^{(\lambda - \mu)x} + \mu e^{(\lambda - \mu - 2)x} + \ldots
++ \mu e^{-(\lambda - \mu)x} + (\mu - 1) e^{-(\lambda - \mu + 2)x} + \ldots
++ e^{-(\lambda + \mu)x}
+\end{equation*}
+To write this as the sum of characters of irreps is easy because if \(V_k\) is
+the highest-dimensional irrep that appears in the sum, then \(e^{kx}\) will be
+the highest term that appears in the character; so we can successively peel off
+\(\chi_{V_k}(x)\) from \(\chi_{V_\lambda \otimes V_\mu}(x)\) where at each
+stage \(k\) is taken from the highest exponential remaining. The result is
+\begin{equation*}
+\chi_{V_\lambda \otimes V_\mu}(x) = \chi_{V_\lambda + V_\mu} +
+\chi_{V_{\lambda + \mu - 2}} + \ldots + \chi_{V_{\lambda - \mu}}
+\end{equation*}
+so the desired decomposition is
+\begin{equation*}
+V_\lambda \otimes V_\mu \simeq V_{\lambda + \mu} \oplus V_{\lambda + \mu - 2}
+\oplus \ldots \oplus V_{\lambda - \mu}
+\end{equation*}
+</p></li>
+<li>Using (l), there exists a representation in which \(E = A =
+J_M(0) \otimes \Id_N + \Id_M \otimes J_N(0)\). But this is just the tensor
+product of representations in which \(E = J_M(0)\) and \(E = J_N(0)\), which
+are the irreps \(V_{M-1}\) and \(V_{N-1}\). This representation therefore
+decomposes as the direct sum \(V_{M+N-2} \oplus V_{M+N-4} \oplus \ldots \oplus
+V_{M-N}\), where, without loss of generality, we have assumed that \(M \geq
+N\), so \(E\)'s Jordan normal form, and hence that of \(A\), must be
+\(J_{M+N-1}(0) \oplus J_{M+N-3}(0) \oplus \ldots \oplus J_{M-N+1}(0)\).</li>
+</ol>

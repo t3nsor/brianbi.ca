@@ -1,0 +1,250 @@
+<h2>Miscellaneous problems for Chapter 11</h2>
+<p><span class="problem">Problem 11.M.1</span> Suppose \(R\) is a nonzero ring
+and \(a^2 = a\) for all \(a \in R\). Let \(a = 1 + 1\). Then \(1 + 1 + 1 + 1 =
+a^2 = a = 1 + 1\), so \(1 + 1 = 0\). We conclude that \(R\) has characteristic
+2.</p>
+
+<p><span class="problem">Problem 11.M.2</span> We may form <q>fractions</q> of
+\(S\). Namely, let \(G\) be the set of equivalence classes of \(S \times S\)
+where the elements \((a, b), (c, d)\) are considered equivalent iff
+\(ad = bc\). We may write \(a/b\) for the equivalence class of \((a, b)\).</p>
+<p>It is clear that this relation is symmetric since \(S\) is commutative. To
+verify that it's really an equivalence relation, we need to show that it's
+also transitive. Suppose \(a/b = c/d\) and \(c/d = e/f\). We have
+\(ad = bc\), so \(adef = bcef\). But \(cf = de\), so \(acff = bcef\), and we
+can cancel \(cf\) from both sides to give \(af = be\). This shows that
+\(a/b = e/f\).</p>
+<p>We can endow \(G\) with a law of composition by defining \((a/b)(c/d) =
+ac/bd\). To see that this is well-defined, suppose \(a'/b' = a/b,
+c'/d' = c/d\); then \((a'/b')(c'/d') = a'c'/b'd'\), and \(ac/bd = a'c'/b'd'\)
+since \(acb'd' = (ab')(cd') = (a'b)(c'd) = bda'c'\). It is easy to see that the
+law of composition of \(G\) is also commutative and associative.</p>
+<p>The element \(1/1\) serves as the identity of \(G\). The element \(a/b\) has
+inverse \(b/a\). So \(G\) is a group.</p>
+<p>We can embed \(S\) into \(G\) by identifying \(a \in S\) with the element
+\(a/1 \in G\). Notice that if \(a/1 = b/1\) then \(a1 = 1b\), or \(a = b\), so
+this mapping is injective as desired.</p>
+
+<p><span class="problem">Problem 11.M.3</span> The set \(R\) contains the
+sequences \((0, 0, 0, \ldots)\) and \((1, 1, 1, \ldots)\), which respectively
+serve as the additive identity and the multiplicative identity. It is closed
+under additive inverses since if \(a\) is eventually constant then \(-a\) is
+also eventually constant. Also, it is closed under addition since if \(a\) is
+constant after term \(m\) and \(b\) is constant after term \(n\) then \(a+b\)
+is constant after term \(\max(m, n)\). A similar argument applies for
+multiplication. It is obvious enough that the other ring axioms hold, as the
+addition and multiplication operations are those inherited from the superset
+consisting of all real sequences. So \(R\) is a ring.</p>
+<p>Consider the following subsets of \(R\):</p>
+<ol>
+<li>\(R_1, R_2, R_3, \ldots\), where \(R_i = \{a \mid a \in R
+\wedge a_i = 0\}\),</li>
+<li>\(Z\), consisting of all elements of \(R\) that tend to zero.</li>
+</ol>
+<p>It is easy to see that the \(R_i\)'s and \(Z\) are ideals. It's also
+easy to see that the cosets of \(R_i\) are just equivalence classes of
+sequences that are equal at the \(i\)<sup>th</sup> element, so \(R/R_i \cong
+\R\). Likewise, the cosets of \(Z\) are equivalence classes of sequences with
+the same limit, so \(R/Z \cong \R\). As \(\R\) is a field, this establishes
+that the ideals \(R_i\) and \(Z\) are maximal.</p>
+<p>Now let \(I\) be an arbitrary proper ideal of \(R\). If all elements of
+\(I\) tend to zero, then \(I \subseteq Z\). Assume going forward that this is
+not the case. Choose \(a \in I\) that doesn't tend to zero. Suppose that
+\(a \to x\), so that there is some \(n\) such that for all \(i \ge n\),
+\(a_i = x\). For each \(i = 1, 2, \ldots, n - 1\), let \(b^i\) be an element
+of \(I\) such that \(b^i_i \ne 0\). If all such \(b^i\) exist, then the
+element \(a^2 + (b^1)^2 + \ldots + (b^{i-1})^2\) is an element of \(I\) with
+all entries nonzero, which is a unit. But we assumed \(I\) to be proper, so
+this cannot be. Therefore,
+there is some \(i\) such that \(b^i\) doesn't exist; that is, all elements of
+\(I\) have \(i\)<sup>th</sup> element equal to 0. Therefore, \(I \subseteq
+R_i\). That is, every proper ideal of \(R\) is contained in either \(Z\) or
+one of the \(R_i\)'s, so these are all the maximal ideals of \(R\).</p>
+
+<p><span class="problem">Problem 11.M.4</span> I will assume that the statement
+<q>\(R\) contains \(\C\)</q> means <q>there is an injective ring homomorphism
+from \(\C\) to \(R\).</p>
+<ol class="subproblems">
+<li><p>Let \(\alpha \in R\) be such that \(\{1, \alpha\}\) is linearly
+independent, <i>i.e.,</i> \(\{1, \alpha\}\) is a basis of \(R\). Therefore
+\(\alpha^2 = p\alpha + q\) for some \(p, q \in \C\). Let \(\beta =
+\alpha - p/2\). Then \(\beta^2 = \alpha^2 - p\alpha + p^2/4 =
+q + p^2/4\). If this is zero, then the ring \(R\) is isomorphic to
+\(\C[x]/(x^2)\) where \(\beta\) is the residue of \(x\). If this is nonzero,
+let \(\gamma = \beta/\sqrt{q + p^2/4}\) so that \(\gamma^2 = 1\). Then the
+ring \(R\) is isomorphic to \(\C[x]/(x^2 - 1)\) where \(\gamma\) is the residue
+of \(x\).</p>
+<p>So in general \(R\) is always isomorphic to either \(\C[x]/(x^2)\) or
+\(\C[x]/(x^2 - 1)\). But are these rings isomorphic to each other? The answer
+is no, because \(\C[x]/(x^2 - 1)\) contains a nontrivial idempotent element,
+namely \(\frac{1}{2}(1 + x)\) (which induces a decomposition
+\(\C[x]/(x^2 - 1) \cong \C \times \C\)). On the other hand, we can easily check
+that \(\C[x]/(x^2)\) contains no nontrivial idempotents (or, equivalently, is
+not a nontrivial product of rings). So there are exactly two isomorphism
+classes.</p></li>
+<li><p>We consider a few cases, which might have some overlap, but we will
+address this at the end.</p><ul>
+<li><p>Case 1: \(R\) contains a nontrivial idempotent element, \(e \in
+R \setminus \{0, 1\}, e^2 = e\). The ring homomorphism \(\varphi : R \to eR\)
+with \(\varphi(x) = ex\) is also a homomorphism of \(\C\)-vector spaces, and
+Proposition 11.6.2(c) tells us that \(eR\) is not the entire ring \(R\). Nor
+can \(eR\) be the zero ring since \(e = e1 \in eR\). Therefore, \(eR\) is a
+subspace of \(R\) of dimension 1 or 2, and \(R\) decomposes as a nontrivial
+direct product \(R \cong eR \times (1-e)R\). If \(eR\) has dimension 2, then
+replace \(e\) with \(1-e\), so that \(eR\) has dimension 1. Now we have the
+decomposition \(R \cong \C \times R'\) where \(R'\) has dimension 2. By part
+(a), we conclude that either \(R \cong \C \times \C[x]/(x^2)\) or \(R \cong
+\C^3\).</p></li>
+<li><p>Case 2: There exists \(\alpha \in R\) such that \(\{1, \alpha,
+\alpha^2\}\) is a basis for \(R\). Therefore, \(R \cong \C[x]/(P(x))\) where
+\(P\) is some
+monic polynomial of degree 3. Factorize \(P(x)\) as \((x-a)(x-b)(x-c)\). If
+\(P(x)\) is a perfect cube, then \(R \cong \C[x]/(x^3)\). Otherwise, without
+loss of generality, suppose \(a\) is unequal to both \(b\) and \(c\). Write
+\(\alpha\) for the residue of \(x\) in \(\C[x]/(P(x))\). Let the ideals \(I\)
+and \(J\) of \(\C[x]/(P(x))\) be respectively generated by \((\alpha-a)\) and
+\((\alpha-b)(\alpha-c)\). It's not hard to see that \(I + J = R\) and that
+\(IJ = 0\), so by the Chinese Remainder Theorem, we obtain
+\(R \cong (R/(\alpha-a)) \times (R/((\alpha-b)(\alpha-c)))\).
+The factor \(R/(\alpha-a)\) is isomorphic to \(\C\), so as in case 1, we must
+have \(R \cong \C \times \C[x]/(x^2)\) or \(\R \cong \C^3\).</p></li>
+<li><p>Case 3: Neither case 1 nor case 2 holds. Let \(\{1, \alpha, \beta\}\) be
+a basis of \(R\). By the argument in part (a), we can always choose \(\alpha\)
+and \(\beta\) such that \(\alpha^2\) and \(\beta^2\) are each either 0 or 1.
+But if \(\alpha^2 = 0\) or \(\beta^2 = 0\) then either
+\(\frac{1}{2}(1+\alpha)\) or \(\frac{1}{2}(1+\beta)\) would be a nontrivial
+idempotent. This was already covered in case 1, so we proceed assuming that
+\(\alpha^2 = \beta^2 = 0\). Write \(\alpha\beta = p\alpha +q\beta + r\) with
+\(p, q, r \in \C\). By multiplying both sides by \(\alpha\) we obtain
+\(q\alpha\beta + r\alpha = 0\). Likewise if we chose to multiply both sides by
+\(\beta\) we would obtain \(p\alpha\beta + r\beta = 0\). We can now consider a
+few subcases:</p>
+<ul>
+<li>Case 3a: \(r \ne 0\). Then \(\alpha = -\frac{q}{r}\alpha\beta\) and
+\(\beta = -\frac{p}{r}\alpha\beta\). This contradicts the assumption of linear
+independence.</li>
+<li>Case 3b: \(r = 0\) and \(p = q\) with \(p \ne 0\). Then
+\(\alpha\beta = p(\alpha+\beta)\). Then \((\alpha + \beta)^2 = \alpha^2 +
+2\alpha\beta + \beta^2 = 2p(\alpha+\beta)\). By appropriately rescaling
+\(\alpha\) and \(\beta\) we can force \(\alpha +\beta\) to be a nontrivial
+idempotent. However, this was considered in case 1.</li>
+<li>Case 3c: Otherwise, either we have \(r = 0\) and \(p \ne q\), in which case
+\((p-q)\alpha\beta = 0\) implying \(\alpha\beta = 0\), or else \(p = q = r =
+0\) and again \(\alpha\beta = 0\). This completely determines the operations
+of \(R\). In particular, \(R \cong \C[x,y]/(x^2,y^2,xy)\).</li>
+</ul></li>
+</ul>
+<p>There are therefore up to four isomorphism classes that \(R\) might belong
+to, namely \(R_1 = \C^3\), \(R_2 = \C \times \C[x]/(x^2)\),
+\(R_3 = \C[x]/(x^3)\), and \(R_4 = \C[x,y]/(x^2,y^2,xy)\). We can verify by
+direct calculation that \(R_3\) and \(R_4\) don't contain any nontrivial
+idempotents (the details are omitted here), so \(R_3\) and \(R_4\) are not
+isomorphic to \(R_1\) and \(R_2\). Since \(\C[x]/(x^2)\) contains no
+nontrivial idempotents, \(R_2\) has a total of four idempotent elements,
+namely \((0, 0), (0, 1), (1, 0), (1, 1)\), while \(R_1\) has eight, so
+\(R_1\) and \(R_2\) aren't isomorphic. Finally, by direct calculation, we can
+verify that \(R_3\) contains only one linearly independent element that
+squares to zero, namely \(x^2\), so \(R_3\) and \(R_4\) aren't isomorphic. We
+conclude that there are exactly four isomorphism classes of these rings (which
+are better known as <em>commutative algebras of dimension 3 over
+\(\C\)</em>).</p>
+<p>(To contribute a better solution to this problem, email me.)</p></li>
+</ol>
+
+<p><span class="problem">Problem 11.M.5</span> Let \(P \in \C[x,y]\) be given
+by \(\sum_{i,j} c_{ij}x^i y^j\). We then have
+\[
+P(x, 0) = \sum_i c_{i0} x^i; \quad
+P(0, y) = \sum_j c_{0j} y^j; \quad
+P(t, t) = \sum_k \sum_{i+j=k} c_{ij} t^k
+\]
+Clearly all three of \(f(x, 0), f(0, y), f(t, t)\) have the same constant term,
+namely \(c_{00}\). Also, the linear coefficient of \(f(t, t)\) is
+\(c_{01} + c_{10}\), which is the sum of the linear coefficients of
+\(f(x, 0)\) and \(f(0, y)\).</p>
+<p>We now claim that \((Q, R, S) \in \im \varphi\)
+for all \(Q \in \C[x], R \in \C[y], S \in \C[t]\) as long as the aforementioned
+conditions are satisfied. Let \(Q, R, S\) be given with
+\[
+Q(x) = \sum_i q_i x^i; \quad
+R(y) = \sum_j r_j y^j; \quad
+S(t) = \sum_k s_k z^k; 
+\]
+where \(q_0 = r_0 = s_0\) and \(s_1 = q_1 + r_1\). Choose \(P_0 \in
+\C[x, y]\) as follows:
+\[
+P_0(x, y) = q_0 + \sum_{i=1}^\infty q_i x^i + \sum_{j=1}^\infty r_j x^j
+\]
+It is easy to see that \(P_0(x, 0) = Q(x)\) and \(P_0(0, y) = R(y)\). Also,
+\(P_0(t, t) = q_0 + (q_1 + r_1)t + \ldots\), so \(P_0(t, t)\) already agrees
+with \(S(t)\) at the constant and linear terms. Now let
+\[
+P(x, y) = P_0(x, y) + \sum_{k=2}^\infty (s_k - q_k - r_k)xy^{k-1}
+\]
+Then \(P(x, 0) = P_0(x, 0) = Q(x); P(0, y) = P_0(0, y) = R(x)\); and
+\(P(t, t) = P_0(t, t) + \sum_{k=2}^\infty (s_k - q_k - r_k)t^k =
+q_0 + (q_1 + r_1)t + \sum_{k=2}^\infty s_k t_k = S(t)\). So our claim is
+proven.</p>
+<p>We further claim that \(\ker \varphi\) is the principal ideal generated by
+\(xy(x-y)\). It's easy to see that \(\varphi(xy(x-y)) = 0\). Suppose
+\(\varphi(P) = 0\). Then the constant and linear terms of \(P\) must all
+vanish. The \(x^2\) and \(y^2\) terms must vanish too, and so \(P(x, y)\)
+equals \(c_{11} xy\) plus terms of degree at least 3. Since \(P(t, t) = 0\),
+this implies that \(c_{11} = 0\) also. So \(P\) consists of terms of degree at
+least 3, which must be mixed, that is, not be of the form \(x^k\) or \(y^k\).
+Thus \(P' = P/(xy)\) is a polynomial, and \(P'(t, t) = 0\) for all \(t \ne 0\).
+Perform division in \(x\) of \(P'\) by \(x - y\) to obtain
+\(P'(x, y) = (x-y)Q(x, y) + R(x, y)\), where \(R\) has degree 0 in \(x\), so
+\(R(x, y) = R(y)\). Then for all \(t \ne 0\), we have \(0 = P'(t, t) =
+R(t)\), so \(R(y)\) is the zero polynomial, and \(x - y \divides P'(x, y)\).
+Therefore \(xy(x-y) \divides P(x, y)\), and the claim is proven.</p>
+
+<p><span class="problem">Problem 11.M.6</span> Suppose \(P(x, y) \in \C[x, y]\)
+satisfies \(P(x, \sin x) = 0\) for each \(x \in \C\). For each \(a \in
+[-1, 1]\), the curve \(y = \sin x\) intersects the line \(y = a\) an infinite
+number of times, so \(P\) has an infinite number of common zeros with the
+polynomial \(y - a\). By Theorem 11.9.10, \(y - a \divides P(x, y)\) for all
+\(a \in [-1, 1]\), which is only possible if \(P\) is the zero polynomial.</p>
+
+<p><span class="problem">Problem 11.M.7</span></p>
+<ol class="subproblems">
+<li>Let \(f = f_1^2 + \ldots + f_n^2\). Since \(f_1, \ldots, f_n\) have no
+common zero, it follows that \(f\) is everywhere nonvanishing, and is therefore
+a unit in \(R\). This implies that \(f_1, \ldots, f_n\) generate the unit ideal
+of \(R\).</li>
+<li><p>Let \(J_c \subseteq R\) be the ideal consisting of the functions that
+vanish at \(c\). Then \(J_c\) contains some functions that vanish <em>only</em>
+at \(c\), such as \(f(x) = x - c\). Together with the result of part (a),
+this implies that \(J_c\) is a maximal ideal.</p>
+<p>Now let \(J \subseteq R\) be an ideal that isn't contained in any of the
+\(J_c\). That is, \(J\) is nonzero and the elements of \(J\) don't have any
+common zero. So for each \(x \in X\), there is some \(f_x \in J\) with
+\(f_x(x) \ne 0\). Since \(f_x\) is continuous, there is an open interval
+containing \(x\), call it \(I_x\), such that \(f_x\) is nonvanishing on
+\(I_x\). The collection \(\{I_x \mid x \in X\}\) is an open cover of \(X\), and
+since \(X\) is compact, we may select finitely many of the \(I_x\)'s that cover
+\(X\), say, \(I_{x_1}, \ldots, I_{x_n}\). Then the finite subset of \(J\) given
+by \(\{f_{x_1}, \ldots, f_{x_n}\}\) has no common zero, so \(J\)
+is the unit ideal.</p>
+<p>Since every ideal
+of \(R\) that isn't contained in any \(J_c\) is the unit ideal, we conclude
+that the \(J_c\)'s (\(c \in X\)) are all the maximal ideals of \(R\), or,
+as the problem statement suggests, there is a natural bijection between the
+maximal ideals of \(R\) and the points of \(X\).</p>
+<p><em>Remark 1:</em> This proof depends crucially on the compactness of \(X\).
+It works if \(X\) is replaced by any compact subset of \(\R\), but the
+statement is false whenever \(X\) fails to be compact. If \(X\) is not closed,
+let \(p\) be some limit point of \(X\) that isn't contained in \(X\); then
+then the proper ideal consisting of all \(f\) such that \(\lim_{x\to p}f(x) =
+0\) is a proper ideal that isn't contained in any of the \(J_c\). Or if \(X\)
+is not bounded above, the proper ideal consisting of all \(f\) with
+\(\lim_{x\to\infty}f(x) = 0\) isn't contained in any of the \(J_c\);
+a similar statement holds when \(X\) isn't
+bounded below. For example, if \(X\) is the <em>open</em> unit interval, then
+\(\{f \mid \lim_{x\to 0}f(x) = 0\}\) is a maximal ideal that isn't equal to any
+of the \(J_c\).</p>
+<p><em>Remark 2:</em> In order to form the collection \(\{I_x \mid x \in X\}\)
+we are implicitly invoking the full axiom of choice. However, a proof that only
+uses <em>countable</em> choice can be found
+<a href="https://math.stackexchange.com/a/97690">here</a>.</p></li>
+</ol>

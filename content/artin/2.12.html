@@ -1,0 +1,138 @@
+<h2>Section 2.12. Quotient Groups</h2>
+<p><span class="problem">Exercise 2.12.1</span> Suppose \(H\) is a subgroup of
+\(G\) and that the product of two left cosets is always a left coset.
+Suppose \(g \in G, h \in H\) and consider the cosets \(gH\) and \(g^{-1}H\).
+Their product contains the identity, so it must be \(H\) itself; it also
+contains \(ghg^{-1}h^{-1}\), which must therefore be in \(H\), implying that
+\(ghg^{-1} \in H\) as well. Since this holds for all choices of \(g\) and
+\(h\), we conclude that \(H\) is normal. This is the contrapositive to what we
+wanted to prove.</p>
+<p><span class="problem">Exercise 2.12.2</span> One can easily verify that
+\(I \in H\), that the product of two upper triangular matrices is upper
+triangular, and that
+\begin{equation}
+\begin{bmatrix}
+1 &amp; a &amp; b \\
+0 &amp; 1 &amp; c \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}^{-1} = 
+\begin{bmatrix}
+1 &amp; -a &amp; ac-b \\
+0 &amp; 1 &amp; -c \\
+0 &amp; 0 &amp; 1
+\end{bmatrix} \label{eqn:e1}
+\end{equation}
+establishing that \(H\) is a subgroup of \(GL_3(\mathbb{R})\). Obviously
+\(K\) is a subset of \(H\) containing the identity, and elements of \(K\) can
+be multiplied by adding the upper-right elements together, implying that \(K\)
+satisfies the conditions to be a subgroup of \(H\). Note that multiplication
+between elements of \(K\) and elements of \(H\) is given by
+\begin{align*}
+\begin{bmatrix}
+1 &amp; 0 &amp; x \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+1 &amp; a &amp; b \\
+0 &amp; 1 &amp; c \\
+0 &amp; 0 &amp; 1
+\end{bmatrix} &amp;=
+\begin{bmatrix}
+1 &amp; a &amp; b + x \\
+0 &amp; 1 &amp; c \\
+0 &amp; 0 &amp; 1
+\end{bmatrix} \\
+\begin{bmatrix}
+1 &amp; a &amp; b \\
+0 &amp; 1 &amp; c \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+1 &amp; 0 &amp; x \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix} &amp;=
+\begin{bmatrix}
+1 &amp; a &amp; x + b \\
+0 &amp; 1 &amp; c \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\end{align*}
+therefore \(K\) is contained in the centre of \(H\), implying that \(K\) is a
+normal subgroup of \(H\). Moreover, let \(h \in H\); then the coset \(hK\)
+consists of precisely those elements of \(H\) that are equal to \(h\) at the
+12 and 23 entries. Call this coset \(C_{ac}\) where \(a = h_{12}\) and
+\(c = h_{23}\). To see how these cosets behave under multiplication, we
+compute the product of two arbitrary elements:
+\begin{equation}
+\begin{bmatrix}
+1 &amp; a &amp; b \\
+0 &amp; 1 &amp; c \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+1 &amp; d &amp; e \\
+0 &amp; 1 &amp; f \\
+0 &amp; 0 &amp; 1
+\end{bmatrix} = 
+\begin{bmatrix}
+1 &amp; d+a &amp; e+af+b \\
+0 &amp; 1 &amp; f + c \\
+0 &amp; 0 &amp; 1
+\end{bmatrix} \label{eqn:e2}
+\end{equation}
+so the product of the cosets \(C_{ac}\) and \(C_{df}\) is \(C_{d+a,f+c}\);
+so the quotient group \(H/K\) is isomorphic to \(\mathbb{R}^+ \times
+\mathbb{R}^+\). Using \((\ref{eqn:e2})\) we can also see that multiplication
+in the opposite order yields the same matrix but with \(ce\) in place of
+\(af\), therefore the two matrices commute iff \(af = cd\). If either \(a\) or
+\(c\) is nonzero, it is always possible to choose \(f\) and \(d\) such that
+\(af \neq cd\), therefore the centre of \(H\) is precisely \(K\).</p>
+<p><span class="problem">Exercise 2.12.3</span> For each \(g \in G\), write
+\(P_g\) for the equivalence class of \(g\) (that is, the element of the
+partition \(P\) that contains \(g\)). We are given that \(N = P_1\). Another
+useful fact is that for any \(a, b \in G\), the product \(P_a P_b\) is
+contained within \(P_{ab}\). (Since \(ab \in P_a P_b\) and the RHS is contained
+within some set of \(P\), the latter must be the unique element of \(P\) that
+contains \(ab\), namely \(P_{ab}\).)</p>
+<p>We are given that \(1 \in N\). For all \(n \in N\), we have
+\(P_{n^{-1}}P_n \subseteq P_1\). But \(P_{n^{-1}}P_n\) also contains
+\(n^{-1}1\) since \(1 \in P_n\). Therefore \(n^{-1} \in P_1 = N\).
+So \(N\) is closed under inverses.</p>
+<p>Also, \(P_1 P_1 \subseteq P_1\), but \(N = P_1\), so \(NN \subseteq N\),
+that is, \(N\) is closed under the operation of \(G\). So \(N\) is a subgroup
+of \(G\).</p>
+<p>Moreover, for all \(g \in G\), we have \(gNg^{-1} \subseteq
+P_g P_1 P_{g^{-1}} \subseteq P_1 = N\). So \(N\) is a normal subgroup of
+\(G\).</p>
+<p>Take \(a \in G\); then \(aN \subseteq P_a P_1 \subseteq P_a\). Also,
+\(a^{-1} P_a \subseteq P_{a^{-1}} P_a \subseteq P_1 = N\), therefore
+\(P_a \subseteq aN\). Taken together, these results imply that \(aN = P_a\).
+Thus, each coset of \(N\) exactly coincides with one of
+the elements of \(P\), and since the cosets cover \(G\), there are no
+elements of \(P\) that are not cosets of \(N\).</p>
+<p><span class="problem">Exercise 2.12.4</span> The coset \(zH\) consists of
+the four complex numbers \(\{z, iz, -z, -iz\}\). On the complex plane, these
+are four points with the same distance from the origin, spaced out evenly on
+the circumference of the circle. We claim that an isomorphism between \(G\) and
+\(G/H\) is given by \(\varphi(re^{i\theta}) = [re^{i\theta/4}]\).</p>
+<p> First, we need to check
+that this is well-defined. If \(z = re^{i\theta} = r'e^{i\theta'}\), then
+\(r' = r\) and \(\theta' - \theta = 2\pi i n\) for some \(n \in \mathbb{Z}\).
+In that case, \(re^{i\theta'/4} = e^{2\pi i n/4} re^{i\theta/4}\), but
+\(e^{2\pi i n/4} \in H\), so \([re^{i\theta'/4}] = [re^{i\theta/4}]\). So
+\(\varphi\) is indeed well-defined.</p>
+<p>Now let \(z = re^{i\theta}, z' =
+r'e^{i\theta'}\). Then \(\varphi(zz') = \varphi(rr' e^{i(\theta + \theta')})
+= [rr' e^{i(\theta + \theta')/4}]\), and \(\varphi(z)\varphi(z') =
+[re^{i\theta/4}][r'e^{i\theta'/4}]\); this latter coset is easily seen to
+contain the element \(rr'e^{i(\theta + \theta')/4}\), so it is the same coset
+as \(\varphi(zz')\).  Therefore \(\varphi\) is a homomorphism.</p>
+<p>Finally,
+suppose \(\varphi(re^{i\theta}) = [1]\). Then \([re^{i\theta/4}] = [1]\),
+implying \(re^{i\theta/4} = e^{2\pi i n/4}\) for some \(n \in \mathbb{Z}\),
+implying \(r = 1\) and \(\theta/4 - 2\pi n/4 = 2\pi m\) for some
+\(m \in \mathbb{Z}\), so \(\theta\) is an integer multiple of \(2\pi\) and
+\(re^{i\theta} = 1\). That is, the kernel of \(\varphi\) is trivial;
+\(\varphi\) is an isomorphism as we claimed.</p>
