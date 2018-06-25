@@ -206,3 +206,33 @@ arguments, so \(g\) is symmetric. Thus, as required, we have the decomposition
 
 <p><span class="problem">Problem 16.M.8</span> I'm not sure exactly what we're
 supposed to do for this problem, so I've skipped it.</p>
+
+<p><span class="problem">Problem 16.M.9</span> I don't think the problem is
+correct as written. A counterexample is given by
+\[
+f(t, x) = x^3 - 3t^2 x - (t^4 + t^2)
+\]
+Since \(f\) is monic in \(x\), if \(f\) is reducible, it must be reducible as
+a polynomial in \(f\) (with coefficients in \(\C[t]\)). We will see shortly
+that this is not the case, therefore \(f\) is irreducible in \(\C[t, x]\). The
+roots of \(f\) are given by
+\begin{align*}
+x_1 &amp;= t^{4/3} + t^{2/3} \\
+x_2 &amp;= \omega t^{4/3} + \omega^2 t^{2/3} \\
+x_3 &amp;= \omega^2 t^{4/3} + \omega t^{2/3}
+\end{align*}
+These roots obviously don't belong to \(\C(t)\), so \(f\) is irreducible as a
+polynomial over \(\C(t)\), and hence also \(\C[t]\). The discriminant of \(f\),
+regarded as a cubic in \(x\), is obtained from (16.2.8):
+\[
+D = -27t^8 + 54t^6 - 27t^4 = (i\sqrt{27}(t^4 - t^2))^2 = \delta^2
+\]
+so \(D\) is a square in \(\C(t)\) and the splitting field of \(f\) has degree
+3. Explicitly, the roots \(x_2, x_3\) can be written as a rational function of
+\(x_1\) and \(\delta\)
+using the result of <a href="/artin/16.8">Exercise 16.8.5</a>.
+However, substituting \(t = 1\) yields \(f(x) = x^3 - 3x - 2\), which has the
+single root 2 and the double root 1. This contradicts the problem
+statement.</p>
+<p>I don't know where the error in the problem is. If you know what Artin
+intended, feel free to write to me.</p>
