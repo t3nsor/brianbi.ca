@@ -236,3 +236,25 @@ single root 2 and the double root 1. This contradicts the problem
 statement.</p>
 <p>I don't know where the error in the problem is. If you know what Artin
 intended, feel free to write to me.</p>
+
+<p><span class="problem">Problem 16.M.10</span> We will prove the desired
+result for algebraic extensions \(K\), which implies the result in the finite
+case. It suffices to prove the desired result when \(K = \overline{F}\), an
+algebraic closure of \(F\); for \(K[x]\) embeds into \(\overline{F}[x]\) for
+any algebraic extension \(K/F\), and if \(f(x)g(x) = h(x)\) where
+\(f(x) \in K[x]\), \(g(x) \in \overline{F}[x]\), and \(h(x) \in F[x]\), then
+polynomial division shows that \(g(x) \in K[x]\) as required.</p>
+<p>We will now proceed assuming that \(K\) is algebraically closed. Write
+\(f\) in fully factored form, \(f(x) = \prod_{i=1}^n (x - x_i)\). For each
+\(x_i\), let its Galois conjugates over \(K/F\) be \(\{y_{ij}\}\) for
+\(j = 1, \ldots, d_i\), and \(y_{i1} = x_i\). Then, we may take
+\begin{equation*}
+g(x) = \prod_{i=1}^n \prod_{j=2}^{d_i} (x - y_{ij})
+\end{equation*}
+so that
+\begin{equation*}
+f(x) g(x) = \prod_{i=1}^n \prod_{j=1}^{d_i} (x - y_{ij})
+\end{equation*}
+and for each \(i\), the inner product expression is the minimal polynomial for
+\(x_i\) over \(F\), and thus lies in \(F[x]\).</p>
+<div class="qed"></div>
