@@ -325,3 +325,90 @@ implies that \(\{\alpha_1, \alpha_2\} = \{\alpha_3, \alpha_4\}\). By
 Proposition 15.6.8(b), \(f\) is reducible, and a contradiction has been
 reached.</p></li>
 </ol>
+
+<p><span class="problem">Problem 16.M.12</span> With \(K\) denoting the
+splitting field of \(f\), suppose \(G = \Gal(K/F)\) is
+solvable, with the sequence \(G = H_0 \supseteq H_1 \supseteq \ldots
+\supseteq H_k = \{1\}\) given. By the fundamental theorem, each \(H_i\) has a
+corresponding intermediate field, namely the subfield of \(K\) that it fixes;
+call this field \(F_i\). (Thus, \(F = F_0\), and \(K = F_k\).) For each
+\(i = 1, \ldots, k\), \(H_{i-1} = \Gal(K/F_{i-1})\), \(H_i = \Gal(K/F_i)\),
+and since \(H_{i-1}\) is a normal subgroup of \(H_i\), the extension
+\(F_i/F_{i-1}\) is Galois, with Galois group \(H_{i-1}/H_i\), which is known to
+be cyclic. Thus, the extensions \(F_1/F\), \(F_2/F_1\), &hellip;, \(K/F_{k-1}\)
+are Galois with cyclic (and therefore abelian) Galois groups. By Lemma 16.12.8,
+each such extension \(F_i/F_{i-1}\) can be constructed by successive Galois
+extensions of prime degree. Thus, the roots of \(f\) satisfy the criterion
+16.12.2(b), and are solvable over \(F\).</p>
+<p>Conversely, suppose \(f\) has at least one solvable root \(\alpha\) in the
+sense of 16.12.2(a): that is, there exists a tower of fields
+\begin{equation}
+\label{radical-tower1}
+F = F_0 \subseteq F_1 \subseteq \ldots \subseteq F_n
+\end{equation}
+where \(\alpha \in F_n\) and for each \(i = 1, \ldots, n\),
+\(F_i = F_{i-1}(\beta_i)\) for some \(\beta_i\) such that a power of
+\(\beta_i\) lies in \(F_{i-1}\) (we call this a <em>simple radical
+extension</em>). As in the proof of
+Proposition 16.12.2, we can assume that \([F_i : F_{i-1}]\) is a prime number
+\(p_i\) for each \(i\). Let \(q = p_1 p_2 \ldots p_n\), and let
+\(F' = F(\zeta_q)\) where \(\zeta_q\) is a primitive \(q\)<sup>th</sup> root of
+unity.</p>
+<p>Let \(\gamma\) be a primitive element for the extension \(F_n/F\), and let
+\(g\) be the minimal polynomial for \(\gamma\) over \(F\). Let \(K'\) be the
+splitting field of \(g\) over \(F\), and let \(\gamma_1, \ldots, \gamma_r\) be
+the roots of \(g\) in \(K'\), with \(\gamma_1 = \gamma\). For each \(j = 1,
+\ldots, r\), let \(\sigma_j\) be an element of \(\Gal(K'/F)\) that takes
+\(\gamma_1 \mapsto \gamma_j\). For each such \(\sigma_j\), the image of
+\eqref{radical-tower1},
+\begin{equation*}
+F = \sigma_j(F) = \sigma_j(F_0) \subseteq \sigma_j(F_1) \subseteq \ldots
+\subseteq \sigma_j(F_n)
+\end{equation*}
+is a tower of simple radical extensions since \(\sigma_j(F_i) =
+\sigma_j(F_{i-1})(\sigma_j(\beta_i))\), and \(\sigma_j(\beta_i)^{p_i} =
+\sigma_j(\beta_i^{p_i})\), which is the image of some element of
+\(F_{i-1}\) under \(\sigma_j\). Note also that \(\gamma_j \in
+\sigma_j(F_n)\) and \(\sigma_j(F_n) \subseteq K\).</p>
+<p>Now let us build a tower of fields by first adjoining \(\zeta_q\) to
+\(F\), then successively adjoining \(\beta_1, \beta_2, \ldots, \beta_n\), then
+\(\sigma_2(\beta_1), \ldots, \sigma_2(\beta_n)\), &hellip;,
+\(\sigma_r(\beta_1), \ldots, \sigma_r(\beta_n)\). Each time we adjoin
+\(\sigma_j(\beta_i)\), by Proposition 16.11.2, this is either a trivial
+extension or a simple radical extension of degree \(p_i\). Having adjoined all
+of these roots, we end up with a field that contains \(F'\) and all the roots
+of \(g\) and is contained within the field \(K'(\zeta_q)\), and is therefore
+equal to \(K'(\zeta_q)\). Thus \(K'(\zeta_q)\) has been constructed from \(F\)
+by a series of simple radical extensions:
+\[
+F \subseteq F' \subseteq F'(\beta_1) \subseteq \ldots \subseteq K'(\zeta_q)
+\]
+Since \(K'(\zeta_q)\) is the splitting field of \(g(x)(x^q - 1)\) over \(F\),
+the extension \(K'(\zeta_q)/F\) is Galois. The extension \(F'/F\) is Galois
+since \(F'\) is the splitting field of \(x^q - 1\) over \(F\). Each of the
+subsequent simple radical extensions is of degree \(p_i\) over a base field
+that contains the \(p_i\)<sup>th</sup> roots of unity, so it too is Galois,
+with cyclic Galois group. By Lemma 16.12.8, the extension \(F'/F\) can be
+built up by successive Galois extensions of prime degree, which therefore also
+have cyclic Galois groups. Thus, we have a tower
+\[
+F \subseteq F' \subseteq F'' \subseteq \ldots \subseteq K'(\zeta_q)
+\]
+where each field is a Galois extension of the previous field with cyclic
+Galois group. Since \(F'/F\) is a Galois extension, the fundamental theorem
+implies that \(\Gal(K'(\zeta_q)/F')\) is a normal subgroup of
+\(\Gal(K'(\zeta_q)/F)\), and that the quotient group is \(\Gal(F'/F)\), which
+is cyclic. Similarly, \(\Gal(K'(\zeta_q)/F'')\) is a normal subgroup of
+\(\Gal(K'(\zeta_q)/F')\) with quotient group \(\Gal(F''/F')\), which is cyclic,
+and so on, which establishes that \(\Gal(K'(\zeta_q)/F)\) is solvable over
+\(F\). Since \(K'(\zeta_q)\) contains \(F_n\), it contains \(\alpha\), and
+since it is a Galois extension of \(F\), Theorem 16.3.2 implies that \(f\)
+splits completely over \(K'(\zeta_q)\), that is, \(K\) is a subfield of
+\(K'(\zeta_q)\). Again, by the fundamental theorem, \(\Gal(K/F) =
+\Gal(K'(\zeta_q)/F) / \Gal(K'(\zeta_q)/K)\). It is a well-known fact that any
+quotient of a solvable group is solvable; therefore, \(\Gal(K/F)\) is
+solvable.</p>
+<div class="qed"></div>
+<p><em>Corollary:</em> Since \(A_5\) is a simple group, its only composition
+series is \(1 \triangleleft A_5\), and it is not a solvable group. This gives
+an alternative proof of Theorem 16.12.4.</p>
