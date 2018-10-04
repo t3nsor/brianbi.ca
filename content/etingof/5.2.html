@@ -1,0 +1,78 @@
+<p><span class="problem">Problem 5.2.7</span></p>
+<ol class="subproblems">
+<li><p>As hinted, we consider the representations of \(G\) over the field
+\(\overline{\mathbb{Q}}\). Since this field is algebraically closed, its
+representations are characterized by Proposition 3.5.8 (together with Maschke's
+theorem). In particular, \(|G| = \sum_i (\dim V_i)^2\) where \(V_i\) ranges
+over the irreducible representations. Every irreducible representation over
+\(\overline{\mathbb{Q}}\) corresponds to a representation over \(\mathbb{C}\)
+in an obvious way. The proof of Theorem 4.5.1 shows that it applies to any
+algebraically closed field whose characteristic doesn't divide the order of the
+group, so in particular \(\langle V, V \rangle = 1\) for the irreps of \(G\)
+over \(\overline{\mathbb{Q}}\); this obviously holds in \(\mathbb{C}\) as well,
+so the \(V_i\) are irreducible there also. Since the sum-of-squares relation
+also holds in \(\mathbb{C}\), these representations are all the irreducible
+representations of \(G\) over \(\mathbb{C}\); that is, every irrep of \(G\)
+over \(\mathbb{C}\) can be presented so that its matrices have only algebraic
+entries. Choose arbitrary bases \(B_i = \{b_{ij}\}_{j=1}^{\dim V_i}\) for the
+\(V_i\)'s considered as representations over \(\overline{\mathbb{Q}}\), and
+let \(K\) be the smallest Galois extension of \(\mathbb{Q}\) that contains
+the entries of all matrices of all the group elements in the representations
+\(V_i\) with respect to the bases \(B_i\). Again by Maschke's theorem and
+Proposition 3.5.8, all finite-dimensional complex representations of \(G\)
+decompose as a direct sum of the \(V_i\)'s. By choosing a basis for such a
+representation in the obvious way from the decomposition into irreducibles and
+the \(B_i\)'s previously chosen, we see that all matrix entries belong to the
+field \(K\), as desired.</p></li>
+<li><p>Again, we follow the hint. Assume \(\chi_V(g) \ne 0\) for all
+\(g \in G\). Then \(|\chi_V(g)|^2 &gt; 0\) for all \(g \in G\). By
+orthonormality of irreducible characters, \(\sum_{g \in G} |\chi_V(g)|^2 =
+|G|\). Now \(|\chi_V(1)|^2 = (\dim V)^2 &gt; 1\), so \(\sum_{g \in
+G \setminus \{1\}} |\chi_V(g)|^2 &lt; |G| - 1\). Thus, the arithmetic mean of
+the numbers \(|\chi_V(g)|^2\) for \(g \ne 1\) is strictly less than 1. By the
+inequality of means, \(\left(\prod_{g \in G \setminus \{1\}}
+|\chi_V(g)|^2\right)^{1/(|G| - 1)} &lt; 1\). Since all
+\(|\chi_V(g)|^2 &gt; 0\), we must in fact have \(0 &lt;
+\prod_{g \in G \setminus \{1\}} |\chi_V(g)|^2 &lt; 1\).</p>
+<p>Now observe that:
+\begin{align*}
+\prod_{g \in G \setminus \{1\}} |\chi_V(g)|^2
+&amp;= \prod_{g \in G \setminus \{1\}} \chi_V(g) \overline{\chi_V(g)} \\
+&amp;= \prod_{g \in G \setminus \{1\}} \chi_V(g) \chi_V(g^{-1}) \\
+&amp;= \prod_{g \in G \setminus \{1\}} \chi_V(g)
+\prod_{g \in G \setminus \{1\}} \chi_V(g^{-1}) \\
+&amp;= \left[\prod_{g \in G \setminus \{1\}} \chi_V(g)\right]^2
+\end{align*}
+Write \(\beta = \prod_{g \in G \setminus \{1\}} \chi_V(g)\); we see that
+\(\beta\) is real and \(|\beta| \in (0, 1)\).</p>
+<p>From part (a), we may choose a basis of \(V\) so that all entries
+of the matrices for elements of \(G\) are algebraic. This implies that the
+numbers \(|\chi_V(g)|\) are all algebraic and belong to a common field \(K
+\subseteq \mathbb{C}\) that is a Galois extension of \(\mathbb{Q}\), as in part
+(a). Let \(\sigma \in \operatorname{Gal}(K/\mathbb{Q})\); then applying
+\(\sigma\) to all the matrix entries produces another irreducible
+representation \(\sigma(V)\) of \(G\), in which \(
+\prod_{g\in G\setminus\{1\}} \chi_{\sigma(V)}(g)\) is a real number whose
+absolute value lies in \((0, 1)\); but
+\begin{align*}
+\prod_{g \in G\setminus\{1\}} \chi_{\sigma(V)}(g)
+&amp;= \prod_{g \in G\setminus\{1\}} \tr \sigma(\rho(g)) \\
+&amp;= \prod_{g \in G\setminus\{1\}} \sigma(\tr \rho(g)) \\
+&amp;= \prod_{g \in G\setminus\{1\}} \sigma(\chi_V(g)) \\
+&amp;= \sigma\left(\prod_{g \in G\setminus\{1\}} \chi_V(g) \right) \\
+&amp;= \sigma(\beta)
+\end{align*}
+thus all conjugates of \(\beta\) have absolute value strictly between 0 and 1.
+Now the results of section 4.4 imply that \(\chi(g)\) is the sum of roots of
+unity for all \(g \in G\); each root of unity is an algebraic integer, so each
+\(\chi(g)\) is also an algebraic integer. The number \(\beta\), being a
+product of such values, is also an algebraic integer. This implies that its
+minimal polynomial has integer constant term. But this constant term is the
+product of the algebraic conjugates of \(\beta\), which is strictly between 0
+and 1 in absolute value; thus, a contradiction has been reached.</p>
+<div class="qed"></div>
+</li>
+</ol>
+
+<p><span class="problem">Remark 5.2.8</span> The proof along the lines of the
+Remark is similar to 5.2.7(b), so it is left as an exercise for the reader.</p>
