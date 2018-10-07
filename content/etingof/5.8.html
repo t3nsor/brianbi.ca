@@ -1,0 +1,77 @@
+<div style="display: none">\[
+\DeclareMathOperator{\Ind}{Ind}
+\]</div>
+
+<p><span class="problem">Problem 5.8.4</span> Let's start by recalling that
+the elements of \(\Ind^G_K V\) are functions \(G \to V\) and the elements of
+\(\Ind^G_H \Ind^H_K V\) are functions \(G \to (H \to V)\). These functions must
+satisfy certain constraints, but writing out the types helps us to identify
+the required isomorphism. It must have the type \(\varphi : (G \to V) \to
+(G \to (H \to V))\). This suggests that we might try \(\varphi(f) :=
+g, h \mapsto f(hg)\).</p>
+<p>Let's now check that \(\varphi\) actually maps from \(\Ind^G_K V\) to
+\(\Ind^G_H \Ind^H_K V\). Let \(f \in \Ind^G_K V\), so that for all \(k \in K,
+g \in G\), we have \(f(kg) = kf(g)\). For each \(h, h' \in H, g
+\in G\), we have:
+\begin{equation*}
+\varphi(f)(hg)(h') = f(h'hg)
+\end{equation*}
+and
+\begin{align*}
+(h(\varphi(f)(g)))(h') &amp;= \varphi(f)(g)(h'h) \\
+&amp;= f(h'hg)
+\end{align*}
+Therefore, for all \(g \in G, h \in H\), we have \(\varphi(f)(hg) =
+h(\varphi(f)(g))\), which is one of the requirements to have
+\(\varphi(f) \in \Ind^G_H \Ind^H_K V\). The other requirement is that each of
+the maps \(\varphi(f)(g)\) actually lies in \(\Ind^H_K V\). For this, note
+that for each \(k \in K\), we have \((\varphi(f)(g))(kh) = f(khg) = kf(hg)
+= k(\varphi(f)(g)(h))\), as required.</p>
+<p>Next, we show that \(\varphi\) is a linear map. Let \(F\) denote the base
+field. If \(\alpha \in F\), then for each \(f \in \Ind^G_K V\), we have
+\(\varphi(\alpha f) = (g, h \mapsto (\alpha f)(hg)) =
+(g, h \mapsto \alpha f(hg)) = \alpha(g, h \mapsto f(hg)) = \alpha \varphi(f)\),
+and for each \(f_1, f_2 \in \Ind^G_K V\), we have
+\(\varphi(f_1 + f_2) = (g, h \mapsto (f_1 + f_2)(hg)) =
+(g, h \mapsto f_1(hg) + f_2(hg)) = (g, h \mapsto f_1(hg)) +
+(g, h \mapsto f_2(hg)) = \varphi(f_1) + \varphi(f_2)\), as required.</p>
+<p>Next, we show that \(\varphi\) is injective. Suppose \(\varphi(f) = 0\)
+for some \(f \in \Ind^G_K V\). Then for all \(g \in G, h \in H\), we have
+\(\varphi(f)(g)(h) = 0\). This implies that \(f(hg) = 0\) for all \(g, h\). But
+the set of elements of the form \(hg\) is all of \(G\), so \(f\) vanishes
+identically.</p>
+<p>For \(V\) finite-dimensional, we could immediately conclude that
+\(\varphi\) is surjective because its domain and codomain have the same
+dimension over \(F\). There doesn't seem to be anything in the text implying
+that \(V\) is assumed finite-dimensional, so we will show surjectivity
+directly. Suppose \(j \in \Ind^G_H \Ind^H_K V\). Then let \(f : G \to V\) be
+defined by \(f(g) = j(g)(1)\). We then see that
+\begin{align*}
+\varphi(f)(g)(h) &amp;= f(hg) \\
+&amp;= j(hg)(1) \\
+&amp;= h(j(g))(1) \\
+&amp;= j(g)(1\cdot h) \\
+&amp;= j(g)(h)
+\end{align*}
+therefore \(\varphi(f) = j\). Also, for each \(k \in K\),
+\begin{align*}
+f(kg) &amp;= j(kg)(1) \\
+&amp;= k(j(g))(1) \\
+&amp;= j(g)(1\cdot k) \\
+&amp;= j(g)(k\cdot 1) \\
+&amp;= k(j(g)(1)) \\
+&amp;= kf(g)
+\end{align*}
+therefore \(f \in \Ind^G_K V\) as required.</p>
+<p>Having established that \(\varphi\) is a linear isomorphism, we have one
+final task, namely to show that \(\varphi\) is an isomorphism of
+\(G\)-modules. So let \(f \in \Ind^G_K V\) and let \(g, g' \in G, h \in H\).
+Then
+\begin{align*}
+(\varphi(g'f))(g)(h) &amp;= (g'f)(hg) \\
+&amp;= f(hgg') \\
+&amp;= \varphi(f)(gg')(h) \\
+&amp;= (g'\varphi(f))(g)(h)
+\end{align*}
+so \(\varphi(g'f) = g'\varphi(f)\) as required.</p>
+<div class="qed"></div>
