@@ -7,8 +7,10 @@ the elements of \(\Ind^G_K V\) are functions \(G \to V\) and the elements of
 \(\Ind^G_H \Ind^H_K V\) are functions \(G \to (H \to V)\). These functions must
 satisfy certain constraints, but writing out the types helps us to identify
 the required isomorphism. It must have the type \(\varphi : (G \to V) \to
-(G \to (H \to V))\). This suggests that we might try \(\varphi(f) :=
-g, h \mapsto f(hg)\).</p>
+(G \to (H \to V))\). This suggests that we might try:
+\begin{equation*}
+\varphi(f) := g, h \mapsto f(hg)
+\end{equation*}</p>
 <p>Let's now check that \(\varphi\) actually maps from \(\Ind^G_K V\) to
 \(\Ind^G_H \Ind^H_K V\). Let \(f \in \Ind^G_K V\), so that for all \(k \in K,
 g \in G\), we have \(f(kg) = kf(g)\). For each \(h, h' \in H, g
@@ -74,4 +76,60 @@ Then
 &amp;= (g'\varphi(f))(g)(h)
 \end{align*}
 so \(\varphi(g'f) = g'\varphi(f)\) as required.</p>
+<div class="qed"></div>
+
+<p><span class="problem">Exercise 5.8.5</span> The required isomorphism
+\(\varphi : \Ind^G_K \mathbb{C}_\chi \to \mathbb{C}[G]e_\chi\) is given by:
+\begin{equation*}
+\varphi(f) := \sum_{g \in G} f(g^{-1}) g
+\end{equation*}
+Note that:
+\begin{align*}
+\varphi(f)e_\chi &amp;= \frac{1}{|K|}\sum_{g \in G} \sum_{k \in K}
+\chi(k)^{-1} f(g^{-1}) gk \\
+&amp;= \frac{1}{|K|} \sum_{g \in G} \sum_{h \in gK}
+\chi(g^{-1}h)^{-1} f(g^{-1})h \\
+&amp;= \frac{1}{|K|} \sum_{h \in G} \sum_{g : h \in gK}
+\chi(h^{-1}g) f(g^{-1})h \\
+&amp;= \frac{1}{|K|} \sum_{h \in G} \left[\sum_{g \in hK}
+\chi(h^{-1}g) f(g^{-1})\right] h \\
+&amp;= \frac{1}{|K|} \sum_{h \in G} \left[\sum_{k \in K}
+\chi(h^{-1}hk) f((hk)^{-1})\right]h \\
+&amp;= \frac{1}{|K|} \sum_{h \in G} \left[\sum_{k \in K}
+\chi(k) f(k^{-1}h^{-1})\right] h \\
+&amp;= \frac{1}{|K|} \sum_{h \in G} \left[\sum_{k \in K}
+\chi(k) k^{-1} f(h^{-1})\right] h \\
+&amp;= \frac{1}{|K|} \sum_{h \in G} \sum_{k \in K} f(h^{-1})h \\
+&amp;= \frac{1}{|K|} \sum_{h \in G} |K| f(h^{-1})h \\
+&amp;= \sum_{h \in G} f(h^{-1})h \\
+&amp;= \varphi(f)
+\end{align*}
+therefore \(\varphi(f) \in \mathbb{C}[G]e_\chi\), as required.</p>
+<p>It is obvious that \(\varphi\) is a linear map. If \(\varphi(f) = 0\), then
+it is easy to see that \(f = 0\), so \(\varphi\) is injective.</p>
+<p>Notice that for all \(g \in G, k \in K\), we have
+\begin{align*}
+gk e_\chi &amp;= \frac{1}{|K|} gk \sum_{k' \in K} \chi(k')^{-1} k' \\
+&amp;= \frac{1}{|K|} g \sum_{k' \in K} \chi(k')^{-1} kk' \\
+&amp;= \frac{\chi(k)}{|K|} g \sum_{k' \in K} \chi(k)^{-1} \chi(k')^{-1} kk' \\
+&amp;= \frac{\chi(k)}{|K|} g \sum_{k' \in K} \chi(kk')^{-1} kk' \\
+&amp;= \frac{\chi(k)}{|K|} g \sum_{k'' \in K} \chi(k'')^{-1} k'' \\
+&amp;= \chi(k) g e_\chi
+\end{align*}
+therefore \(\mathbb{C}[G]e_\chi\) is \(|G|/|K|\)-dimensional with a basis given
+by \(g_1 e_\chi, \ldots, g_{|G|/|K|} e_\chi\) where the \(g_i\)'s belong to
+different left \(K\)-cosets of \(G\). Since \(\mathbb{C}[G]e_\chi\) has the
+same dimension (as a vector space) as \(\Ind^G_K \mathbb{C}_\chi\), the map
+\(\varphi\) is surjective.</p>
+<p>Finally, we must show that \(\varphi: \Ind^G_K \mathbb{C}_\chi \to
+\mathbb{C}[G]e_\chi\) is an isomorphism of \(G\)-modules. Let \(f \in
+\Ind^G_K \mathbb{C}_\chi, g \in G\). Then
+\begin{align*}
+\varphi(gf) &amp;= \sum_{h \in G} (gf)(h^{-1})h \\
+&amp;= \sum_{h \in G} f(h^{-1}g)h \\
+&amp;= g\sum_{h \in G} f(h^{-1}g)g^{-1}h \\
+&amp;= g\sum_{h' \in G} f(h'^{-1})h' \\
+&amp;= g\varphi(f)
+\end{align*}
+as required.</p>
 <div class="qed"></div>
