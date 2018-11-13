@@ -66,6 +66,10 @@ p.lemma::before {
     content: "Lemma: ";
     font-style: italic;
 }
+p.corollary::before {
+    content: "Corollary: ";
+    font-style: italic;
+}
 .proof::before {
     content: "Proof: ";
     font-style: italic;

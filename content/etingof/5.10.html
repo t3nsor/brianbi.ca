@@ -1,0 +1,244 @@
+<div style="display: none">\[
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+\]</div>
+
+<p><span class="problem">Problem 5.10.2(a)</span> We will use the universal
+property for the tensor product of bimodules, which is as follows:</p>
+<blockquote>Suppose \(M\) and \(N\) are respectively \((A, B)\)- and
+\((B, C)\)-bimodules. If \(P\) is an \((A, C)\)-bimodule, then a map
+\(f : M \times N \to P\) is said to be <em>balanced</em> if all of the
+following hold:
+<ul>
+<li>\(f(m_1 + m_2, n) = f(m_1, n) + f(m_2, n)\) for all \(m_1, m_2 \in M\) and
+\(n \in N\);</li>
+<li>\(f(m, n_1 + n_2) = f(m, n_1) + f(m, n_2)\) for all \(m \in M\) and
+\(n_1, n_2 \in N\);</li>
+<li>\(f(am, n) = af(m, n)\) for all \(m \in M, n \in N, a \in A\);</li>
+<li>\(f(mb, n) = f(m, bn)\) for all \(m \in M, n \in N, b \in B\); and</li>
+<li>\(f(m, nc) = f(m, n)c\) for all \(m \in M, n \in N, c \in C\)</li>
+</ul>
+The tensor product is defined as an \((A, C)\)-bimodule \(M \otimes_B N\)
+together with a balanced map \(\otimes : M \times N \to M \otimes_B N\)
+such that for every \((A, C)\)-bimodule \(P\) and every balanced map
+\(f : M \times N \to P\), there is a unique \((A,C)\)-bimodule homomorphism
+\(\tilde{f} : M \otimes_B N \to P\) such that \(f = \tilde{f} \circ
+\otimes\).</blockquote>
+<p>The above universal property is easily proven to hold for the tensor product
+as defined in Problem 2.11.6, and a simple argument similar to
+<a href="https://math.stackexchange.com/q/794448/24692">the one for modules</a>
+establishes that it uniquely characterizes the tensor product up to
+isomorphism.</p>
+<p>Now consider the \((k[H], k)\)-bimodule (that is, left \(k[H]\)-module)
+\(\Res^G_H V\) together with the
+binary operation \(\star : k[G] \times V \to \Res^G_H V\) given by \(a \star v
+= av\). It's easy to see that \(\star\) is balanced. Let \(f : k[G] \times V
+\to P\) be a balanced map and \(P\) a left \(k[H]\)-module. We claim that there
+is precisely one left \(k[H]\)-module homomorphism \(\tilde{f} :
+\Res^G_H V \to P\) such that \(f = \tilde{f} \circ \star\). In particular, we
+must have \(f(1, v) = \tilde{f}(1 \star v)\) for all \(v \in V\), that is,
+\(\tilde{f}(v) = f(1, v)\). With this definition of \(\tilde{f}\), we obtain
+\((\tilde{f} \circ \star)(a, v) = \tilde{f}(av) = f(1, av) = f(a, v)\), as
+required, and it is easy to check that \(\tilde{f}\) is an isomorphism of
+left \(k[H]\)-modules. Since \(\Res^G_H V\) satisfies the universal property,
+it is isomorphic to \(k[G] \otimes_{k[G]} V\) as a left \(k[H]\)-module.</p>
+<div class="qed"></div>
+
+<p><span class="problem">Problem 5.10.2(b)</span> It is fairly clear why Remark
+5.8.2 is true, so we won't bother to prove it here. By Remark 5.8.2, and
+functoriality of \(\Hom(V, -)\) (<i>i.e.</i>, it preserves isomorphisms), we
+have
+\[
+\Hom_G(V, \Ind^G_H W) \cong \Hom_{k[G]}(V, \Hom_{k[H]}(k[G], W))
+\]
+as \(k\)-vector spaces. By the tensor-hom adjunction
+(<a href="/etingof/2.11">Problem 2.11.6(b)</a>), using
+the fact that \(V\) is a \((k[G], k)\)-bimodule, \(k[G]\) is a
+\((k[H], k[G])\)-bimodule, and \(W\) is a \((k[H], k)\)-bimodule, we have
+\[
+\Hom_{k[G]}(V, \Hom_{k[H]}(k[G], W)) \cong \Hom_{k[H]}(k[G] \otimes_{k[G]} V, W)
+\]
+as \((k, k)\)-bimodules, that is, as \(k\)-vector spaces. By part (a) of this
+problem and functoriality of \(\Hom(-, W)\), we have
+\[
+\Hom_{k[H]}(k[G] \otimes_{k[G]} V, W) \cong \Hom_H(\Res^G_H V, W)
+\]
+as \(k\)-vector spaces. Putting it all together, we conclude
+\(\Hom_G(V, \Ind^G_H W) \cong \Hom_H(\Res^G_H V, W)\) as \(k\)-vector
+spaces.</p>
+<div class="qed"></div>
+
+<p><span class="problem">Problem 5.10.2(c)</span> We'll show that
+\(\Hom_{k[G]}(k[G], V) \cong k[G] \otimes_{k[G]} V\) as left \(k[G]\)-modules
+using the universal property of the tensor product. The desired result will
+immediately follow.</p>
+<p>Define \(\star :
+k[G] \times V \to \Hom_{k[G]}(k[G], V)\) by \((a \star v)(b) = bav\). Then
+\(\star\) is a balanced product of the \((k[G], k[G])\)-bimodule \(k[G]\) and
+the left \(k[G]\)-module \(V\).</p>
+<p>Let \(f : k[G] \times V \to P\) be a balanced
+map where \(P\) is a left \(k[G]\)-module. We claim that there is exactly one
+left \(k[G]\)-module homomorphism \(\tilde{f} : \Hom_{k[G]}(k[G], V) \to P\)
+such that \(f = \tilde{f} \circ \star\). In particular, every
+\(\varphi : \Hom_{k[G]}(k[G], V)\) takes the form \(\varphi(a) =
+\varphi(a \cdot 1) = a\varphi(1)\), and there is precisely one such map for
+each possible value of \(\varphi(1)\); call this map \(\varphi_v\), so that
+\(\varphi_v(a) = av\). Observe that for each \(v \in V\), we have
+\(f(1, v) = \tilde{f}(1 \star v) = \tilde{f}(\varphi_v)\). Thus, we must have
+\(\tilde{f}(\varphi) = f(1, \varphi(1))\) for each \(\varphi \in
+\Hom_{k[G]}(k[G], V)\).</p>
+<p>Indeed, for each \(a \in k[G]\),
+\(\tilde{f}(a \star v) = \tilde{f}(b \mapsto bav) = \tilde{f}(\varphi_{av})
+= f(1, av) = f(a, v)\), so \(\tilde{f} \circ \star = f\) as required.</p>
+<div class="qed"></div>
+
+<p><span class="problem">Problem 5.10.2(d)</span> We'll show that
+\(\Ind^G_H W\) satisfies the universal property of the tensor product
+\(k[G] \otimes_{k[H]} W\) (where \(k[G]\) is a \((k[G], k[H])\)-bimodule and
+\(W\) is a left \(k[H]\)-module).</p>
+<p>We must define a balanced map \(\star : k[G] \times W \to \Ind^G_H W\).
+Intuitively, we want something similar to <q>\(a \star w =
+(g \mapsto gaw)\)</q>, which doesn't make sense since we haven't defined an
+action of \(k[G]\) on \(W\) yet. However, we can construct one by treating
+\(k[G]\) as a direct sum of \(|G|/|H|\) copies of \(k[H]\) and having only one
+copy (<i>i.e.,</i> the one naturally embedded in \(k[G]\)) act on \(W\). That
+is,
+\begin{equation}
+\label{eqn:star1}
+(a \star w)(g) = \pi(ga)w
+\end{equation}
+where \(\pi : k[G] \to k[H]\) is the \(k\)-linear map such that
+\(\pi(g)\) is \(g\) if \(g \in H\), and 0 otherwise. Observe that for all
+\(h \in H, a \in k[G]\), we have \(\pi(ha) = h\pi(a)\).</p>
+<p>Let \(g \in G, h \in H\); then \((a \star w)(hg) = \pi(hga)w =
+h\pi(ga)w = h(a \star w)(g)\). This shows that \(a \star w \in
+\Ind^G_H W\).</p>
+<p>Linearity of \(\pi\) implies that \(\star\) satisfies the first two
+properties of a balanced product, as stated in 5.10.2(a). If \(a_1, a_2 \in
+k[G], w \in W, g \in G\), then \(((a_1 a_2)\star w)(g) = \pi(ga_1 a_2)w =
+(a_2 \star w)(ga_1) =
+(a_1 (a_2 \star w))(g)\). If \(a \in k[G], b \in k[H], w \in W, g \in G\), 
+then \(((ab)\star w)(g) = \pi(gab)w = (\pi(ga)b)w = \pi(ga)(bw) =
+(a \star (bw))(g)\). Finally, the last property of balanced products in this
+case is just \(k\)-linearity, which obviously holds. Therefore
+\(\star\) is a balanced product of a \((k[G], k[H])\)-bimodule and a left
+\(k[H]\)-module.</p>
+<p>In general, \(\im \star\) is not the entire set \(\Ind^G_H W\). However,
+observe that if \(g \in G, w \in W\), then \((g^{-1} \star w)(g') =
+\pi(g'g^{-1})w\), therefore
+\begin{equation*}
+(g^{-1} \star w)(g') = \begin{cases}
+g'g^{-1} w &amp; \text{if $g, g'$ belong to the same right $H$-coset} \\
+0 &amp; \text{otherwise}
+\end{cases}
+\end{equation*}
+and in particular \((g^{-1} \star w)(g) = w\). Thus, if \(S\) is a right
+\(H\)-transversal of \(G\), <i>i.e.,</i> \(S = \{g_1, g_2, \ldots,
+g_{|G|/|H|}\}\) with one element chosen from each \(H\)-coset of \(G\), then
+for each \(v \in \Ind^G_H W\), we can write
+\begin{equation*}
+v = \sum_{g \in S} g^{-1} \star v(g)
+\end{equation*}
+that is, elements of the form \(g^{-1} \star w\), where \(g \in S\) and
+\(w \in W\), span \(\Ind^G_H W\).</p>
+<p>Now let \(f : k[G] \times W \to P\) be a balanced product of a
+\((k[G], k[H])\)-bimodule and a left \(k[H]\)-module. We claim that there is
+exactly one left \(k[G]\)-module homomorphism \(\tilde{f} :
+\Ind^G_H W \to P\) such that \(f = \tilde{f} \circ \star\). In particular,
+for all \(g \in G, w \in W\), we have \(f(g, w) = \tilde{f}(g \star w)\), which
+fixes the value of \(\tilde{f}\) at each element of \(\Ind^G_H W\) of the form
+\(g \star w\); we have already established that such elements span
+\(\Ind^G_H W\), so there can be at most one possible \(\tilde{f}\). Indeed,
+fix some right transversal \(S\) as above and set
+\begin{equation}
+\label{eqn:tildef1}
+\tilde{f}(v) = \sum_{g \in S} f(g^{-1}, v(g))
+\end{equation}
+Since \(f\) is a balanced product, \eqref{eqn:tildef1} doesn't depend on the
+choice of transversal. Observe that \(\tilde{f}\) so defined is
+\(k\)-linear and for each \(g' \in G\), we have
+\begin{align*}
+\tilde{f}(g'v)
+&amp;= \sum_{g \in S} f(g^{-1}, (g'v)(g)) \\
+&amp;= \sum_{g \in S} f(g^{-1}, v(gg')) \\
+&amp;= \sum_{g \in S} f(g'(gg')^{-1}, v(gg')) \\
+&amp;= g' \sum_{g \in S} f((gg')^{-1}, v(gg')) \\
+&amp;= g' \tilde{f}(v)
+\end{align*}
+where we have used the fact that \(\{gg' \mid g \in S\}\) is also a right
+\(H\)-transversal of \(G\). It is thereby established that \(\tilde{f}\) is a
+left \(k[G]\)-module homomorphism. We also have that for each \(g \in S,
+w \in W\),
+\begin{align*}
+\tilde{f}(g^{-1} \star w)
+&amp;= \sum_{g' \in S} f(g'^{-1}, (g^{-1} \star w)(g')) \\
+&amp;= f(g^{-1}, w)
+\end{align*}
+where we have used the fact that for \(g, g' \in S\), \((g^{-1} \star w)(g')\)
+is nonzero only when \(g = g'\). We see that \(\tilde{f} \circ \star\) agrees
+with \(f\) on \(S^{-1} \times W\). As we previously discussed, elements of the
+form \(g^{-1} \star w\) span \(\Ind^G_H W\), so by linearity,
+\(f = \tilde{f} \circ \star\) as required.</p>
+<p>(Note: We have used the fact that \eqref{eqn:tildef1} is independent of the
+choice of transversal \(S\) in the proof of the universal property. However,
+the <em>definition</em> of \(\star\), which establishes the isomorphism
+between \(\Ind^G_H W\) and \(k[G] \otimes_{k[H]} W\), was given as
+\eqref{eqn:star1} and doesn't make any reference to \(S\). Therefore, said
+isomorphism is natural in the informal sense.)</p>
+<div class="qed"></div>
+
+<p><span class="problem">Problem 5.10.2(e)</span> Using (c) and (d) together
+with the tensor-hom adjunction, we find:
+\begin{equation*}
+\Hom_H(W, \Res^G_H V) \cong \Hom_H(W, \Hom_{k[G]}(k[G], V))
+\cong \Hom_{k[G]}(k[G] \otimes_{k[H]} W, V) \cong \Hom_G(\Ind^G_H W, V)
+\end{equation*}
+This isomorphism of \(k\)-vector spaces is natural because each of the three
+isomorphisms in the above chain is natural.</p>
+<div class="qed"></div>
+
+<p><span class="problem">Problem 5.10.2(f)</span> We follow the Hint. By
+part (d), \((\Ind^G_H V)^* \cong (k[G] \otimes_{k[H]} V)^\star\). By
+Remark 5.8.2, \(\Ind^G_H(V^*) \cong \Hom_H(k[G], V^*)\). Define a
+\(k\)-bilinear functional
+\(\langle \cdot, \cdot \rangle : \Hom_H(k[G], V^*) \times
+(k[G] \otimes_{k[H]} V) \to k\) by setting
+\begin{equation}
+\label{eqn:form1}
+\langle f, x \otimes_{k[H]} v \rangle = f(Sx)(v)
+\end{equation}
+for all \(f \in \Hom_H(k[G], V^*), x \in k[G], v \in V\) and extending by
+linearity. (Note that the text incorrectly stated the intended domain of the
+bilinear form, but it's clear enough from the hint what the correct domain is.)
+It's not obvious that this is well-defined, so we now show that this is the
+case. Fix \(f \in \Hom_H(k[G], V^*)\); then define \(B_f : k[G] \times V \to
+k\) by \(B_f(x, v) = f(Sx)(v)\). It's obvious that \(B_f\) is \(k\)-bilinear;
+furthermore, for each \(h \in H\), we have \(B_f(xh, v) = f(S(xh))(v) =
+f(h^{-1}Sx)(v) = (h^{-1}f(Sx))(v) = f(Sx)(hv) = B_f(x, hv)\). Thus,
+\(B_f\) is a balanced map from a right \(k[H]\)-module and a left
+\(k[H]\)-module to \(k\). By the universal property, there is one unique
+\(k\)-linear map \(\tilde{B}_f : k[G] \otimes_{k[H]} V \to k\) such that
+\(B_f = \tilde{B}_f \circ \otimes_{k[H]}\). Finally, define
+\(\langle f, \cdot \rangle = \tilde{B}_f\). It can be easily seen that this
+agrees with \eqref{eqn:form1} and the mapping \(f \mapsto \tilde{B}_f\) is
+linear.</p>
+<p>Suppose \(f \in \Hom_H(k[G], V^*)\) satisfies \(\tilde{B}_f = 0\). Then
+\(f(Sx)(v) = 0\) for all \(x \in k[G], v \in V\). This implies
+\(f(Sx) = 0\) for all \(x \in k[G]\), so \(f(g^{-1}) = 0\) for all \(g \in G\).
+By linearity, \(f\) vanishes identically. This establishes that the mapping
+\(\varphi : \Hom_H(k[G], V^*) \to (k[G] \otimes_{k[H]} V)^*\) given by
+\(\varphi(f) = \langle f, \cdot \rangle\) is an injection from
+\(\Hom_H(k[G], V^*)\) to \((k[G] \otimes_{k[H]} V)^*\); that is, from
+\(\Ind^G_H(V^*)\) to \((\Ind^G_H V)^*\). Since \(\dim \Ind^G_H(V^*) =
+|G| \dim(V^*)/|H| = |G| \dim(V)/|H| = \dim(\Ind^G_H V) =
+\dim((\Ind^G_H V)^*)\), \(\varphi\) is in fact an isomorphism.</p>
+<p>Furthermore, we always have \(\langle gf, g(x \otimes_{k[H]}v) \rangle =
+\langle gf, gx \otimes_{k[H]}v \rangle = (gf)(S(gx))(v) = f((Sx)g^{-1}g)(v)
+= f(Sx)(v) = \langle f, x \otimes_{k[H]} v\rangle\), for each \(g \in G\). By
+linearity in the second
+argument, we can conclude that \(\langle \cdot, \cdot \rangle\) is
+\(G\)-invariant. Thus, \(\varphi(gf) =
+(t \mapsto \langle gf, t\rangle) = (t \mapsto \langle f, g^{-1}t\rangle) =
+g(t \mapsto \langle f, t\rangle) = g\varphi(f)\), so, in fact,
+\(\Ind^G_H(V^*) \cong (\Ind^G_H V)^*\) as left \(k[G]\)-modules.</p>
+<div class="qed"></div>
