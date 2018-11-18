@@ -90,4 +90,4 @@ table.char td, table.char th {
 </style>
 <?php include("content/etingof/$file") ?>
 </div>
-<? } ?>
+<?php } ?>

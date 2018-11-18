@@ -89,4 +89,4 @@ to Artin's <em>Algebra</em></a>
 <?php endif; ?>
 <?php include("content/artin/$file") ?>
 </div>
-<? } ?>
+<?php } ?>
