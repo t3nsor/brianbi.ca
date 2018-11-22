@@ -4,14 +4,14 @@
 \]</div>
 
 <p><em>Remark:</em> The text says to use Frobenius reciprocity, but it seems
-obvious that it means we should use the Frobenius character formula. One might
-wonder which of the three \(\mathbb{Z}_2\)-subgroups of \(S_3\) to use in (1),
-and similarly for (2) and (3). However, if we look at the Frobenius character
-formula, we see that replacing \(H\) with a conjugate subgroup doesn't change
-the result; in (1), the three subgroups of \(G\) isomorphic to \(\mathbb{Z}_2\)
-are all conjugate to each other, so we must get the same decomposition
-regardless of which one we choose for the computation. A similar statement
-holds for (2) and (3)</p>
+obvious that it means we should use the Frobenius formula from section 5.9. One
+might wonder which of the three \(\mathbb{Z}_2\)-subgroups of \(S_3\) to use in
+(1), and similarly for (2) and (3). However, if we look at the Frobenius
+character formula, we see that replacing \(H\) with a conjugate subgroup
+doesn't change the result; in (1), the three subgroups of \(G\) isomorphic to
+\(\mathbb{Z}_2\) are all conjugate to each other, so we must get the same
+decomposition regardless of which one we choose for the computation. A similar
+statement holds for (2) and (3)</p>
 
 <p><span class="problem">Problem 5.11.1</span> The group \(A_5\) has the
 property that any two isomorphic subgroups are conjugate, so in each of (a) to
@@ -73,11 +73,11 @@ of elements of \(G\) that either fix \(g\) under conjugation or take \(g\) to
 contains 20 elements, there are 3 elements that fix \(g\) (namely, the 3
 elements of \(H\) itself) and 3 elements that take \(g\) to \(g^2\), namely
 \((1\ 2)(4\ 5), (2\ 3)(4\ 5), (3\ 1)(4\ 5)\). Thus, \(\chi(g) = 2\). In
-\(\Ind^G_H \mathbb{C}_{\omega}\), the sum in the Frobenius character formula
-includes \(\omega\) twice and \(\omega^2\) twice, so \(\chi(g) = (1/3)(3\omega
-+ 3\omega^2) = -1\). In \(\Ind^G_H \mathbb{C}_{\omega^2}\), we get
-result, \(\chi(g) = (1/3)(3\omega^2 + 3\omega) = -1\), the same result. We now
-write out the characters of the induced representations:</p>
+\(\Ind^G_H \mathbb{C}_{\omega}\), the sum in the Frobenius formula of section
+5.9 includes \(\omega\) twice and \(\omega^2\) twice, so \(\chi(g) =
+(1/3)(3\omega + 3\omega^2) = -1\). In \(\Ind^G_H \mathbb{C}_{\omega^2}\), we
+get result, \(\chi(g) = (1/3)(3\omega^2 + 3\omega) = -1\), the same result. We
+now write out the characters of the induced representations:</p>
 <table class="char">
 <tr><th>\(A_5\)</th><th>1</th><th>(123)</th><th>(12)(34)</th>
 <th>(12345)</th><th>(13245)</th></tr>
@@ -160,19 +160,20 @@ compute. It vanishes at all the 5-cycles, since no 5-cycle can be conjugate to
 any element of \(H\). Taking \(g = (1\ 2\ 3)\) as above, there are 3 elements
 of \(A_5\) that commute with \(g\) and 3 elements mapping it to each of its
 7 conjugates in \(A_4\) (namely, the other 3-cycles in \(A_4\)), so the
-Frobenius character formula gives \(\chi(g) = (1/12)(8 \times 3) = 2\). (The
-remaining 12 conjugates lie outside \(H\).) Set \(g' = (1\ 2)(3\ 4)\); there
-are 4 elements of \(A_5\) that commute with \(g'\), and 4 taking it to each of
-its two conjugates in \(A_4\), so \(\chi(g') = (1/12)(4 + 4 + 4) = 1\).</p>
+Frobenius formula of section 5.9 gives \(\chi(g) = (1/12)(8 \times 3) = 2\).
+(The remaining 12 conjugates lie outside \(H\).) Set \(g' = (1\ 2)(3\ 4)\);
+there are 4 elements of \(A_5\) that commute with \(g'\), and 4 taking it to
+each of its two conjugates in \(A_4\), so \(\chi(g') = (1/12)(4 + 4 + 4) =
+1\).</p>
 <p>To compute \(\Ind^G_H \mathbb{C}_\epsilon\), we use the fact that \(g\)
 belongs to a conjugacy class of \(H\) that contains four 3-cycles, with the
 other four 3-cycles belonging to another conjugacy class; but all eight of
 these 3-cycles are conjugate to each other in \(A_5\). The sum in the
-Frobenius character formula therefore includes 12 terms with value \(\epsilon\)
-(since there are 4 elements of \(H\) with trace \(\epsilon\) and 3 elements of
-\(G\) taking \(g\) to each of these under conjugation) and another 12 with
-value \(\epsilon^2\), giving \(\chi(g) = (1/12)(12\epsilon + 12\epsilon^2)
-= -1\). Since all double transpositions have trace 1 in
+Frobenius formula of section 5.9 therefore includes 12 terms with value
+\(\epsilon\) (since there are 4 elements of \(H\) with trace \(\epsilon\) and 3
+elements of \(G\) taking \(g\) to each of these under conjugation) and another
+12 with value \(\epsilon^2\), giving \(\chi(g) = (1/12)(12\epsilon +
+12\epsilon^2) = -1\). Since all double transpositions have trace 1 in
 \(\mathbb{C}_\epsilon\), it follows that \(\chi(g') = 1\) here as in the
 previous paragraph. A similar calculation, only exchanging \(\epsilon\) with
 \(\epsilon^2\), shows that \(\Ind^G_H \mathbb{C}_{\epsilon^2}\) is isomorphic

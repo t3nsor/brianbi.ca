@@ -1,0 +1,12 @@
+<p><span class="problem">Problem 5.12.5</span> By Corollary 5.12.4 and
+Corollary 5.1.6, the sum of the dimensions of the irreps of \(S_n\) equals the
+number of involutions of \(S_n\). Denote this by \(T(n)\). The involutions of
+\(S_n\) are precisely those permutations that are a product of (possibly zero)
+distinct transpositions. Therefore \(T(n)\) can be computed by summing over all
+possible numbers of such transpositions. If there are \(k\) transpositions,
+then there are \(\binom{n}{2k}\) ways to select the \(2k\) elements to be
+involved in the transpositions, and \((2k-1)!!\) ways to pair them up.
+Therefore,
+\[
+T(n) = \sum_{k=0}^{\lfloor n/2 \rfloor} \binom{n}{2k} (2k-1)!!
+\]</p>
