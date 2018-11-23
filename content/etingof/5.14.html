@@ -1,0 +1,26 @@
+<div style="display: none">\[
+\DeclareMathOperator{\Ind}{Ind}
+\]</div>
+
+<p><em>Remark:</em> The text claims that it's <q>easy</q> to see that
+\(U_\lambda\) can be alternatively defined as \(\mathbb{C}[S_n]a_\lambda\). I'm
+not sure it's quite so trivial.  An element of \(\Ind^{S_n}_{P_\lambda}
+\mathbb{C}\) is a function \(f : S_n \to \mathbb{C}\) subject to the
+restriction that \(f(hg) = hf(g) = f(g)\) for each \(g \in S_n, h \in
+P_\lambda\); that is, \(f\) is a constant when restricted to any <em>right</em>
+\(P_\lambda\)-coset of \(S_n\). There's also a natural way to view
+\(\mathbb{C}[S_n]a_\lambda\) as a set of functions from \(S_n\) to
+\(\mathbb{C}\), namely, by treating \(\sum_{g \in S_n} c_g g\) as the function
+that assigns to each element \(g\) the scalar \(c_g\). However, such functions
+will be constant on each <em>left</em> coset and not necessarily on each right
+coset.</p>
+<p>Observe, however, that by <a href="/etingof/5.10">Problem 5.10.2(d)</a>,
+\(U_\lambda \cong \mathbb{C}[S_n] \otimes_{P_\lambda} \mathbb{C}\), and
+\(\mathbb{C}[S_n]a_\lambda\) is also isomorphic to \(\mathbb{C}[S_n]
+\otimes_{P_\lambda} \mathbb{C}\) when \(x \otimes k \in \mathbb{C}[S_n]
+\otimes_{P_\lambda} \mathbb{C}\) is identified with \(kxa_\lambda \in
+\mathbb{C}[S_n]a_\lambda\). Therefore \(U_\lambda\) and
+\(\mathbb{C}[S_n]a_\lambda\) are isomorphic to each other. (The natural
+isomorphism defined in Problem 5.10.2(d) involves taking inverses, which is why
+it can be used to <q>flip</q> from right cosets to left cosets, so to
+speak.)</p>
