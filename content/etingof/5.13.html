@@ -1,0 +1,21 @@
+<p><span class="problem">Remark</span> I did not understand the proof of Lemma
+5.13.3 given in the text, so I consulted Fulton &amp; Harris, which cited
+Curtis &amp; Reiner. It appears that the key is to consider the linear operator
+\(T\) on \(\mathbb{C}[S_n]\) that acts by <em>right</em>-multiplication by
+\(c_\lambda\). This was not clear in Etingof's proof.</p>
+<p>Explicitly, let \(\gamma\) denote the scalar such that \(c_\lambda^2 =
+\gamma c_\lambda\). Since the coefficient of the identity element in
+\(c_\lambda\) is 1, computing the trace of \(T\) in the basis consisting of the
+elements of \(S_n\) yields \(n!\). We now compute \(\tr T\) in a second way.
+Write \(\mathbb{C}[S_n] = V_\lambda \oplus W\), a direct sum of vector spaces.
+(<em>Note:</em> the argument used in the proof of Maschke's theorem
+implies that it's possible to choose \(W\) to be a subrepresentation of
+\(\mathbb{C}[S_n]\), but we won't need that fact here.) Now
+\(n! = \tr T = \tr(T|_{V_\lambda}) + \tr(T|_W)\). For \(x \in V_\lambda\), we
+have \(x = yc_\lambda\) for some \(y \in \mathbb{C}[S_n]\), so that
+\(T(x) = xc_\lambda = yc_\lambda^2 = \gamma yc_\lambda = \gamma x\). Thus,
+\(T|_{V_\lambda} = \gamma \Id\) and the trace on this block is \(\gamma
+\dim V_\lambda\). On the other hand, for arbitrary \(x \in \mathbb{C}[S_n]\),
+we have \(T(x) \in V_\lambda\), so \(\tr(T|_W) = 0\). This implies that
+\(n! = \gamma \dim V_\lambda\), or \(\gamma = \frac{n!}{\dim V_\lambda}\) as
+required.</p>
