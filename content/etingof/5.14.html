@@ -2,7 +2,7 @@
 \DeclareMathOperator{\Ind}{Ind}
 \]</div>
 
-<p><em>Remark:</em> The text claims that it's <q>easy</q> to see that
+<p><em>Remark on prelude:</em> The text claims that it's <q>easy</q> to see that
 \(U_\lambda\) can be alternatively defined as \(\mathbb{C}[S_n]a_\lambda\). I'm
 not sure it's quite so trivial.  An element of \(\Ind^{S_n}_{P_\lambda}
 \mathbb{C}\) is a function \(f : S_n \to \mathbb{C}\) subject to the
@@ -24,3 +24,86 @@ coset.</p>
 isomorphism defined in Problem 5.10.2(d) involves taking inverses, which is why
 it can be used to <q>flip</q> from right cosets to left cosets, so to
 speak.)</p>
+
+<p><em>Remarks on proof of Theorem 5.14.3:</em> The proof is very terse.
+Although there is nothing here that is specifically about representation
+theory, since I did the work of figuring out the details, I figured I'd share
+them.</p>
+<p>Etingof states that for \(g \in C_{\mathbf{i}}\), we have
+\[
+Z_g \cong \prod_m S_{i_m} \ltimes (\mathbb{Z}/m\mathbb{Z})^{i_m}
+\]
+where \(Z_g\) is the centralizer of \(g\). This is based on the fact that
+conjugation in the symmetric group is <q>relabelling</q> of elements. Thus,
+\(Z_g\) is the set of permutations \(h\) such that if \(h\) is used to relabel
+the elements of \(g\), we get \(g\) back. A necessary condition is that each
+element \(j \in \{1, \ldots, n\}\) must be relabelled to an element that occurs
+in a cycle of the same length as \(j\) in \(g\). \(Z_g\) is therefore a direct
+product of subgroups \(Z_{gm}\) each of which permutes only those \(j\) that
+occur in one of the cycles of length \(m\) in \(g\). For each \(j\), once we
+have chosen the image \(h(j)\), the element \(g^k(j)\) must be sent by \(h\) to
+\(g^k(h(j))\) in order to get back the original \(g\). That is, each cycle of
+length \(m\) in \(g\) must be mapped by \(h\) in its entirety to one of the
+cycles of length \(m\) in \(g\) (possibly itself). Thus, each element of
+\(Z_{gm}\) can be viewed as a permutation of the cycles themselves followed by
+a relabelling of each cycle mapping it to itself. The relabellings of an
+individual cycle \(c\) mapping it to itself are simply \(\langle c \rangle\).
+So we have \(Z_{gm} = (\mathbb{Z}/(m\mathbb{Z}))^{i_m} S^{gm}\) where
+\(S^{gm}\) is a subgroup of \(S_n\) that maps each cycle of \(g\) of length
+\(m\) to some cycle of \(g\). The two subgroups in this product have trivial
+intersection, and the first factor \((\mathbb{Z}/(m\mathbb{Z}))^{i_m}\) is a
+normal subgroup of \(Z_{gm}\) since each element of \(S^{gm}\) simply permutes
+its factors. We therefore have \(Z_{gm} \cong S^{gm} \ltimes
+(\mathbb{Z}/(m\mathbb{Z}))^{i_m}\), a semidirect product. Finally, \(S^{gm}\)
+is itself isomorphic to \(S_{i_m}\).</p>
+<p>Next, Etingof gives a formula for \(|C_{\bf i} \cap P_\lambda|\), which
+involves summing over collections \(r_{jm}\) specifying the number of cycles of
+length \(m\) in the set of \(\lambda_j\) elements corresponding to row \(j\) of
+the tableau. For each such collection \(r_{jm}\), we have to compute the number
+of ways to divide up \(\lambda_j\) distinguishable elements into \(r_{jm}\)
+cycles of length \(m\) for each \(m\). Denote this by \(A_{jm}\). Then
+\[
+A_{jm} = B_{jm} \times \left(\prod_m C_{jm}\right) \times
+\left(\prod_m D_{jm}\right)
+\]
+where \(B_{jm}\) is the number of ways to partition \(\lambda_j\)
+distinguishable elements into an ordered collection of subsets of \(mr_{jm}\)
+elements for each \(m\), representing the elements that will belong to cycles
+of length \(m\); \(C_{jm}\) is the number of ways to divide \(mr_{jm}\)
+distinguishable elements into an unordered collection consisting of \(r_{jm}\)
+subsets of \(m\) elements each; and \(D_{jm}\) is the number of ways to place
+\(mr_{jm}\) distinguishable elements already so partitioned into \(r_{jm}\)
+cycles of length \(m\), each element forming a cycle together with the other
+elements in its subset. We have
+\begin{gather*}
+B_{jm} = \frac{\lambda_j!}{\prod_m (mr_{jm})!} \\
+C_{jm} = \frac{1}{r_{jm}!}\frac{(mr_{jm})!}{(m!)^{r_{jm}}} \\
+D_{jm} = (m-1)!^{r_{jm}}
+\end{gather*}
+where for \(B_{jm}\) and \(C_{jm}\) we have used the multinomial coefficients,
+and for \(D_{jm}\) we used the fact that there are \((m-1)!\) \(m\)-cycles on a
+set of size \(m\). The formula stated in the text for \(A_{jm}\) then
+follows.</p>
+<p>The subsequent formula for \(\chi_{U_\lambda}(C_{\bf i})\) is obtained after
+a bit of algebra. The appearance of the product in the denominator of the
+expression for \(|C_{\bf i} \cap P_\lambda|\) should not distract us from the
+fact that we can exchange the order of the two product operations.</p>
+<p>Finally, to get the desired coefficient, we have the count the number of
+different ways that we can select one term from each of the factors in the
+product at the end, such that the product of the selected terms is
+\(x^\lambda\). As Etingof points out, this can be done by considering each
+set of \(r_{jm}\)'s, stipulating that \(x_j^m\) is taken \(r_{jm}\) times, then
+summing over all possible \(r\). Once we know that \(x_j^m\) is taken
+\(r_{jm}\) times, we have to select, for each \(j, m\), a subset of the
+\(i_m\) factors containing powers of \(m\) of cardinality \(r_{jm}\); this is
+the subset for which we pick \(x_j^m\) from the corresponding factor. As we
+are picking \(x_1\) \(r_{1m}\) times, and so on from distinguishable factors,
+the total number of ways to select one term from each of the \(i_m\) factors
+consistently with \(r_{jm}\) is the multinomial
+coefficient \(\frac{i_m!}{\prod_j r_{jm}!}\), and with \(r_{jm}\) known, we can
+treat the \(x_j^m\) with different \(m\) independently. Thus the desired
+coefficient is \(\sum_r\) of \(\prod_m\) of the multinomial coefficient, just
+like in \(\chi_{U_\lambda}(C_{\bf i})\). (Maybe this last paragraph just made
+you more confused. In that case, ignore it and try to work out for yourself how
+to compute the desired coefficient by summing over \(r\). It will probably make
+sense then.)</p>
