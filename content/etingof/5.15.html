@@ -1,0 +1,74 @@
+<p><em>Remark:</em> I had some trouble understanding why the expression given
+for \(\theta_\lambda\) in the proof of Theorem 5.15.3 follows, as Etingof says,
+from Theorem 5.14.3. In fact, it follows from Theorem 5.14.3 and the following
+well-known result:
+\[
+\Delta(x) = \sum_{\sigma \in S_N} \sgn(\sigma) \, x^{\sigma(\rho)}
+\]
+This identity is not difficult to prove.
+See <a href="https://en.wikipedia.org/wiki/Vandermonde_matrix">here</a>.</p>
+<p>Next, Etingof explains why \(\mu = \lambda + \rho - \sigma(\rho)\) is always
+a <q>larger</q> partition (in the lexicographic ordering introduced in section
+5.13) than \(\lambda\) except when \(\sigma\) is the identity. It's not
+immediately clear to me why his statement about the \(e_i - e_j\) vectors
+(with \(i &lt; j\)) is true, but it's clear enough to me that the former claim
+is true. Since \(\lambda_1 = \max_i(\lambda_i)\), any partition
+with any part greater than \(\lambda_1\) will be larger than \(\lambda\). But
+this happens whenever \(\sigma\) doesn't fix the first element, as the first
+element of \(\rho - \sigma(\rho)\) will then be positive, as it is
+\(N - 1\) minus some smaller integer. If \(\sigma\) fixes its first element but
+not its second, then by the same logic, \(\mu\) will compare larger than
+\(\lambda\) when a part with value \(\lambda_1\) is removed from both of them;
+but that implies \(\mu &gt; \lambda\) when we compare them in their entirety.
+If \(\sigma\) fixes the first two elements but not the third, then
+\(\mu\) will compare greater than \(\lambda\) when we compare them with a part
+of value \(\lambda_1\) and a part of value \(\lambda_2\) is removed from both;
+which likewise implies \(\mu &gt; \lambda\) when they are compared in their
+entirety. Continuing this logic, we get \(\mu &gt; \lambda\) whenever
+\(\sigma\) is not the identity.</p>
+<p>In the expression for \(S(x, y)\), note that \(H_m(x)\) has been written
+out explicitly for the sake of the algebraic manipulations that follow. Thus,
+the intimidating-looking expression really just follows from the definition of
+\(\theta_\lambda\) and the preceding results after rearranging some
+factors.</p>
+<p>To prove Corollary 5.15.4, we use the fact that multiplying any row of a
+matrix by a constant factor also multiplies the determinant by the same factor,
+thus:
+\[
+\det \left[\frac{1}{1 - x_i y_j}\right]_{ij} = \left(\prod_i x_i^{-1}\right)
+\det \left[\frac{x_i}{1 - x_i y_j}\right]_{ij} = \left(\prod_i x_i^{-1}\right)
+\det \left[\frac{1}{z_i - y_j}\right]_{ij}
+\]
+The remaining algebraic manipulations after applying Lemma 5.15.3 are
+straightforward. \(N\) factors of each \(x_i^{-1}\) will be pulled out from the
+denominator and \(N-1\) from the numerator, so all such factors cancel.</p>
+<p>Finally, let us consider the <q>obvious</q> leap from Corollary 5.15.4 to
+the conclusion that the coefficient of \(x^{\lambda + \rho}
+y^{\lambda + \rho}\) is 1. The coefficient will be obtained by summing over the
+coefficient of said monomial in
+\(\prod_j (1 - x_j y_{\sigma(j)})^{-1}\) as \(\sigma\) ranges over
+\(S_N\). Let us write out the infinite series in each factor explicitly:
+\[
+\prod_j (1 - x_j y_{\sigma(j)})^{-1} =
+(1 + x_1 y_{\sigma(1)} + x_1^2 y_{\sigma(1)}^2 + \ldots) \times
+(1 + x_2 y_{\sigma(2)} + x_2^2 y_{\sigma(2)}^2 + \ldots) \times \ldots \times
+(1 + x_N y_{\sigma(N)} + x_N^2 y_{\sigma(N)}^2 + \ldots)
+\]
+The only way to get a monomial of the form \(x^{\lambda + \rho} y^q\) is to
+take the term with \(x\)-degree \(\lambda_1 + \rho_1\) from the first factor,
+the term with \(x\)-degree \(\lambda_2 + \rho_2\) from the second factor, and
+so on. The product of all such terms is
+\[
+x^{\lambda + \rho} \prod_i y_{\sigma(i)}^{\lambda_i + \rho_i}
+\]
+Thus, in order for this to equal \(x^{\lambda + \rho} y^{\lambda + \rho}\) we
+must have \(\lambda_i + \rho_i = \lambda_{\sigma(i)} + \rho_{\sigma(i)}\) for
+all \(i \in \{1, \ldots, N\}\). If \(\sigma\) satisfies this property, the
+coefficient of \(x^{\lambda + \rho} y^{\lambda + \rho}\) is 1; otherwise it is
+0. But note that whenever \(i &gt; \sigma(i)\), we have \(\lambda_i \ge
+\lambda_{\sigma(i)}\) and \(\rho_i &gt; \rho_{\sigma(i)}\), so that
+\(\lambda_i + \rho_i &gt; \lambda_{\sigma(i)} + \rho_{\sigma(i)}\). There will
+always be such \(i\) for any \(\sigma\) other than the identity. When
+\(\sigma\) is the identity, the required property evidently holds. Thus, just
+as Etingof says, the coefficient of \(x^{\lambda + \rho} y^{\lambda + \rho}\)
+is 1 for \(\sigma = 1\) and 0 for all other \(\sigma\).</p>
