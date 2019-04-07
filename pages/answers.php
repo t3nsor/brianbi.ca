@@ -12,9 +12,10 @@ if (in_array($file, scandir('content/answers'))) {
     echo "\n";
     echo '#question_content { padding-bottom: 2ex; border-bottom: 1px solid #aaa; margin-bottom: 0.5ex; }';
     echo "\n";
-    echo '#answer_content { padding-top: 2ex; border-top: 1px solid #aaa; margin-top: 0.5ex; }';
+    echo '#answer_content { padding-top: 2ex; margin-top: 0.5ex; }';
     echo "\n";
     echo '</style>';
+    echo '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[["\\\\(","\\\\)"],["[math]","[/math]"]]}});</script>';
     echo '<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>';
     include("content/answers/$file");
     echo '</section>';

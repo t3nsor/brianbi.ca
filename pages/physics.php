@@ -41,5 +41,19 @@ philosophy?</a> (January 18, 2014)</li>
 <li><a href="/answers/mathphys">What is the difference between mathematics and physics?</a> (January 3, 2015)</li>
 <li><a href="/answers/lagrangian1">How do I construct a Lagrangian from a given field equation (besides solving the E-L differential equation)?</a> (January 16, 2015)</li>
 <li><a href="/answers/noether">What is Noether's theorem?</a> (February 16, 2015)</li>
+<li><a href="/answers/em-wave1">What is light or an electromagnetic wave a wave <em>in</em>?</a> (March 15, 2015)</li>
+<li><a href="/answers/lorentz1">What is an intuitive explanation of the Lorentz transformation?</a> (March 15, 2015)</li>
+<li><a href="/answers/spin2">Where does particle spin come from?</a> (April 12, 2015)</li>
+<li><a href="/answers/em-charge">What is the difference between magnetic charge and electric charge?</a> (April 12, 2015)</li>
+<li><a href="/answers/schrodinger">What is Schrodinger's equation?</a> (April 21, 2015)</li>
+<li><a href="/answers/h-field">What is the physical meaning of the H field?</a> (May 4, 2015)</li>
+<li><a href="/answers/poynting">In the vicinity of a perfect reflector, there will be incoming and outgoing waves of equal and opposite momentum. Does this imply the Poynting vector is locally zero, and if so, how do we account for the presence of radiation pressure on the reflector, which is proportional to the Poynting vector?</a> (May 6, 2015)</li>
+<li><a href="/answers/christoffel">What is the qualitative description of a covariant derivative and the Christoffel symbol?</a> (May 27, 2015)</li>
+<li><a href="/answers/spin3">Does the spin of subatomic particles actually involve angular momentum (i.e., is the particle actually *spinning*)?</a> (Nov 14, 2015)</li>
+<li><a href="/answers/photon-direction">Generally speaking, what determines a photons vector? Why does it go whizzing off at the speed of light in one direction vs. another?</a> (Jan 20, 2016)</li>
+<li><a href="/answers/action1">According to PLA, a particle takes the path that minimises the action between 2 points but how does the particle know where it'll be in the future?</a> (March 27, 2016)</li>
+<li><a href="/answers/mixing-entropy">Does mixing a cup of dry black sand and dry yellow sand increase the thermodynamic entropy of the universe?</a> (April 9, 2016)</li>
+<li><a href="/answers/entropy-quantization">Are there discrete (quantised) units of space (and time)? Does the expression for entropy S = k.lnW suggests this must be so? If not, why not?</a> (May 19, 2016)</li>
+<li><a href="/answers/quadrupole">What is the surface charge density on the surface of a spherical cavity, scooped from a conductor, with an electric quadrupole at the center?</a> (October 8, 2016)</li>
 </ul>
 </div>
