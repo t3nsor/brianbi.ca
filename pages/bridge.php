@@ -83,7 +83,7 @@ with the ace, king, queen, and jack, the opponents will usually have no hearts
 left, which means the remaining two small hearts in your hand can each win a
 trick. Thus we see that there is an advantage to having a <em>long</em> suit,
 beyond just having lots of HCP.</p>
-<p>When you are playing in a suit contract, there is an advantage to have
+<p>When you are playing in a suit contract, there is an advantage to having
 <em>short</em> suits, because once one hand is voided of a suit, it can start
 playing trumps. For example, &hearts;A854 opposite &hearts;K932 is probably
 only worth 2 tricks, but &hearts;AK9854 opposite &hearts;32 is likely worth
@@ -104,18 +104,37 @@ give yourself 1 point for each doubleton suit, 2 points for each singleton
 suit, and 3 points for each void suit. (This does not apply to the trump
 suit.)</li>
 </ul>
-Don't add points for <em>both</em> length and shortness, because then you'll
-probably overcount. There are some special situations where both length and
-shortness matter, but for now let's keep it simple.</p>
+Actually, when you are in a suit contract, short suits and long suits
+<em>both</em> help you. Consider again the example of &hearts;AKQxxx opposite
+&hearts;Jx, with spades as the trump suit this time. You probably can take 6
+tricks in hearts without even ruffing, and in fact, will be able to discard
+losers from the hand with shorter hearts. Despite this fact, you must remember
+(at this stage) not to count both length and shortness points in a suit
+contract; only count shortness points. There are some more advanced evaluation
+systems in which both length and shortness are counted, but we won't get into
+those here.</p>
 <p>The sum of HCP and distribution points is called <q>total points</q> or
-often just <q>points</q>.</p>
+often just <q>points</q>. Again, in a suit contract, total points equals HCP
+plus shortness points, whereas in a notrump contract, total points equals HCP
+plus length points.</p>
 <p>You may be surprised to hear that making a 3NT contract (9 tricks) is often
 possible when you and your partner have as little as 25 total points. With
 25 HCP for example, your partnership would only have 62% of the HCP in the
-deck, but it's probably possible to take 69% of the tricks. That's partially
-because the declarer has the ability to coordinate play between their hand and
-the dummy hand, thus making their HCP count for more by using them
-strategcially.</p>
+deck, but you have a good chance of being able to take 9 of the 13 tricks (69%).
+That's partially because the declarer has the ability to coordinate play between
+their hand and the dummy hand, thus making their HCP count for more by using
+them strategically.</p>
+<p>It is important to remember that the point system is not something
+fundamental about bridge; it is just a way to <em>estimate how much your hand
+contributes to you and your partner's combined ability to win tricks.</em> Some
+players use more complicated point systems in the hopes that they will yield a
+more accurate impression of their hand strength. All advanced players
+understand that hand evaluation is more complicated than just adding up
+points, and in fact additionally depends on what you think your partner and
+opponents have (as determined by the auction). Their intuition for hand
+evaluation can only be obtained through a great deal of bridge experience.
+Thus, beginners will have to rely on adding up points for now but should pay
+attention to finer details of hand evaluation as they play.</p>
 </section>
 <section id="scoring">
 <h2>Section 2: Overview of duplicate bridge scoring</h2>
@@ -131,7 +150,11 @@ worth 90 points (3 times 30) whereas 2NT is worth 70 points (3 times 30 plus
 10). Because of this, your partnership will usually want to play in hearts or
 spades instead of clubs or diamonds. Hearts and spades are called the
 <strong>major suits</strong> whereas clubs and diamonds are called the
-<strong>minor suits</strong>.</li>
+<strong>minor suits</strong>. Sometimes we may want to refer to a major suit
+without specifying which one; in that case, the uppercase letter <q>M</q> is
+used. Similarly, lowercase <q>m</q> means a minor suit. For example, if we say
+your partner bids 1m in some hypothetical scenario, it means your partner bids
+1&clubs; or 1&diams; and it was not important to specify which.</li>
 <li>If you make overtricks (you win more tricks than the contract requires) then
 they are scored at the same rate as regular tricks. So for example, bidding
 2&spades; and winning 9 tricks is worth 60 points for making the contract plus
@@ -216,18 +239,25 @@ doing that. But if instead you competed in the auction and bid up to 2&clubs;
 and made that contract, you would get 90 points (not 40), which is better.</li>
 <li>Even when you and your partner don't have enough for game, you will still
 usually be able to score more tricks with a 8 card suit fit (8 cards of one
-suit between the two of you) than you will in notrump. Therefore the bidding
-system still has the objective of trying to find a 8 card <em>major</em> fit
+suit between the two of you) than you will in notrump. Therefore it is useful
+for the bidding system to still help you try to find a 8 card <em>major</em> fit
 even at partscore. For example, if you have enough points together so that you
 could make a 1NT contract, but you also have an 8 card fit in spades, then you
 will probably be able to make a 2&spades; contract, and choosing 2&spades;
 instead of 1NT will score your side 110 points instead of 90, assuming you
-make the contract. Even 2 of a minor (also 90 points) might be better than 1NT
-because if your hands are imbalanced and have a weak suit then in 1NT the
-opponents can more easily deprive you of overtricks. However, since the
-advantage of playing a partscore contract in a suit is slight, it's more
-important to make sure we don't bid a contract we can't make than to go too
-high looking for a suit fit.</li>
+make the contract.</li>
+<li>A 2m contract scores 90 points when made, just like 1NT. If you and your
+partner have no 8-card major fit, and you also don't have enough strength to
+make 3NT or 5m, then you'll often end up in 1NT or 2m. If you have a 8-card
+<em>minor</em> fit, then sometimes 2m is a <q>better</q> contract than 1NT
+(though not always). If you don't have a 8-card minor fit, 1NT is almost always
+a better contract than 2m. (By <q>better</q>, we mean likely to yield a higher
+score. A contract that can be made is better than a contract that will go down,
+but sometimes both contracts will make and one will score higher than the other
+due to overtricks.) Even if 2m is a better contract than 1NT, the benefit of
+playing in 2m is usually slight. Therefore, finding minor partscores is usually
+not a priority. Staying in a relatively safe 1NT contract is usually better
+than pushing the bidding too high to search for a minor suit fit.</li>
 </ul>
 </p>
 </section>
@@ -327,18 +357,18 @@ strength, because your hand has at least 13 points. You need to let your
 partner know that you have 13+ points so that partner will know to continue
 bidding until a game-level contract is agreed on. We'll cover how to do that
 later on.</p>
-<p>But that's not the only time when you should respond to your partner's bid.
-Say your partner open, and you have 8 points. Do you pass, because you only
-know that you and your partner have 20+ points together? That's probably not a
-good idea, because what if your partner actually has 17+ points? Then you
-would miss a game.</p>
+<p>However, that doesn't mean that if your partner has opened and you have less
+than 13 points, you should pass. After all, your partner has promised <em>at
+least</em> 12 points, not exactly 12 points. Let's suppose you only have 8
+points. Then, there is still a chance for game, if your partner has at least 17
+points. If you pass now, you foreclose on that possibility.</p>
 <p>So it is desirable to have a system where you can respond even when you have
 less than 13 points, in the hopes that your partner will have more points than
 they initially promised. But does that mean you should have a system where you
 will respond even with 0 points? No, because there are two problems with that:
 <ul>
 <li>When you have 0 points, for all you know, you and your partner together
-might have only 12. It's too dangerous to support your opponent's suit by
+might have only 12. It's too dangerous to support your partner's suit by
 raising to the two level; there's a high probability of simply not being able
 to make the contract. Even if you just make another bid at the one-level, you
 must be aware that if you and your partner don't agree on a trump suit, you
@@ -350,18 +380,24 @@ anything about the strength of your hand. What if your partner had 20 points
 and only needed you to have 5 in order to go to game? Your response wouldn't
 tell your partner whether this would be possible or not.</li>
 </ul>
-A sensible compromise is to meet halfway: agree to <strong>respond to partner's
-opening bid if you have at least 6 points,</strong> and if your
-partner has 6&ndash;7 more points than originally promised (<i>i.e.,</i> 19 or
-more) then they'll know you should go to game. This situation actually happens
-pretty often.</p>
-<p>So we'll use a system where you respond if you have at least 6 points. But
-what should you respond with? For that, remember that our other goal is to
-figure out whether we have a 8-card major fit. If your partner has opened 1M
-(the uppercase <q>M</q> means a major suit) and you have 3 of that suit, you
-know you have a 8-card major fit. If that isn't the case, or partner opened 1m,
-the system you follow for your subsequent bidding should serve the goal of
-determining whether a 8-card major fit exists.</p>
+A common design principle of bidding systems is that, if there's a certain
+total number of points that you and your partner are hoping to have, you need a
+way of telling your partner that, in addition to what they already know you
+have, you also have enough extra points as to close the gap <strong>at least
+halfway</strong>. So, if your partner has opened, showing 12+ points, then 13
+more points beyond what has been shown so far are needed to make game. Those 13
+additional points could be in your hand and your partner's hand. But for your
+part, you need to have some bid that your partner will understand as showing 6+
+points (roughly half of 13). So, after you make that bid, if your partner has
+the other half&mdash;7 more points than they originally promised (for a total of
+19)&mdash;then they can bid a game.</p>
+<p>So we'll use a system where <strong>you respond if you have at least 6
+points.</strong> But what should you respond with? For that, remember that our
+other goal is to figure out whether we have a 8-card major fit. If your partner
+has opened 1M (the uppercase <q>M</q> means a major suit) and you have 3 of
+that suit, you know you have a 8-card major fit. If that isn't the case, or
+partner opened 1m, the system you follow for your subsequent bidding should
+serve the goal of determining whether a 8-card major fit exists.</p>
 <p>If a 5-3 fit (with opener having 5 of the major, and responder having 3)
 does not exist, then maybe a 4-4 fit does exist. So if your partner has opened
 1&hearts; and you have four spades but less than three hearts, you could bid
@@ -455,10 +491,12 @@ and is therefore a <q>minimum</q> opener:
 and your partner responded 1&hearts;, showing 4 hearts, then you can bid
 2&hearts; to show support for hearts.</p>
 <p>When you show support by raising to the two level, the partnership has at
-least 18 points together. You might be surprised that it's usually possible to
-make the two-level contract (which means 8 tricks). That's because you set the
-trump suit to be a suit that you and your partner have, which gives you an
-advantage in trick-taking compared to the defenders (your opponents).</p>
+least 18 points together, but most likely a few more. Generally, having 20
+points together is enough to make a two-level contract (8 tricks). That's
+because you set the trump suit to be a suit that you and your partner have,
+which gives you an advantage in trick-taking compared to the defenders (your
+opponents). Even with exactly 18 points, you still have a chance of making the
+contract.</p>
 <p>As discussed previously, when opener finds out that their partner has 6+
 points, and a major suit fit is established, opener can raise to the 4 level
 if they themselves have at least 19 points, since the partnership then has a
