@@ -1,69 +1,89 @@
-<div style="margin: 1em">
-<style scoped>
-li {
+<div id="content">
+<style>
+#content {
+    margin: 1em;
+}
+#content li {
     margin: 0.7em 0;
 }
-div.handWrapper {
+#content span.handWrapper {
+    display: block;
     text-align: center;
 }
-div.handContent {
+#content span.handContent {
     display: inline-block;
     text-align: left;
     padding: 1ex 0.7em;
     margin: 1em;
     border: 1px solid #808080;
 }
-table.auction {
-    display: inline-block;
+#content span.auctionContainer {
+    display: block;
+    text-align: center;
+}
+#content span.auction {
+    display: inline-table;
     border-collapse: collapse;
     margin: 2ex 0.7em;
 }
-table.auction th {
+#content span.auction > span:first-child {
     background-color: #c0c0c0;
 }
-table.auction td {
+#content span.auction > span {
+    display: table-row;
     background-color: #ffff80;
 }
-table.auction td, table.auction th {
+#content span.auction span span {
+    display: table-cell;
     border: 1px solid grey;
     width: 1.5em;
     text-align: center;
+}
+#content div.beginSectionNumbering {
+    counter-reset: section 0;
+}
+#content h2::before {
+    counter-increment: section;
+    content: "Section " counter(section) ": ";
 }
 </style>
 <?php
 // "rh" means "render hand"
 function rh($spades, $hearts, $diamonds, $clubs) {
-    return "<div class='handContent'>" .
+    return "<span class='handContent'>" .
            "<span style='color: black'>&spades;</span> $spades<br/>" .
            "<span style='color: red'>&hearts;</span> $hearts<br/>" .
            "<span style='color: red'>&diams;</span> $diamonds<br/>" .
            "<span style='color: black'>&clubs;</span> $clubs<br/>" .
-           "</div>";
+           "</span>";
 }
 // "ch" means "center hand"
 function ch($spades, $hearts, $diamonds, $clubs) {
-    return '<div class="handWrapper">' .
+    return '<span class="handWrapper">' .
            rh($spades, $hearts, $diamonds, $clubs) .
-           '</div>';
+           '</span>';
 }
 function auction($a) {
-    $result = "<table class='auction'>" .
-              "<tr><th>W</th><th>N</th><th>E</th><th>S</th></tr>";
+    $result = "<span class='auction'>" .
+              "<span><span>W</span><span>N</span>" .
+              "<span>E</span><span>S</span></span>";
     for ($i = 0; $i < count($a); $i++) {
         if ($i % 4 == 0) {
-            $result .= '<tr>';
+            $result .= '<span>';
         }
-        $result .= "<td>{$a[$i]}</td>";
+        $result .= "<span>{$a[$i]}</span>";
         if ($i % 4 == 3) {
-            $result .= '</tr>';
+            $result .= '</span>';
         }
     }
-    return $result . '</table>';
+    return $result . '</span>';
 }
 ?>
+<div class="beginSectionNumbering"></div>
 <section id="eval">
-<h2>Section 1: Hand evaluation</h2>
-<p>The most basic technique for evaluating your hand is to give yourself:
+<h2>Hand evaluation</h2>
+<h3>High card points (HCP)</h3>
+The most basic technique for evaluating your hand is to give yourself:
 <ul>
 <li>4 points for each ace;</li>
 <li>3 points for each king;</li>
@@ -71,7 +91,8 @@ function auction($a) {
 <li>1 points for each jack.</li>
 </ul>
 These are called <em>high card points,</em> or <q>HCP</q> for short. There are
-40 HCP in a deck.</p>
+40 HCP in a deck.
+<h3>Distribution points</h3>
 <p>However, we should understand that there is also an advantage to having
 imbalanced hands. If you have &hearts;AQxx and your partner has
 &hearts;KJxx, so that you have all 10 HCP of the hearts suit, then you can
@@ -94,7 +115,7 @@ shortness in a suit contract</strong>. These are called <em>distribution
 points</em>. Of course, being short in the trump suit
 is not a good thing since it implies the opponents have more trumps, so don't
 add points for being short in the trump suit.</p>
-<p>Usually distribution points are added according to the following rules:
+Usually distribution points are added according to the following rules:
 <ul>
 <li>Before a suit fit has been found, or if you are planning on being in
 notrump, give yourself 1 point for each 5-card suit, 2 points for each
@@ -104,7 +125,7 @@ give yourself 1 point for each doubleton suit, 2 points for each singleton
 suit, and 3 points for each void suit. (This does not apply to the trump
 suit.)</li>
 </ul>
-Actually, when you are in a suit contract, short suits and long suits
+<p>Actually, when you are in a suit contract, short suits and long suits
 <em>both</em> help you. Consider again the example of &hearts;AKQxxx opposite
 &hearts;Jx, with spades as the trump suit this time. You probably can take 6
 tricks in hearts without even ruffing, and in fact, will be able to discard
@@ -117,31 +138,34 @@ those here.</p>
 often just <q>points</q>. Again, in a suit contract, total points equals HCP
 plus shortness points, whereas in a notrump contract, total points equals HCP
 plus length points.</p>
-<p>You may be surprised to hear that making a 3NT contract (9 tricks) is often
-possible when you and your partner have as little as 25 total points. With
-25 HCP for example, your partnership would only have 62% of the HCP in the
-deck, but you have a good chance of being able to take 9 of the 13 tricks (69%).
+<h3>The significance of points</h3>
+<p>Bridge is a game of taking <em>tricks</em>. The bottom line is that it is
+the number of tricks you take, not the number of <em>points</em> you and your
+partner have in your hands, that determines your score. The points system is
+not a <em>rule</em> of bridge; it is just a way to estimate how many tricks you
+and your partner will be able to take.</p>
+<p>The number of points you have is not necessarily <em>proportional</em> to
+the number of tricks you can take. For example, most of the time, if you and
+your partner have at least 25 HCP together, it is possible to make a 3NT
+contract (<i>i.e.</i>, take at least 9 tricks out of 13). That is, you can
+usually take 69% of the tricks with only 62% of the HCP.
 That's partially because the declarer has the ability to coordinate play between
 their hand and the dummy hand, thus making their HCP count for more by using
 them strategically.</p>
-<p>It is important to remember that the point system is not something
-fundamental about bridge; it is just a way to <em>estimate how much your hand
-contributes to you and your partner's combined ability to win tricks.</em> Some
-players use more complicated point systems in the hopes that they will yield a
-more accurate impression of their hand strength. All advanced players
-understand that hand evaluation is more complicated than just adding up
-points, and in fact additionally depends on what you think your partner and
-opponents have (as determined by the auction). Their intuition for hand
-evaluation can only be obtained through a great deal of bridge experience.
-Thus, beginners will have to rely on adding up points for now but should pay
-attention to finer details of hand evaluation as they play.</p>
+<p>Of course, not all 25-point pairs of hands are alike. Experienced players
+understand that proper evaluation of your hand&mdash;that is, making accurate
+estimates of its trick-taking ability&mdash;requires more than just adding up
+points. However, the subtleties of hand evaluation can only be learned through
+a great deal of bridge experience. Thus, beginners will have to rely on adding
+up points for now but should pay attention to finer details of hand evaluation
+as they play.</p>
 </section>
 <section id="scoring">
-<h2>Section 2: Overview of duplicate bridge scoring</h2>
+<h2>Overview of duplicate bridge scoring</h2>
 <p>The scoring rules of bridge are complicated, but there a few basic rules
 that we should go over. It is not possible to understand bidding unless you
 understand scoring. After all, the ultimate goal of a bidding system is to
-help you score as many points as possible. 
+help you score as many points as possible.</p>
 <ul>
 <li>The suits are worth different amounts of points. Each club or diamond level
 is worth 20 points. Each heart or spade level is worth 30 points. Notrump is
@@ -259,93 +283,265 @@ playing in 2m is usually slight. Therefore, finding minor partscores is usually
 not a priority. Staying in a relatively safe 1NT contract is usually better
 than pushing the bidding too high to search for a minor suit fit.</li>
 </ul>
-</p>
+</section>
+<section id="system">
+<h2>Basic principles of bidding systems</h2>
+<p>Bidding is the most difficult topic for beginning bridge players to learn.
+This was not always the case. In the first half of the 20th century, bridge was
+a casual game, popular first among socialites, and later the broader American
+population, reaching the peak of its popularity in the 1940s. Over the years,
+other activities replaced bridge as a vehicle for young people to socialize.
+The popularity of bridge, though much less now than at its peak, endures
+because of its vast strategic depth, which has hooked generation after
+generation of young people with a particular disposition. Each generation
+brought new strategic innovations, some of which withstood the test of time and
+became <i>de rigueur</i> for the next generation learning to play bridge.
+Consequently, it is common to sit in a random seat on <em>Bridge Base
+Online</em> and discover that your partner's profile contains two dozen code
+words like <q>supX, invm, fsf, nmf, j2nt</q> and so on. There is a good reason
+for this, but it is not possible for beginners to learn all these conventions
+at once, particularly when they don't even understand the fundamental
+principles of bidding. There is just too much to memorize!</p>
+<p>This page aims to explain both the principles and objectives of bidding, and
+the particular conventions that arise under them, including the reasoning for
+each, in a manner that should be easy for the logically-minded beginner to
+understand. My hope is that learning the system described on this page doesn't
+feel like memorization. Instead, it should feel like reading a story about how
+people used logical reasoning to design a bidding system that would work well
+in a wide variety of situations.</p>
+<h3>Terminology</h3>
+<p>During the auction, players take turns making <em>calls</em>. If your call
+is a contract (such as 1NT), then you are making a <em>bid</em>. The other
+three possible calls are <q>pass</q>, <q>double</q>, and <q>redouble</q>. The
+first call in an auction other than <q>pass</q> is called the <em>opening
+bid</em>. If your partner opens and you then make a bid, you are said to be
+<em>responding</em>; your partner is opener and you are responder. After that,
+if the opener bids again, they are making a <em>rebid</em>; same for the
+responder.</p>
+<p>If you or your partner opens, but then one of the opponents then makes a bid,
+they are said to be <em>overcalling</em>. A bid usually has a different meaning
+as an overcall than it does as an opening. More generally, the meaning of a
+call depends on the entire context of the preceding calls in the auction, so it
+is important to pay attention and particularly to distinguish between opening
+bids and overcalls! Besides overcalling, it's also possible that one of the
+opponents will double after you or your partner opens. The first opponent to
+either overcall or double after your side opens is called the
+<em>intervenor</em>. If the intervenor's partner subsequently bids, doubles, or
+redoubles, they are the <em>advancer</em>.</p>
+<p>An <em>honor</em> card is a card that is 10 or higher. A card that is 9 or
+lower is called a <em>spot</em> card. The set of cards that you have in a
+particular suit in your hand is called a <em>holding</em>. Therefore, a hand
+always consists of four holdings (if you are void in a suit, the holding is the
+empty set). The set of four hands dealt to you and the other players is called a
+<em>deal</em>. Sometimes a deal is also called a <em>board</em>.</p>
+<h3>Natural and artificial bids</h3>
+<p>In the early days of contract bridge, bidding was easy to understand because
+most bids had roughly the meaning that you would expect: if someone bid a suit,
+it meant they had length in that suit and usually meant they were interested in
+playing in that suit; bidding showed more strength than passing; bidding higher
+showed more strength than bidding lower; double meant you expected the
+opponents to go down; redouble meant you expected to make the contract even
+though the opponents doubled you. This is called <q>natural</q> bidding.</p>
+<p>On the opposite extreme, in the 21st century, it is common for players to
+bid a suit when the information they are communicating actually has nothing to
+do with their holding in that suit! For example, a very common convention, which
+we will discuss later, involves bidding 2&hearts; in order to tell your partner
+that your hand contains 5+ <em>spades</em>. This is called an <q>artificial</q>
+bid. A double or redouble that does not have its natural meaning can also be
+thought of as an artificial call.</p>
+<p>All partnerships use natural bids, and most partnerships also have several
+agreements to use artificial bids. A particular agreement about the meaning of
+an artificial bid, and what subsequent bids after the artificial bid mean, is
+called a <em>convention</em>. For example, the <em>Stayman convention</em> is
+an agreement between partners that when one partner opens 1NT and the other
+responds 2&clubs;, the responder has some 4-card major holding and is asking
+the opener if they also have a 4-card major holding. Assuming that a partnership
+has agreed to use the Stayman convention, the opener in this situation is
+obligated to bid 2&hearts; or 2&spades; if they have a 4+ card major holding,
+or 2&diams; if they don't. The Stayman convention therefore entails not only a
+specific meaning for this 2&clubs; bid, but also a specific meaning for the
+subsequent artificial bid of 2&diams; or the subsequent natural-ish bids of
+2M. (The vast majority of partnerships use the Stayman convention. We will cover
+it in detail in a later section, so don't bother trying to memorize it
+now.)</p>
+<p>In most conventions, an artificial call is <em>forcing</em>, which means that
+the partner of the player who makes the artifical call is forbidden to pass
+(they are <em>forced</em> to bid). We will discuss the reasons for this
+later.</p>
+<h3>Bidding agreements</h3>
+<p>Regardless of whether your bids are natural or artificial, it is crucial
+that you and your partner share a common understanding of what each bid means.
+What exactly that understanding <em>is</em>, though, is up to the two of
+you! The set of such agreements that you and your partner have about the
+meanings of bids is called your <em>system</em>. In tournaments, you and your
+partner will write down your system on a <em>convention card</em> so that your
+opponents will also be able to understand your bids.</p>
+<p>For example, a very common agreement used by partnerships in the United
+States and Canada is that an opening bid of 1M means the opener has at least
+<em>five</em> cards in the suit bid. However, this is not universal, and some =
+partnerships have an agreement that this would only promise at least
+<em>four</em> cards in the suit. Imagine that your bridge partner were someone
+you never met before, and you didn't discuss what such a 1M bid means.
+Your partner could bid 1M, you could think it meant five, look at your own hand
+and see 3 cards in that major, and mistakenly believe that a 8-card fit exists,
+when in actual fact your partner may only have 4 cards in the major suit. This
+would cause some serious problems. Thus, we can see that even if you and your
+partner don't use any conventions, you still need to have agreements about the
+meanings of natural bids.</p>
+<h3>Standard American and 2/1 systems</h3>
+<p>Older generations of American bridge players overwhelmingly used some
+variation of the <q>Standard American</q> system. In Standard American, for
+example, a 1&hearts; opening bid shows at least 5 hearts, a 1NT response shows
+6&ndash;10 HCP, and a 2&diams; response shows at least 4 diamonds with 10+ HCP.
+Among younger players, <q>two over one</q> (2/1) systems are more popular. In
+a 2/1 system, the 1&hearts; opening still shows at least 5 hearts, but now a
+1NT response shows 6&ndash;12 HCP and is forcing, and a 2&diams; response shows
+13+ HCP and is also forcing.</p>
+<p>Although I'm a young man, I learned bidding from a book called
+<em>Standard Bidding with SAYC</em>. I would recommend this book to others,
+except that it teaches Standard American, rather than 2/1. So I wrote this page
+for beginners to understand how to use a 2/1 system.</p>
+<h3>The design of bidding systems</h3>
+<p>All new players will have to ask themselves the question: why should I use
+one bidding system rather than another? The answer is that the main purpose of
+a bidding system is to help you and your partner reach a contract in which
+you'll score as many points as possible. Each bid communicates information to
+your partner and, if all other players pass, places the contract. You want to
+communicate with your partner as efficiently as possible, but the only way to
+do so is through your calls. Therefore, you and your partner should try to find
+ways to assign meanings to your calls that cover the most common and useful
+pieces of information that you would want to communicate during typical
+auctions. If you have been playing a certain bidding system, and noticing that
+partnerships that play other bidding systems have tended to reach better
+contracts and score more points than you, it makes sense to have a discussion
+with your partner about whether you should incorporate some conventions that
+other partnerships use into your own system.</p>
+<p>In the following sections of this page, I'm going to describe the agreements
+that I usually play with my bridge partners, but moreover, I will explain the
+problems that each agreement is intended to solve, or, more broadly, why each
+agreement is useful. I believe that if you understand the reasoning, the system
+will make sense, and you won't need to memorize as much.</p>
 </section>
 <section id="1open">
-<h2>Section 3: Opening bidding at the one level</h2>
-<p>An <em>opening bid</em> is the first call in a particular auction other than
-<q>Pass</q>.</p>
-<p>If your hand is really bad, you probably shouldn't make an opening bid
-because the odds of actually being able to make a contract are not in your
-favour. On the other hand, if your hand is good, you need to make an opening
-bid. What would happen if your hand and your partner's hand were both good and
-neither opened? Then you might very well miss a game level contract.</p>
-<p>This tells us that the threshold for how many points you need to make an
-opening bid should be no more than 13 (since about 25 points are needed to make
-game). If you and your partner both had 13 points but neither opened, then
-you'd be missing out.</p>
-<p>You might wonder whether it's worthwhile to make the threshold lower. What
-if you and your partner agreed to open with at least 11 points?
-There are two disadvantages to that, though. One is that it gives less
-information. For example, if you and your partner both have 13 points, but you
-have agreed that only 11 points are required for an opening bid, then after
-you've opened, your partner still doesn't know whether you have enough for
-game. The other disadvantage is that the fewer points you have when you open,
-the higher the risk of not having enough points between you and your partner to
-actually make a contract. Indeed, you might not even have the majority of the
-HCP in the deck.</p>
-<p>That's why almost all partnerships use a system in which you only open with
-13 points or more. This system works well even when your hand is weak and your
-partner's hand is potentially strong. In that case you just pass and see
-whether your partner opens. In that case, you still have a good chance of
-making a partscore contract (or even a game contract, if your partner's hand is
-especially good).</p>
-<p>You can open with less than 13 HCP if you have good distribution. If
-you have at least 13 <em>total</em> points, you should make an opening bid. In
-fact, most players use a slightly more liberal rule, called the <strong>Rule of
+<h2>Opening bidding at the one level</h2>
+<h3>Strength needed for an opening bid</h3>
+<p>It is important that you open every hand with 13+ HCP. That is, if your hand
+has 13+ HCP, it's your turn, and no one else has bid yet, you should bid. The
+reason for this is that if you have 13+ HCP and your partner also has 13+ HCP,
+then there is probably a game contract that you can make on the current deal.
+(Recall that the threshold for making a 4M or 3NT contract is around 25+ total
+points, so if each of you has 13+ HCP, you'll have 26+ total points before even
+counting distribution points.) If both of you pass with 13 HCP, the opponents
+will probably pass as well, and you'll get a score of zero for the board rather
+than a positive score from bidding and making a game.</p>
+<p>There is no rule in bridge that says a hand with 13+ HCP must be opened. I
+a just saying that if you and your partner had an agreement that only hands
+with 14+ HCP would be opened, you would be shooting yourselves in the foot.
+You have the freedom to make that kind of agreement, but you shouldn't. You
+should have agreements that maximize your chances of getting as many points as
+possible. So, you and your partner <em>should</em> have an agreement on how
+much strength warrants an opening bid, and you <em>should not</em> set the
+threshold to be higher than 13 HCP.</p>
+<p>You <em>could</em> have an agreement that any hand would be opened, no
+matter how weak. However, this would also be a bad idea. Suppose for example
+that you have 4 HCP. The expected number of HCP that each of the other three
+players has is then 12. So on average, you and your partner will have 16 HCP
+together. With 16 HCP, there's probably no contract that you can make. So
+whenever your opponents have good hands, they'll double you and you'll lose a
+few hundred points. Not a wise system to use.</p>
+<p>Besides that, the wider the point range is for a bid, the less information
+the bid conveys. If you could open both very weak and very strong hands, then
+your partner, upon seeing your bid, would know nothing about your hand
+strength! On the other hand, if you have a system where only 13+ HCP hands are
+opened, then either an opening bid or pass would tell your partner something
+about your hand. A bid would tell your partner that you have 13+ HCP while a
+pass would tell them that you have 12&minus; HCP. The more information you and
+your partner can exchange during a typical auction, the better you'll be at
+finding the right contract and maximizing your score.</p>
+<p>You might be thinking, <q>what if my hand is weak but I want to give my
+partner information about distribution?</q> But usually you needn't be in a
+hurry. Pass, and wait for your partner to open. Then, you'll have an opportunity
+to respond. When you respond, your partner will know that you didn't have enough
+strength to open, but they'll also have information about your distribution that
+you'll convey with your response.</p>
+<p>With all that being said, most players nowadays use the <strong>Rule of
 20</strong>, which states that you can open if the sum of your HCP count and
 the lengths of your two longest suits is at least 20. For example, with 12 HCP
 and a 4432 distribution, you can open. If you forget the rule of 20, just
-remember to open with 13 total points or more. (Remember to count points for
-length rather than shortness, since you haven't found a fit yet.)</p>
-<p>(Note: As a consequence of the rule of 20, an opening bid only promises 12
-total points, not necessarily 13.)</p>
-<p>Once you've decided your hand is good enough to open the bidding at the one
-level, you should also try to communicate some information to your partner
-about the suit distribution of your hand. This is where it gets
-interesting. Recall from the previous section that one of the important things
-to figure out about your hands is whether you have a 8-card fit in any major
-suit (&hearts; or &spades;). The minor suits are less important; finding a
-8-card major fit takes precedence. How can we design a system for you and your
-partner to communicate through the bidding so that you can figure out whether
-you have a 8-card major fit?</p>
-<p>If you do have a 8-card major fit, then it's most likely that either you
-have 4 and your partner has 4, or one of you had 5 and the other has 3. So one
-sensible system would be: if you have opening strength and 4 of a major suit,
-then open bidding with 1 of that suit. If you don't have 4 of either major
-suit, then there must be a minor suit in which you have at least 4, so open 1
-of that instead. If partner also has 4 of the major suit you bid, then they
-can raise to 2 of that suit, to show <q>support</q>, and voilà, you have found
-your 8-card major fit. If partner doesn't have 4, then they can bid something
-else.</p>
-<p>Another possible approach is that when you are opening, if you have at least
-5 of a major suit, then bid 1 of that suit. Then your partner can support you
-with 3 of that suit. At first glance, this system sounds bizarre: what if
-you're the one with 3 hearts and your partner has 5? After your opening bid,
-how will you and your partner figure out that you have 8 hearts in total?
-However, this <q>five-card major</q> approach does have advantages too. The
-Standard American system is a <q>five-card major</q> system, whereas the ACOL
-system (popular in the UK) is a <q>four-card major</q> system. The remainder of
-this document will assume we are using a five-card major system.</p>
+remember to open with 13 <em>total</em> points or more. (Remember to count
+points for length rather than shortness, since you haven't found a fit yet.)
+The Rule of 20 is a way of taking distribution into account. In the first
+section, we discussed how distributional hands have more trick-taking potential
+than flat hands. So if your hand has good distribution, even with less than 13
+HCP, you might want to open it. The Rule of 20 is an agreement that tends to
+work well, so that you and your partner will open hands that provide roughly
+half of the trick-taking potential needed to make a game. We will use the Rule
+of 20 for the remainder of this page.</p>
+<h3>Choice of suit to open</h3>
+<p>As previously discussed, most partnerships use the Rule of 20 to decide
+when to make an opening bid. But, assuming you have a hand that is strong
+enough to open, which suit should you bid? Here, already, there is more variety
+between partnerships.</p>
+<p>The most natural agreement you might have with your partner is to simply open
+whichever suit you have the longest holding in. For example, with 4 spades and
+3 of each other suit, and 13 HCP, you could open 1&spades;. However, most
+partnerships don't use that kind of system. The reason is that the four suits
+are not all equally important. Finding a 8-card major fit, if possible, is very
+important for maximizing your score. So your bidding system should make it a
+priority to communicate information about your major suit holdings. The mere
+fact that a minor suit holding happens to be longer than a major suit holding
+does not make it more important.</p>
+<p>The 2/1 system (as well as Standard American, incidentally) is a
+<q>5 card major</q> system, which means that you and your partner agree that
+an opening bid of 1M shows a 5+ card holding in that major. Thus, when playing
+2/1, if you see your partner open 1&spades;, and you yourself hold at least 3
+spades, you immediately know that a 8-card spade fit has been found. On the
+other hand, if you hold 3 spades and you see your partner open 1&clubs;, you
+immediately know that your partner has 4 or fewer spades, so you and your
+partner do not have an 8-card spade fit. This is where the value of the 5 card
+major agreement lies: <strong>it provides the most important information up
+front, to help you determine whether an 8-card major fit exists.</strong> This
+is a theme that will recur again and again. Don't view the set of agreements
+that constitute the 2/1 system as merely something to memorize. If you and
+your partner never knew that the 2/1 system existed, but you simply played a
+lot of hands together using the <q>open your longest suit</q> agreement, you
+would gradually discover that this would cause you to miss a lot of 8-card
+major fits, reducing your score. You would eventually design something like the
+5 card major agreement, and you would never forget it because you would remember
+how it was necessary in order to solve the problem of finding 8-card major
+fits.</p>
 <p>If you have opening strength but no five-card major, then choose the longer
 of your two minor suits to open with.</p>
-<p>Thus, the following hand should be opened 1&clubs;:
-<?=ch('75', 'AK97', 'A62', 'Q973')?></p>
-<p>while the following hand should be opened 1&hearts;, and if the opener's
-partner has at least 3 hearts, then a 8-card major fit has been found:
-<?=ch('AK', 'KJT98', 'AQJ3', 'T4')?></p>
-<p>The following hand shouldn't be opened at all, since it's too weak:
-<?=ch('863', 'AK753', '72', 'JT4')?></p>
-<p>Notice that in some cases, an opening bid of 1m (the lowercase <q>m</q>
-means a minor suit) might mean only 3 of that suit. For example, the following
-hand would be opened 1&clubs;:
-<?=ch('A42', 'QT92', 'QJ9', 'A72')?></p>
-That's okay though; most of the time we don't care how many of a minor suit we
-have. When your partner opens 1m, your first priority is still finding a 8-card
-major fit, if possible. We'll see how to do that in the next section.</p>
+<h3>Examples</h3>
+What opening bid should be made with the following hands? That is, if you are
+dealt the following hands, and everyone before you has passed, what should be
+your call?<br/>
+<span class="handWrapper">
+<?=rh('75', 'AK97', 'A62', 'Q973')?>
+<?=rh('AK', 'KJT98', 'AQJ3', 'T4')?>
+<?=rh('863', 'AK753', '72', 'JT4')?>
+<?=rh('A42', 'QT92', 'QJ9', 'A72')?>
+</span>
+<p>The first hand should be opened 1&clubs; since it contains no 5-card major
+holding, and clubs is the longer of the two minor suits.</p>
+<p>The second hand should be opened 1&hearts; since it contains a 5-card heart
+holding. After you open 1&hearts;, if your partner has 3+ hearts, they will
+immediately know that a 8-card heart fit has been found.</p>
+<p>The third hand should not be opened, since it's too weak. It contains 8 HCP,
+its longest holding has 5 cards, and the second longest has 3 cards. The sum is
+16, which is much less than the threshold of 20 required to open.</p>
+<p>The fourth hand should be opened 1&clubs; (if you picked 1&diams;, that's
+also an acceptable answer.) Even though you only have 3 of each minor suit, you
+must bid a minor suit because there is no 5-card major for you to bid. Thus,
+if you see your partner open 1m, keep in mind that they might only have a 3-card
+holding in that minor suit. However, most of the time, we don't care that much
+about our partner's minor suit holdings; major suits are much more important.
+We will see in the next section how, even when your partner opens 1m, you may
+still find a 8-card <em>major</em> fit. Once an 8-card major fit is found, you
+almost always want to play a contract in that major suit.</p>
 </section>
 <section id="1resp">
-<h2>Section 4: Subsequent one-level bidding</h2>
+<h2>Subsequent one-level bidding</h2>
 <p>If your partner has opened at the one-level, you know they have at least 12
 points. By responding to their bid, you have the opportunity to communicate
 information to them about <em>your</em> hand. Let's think about what
@@ -365,7 +561,8 @@ points. If you pass now, you foreclose on that possibility.</p>
 <p>So it is desirable to have a system where you can respond even when you have
 less than 13 points, in the hopes that your partner will have more points than
 they initially promised. But does that mean you should have a system where you
-will respond even with 0 points? No, because there are two problems with that:
+will respond even with 0 points? No, because there are two problems with
+that:</p>
 <ul>
 <li>When you have 0 points, for all you know, you and your partner together
 might have only 12. It's too dangerous to support your partner's suit by
@@ -380,7 +577,7 @@ anything about the strength of your hand. What if your partner had 20 points
 and only needed you to have 5 in order to go to game? Your response wouldn't
 tell your partner whether this would be possible or not.</li>
 </ul>
-A common design principle of bidding systems is that, if there's a certain
+<p>A common design principle of bidding systems is that, if there's a certain
 total number of points that you and your partner are hoping to have, you need a
 way of telling your partner that, in addition to what they already know you
 have, you also have enough extra points as to close the gap <strong>at least
@@ -409,7 +606,7 @@ and partner has opened 1m, remember to always bid 1&hearts; first. If you were
 to bid 1&spades; first and your partner also had 4 hearts, you would miss the
 4-4 hearts fit!</p>
 <p>For example, if your partner has opened 1&hearts; and your hand is:
-<?=ch('8764', '3', 'K862', 'K942')?></p>
+<?=ch('8764', '3', 'K862', 'K942')?>
 then you should respond 1&spades; to show that you have at least 4 spades.</p>
 <p>If your partner has opened 1&diams; and your hand is:
 <?=ch('KQJ4', '8643', '652', '42')?>
@@ -421,10 +618,10 @@ lower 4-card suit first, which is called <q>bidding up the line</q>, you ensure
 that as long as you have a 4-4 fit in either hearts or spades, you will find a
 4-4 major fit.</p>
 <p>Now suppose we have the following auction:
-<div style="text-align: center">
+<span class="auctionContainer">
 <?=auction(array('P', '1&diams;', 'P', '1&hearts;',
                  'P', '1&spades;', 'P', ''))?>
-</div>
+</span>
 where you are sitting south and your hand is:
 <?=ch('A5', 'T873', 'T82', 'KQT3')?>
 That is, you already showed your partner your 4-card heart suit, but your
@@ -439,7 +636,7 @@ If your partner opens 1&clubs; or 1&diams;, then you have nothing to say.
 There is no point in showing a 3-card major suit, because you already know your
 partner doesn't have 5 of either major. So you would respond 1NT right away,
 telling your partner that you have at least 6 points but no major suit fit.</p>
-<p>So in summary, the basic system for subsequent bidding after a 1-level
+So in summary, the basic system for subsequent bidding after a 1-level
 opening is:
 <ul>
 <li>If you're the responder, only respond with at least 6 points.</li>
@@ -451,7 +648,7 @@ available major suit you have with at least 4 cards.</li>
 suits left to bid, then bid 1NT. Usually, this lets your partner know that the
 two of you do not have a 8-card major fit.</li>
 </ul>
-There are exceptions to these rules, however. The 1NT <q>I give up</q> bid is
+<p>There are exceptions to these rules, however. The 1NT <q>I give up</q> bid is
 used for minimum hands. For example, if your partner opened and you had 13
 points but no fit with your partner, you wouldn't bid 1NT, because your partner
 might pass and game would be missed. Different bids must be used to
@@ -462,7 +659,7 @@ this situation and provide a way for you to still discover your 8-card fit?
 This is an advanced topic. For now don't worry about it.</p>
 </section>
 <section id="support">
-<h2>Section 5: Supporting a major suit</h2>
+<h2>Supporting a major suit</h2>
 <p>In section 4, we went over how a 8-card major fit can be found. For example,
 if your partner opens 1&spades; and you have three spades, you know that you
 have at least 8 spades together. However, your partner doesn't know that yet.
@@ -501,11 +698,11 @@ contract.</p>
 points, and a major suit fit is established, opener can raise to the 4 level
 if they themselves have at least 19 points, since the partnership then has a
 total of 25+. This auction is a fairly typical one:
-<div style="text-align: center">
+<span class="auctionContainer">
 <?=auction(array('P', '1&spades;', 'P', '2&spades;',
                  'P', '4&spades;', 'P', 'P',
                  'P', '', '', ''))?>
-</div>
+</span>
 assuming that you are sitting north, and your hand looks something like this:
 <?=ch('AKJT8', 'K96', 'T9', 'AK9')?>
 You have 18 HCP and 1 distribution point in diamonds, so you have 19 total
@@ -546,19 +743,19 @@ contract is makeable.</p>
 <p>Likewise, with the following hand, where you are sitting south:
 <?=ch('KT93', 'K632', 'KT', 'J63')?>
 a possible bidding sequence begins:
-<div style="text-align: center">
+<span class="auctionContainer">
 <?=auction(array('P', '1&clubs;', 'P', '1&hearts;',
                  'P', '1&spades;', 'P', '3&spades;'))?>
-</div>
+</span>
 Here, you jump raise to 3&spades; once the 8-card spade fit is found.</p>
 <p>The opener can also be the one to extend an invitation. If for example you
 have the following hand and are sitting north:
 <?=ch('AJ8', 'AJ54', 'KQ', 'J63')?>
 then the auction might start like this:
-<div style="text-align: center">
+<span class="auctionContainer">
 <?=auction(array('P', '1&clubs;', 'P', '1&hearts;',
                  'P', '3&hearts;', '', ''))?>
-</div>
+</span>
 Here, you make the jump raise to 3&hearts; because you have 17 points, which is
 significantly above typical opening strength. Generally, an invitational jump
 raise is made by the opener with 16 to 18 points. Responder can then raise to
@@ -589,15 +786,15 @@ if you have 13 and your partner opened (showing 12+) then you know you have
 25+. For example, with the following hand, where you are sitting south:
 <?=ch('KT93', 'K632', 'KT', 'A63')?>
 a possible bidding sequence is:
-<div style="text-align: center">
+<span class="auctionContainer">
 <?=auction(array('P', '1&clubs;', 'P', '1&hearts;',
                  'P', '1&spades;', 'P', '4&spades;'))?>
-</div>
+</span>
 </p>
 </section>
 <section id="2resp">
-<h2>Section 6: Subsequent bidding at the two-level and higher</h2>
-<p>In section 4, we described how to try to find a 8-card major fit by bidding
+<h2>Subsequent bidding at the two-level and higher</h2>
+In section 4, we described how to try to find a 8-card major fit by bidding
 at the one level. If this procedure fails, then you end up in 1NT. There are a
 few problems with this:
 <ol>
@@ -623,7 +820,7 @@ important if you want to go to game but neither 4M nor 3NT is viable, but also
 means you don't get the chance to play a 2m contract, which, as discussed in
 section 2, can be better than 1NT.</li>
 </ol>
-All of these issues can be resolved to some extent, but we need to get more
+<p>All of these issues can be resolved to some extent, but we need to get more
 creative with our bidding. As the title of this section suggests, the idea is
 that if we want to communicate more information with partner, we need to
 consider bidding at the two-level or higher rather than just giving up in
@@ -705,21 +902,21 @@ response has the Standard American meaning of 11+ points. (As we covered
 previously, a response with less than 11 points here would not be wise.)
 Therefore, the following auctions are 2/1 game forcing, with the responder
 showing 13+ points:
-<div style="text-align: center">
+<span class="auctionContainer">
 <?=auction(array('1&diams;', 'P', '2&clubs;', 'P'))?>
 <?=auction(array('P', '1&spades;', 'P', '2&hearts;'))?>
-</div>
+</span>
 whereas the following is not, because the responder (West) already passed once,
 and could not possibly have 13+ points, but instead must have 11&ndash;12:
-<div style="text-align: center">
+<span class="auctionContainer">
 <?=auction(array('P', 'P', '1&diams;', 'P',
                  '2&clubs;', '', '', ''))?>
-</div>
+</span>
 The following auction is also not 2/1 game forcing, because the responder chose
 to jump a level by bidding 2&spades; instead of 1&spades;:
-<div style="text-align: center">
+<span class="auctionContainer">
 <?=auction(array('P', '1&hearts;', 'P', '2&spades;'))?>
-</div>
+</span>
 Some players have an
 agreement that this <em>jump shift</em> shows an especially strong hand (17+
 points). But we will not discuss this right now. Instead, avoid making jump
@@ -731,36 +928,36 @@ strong your hand is. If you want to force to game, you can do that later.</p>
 responder should focus on finding the best game to play in. As a general rule,
 showing a new suit means you have at least four cards in that suit, while
 rebidding a suit you already bid, without support from partner, means you have
-at least six cards in that suit. Therefore,
+at least six cards in that suit. Therefore:</p>
 <ul>
 <li>Remember that if a suit fit has not been found yet, and you have a 4-card
 major suit that neither you nor your partner has mentioned yet, you should bid
 that suit in the hopes that your partner will also have 4 of that major.</li>
 <li>Once you become aware that a 8-card major fit exists, raise to the 4 level.
 For example, with
-<div style="text-align: center">
+<span class="auctionContainer">
 <?=auction(array('1&spades;', 'P', '2&clubs;', 'P',
                  '2&spades;', 'P', '', ''))?>
-</div>
+</span>
 if you are East, your partner's rebid tells you that they have at least six
 spades; therefore, if you have at least <em>two</em> spades, then support your
 partner by raising to 4&spades;. With the following auction:
-<div style="text-align: center">
+<span class="auctionContainer">
 <?=auction(array('1&spades;', 'P', '2&hearts;', 'P'))?>
-</div>
+</span>
 if you are West, your partner's 2&hearts; response tells you that they have at
 least <em>five</em> hearts; therefore, if you have at least three hearts, then
 support your partner by raising to 4&hearts;. With the following auction:
-<div style="text-align: center">
+<span class="auctionContainer">
 <?=auction(array('1&spades;', 'P', '2&clubs;', 'P',
                  '2&hearts;', 'P', '', ''))?>
-</div>
+</span>
 if you are East, and you have at least four hearts,  then support your partner
 by raising to 4&hearts;.</li>
 <li>When an 8-card major fit can't be found, normally you will end up playing
 in 3NT, with some rare exceptions. Sometimes you will go to 5m, but you are
 also allowed to stop in 4m.</li>
-</ul></p>
+</ul>
 <h3>Two-level bidding after the first response</h3>
 <p>In the previous section, we covered the immediate two-level suit response to
 a one-level opening bid. We discussed that a sane bidding system would only
