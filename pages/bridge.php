@@ -366,8 +366,8 @@ it in detail in a later section, so don't bother trying to memorize it
 now.)</p>
 <p>In most conventions, an artificial call is <em>forcing</em>, which means that
 the partner of the player who makes the artifical call is forbidden to pass
-(they are <em>forced</em> to bid). We will discuss the reasons for this
-later.</p>
+(they are <em>forced</em> to bid). Some natural bids are also forcing. We will
+discuss the reasons for this later.</p>
 <h3>Bidding agreements</h3>
 <p>Regardless of whether your bids are natural or artificial, it is crucial
 that you and your partner share a common understanding of what each bid means.
@@ -511,7 +511,47 @@ major fits, reducing your score. You would eventually design something like the
 how it was necessary in order to solve the problem of finding 8-card major
 fits.</p>
 <p>If you have opening strength but no five-card major, then choose the longer
-of your two minor suits to open with.</p>
+of your two minor suits to open with. If you have opening strength and 5+ cards
+in <em>both</em> majors, usually you should bid 1&spades; unless your heart
+holding is even longer. We will discuss the reasons for this later. Also note
+that the 1NT opening bid is a special case, which we will cover later.</p>
+<h3>4-card major systems</h3>
+<p>The vast majority of American partnerships use a 5-card major system similar
+to the one that we will be using. However, in some countries, 4-card major
+systems are more common. The ACOL system, popular in England, is a 4-card major
+system. At risk of stating the obvious, a 4-card major system conveys different
+information from a 5-card major system:</p>
+<ul>
+<li>As previously mentioned, in a 5-card major system, when you see your partner
+open 1M, and you have 3 cards in that major, you immediately know that a 8-card
+fit exists. In a 4-card major system, if you see your partner open 1M, and you
+have 3 cards in that major, you don't know whether a 8-card fit exists yet.
+Perhaps your partner has 5 of their major, but since the <em>bid</em> only
+conveys the information that they have 4+, you need further bidding to explore
+whether a fit exists.</li>
+<li>In a 5-card major system, when you see your partner open 1m, and you have a
+4-card major, you don't know whether a 8-card fit exists yet; perhaps your
+partner has 4 cards in your major, yet was not able to open that major,
+according to your agreement. Further bidding is required to determine whether
+a 4&ndash;4 fit exists in that suit. On the other hand, in a 4-card major
+system, your partner wouldd bid their 4-card major right away and you'd
+immediately know that a 8-card fit exists.</li>
+</ul>
+<p>We thus see that 5-card major and 4-card major systems each have advantages
+and disadvantages. We will use a 5-card major system, but not because it is
+clearly better than a 4-card major system. On the other hand, almost no one
+would play a 6-card major system, because such a system would not be efficient
+at discovering either 4&ndash;4 or 5&ndash;3 major fits. Sure, it would be
+great at finding 6&ndash;2 or 6&ndash;3 major fits, but those are much rarer. A
+bidding system that's great at describing rare situations, but not very good at
+common situations, will not lead to great scores in the average case.
+Similarly, a 3-card major system would only be good at describing hands where
+you <em>don't</em> have a 3-card major holding: those rare hands where you have
+less than 3 cards in both major suit holdings. In hands where you do have a
+3-card major, opening it would leave your partner wondering whether you actually
+have 3, 4, or 5+ of your major suit. In other words, in the most typical case,
+it would give a very imprecise description, which would not be very helpful for
+finding a 8-card major fit and scoring as many points as possible.</p>
 <h3>Examples</h3>
 What opening bid should be made with the following hands? That is, if you are
 dealt the following hands, and everyone before you has passed, what should be
