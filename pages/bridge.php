@@ -421,6 +421,28 @@ that I usually play with my bridge partners, but moreover, I will explain the
 problems that each agreement is intended to solve, or, more broadly, why each
 agreement is useful. I believe that if you understand the reasoning, the system
 will make sense, and you won't need to memorize as much.</p>
+<h3>Interpretation of bids</h3>
+<p>Generally, the meaning of a bid depends on the context in which the bid was
+made. For example, in the system we will be using, an <em>opening</em> bid
+of 1&hearts; indicates that the opener has at least 12 total points and 5
+hearts (more on this later). However, if one of the opponents were to open and
+then your partner overcalled 1&hearts;, it may not mean that your partner has
+12+ total points; they might have less.</p>
+<p>In general, when your partner makes some bid, you should interpret it
+according to the agreement that you and your partner have, and that agreement
+will often provide that the meaning of a bid varies depending on context.
+Similarly, when you are about to bid, make sure that you choose a bid that,
+when considering the context, will be interpreted correctly by your partner; do
+not use a bid that has your intended meaning in a different context, but which,
+in the present context, is not accurate.</p>
+<p>Sometimes your partner may make a bid and you may realize that, in the
+context in which your partner's bid was made, the two of you don't have an
+explicit agreement that assigns a meaning to that bid. Even still, that doesn't
+mean that the bid has the same meaning there as it would in another context. To
+interpret the bid, you would need to think about the principles behind the
+design of bidding systems, and what information your partner might be trying to
+communicate, based on likely objectives in the context. Of course, it is better
+to have an agreement, to remove the ambiguity.</p>
 </section>
 <section id="1open">
 <h2>Opening bidding at the one level</h2>
@@ -582,121 +604,225 @@ almost always want to play a contract in that major suit.</p>
 </section>
 <section id="1resp">
 <h2>Subsequent one-level bidding</h2>
-<p>If your partner has opened at the one-level, you know they have at least 12
-points. By responding to their bid, you have the opportunity to communicate
-information to them about <em>your</em> hand. Let's think about what
-information we would most want to communicate.</p>
-<p>Remember that one of your goals is to figure out whether you and your
-partner have together enough strength to go to game (25 points). Sometimes,
-after your partner has opened, you'll immediately know that you do have enough
-strength, because your hand has at least 13 points. You need to let your
-partner know that you have 13+ points so that partner will know to continue
-bidding until a game-level contract is agreed on. We'll cover how to do that
-later on.</p>
-<p>However, that doesn't mean that if your partner has opened and you have less
-than 13 points, you should pass. After all, your partner has promised <em>at
-least</em> 12 points, not exactly 12 points. Let's suppose you only have 8
-points. Then, there is still a chance for game, if your partner has at least 17
-points. If you pass now, you foreclose on that possibility.</p>
-<p>So it is desirable to have a system where you can respond even when you have
-less than 13 points, in the hopes that your partner will have more points than
-they initially promised. But does that mean you should have a system where you
-will respond even with 0 points? No, because there are two problems with
-that:</p>
+<h3>Communicating the strength of your hand</h3>
+<p>If your partner has opened at the one-level, you know that their hand
+satisfies the Rule of 20. This, in fact, implies that your partner's hand is
+worth at least 12 total points&mdash;roughly half of the amount needed for a
+game. Of course, it's possible that your partner has a lot more than 12 points,
+but that information isn't yet available to you at this point.</p>
+<p>This is not a coincidence. In section 4, we discussed how, in a good bidding
+system, all hands with at least half the strength needed for game must be
+opened. Both of you started out wondering whether the partnership had enough
+strength for a game; according to the agreement, if either partner has at least
+half of that amount, they should <q>make the first move</q>, if their partner
+hasn't already done so. This kind of pattern resurfaces repeatedly in bidding
+systems.</p>
+<p>Now, when you find yourself opposite a partner who has opened 1 of a
+suit&mdash;showing 12+ total points&mdash;it'll often be the case that your own
+hand contains 13+ total points and you know that the auction is destined for a
+game. The 2/1 system contains a special category of bids that are to be used in
+such a situation, in order to make sure your partner understands that the
+partnership must keep bidding until a game contract is reached (otherwise you
+may miss out on a game). These are called <em>game-forcing bids</em>. In the
+2/1 system, certain 2-level responses to 1-level opening bids are game-forcing
+(hence the name). We will cover 2/1 game forcing auctions in a later
+section.</p>
+<p>When your partner has opened but you have less than 13 total points in your
+hand, you don't immediately know whether or not the partnership has enough
+strength for game. If your agreement were to always pass with less than 13, it
+would mean games would be missed as well. (For example, if your partner has 16
+total points, then you only need to have 9 in order to bid a game.) If your
+agreement were to always respond, then your partner, seeing your response,
+wouldn't know if you have 0 or 12 points or anything in between. Here, again,
+the principle of making a move if you have half of what's required is relevant.
+Your partner has shown at least 12 points; that means that your hand strength
+plus whatever undisclosed additional strength your partner has must be at least
+13 points in order to go to game. If your hand contains 6 or more total points
+(about half of 13) then you should respond in order to keep the auction open
+and let your partner know your strength.</p>
+<p>To recap, once your partner has opened, 12 points are accounted for; to go to
+game, 13 additional points are needed, which can come from both your hand and
+your partner's hand. <strong>If you have at least half of that&mdash;6+ total
+points&mdash;you should respond. If you have the entire amount&mdash;13+ total
+points&mdash;there are special bids available to show that.</strong></p>
+
+<h3>Finding the right strain</h3>
+<p>When your partner has opened 1 of a suit, and you've decided that you have to
+respond, it means you either know that the partnership has enough strength for
+game (because you have 13+ total points), or you are still <em>hoping</em> that
+the partnership has enough strength for game (because you have 6&ndash;12 total
+points). Assuming you do end up in a game&mdash;usually 3NT, 4&hearts;, or
+4&spades;&mdash;how can your bidding agreement help you end up making the right
+choice of strain? (A <em>strain</em> means either a suit or notrump. For
+example, 2&hearts; and 2NT are two contracts of the same level but different
+strains; 2NT and 3NT are two contracts of the same strain but different
+levels.)</p>
+<p>Suppose your hand is:
+<?=ch('Q2', 'A94', 'AT2', 'KT987')?>
+and you see your partner open 1&diams;. Then, seeing that your hand contains
+13 HCP, you can immediately bid 3NT, which is a game. Your partner will probably
+pass, and you'll be declaring 3NT.</p>
+<p>Why is 3NT the best game for this deal? Recall that usually we prefer to bid
+4M if a 8-card major fit exists, and 3NT otherwise. Given the hand above, if
+your partner has opened 1&diams;, they've denied a 5-card major. Since your
+partner has less than 5 hearts and less than 5 spades, it's impossible for you
+and your partner to have an 8-card major fit. So that makes 3NT probably the
+best choice.</p>
+<p>However, it's not always that obvious. Suppose again that your partner opens
+1&diams;, but this time, your hand is:
+<?=ch('Q2', 'A942', 'AT', 'KT987')?>
+Now, it's possible that 4&hearts; would be the best contract for you to play
+in, but you don't know yet, because you don't know whether your partner has 4
+hearts. Thus, jumping immediately to 3NT is not a good choice; you ideally
+would like a way to decide between 3NT and 4&hearts;, depending on whether your
+partner has 4 hearts or not.</p>
+<p>Similarly, your partner may open 1&diams; and you may have the following
+hand:
+<?=ch('62', 'A942', 'K7', 'JT987')?>
+Now what? You don't have 13+ points, so you don't know whether a game is
+possible. In this case, you and your partner, through subsequent bidding, have
+to establish both whether or not you have 25+ total points together,
+<em>and</em> whether there's an 8-card heart fit.</p>
+<p>Thus, in these situations, bidding systems provide some way for you to make
+a bid that conveys information about your suit distribution to your partner
+on your first response (and possibly subsequent responses as well). For
+example, most players would bid 1&hearts; in response to their partner's
+1&diams; opening, with either of the two hands above, in order to show a
+4+-card heart holding. These bids are <strong>forcing</strong>, so that you can
+go ahead and make that bid no matter how strong your hand is. Your partner is
+obligated to not pass&mdash;so that the possibility of bidding a game is left
+open.</p>
+
+<h3>Responding with 1 of a suit</h3>
+<p>In light of the previous discussion, most partnerships agree that
+<strong>bidding a new suit at the 1-level is forcing.</strong> So, if your
+partner opens, and you respond 1X (meaning 1 of a suit), your partner is, under
+the partnership agreement, obligated to bid again. Likewise, if your partner
+opens, you respond 1X, then your partner bids 1Y (a different suit), you are
+obligated to bid again. This forcing agreement guarantees
+that, if you want to bid a new suit at the 1-level as part of a process of
+determining the best game to bid, then your partner will not pass prematurely.
+You will definitely get another chance to bid.</p>
+<p>Furthermore, most partnerships that play a 5-card major system agree that
+<strong>bidding a new suit at the 1-level shows a 4+ card holding.</strong> The
+reason for this has to do with the fact that the most important information
+about you and your partner's suit distribution is whether a 8-card major fit
+exists, and therefore, bidding agreements are tailored toward making it possible
+to determine this. The 5-card major agreement already gives you and your
+partner a way of finding 5&ndash;3 fits (opener has 5, responder has 3); the
+agreement to bid 4+ card suits at the 1-level gives you and your partner a way
+of finding 4&ndash;4 fits.</p>
+<p>Let's consider a few situations. First, suppose that your partner has opened
+1&diams; and your hand is:
+<?=ch('42', '8643', 'KQJ4', '652')?>
+Then, you should bid 1&hearts;, showing a 4+-card holding. The fact that you
+also have 4+ diamonds is not as important. The fact that the diamond suit is
+stronger than the heart suit also doesn't matter. The priority should be to
+determine whether a 4&ndash;4 heart fit exists between your hands.</p>
+<p>In a similar vein, suppose that you have the same hand:
+<?=ch('42', '8643', 'KQJ4', '652')?>
+but this time, your partner opens 1&clubs;. Then, again, you should bid
+1&hearts;. If you were to bid 1&diams;, you would correctly inform your partner
+that you have 4+ diamonds, but it's more important to show the heart suit than
+the diamond suit. Many partnerships play <q>up the line</q> bidding, where the
+responder would bid 1&diams; first and then the opener would have the chance to
+bid 1&hearts; (if opener had 4 hearts), at which point the 4&ndash;4 fit would
+be found. The problem with bidding up the line is that when your partner opens
+1&clubs;, your right-hand opponent passes, and you bid 1&diams;, your left-hand
+opponent might make a bid, and now your partner doesn't have the chance to bid
+1&hearts; anymore, so both of you could be left unaware of a 4&ndash;4 heart
+fit. If you bid 1&hearts; instead of 1&diams;, you're conveying the most crucial
+information to your partner while you still have a chance.</p>
+<p>Now let's rearrange the suits a bit. Suppose you hold:
+<?=ch('652', '42', '8643', 'KQJ4')?>
+and your partner opens 1&hearts;. You have two four-card suits, but
+it's not possible to bid either of them at the 1-level, because hearts is
+higher (you cannot bid 1m; after someone else has already bid 1&hearts;).
+Do not bid 2&clubs; or 2&diams;. A 2-level bid has a different meaning from a
+1-level bid. Instead, you have to bid 1NT. This tells your partner that: you
+don't have 3 hearts (to support their 5+ hearts), nor do you have a higher
+4-card suit to bid, therefore, there probably is no 5&ndash;3 or 4&ndash;4
+major fit to be found.</p>
+<p>What if your partner opens 1&clubs;, and you have the following hand?
+<?=ch('K942', '8764', 'K862', '3')?>
+You probably have figured out by now that in our system, you shouldn't bid
+1&diams;, because the major suits are more important. But should you bid
+1&hearts;, or 1&spades;? This is one case where you <em>should</em> bid up the
+line, by bidding 1&hearts; first. The reason for this is that your partner could
+have 4 hearts, 4 spades, or both, and since both of them are major suits, they
+are both equally important. So you don't want to <q>skip</q> hearts. If you were
+to skip hearts by bidding 1&spades;, but it actually turned out that your
+partner had 4 hearts, then the 4&ndash;4 heart fit would be missed.</p>
+<p>You bid 1&hearts;. If your partner does have 4 hearts, they will make a bid
+to communicate the fit (we'll cover this in the next section). If not, but they
+do have 4 spades, they'll bid 1&spades; and now you have a chance to
+communicate the fit. If they don't have 4 of either major suit, they'll bid 1NT
+and you'll know that no major fit exists.</p>
+
+<h3>Bidding 1NT</h3>
+<p>As discussed in the previous subsection, 1X bids made by opener or
+responder after the opening bid (X means a suit) show 4+ cards in the suit and
+are aimed at finding a 4&ndash;4 major. You shouldn't bid 1NT as long as you
+still have a higher 4-card suit to bid <em>or</em> you found a major suit
+agreement with your partner. However, when neither of those conditions are true,
+then you can bid 1NT. For example, if you have the following hand:
+<?=ch('42', '8643', 'KQJ4', '652')?>
+and your partner opens 1&spades;, then you should bid 1NT. But if your partner
+had opened 1&hearts; and you had the above hand, you should not bid 1NT, because
+you would need to make a bid that showed agreement with hearts (we will discuss
+major suit agreement in the next section).</p>
+<p>Again, suppose you hold the same hand:
+<?=ch('42', '8643', 'KQJ4', '652')?>
+and this time your partner opens 1&clubs;. As discussed in the previous
+subsection, your response should be 1&hearts;. If your partner then bids
+1&spades;, it means they don't have 4 hearts, but they do have 4 spades.
+However, you don't have 4 spades, so you've exhausted the possibilities of a
+major fit, and you bid 1NT.</p>
+<p>The opener can also bid 1NT. For example, suppose you hold:
+<?=ch('K85', 'A76', 'A6', 'K9852')?>
+and you are dealer. You would open 1&clubs;. If your partner were to then
+respond with 1&hearts;, you can neither show agreement (since you have less than
+4 hearts) nor bid spades (since you have less than 4 spades). So you would bid
+1NT.</p>
+
+<h3>Summary of this section</h3>
+<p>When the opener bids 1 of a major, their partner knows that they have 5 or
+more of that major suit. If the partner has 3 or more of that suit, then a
+8-card fit has been found.</p>
+<p>If a 5&ndash;3 fit cannot be found in this way, the opener might still have
+4 of a major. That is, there might still be a major suit such that the opener
+and the responder both have 4. In order to find such a fit, opener and responder
+take turns bidding major suits <q>up the line</q>, that is, you keep bidding
+the cheapest available 4-card major holding you have at the 1 level, until
+either you have a fit for your partner's major, or you have no 4-card majors
+left.</p>
+To summarize, the rules are:
 <ul>
-<li>When you have 0 points, for all you know, you and your partner together
-might have only 12. It's too dangerous to support your partner's suit by
-raising to the two level; there's a high probability of simply not being able
-to make the contract. Even if you just make another bid at the one-level, you
-must be aware that if you and your partner don't agree on a trump suit, you
-will end up in 1NT, and there is not a snowball's chance in hell that you can
-make a 1NT contract with 12 combined points.</li>
-<li>Even if your partner has a very good hand, if you agreed that you would
-respond even with 0 points, that means your response doesn't tell your partner
-anything about the strength of your hand. What if your partner had 20 points
-and only needed you to have 5 in order to go to game? Your response wouldn't
-tell your partner whether this would be possible or not.</li>
+<li>The opener's hand contains at least 12 total points. If your partner opened,
+only respond with at least 6 points. With less than 6 points, pass.</li>
+<li>Regardless of whether you're the opener or the responder, if you
+<em>can</em> support your partner's major suit (<em>i.e.,</em> you know that
+you and your partner together have 8+) then make a bid that shows support. (We
+discuss how to do this in the next section.</li>
+<li>If you can't support your partner's major suit, then regardless of whether
+you're the opener or responder, look for a major suit you can bid at the 1
+level (4+-card holding), and bid it. If you have both 4+ hearts and 4+ spades,
+bid hearts before spades.</li>
+<li>Either opener and responder can bid 1NT once they have no 4-card major suits
+left to show their partner. However, the 1NT bid should only be used by a player
+with a <q>minimal</q> hand, that is, a hand that is near the minimum requirement
+to bid. Therefore, a responder with 12 points (much more than the 6 needed to
+respond) shouldn't bid 1NT. An opener with 18 points also shouldn't bid 1NT. We
+will discuss alternatives in later sections.</li>
 </ul>
-<p>A common design principle of bidding systems is that, if there's a certain
-total number of points that you and your partner are hoping to have, you need a
-way of telling your partner that, in addition to what they already know you
-have, you also have enough extra points as to close the gap <strong>at least
-halfway</strong>. So, if your partner has opened, showing 12+ points, then 13
-more points beyond what has been shown so far are needed to make game. Those 13
-additional points could be in your hand and your partner's hand. But for your
-part, you need to have some bid that your partner will understand as showing 6+
-points (roughly half of 13). So, after you make that bid, if your partner has
-the other half&mdash;7 more points than they originally promised (for a total of
-19)&mdash;then they can bid a game.</p>
-<p>So we'll use a system where <strong>you respond if you have at least 6
-points.</strong> But what should you respond with? For that, remember that our
-other goal is to figure out whether we have a 8-card major fit. If your partner
-has opened 1M (the uppercase <q>M</q> means a major suit) and you have 3 of
-that suit, you know you have a 8-card major fit. If that isn't the case, or
-partner opened 1m, the system you follow for your subsequent bidding should
-serve the goal of determining whether a 8-card major fit exists.</p>
-<p>If a 5-3 fit (with opener having 5 of the major, and responder having 3)
-does not exist, then maybe a 4-4 fit does exist. So if your partner has opened
-1&hearts; and you have four spades but less than three hearts, you could bid
-1&spades; and hope that your partner also has four spades (and will show
-support). If your partner has opened 1m, and you have either four hearts or
-four spades, a similar principle applies: you can show your four-card major
-suit and hope for support from partner. If you have both 4 hearts and 4 spades,
-and partner has opened 1m, remember to always bid 1&hearts; first. If you were
-to bid 1&spades; first and your partner also had 4 hearts, you would miss the
-4-4 hearts fit!</p>
-<p>For example, if your partner has opened 1&hearts; and your hand is:
-<?=ch('8764', '3', 'K862', 'K942')?>
-then you should respond 1&spades; to show that you have at least 4 spades.</p>
-<p>If your partner has opened 1&diams; and your hand is:
-<?=ch('KQJ4', '8643', '652', '42')?>
-then you should respond 1&hearts;. If your partner has 4 hearts, they will then
-realize that you have a 8-card fit in hearts. If your partner doesn't have 4
-hearts, but they do have 4 spades, then they will bid again with 1&spades; and
-you will realize that you have a 8-card fit in spades. So by bidding the
-lower 4-card suit first, which is called <q>bidding up the line</q>, you ensure
-that as long as you have a 4-4 fit in either hearts or spades, you will find a
-4-4 major fit.</p>
-<p>Now suppose we have the following auction:
-<span class="auctionContainer">
-<?=auction(array('P', '1&diams;', 'P', '1&hearts;',
-                 'P', '1&spades;', 'P', ''))?>
-</span>
-where you are sitting south and your hand is:
-<?=ch('A5', 'T873', 'T82', 'KQT3')?>
-That is, you already showed your partner your 4-card heart suit, but your
-partner didn't have 4 hearts, and went up to spades, but you don't have a
-4-card spade suit. You don't want to play in a spades contract, since for all
-you know, the opponents could have 7 of the 13 spades. You also can't support
-your partner's spades. You guys haven't found a suit fit, so you'll need to
-play in notrump. So in this auction, you would respond 1NT.</p>
-<p>Let's rearrange the above hand so that you only have 3 hearts and 3 spades:
-<?=ch('A53', 'T87', 'T82', 'KQT3')?>
-If your partner opens 1&clubs; or 1&diams;, then you have nothing to say.
-There is no point in showing a 3-card major suit, because you already know your
-partner doesn't have 5 of either major. So you would respond 1NT right away,
-telling your partner that you have at least 6 points but no major suit fit.</p>
-So in summary, the basic system for subsequent bidding after a 1-level
-opening is:
-<ul>
-<li>If you're the responder, only respond with at least 6 points.</li>
-<li>If you've discovered a 8-card major fit, show support. Otherwise continue
-showing other suits.</li>
-<li>If you haven't found a 8-card major fit yet, bid 1 of the cheapest
-available major suit you have with at least 4 cards.</li>
-<li>If you can't support your partner's suit and you have no more 4-card major
-suits left to bid, then bid 1NT. Usually, this lets your partner know that the
-two of you do not have a 8-card major fit.</li>
-</ul>
-<p>There are exceptions to these rules, however. The 1NT <q>I give up</q> bid is
-used for minimum hands. For example, if your partner opened and you had 13
-points but no fit with your partner, you wouldn't bid 1NT, because your partner
-might pass and game would be missed. Different bids must be used to
-show stronger hands. These will be covered in later sections.</p>
-<p>Also, you might be wondering what happens if opener has 3 of a major suit
-and you have 5, rather than the other way around. Can the system accommodate
-this situation and provide a way for you to still discover your 8-card fit?
-This is an advanced topic. For now don't worry about it.</p>
+<p>You might be wondering what happens if opener has 3 of a major suit
+and you have 5, rather than the other way around. Like, say, your partner opens
+1m, but actually they have 3 hearts, and you have 5 hearts. This situation is
+quite common, but so far the system we've discussed is not very useful in this
+situation: you will bid 1&hearts;, but your partner won't know that you have 5,
+so they won't be able to support hearts right away. Are there bidding
+agreements that can enable the two of you to reach a heart contract? The answer
+is yes, but this is an advanced topic that we'll discuss later.</p>
 </section>
 <section id="support">
 <h2>Supporting a major suit</h2>
