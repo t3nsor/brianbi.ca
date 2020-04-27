@@ -1,7 +1,7 @@
 <?php
 include('router.php');
-if (!empty($_GET['path'])) {
-    $path = $_GET['path'];
+if (!empty($_GET['__internal_path'])) {
+    $path = $_GET['__internal_path'];
 } else {
     $path = 'about';
 }
