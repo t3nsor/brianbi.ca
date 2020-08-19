@@ -1,5 +1,5 @@
 <h2>Subsequent bidding at the two level and higher</h2>
-In the section on <a href="bridge/1resp">one-level responses</a>, we discussed
+In the section on <a href="/bridge/1resp">one-level responses</a>, we discussed
 how to try to find a 8-card major fit by bidding at the one level. If this
 procedure fails, then you end up in 1NT. There are a few problems with this:
 <ol>
@@ -23,7 +23,7 @@ only two of that suit? Is it possible to find the 8-card fit then?</li>
 <li>There's also no way to find a minor suit agreement, which might be
 important if you want to go to game but neither 4M nor 3NT is viable, but also
 means you don't get the chance to play a 2m contract, which, as discussed in
-<a href="bridge/scoring">the scoring section</a>, can be better than 1NT.</li>
+<a href="/bridge/scoring">the scoring section</a>, can be better than 1NT.</li>
 </ol>
 <p>All of these issues can be resolved to some extent, but we need to get more
 creative with our bidding. As the title of this section suggests, the idea is

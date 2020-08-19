@@ -46,7 +46,7 @@ and a 4432 distribution, you can open. If you forget the rule of 20, just
 remember to open with 13 <em>total</em> points or more. (Remember to count
 points for length rather than shortness, since you haven't found a fit yet.)
 The Rule of 20 is a way of taking distribution into account. In the
-<a href="bridge/hand-evaluation">hand evaluation section</a>,
+<a href="/bridge/hand-evaluation">hand evaluation section</a>,
 we discussed how distributional hands have more trick-taking potential
 than flat hands. So if your hand has good distribution, even with less than 13
 HCP, you might want to open it. The Rule of 20 is an agreement that tends to
@@ -128,7 +128,7 @@ less than 3 cards in both major suit holdings. In hands where you do have a
 have 3, 4, or 5+ of your major suit. In other words, in the most typical case,
 it would give a very imprecise description, which would not be very helpful for
 finding a 8-card major fit and scoring as many points as possible.</p>
-h3>Examples</h3>
+<h3>Examples</h3>
 What opening bid should be made with the following hands? That is, if you are
 dealt the following hands, and everyone before you has passed, what should be
 your call?<br/>
@@ -152,7 +152,7 @@ must bid a minor suit because there is no 5-card major for you to bid. Thus,
 if you see your partner open 1m, keep in mind that they might only have a 3-card
 holding in that minor suit. However, most of the time, we don't care that much
 about our partner's minor suit holdings; major suits are much more important.
-We will see in <a href="bridge/1resp">the next section</a> how, even when your
+We will see in <a href="/bridge/1resp">the next section</a> how, even when your
 partner opens 1m, you may still find a 8-card <em>major</em> fit. Once an
 8-card major fit is found, you almost always want to play a contract in that
 major suit.</p>

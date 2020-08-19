@@ -5,7 +5,7 @@ satisfies the Rule of 20. This, in fact, implies that your partner's hand is
 worth at least 12 total points&mdash;roughly half of the amount needed for a
 game. Of course, it's possible that your partner has a lot more than 12 points,
 but that information isn't yet available to you at this point.</p>
-<p>This is not a coincidence. In <a href="bridge/1open">the previous
+<p>This is not a coincidence. In <a href="/bridge/1open">the previous
 section</a>, we discussed how, in a good bidding system, all hands with at least
 half the strength needed for game must be opened. Both of you started out
 wondering whether the partnership had enough strength for a game; according to
@@ -147,7 +147,7 @@ are both equally important. So you don't want to <q>skip</q> hearts. If you were
 to skip hearts by bidding 1&spades;, but it actually turned out that your
 partner had 4 hearts, then the 4&ndash;4 heart fit would be missed.</p>
 <p>You bid 1&hearts;. If your partner does have 4 hearts, they will make a bid
-to communicate the fit (we'll cover this in <a href="bridge/support-major">the
+to communicate the fit (we'll cover this in <a href="/bridge/support-major">the
 next section</a>). If not, but they do have 4 spades, they'll bid 1&spades; and
 now you have a chance to communicate the fit. If they don't have 4 of either
 major suit, they'll bid 1NT and you'll know that no major fit exists.</p>
@@ -163,7 +163,7 @@ then you can bid 1NT. For example, if you have the following hand:
 and your partner opens 1&spades;, then you should bid 1NT. But if your partner
 had opened 1&hearts; and you had the above hand, you should not bid 1NT, because
 you would need to make a bid that showed agreement with hearts (we will discuss
-major suit agreement in <a href="bridge/support-major">the next
+major suit agreement in <a href="/bridge/support-major">the next
 section</a>).</p>
 <p>Again, suppose you hold the same hand:
 <?=ch('42', '8643', 'KQJ4', '652')?>
