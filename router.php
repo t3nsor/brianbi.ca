@@ -7,6 +7,7 @@ class Router {
             'artin' => 'artin.php',
             'artin/(?P<sec>.*)' => 'artin.php',
             'bridge' => 'bridge.php',
+            'bridge/(?P<sec>.*)' => 'bridge.php',
             'code' => 'code.php',
             'etingof' => 'etingof.php',
             'etingof/(?P<sec>.*)' => 'etingof.php',
