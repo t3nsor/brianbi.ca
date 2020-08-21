@@ -132,3 +132,55 @@ a possible bidding sequence is:
 </span>
 </p>
 
+<h3>Summary of this section</h3>
+<p>When your partner has opened and you can support your partner's major
+suit:</p>
+<ul><li>With 6+ points, raise your partner's suit to the 2 level. This tells
+your partner that a major fit has been found and that the partnership has at
+least 18 total points (7 more points needed for game)</li>
+<li>If you have 13+ points, the partnership has enough for game. Raise your
+partner's suit to the 4 level.</li>
+<li>The 3-level raise is an invitation, telling your partner you have some
+extra strength compared to a 2-level raise, making game more likely. It should
+be used when, compared to a 2-level raise, you have at least half of the extra
+strength needed for game (in general, you should be at least halfway to the
+desired destination in order to extend an invitation). That means you should
+have 4 more points than needed for a 2-level raise: in other words, 10+
+points.</li>
+<li>Thus, a raise to 2 means 6&ndash;9 points, a raise to 3 means 10&ndash;12
+points, and a raise to 4 means 13+.</li>
+<li>If you raise to the 2 level and your partner extends an invitation by
+bidding 3, they are acknowledging that you have only 6&ndash;9 points but still
+pushing to see if a game is possible. Here, as in other bidding situations, they
+are asking you to meet them halfway: in other words if you are in the upper half
+of your range (8&ndash;9 points) then you should go to game. Your partner will
+make this bid if they have 17&ndash;18 points (17 plus 8 is 25).</li></ul>
+<p>When you have opened and you can support your partner's major suit:</p>
+<ul><li>With a minimum opening hand, raise your partner's suit to the 2
+level. Here, again, the partnership has at least 18 total points.</li>
+<li>If you have 19+ total points, then your 19+ points plus your partner's 6+
+points are enough for game. Raise to the 4 level.</li>
+<li>To extend an invitation to game, you should have at least 4 extra points out
+of the 7 needed compared to a minimum raise (25 minus 18). That is, with 16+
+points, you should raise to the 3 level.</li>
+<li>Thus, a raise to 2 means 12&ndash;15 points, a raise to 3 means 16&ndash;18
+points, and a raise to 4 means 19+.</li>
+<li>If you raise to the 2 level, and your partner (knowing that you have only
+12&ndash;15 points) extends an invitation by bidding 3, they are again asking if
+you can meet them halfway: even knowing that you have less than 16 points, they
+are <em>still</em> interested in whether you might be in the upper half of your
+range (that is, 14&ndash;15). In other words, they are showing you that they
+have 11&ndash;12 points. If appropriate, you can raise to the 4 level.</li>
+</ul>
+<p>You can read both of the above bullet points from the point of view of the
+person's partner. Thus, when your partner supports <em>your</em> major suit,
+know that they will bid 2 with a minimum hand, 3 with an invitational hand, or
+4 if they know that both of you together have enough for game. If they bid 3,
+you should decide whether or not to accept the invitation. If they bid 2, you
+can pass, jump to game, or invite to game by bidding 3. The principles are the
+same as in the above points.</p>
+<p>Do not memorize the above points. Instead, understand the reasoning about
+how the point ranges and bids are a natural consequence of you and your partner
+giving each other information about whether you have enough points for game.
+Invitational bids can be seen as <q>negotiation</q> where the partner extending
+the invitation is asking their partner to meet them halfway.</p>
