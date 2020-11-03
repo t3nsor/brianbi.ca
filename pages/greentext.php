@@ -14,6 +14,9 @@
 </style>
 <section id="greentext">
 <h1>Greentext generator</h1>
+<p>Text entered in the box below will be automatically rendered as if on 4chan.
+Lines starting with &gt; will be displayed in green, while other lines will be
+displayed in maroon.</p>
 <textarea id="input" rows="20"></textarea>
 <div id="output"><blockquote></blockquote></div>
 </section>
