@@ -11,6 +11,7 @@ class Router {
             'code' => 'code.php',
             'etingof' => 'etingof.php',
             'etingof/(?P<sec>.*)' => 'etingof.php',
+            'greentext' => 'greentext.php',
             'math' => 'math.php',
             'physics' => 'physics.php',
             'resume' => 'resume.php',
