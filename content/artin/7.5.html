@@ -223,14 +223,14 @@ to either \(a\) or \(b\). Denote these two conjugacy classes in \(A_n\) by
 \(C_a\) and \(C_b\). The map \(\varphi : C_a \to C_b\) given by conjugation by
 \(\sigma\) is one-to-one and has an inverse, namely conjugation by
 \(\sigma^{-1}\), so it is a bijection, and \(|C_a| = |C_b|\).</p>
-<p>To know whether \(C\) is one or two conjugacy classes in \(A_n\), it
-suffices to compute the centralizer of some element of \(C\) in both \(S_n\)
-and \(A_n\). This
-will tell us the size of the conjugacy class that element belongs to in
-\(A_n\). Namely, if the centralizer is the same in \(A_n\) as it is in \(S_n\),
-then the conjugacy class is half as large in \(A_n\) as it is in \(S_n\). If
-the centralizer has half the order in \(A_n\), then
-the conjugacy class is of the same size.</p></li>
+<p>Again, let \(a \in C\). By the orbit-stabilizer theorem, the conjugacy class
+\(a\) belongs to in \(A_n\) will be half the size of \(C\) iff the centralizer
+of \(a\) in \(A_n\) is the same size as the centralizer of \(a\) in \(S_n\),
+that is, if the centralizer of \(a\) in \(S_n\) is already a subgroup of
+\(A_n\). Otherwise&mdash;precisely when there exists an odd permutation that
+\(a\) commutes with&mdash;the centralizer of \(a\) in \(A_n\) will consist of
+only the even elements of the centralizer of \(a\) in \(S_n\), and thus be half
+the size, and \(C\) will be a single conjugacy class in \(A_n\).</p></li>
 <li><p>The conjugacy classes of even permutations in \(S_4\) are that of the
 identity, the eight 3-cycles, and the three double transpositions. Obviously
 the identity is also a conjugacy class of \(A_4\), and the three double
@@ -249,12 +249,16 @@ centralizer of that 5-cycle in \(A_5\). This implies that the conjugacy class
 of 5-cycles in \(S_5\) is split into two conjugacy classes in \(A_5\). In
 conclusion, the class equation of \(A_5\) is \(60 = 1 + 12 + 12 + 15 + 20\),
 which matches what was determined in the text geometrically for \(I\).</p></li>
-<li>The proof of part (a) applies just as well to each conjugacy class of
-odd permutations of \(S_n\), provided that we replace statements like
-<q>\(a\) and \(b\) are conjugate in \(A_n\)</q> with <q>\(a\) and \(b\) belong
-to the same \(A_n\)-orbit</q>. Therefore each conjugacy class of odd
-permutations of \(S_n\) is either an \(A_n\)-orbit or the union of two
-\(A_n\)-orbits of equal size.</li>
+<li>Although the text says <q>permutations of odd order</q>, I assume that Artin
+really meant <q>odd permutations</q>. The proof of part (a) applies just as well to each conjugacy class of odd permutations of \(S_n\), provided that we
+replace statements like <q>\(a\) and \(b\) are conjugate in \(A_n\)</q> with
+<q>\(a\) and \(b\) belong to the same \(A_n\)-orbit</q>. Therefore we can at
+first conclude that each conjugacy class of odd permutations of \(S_n\) is
+either an \(A_n\)-orbit or the union of two \(A_n\)-orbits of equal size.
+Applying the test to distinguish the two possibilities, we find that since an
+odd permutation always commutes with at least one odd permutation (namely
+itself) it follows that its conjugacy class in \(C_n\) always forms a single
+\(A_n\)-orbit.</li>
 </ol>
 
 <p><span class="problem">Exercise 7.5.12</span> In \(S_6\) there are \(5! =
