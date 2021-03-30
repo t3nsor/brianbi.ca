@@ -1,10 +1,7 @@
 <section style="margin: 1em">
-<p>Hi, my name is Brian and I write code. (I'm also Canadian, as you can
-probably tell from the domain name.) Currently I live in Manhattan, NY and I
-work at Citadel Securities on the Low Latency Engineering team.</p>
-
-<p>I deleted the photo of me that used to be here, because I don't really look
-like that anymore. Maybe eventually I'll post a new one.</p>
+<p>Hi, my name is Brian and I'm a Canadian software engineer who lives in
+Manhattan, NY. My main professional interest is in the domain of C++ template
+libraries.</p>
 
 <p>I can be reached by email at
 <a href="mailto:bbi5291@gmail.com">bbi5291@gmail.com</a>.</p>
