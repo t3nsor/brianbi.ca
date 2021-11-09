@@ -9,7 +9,7 @@ $router = new Router();
 $route = $router->match($path);
 if (!$route) {
     header('HTTP/1.0 404 Not Found');
-    die();
+    die('Page not found');
 }
 $script = $route[0];
 $params = $route[1];
