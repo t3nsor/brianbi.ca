@@ -340,8 +340,8 @@ one. There are four cases. If \(A_{11} = 1\) and \(A_{21} = 0\), then since
 remaining two cases, in which \(A_{11} = 0\) and \(A_{21} = \pm 1\), are
 similar.</p>
 <p><em>Inductive case:</em> Assume \(A_{11}\) and \(A_{21}\) are relatively
-prime and let \(n = |A_{11}| + |A_{21}|\). One of these two magnitudes must
-be greater than the other. We can write \(A = MB\) where \(M\) is one of the
+prime and let \(n = |A_{11}| + |A_{21}|\). Since \(n \ge 2\), neither of these
+two magnitudes can be zero. We can write \(A = MB\) where \(M\) is one of the
 four elementary matrices \(E\), \(E^{-1}\), \(E'\), \(E'^{-1}\) and \(B\) is
 obtained from \(A\) by, respectively, subtracting the second row from the
 first, adding the second row to the first, subtracting the first row from the
@@ -350,7 +350,8 @@ second, or adding the first row to the second. We choose the appropriate
 the target row is the one that contains the larger of the two entries
 \(A_{11}, A_{21}\) in absolute value, and the other row is either subtracted or
 added in order to bring that entry closer to zero, depending on whether
-the signs of the two entries are like or opposite, respectively.
+the signs of the two entries are like or opposite, respectively. (If the two
+magnitudes are equal, it does not matter which row is chosen as the target row.)
 The resulting matrix \(B\) satisfies \(\det B = 1\) and
 \(|B_{11}| + |B_{21}| &lt; n\); by the inductive hypothesis,
 \(B \in \langle E, E' \rangle\), and therefore \(A \in \langle E, E'\rangle\)
