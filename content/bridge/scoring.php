@@ -65,7 +65,12 @@ tricks. Once they win 5 tricks, the contract is defeated since there are only
 8 tricks left for your side to win, and you need 9 to make the contract. So
 before going to 3NT, you should make sure you have <q>stoppers</q> in all four
 suits, meaning that you have some card that can eventually win so your side can
-get back in control.</li>
+get back in control.
+(You do not need to be absolutely sure that you have all four suits stopped. The
+most important thing is that if the auction indicates that the opponents have
+length in a suit, then you should make sure you have <em>that</em> suit stopped
+before you try to play in 3NT.)
+</li>
 <li>If you are deficient in hearts and spades, and have unbalanced hands so
 that 3NT is dangerous, you must have either a lot of clubs together or a lot of
 diamonds together. So in those cases, you can try to go to 5&clubs; or
@@ -82,8 +87,18 @@ making 5&clubs; or 5&diams;. With only 25, it's not so certain.</li>
 <li>If you and your partner realize that you don't have 25 points together,
 you should usually try to put the brakes on the bidding. There is no point in
 going higher. For example, remember that 2&spades;+1 is worth the same as
-3&spades;. There is no bonus for bidding a higher contract, unless it is at
-least game level.</li>
+3&spades;. (There is no bonus for bidding a higher contract, unless it is at
+least game level.)
+But there are situations where it is legitimate to bid 4&hearts; or 4&spades;
+even when you and your partner don't have 25 points together. Usually this will
+be a situation where you or your partner have a highly unbalanced hand. When a
+hand is highly unbalanced, it can be stronger than the point system would
+suggest. Knowing information about the opponents' hands can also affect how good
+your hand seems, and can help your side play more accurately if you win the
+contract. So, although bidding systems are designed to convey point strength
+accurately, it is important to use your judgement to reach the best contract,
+regardless of how many points you have.
+</li>
 <li>When you fail to make your contract, the opponents score 50 points per
 undertrick. For example, bidding 4&hearts; but winning only 8 tricks means you
 missed by two tricks, so the opponents score 100 points. However, when your
