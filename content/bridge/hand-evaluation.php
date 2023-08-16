@@ -68,8 +68,12 @@ contract (<i>i.e.</i>, take at least 9 tricks out of 13). That is, you can
 usually take 69% of the tricks with only 62% of the HCP.
 That's partially because the declarer has the ability to coordinate play between
 their hand and the dummy hand, thus making their HCP count for more by using
-them strategically.</p>
-<p>Of course, not all 25-point pairs of hands are alike. Experienced players
+them strategically. By the way, your partnership's HCP are usually worth more
+when they are evenly split between you and your partner's hand. For example, if
+you have 13 HCP and your partner has 12, there is a 59% chance that you can make
+3NT, but if you have 20 HCP and your partner has 5, then your chances drop to
+51%. <a href="https://taigabridge.net/articles/dd/hcpsplit.htm">(Source)</a></p>
+<p>There are many other reasons as well why not all 25-point pairs of hands are alike. Experienced players
 understand that proper evaluation of your hand&mdash;that is, making accurate
 estimates of its trick-taking ability&mdash;requires more than just adding up
 points. However, the subtleties of hand evaluation can only be learned through
