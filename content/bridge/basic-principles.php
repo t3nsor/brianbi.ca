@@ -91,7 +91,7 @@ partner will write down your system on a <em>convention card</em> so that your
 opponents will also be able to understand your bids.</p>
 <p>For example, a very common agreement used by partnerships in the United
 States and Canada is that an opening bid of 1M means the opener has at least
-<em>five</em> cards in the suit bid. However, this is not universal, and some =
+<em>five</em> cards in the suit bid. However, this is not universal, and some
 partnerships have an agreement that this would only promise at least
 <em>four</em> cards in the suit. Imagine that your bridge partner were someone
 you never met before, and you didn't discuss what such a 1M bid means.
@@ -155,4 +155,9 @@ mean that the bid has the same meaning there as it would in another context. To
 interpret the bid, you would need to think about the principles behind the
 design of bidding systems, and what information your partner might be trying to
 communicate, based on likely objectives in the context. Of course, it is better
-to have an agreement, to remove the ambiguity.</p>
+to have an agreement, to remove the ambiguity.
+But even when you and your partner do have an agreement, you might forget what
+the agreement is. In those cases, you will have to guess what your partner's
+bid means, and when doing so, you should remember the design principles in order
+to reach an educated guess.
+</p>
