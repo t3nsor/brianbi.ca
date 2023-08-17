@@ -118,7 +118,7 @@ communicating.</p>
 <p>If you had the following hand, you would open 1&clubs;:
 <?=ch('AKJT', 'K96', 'T9', 'AK98')?>
 If your partner responds 1&spades;, there's no sense beating around the bush;
-with 19 total points, you already know you have enough for game, so you can
+with 19 points, you know that you and your partner together have at least 25, so you already know you have enough for game. You should
 directly bid 4&spades;. This is a <em>double jump raise</em>, since two levels
 are being skipped.</p>
 <p>You can also double jump raise as responder with at least 13 points, since
