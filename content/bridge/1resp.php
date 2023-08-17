@@ -151,6 +151,17 @@ to communicate the fit (we'll cover this in <a href="/bridge/support-major">the
 next section</a>). If not, but they do have 4 spades, they'll bid 1&spades; and
 now you have a chance to communicate the fit. If they don't have 4 of either
 major suit, they'll bid 1NT and you'll know that no major fit exists.</p>
+<p>
+Finally, what if your partner opens 1&clubs;, and you have the following?
+<?=ch('QJ9', 'KJ6', 'AK73', 'A52')?>
+In this case, you should show your 4-card diamond suit because you do not have a
+4-card or longer major suit that would take precedence over it. It is possible
+that you have a 4&ndash;4 diamond fit with your partner. Your hand is very
+strong, but you should still bid only 1&diams;. Showing a new suit at the 1
+level is forcing, so your partner is obligated to bid a second time, which will
+give you an opportunity to tell your partner how strong your hand is. We will
+discuss how to do this in a later section.
+</p>
 
 <h3>Bidding 1NT</h3>
 <p>As discussed in the previous subsection, 1X bids made by opener or
@@ -196,11 +207,17 @@ only respond with at least 6 points. With less than 6 points, pass.</li>
 <li>Regardless of whether you're the opener or the responder, if you
 <em>can</em> support your partner's major suit (<em>i.e.,</em> you know that
 you and your partner together have 8+) then make a bid that shows support. (We
-discuss how to do this in the next section.</li>
+discuss how to do this in the next section.)
+</li>
 <li>If you can't support your partner's major suit, then regardless of whether
 you're the opener or responder, look for a major suit you can bid at the 1
 level (4+-card holding), and bid it. If you have both 4+ hearts and 4+ spades,
-bid hearts before spades.</li>
+bid hearts before spades.
+(If you don't have a major suit that you can bid, but you have 4+ diamonds, you
+can respond 1&diams;, although this is not always the right bid; sometimes, you
+might want to support partner's club suit, or bid notrump. We will discuss this
+issue in a later section.)
+</li>
 <li>Either opener and responder can bid 1NT once they have no 4-card major suits
 left to show their partner. However, the 1NT bid should only be used by a player
 with a <q>minimal</q> hand, that is, a hand that is near the minimum requirement
