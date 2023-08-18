@@ -65,6 +65,31 @@ function ch($spades, $hearts, $diamonds, $clubs) {
            rh($spades, $hearts, $diamonds, $clubs) .
            '</span>';
 }
+// "rsh" means "render short hand"
+function rsh($spades, $hearts, $diamonds, $clubs) {
+    if ($spades === '') {
+        $spades = ' &ndash;';
+    }
+    if ($hearts === '') {
+        $hearts = ' &ndash;';
+    }
+    if ($diamonds === '') {
+        $diamonds = ' &ndash;';
+    }
+    if ($clubs === '') {
+        $clubs = ' &ndash;';
+    }
+    return "<span style='color: black'>&spades;</span>$spades " .
+           "<span style='color: red'>&hearts;</span>$hearts " .
+           "<span style='color: red'>&diams;</span>$diamonds " .
+           "<span style='color: black'>&clubs;</span>$clubs</span>";
+}
+// "csh" means "center short hand"
+function csh($spades, $hearts, $diamonds, $clubs) {
+    return '<span class="handWrapper">' .
+           rsh($spades, $hearts, $diamonds, $clubs) .
+           '</span>';
+}
 function auction($a) {
     $result = "<span class='auction'>" .
               "<span><span>W</span><span>N</span>" .
