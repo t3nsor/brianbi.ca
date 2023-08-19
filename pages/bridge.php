@@ -36,11 +36,11 @@ if (!in_array($file, scandir('content/bridge'))) {
     margin: 2ex 0.7em;
 }
 #content span.auction > span:first-child {
-    background-color: #c0c0c0;
+    background-color: #d0d0d0;
 }
 #content span.auction > span {
     display: table-row;
-    background-color: #ffff80;
+    background-color: #ffffc0;
 }
 #content span.auction span span {
     display: table-cell;

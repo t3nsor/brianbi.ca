@@ -211,8 +211,30 @@ range for a 1NT response. And because your partner knows that you're playing a
 to 12 points (but always at least 6). For this reason, your partner normally
 should not pass when you have made a 1NT response to their 1M opening, unless
 your partner has a balanced, dead minimum (12&ndash;13 points). For this reason,
-we say that this 1NT response is <em>semi-forcing</em>. No one likes the
-semi-forcing 1NT convention, but it is a necessary part of every 2/1 system.
+we say that this 1NT response is <em>semi-forcing</em>.
+</p>
+<p>
+There are two reasons why semi-forcing 1NT is not a very useful bid. It is not
+descriptive, as responder might not necessarily have a balanced hand. Responder
+might have wanted to bid a suit, but could not do so because the partnership is
+playing 2/1 game forcing. In addition, responder might actually want to play in
+1NT: in other words, responder, having a balanced minimum, would really like for
+opener to pass after responder bids 1NT, but because the 1NT response is
+semi-forcing, opener will bid again most of the time, which forecloses the
+possibility of playing in 1NT. Unfortunately, the semi-forcing 1NT that no one
+likes is a necessary evil of 2/1 game forcing systems.
+</p>
+<p>
+Note that when the opening bid is 1m instead of 1M, then responder's 1NT bid is
+<em>not</em> semi-forcing. It is a natural bid, showing 6&ndash;10 points and a
+balanced hand. The difference is that, when opener bids a major suit, responder
+might have no choice but to bid 1NT because other options are not available. But
+when opener bids a minor suit, responder has more options available, such as
+bidding a 4-card major suit at the 1 level. If responder has invitational
+strength with a balanced hand, they could bid 2NT. So if they choose to bid 1NT,
+they really mean it. This is not a semi-forcing bid, and opener can pass, but is
+allowed to bid more, if they have a reason to. For example, if opener has 19
+HCP, they might raise to 3NT.
 </p>
 <h3>Two-level bids that are <em>not</em> 2/1 game forcing</h3>
 <p>In the previous subsection, we covered the immediate two-level suit response
