@@ -101,6 +101,40 @@ when in actual fact your partner may only have 4 cards in the major suit. This
 would cause some serious problems. Thus, we can see that even if you and your
 partner don't use any conventions, you still need to have agreements about the
 meanings of natural bids.</p>
+<h3>Agreements versus rules</h3>
+<p>
+A partnership agreement is different from a rule. The rules of bridge are listed
+in the <i>Laws of Duplicate Bridge</i>, and must be followed by all players; if
+a player breaks a rule, the tournament director should be summoned at once in
+order to provide the remedy prescribed by the Laws. For example, it is a
+<em>rule</em> that you can double only if the last bid was made by one of the
+opponents (Law 19A.1). If you break this rule, the tournament director will make
+you substitute a legal call, and you and your partner must then both pass until
+the end of the auction (Law 36B). On the other hand, if you break your
+partnership agreement, you will deviate from the carefully crafted system
+devised by you and your partner, which will likely result in a bad score. For
+example, if your partner has made a forcing bid, the only reason why it's
+forcing is that you and your partner have agreed that it's forcing. So if you
+pass, then you're not breaking any rules, but you're breaking the partnership
+agreement, and passing when your partner has made a forcing bid is typically a
+very bad idea, since forcing bids are often artificial. (Meaning that your
+partner will then end up playing a contract even though their hand is not
+suitable for it.)
+</p>
+<p>
+When this site uses language such as <q>should</q> or <q>must</q>, the meaning
+depends on context. It will usually mean <q>the partnership agreement requires
+this</q> or it might mean that <em>any</em> reasonable partnership agreement
+would require this (not only the one described on this site). Sometimes it means
+<q>the partnership agreement doesn't require this, but it would be foolish to do
+otherwise</q>. Rarely, it might mean <q>the rules require this</q>. The reader
+is presumed to be familiar with the rules of bridge.
+</p>
+<p>
+To make things more confusing, some partnership agreements, despite being legal
+under the rules of bridge, are disallowed in some tournaments. On rare occasion,
+this site will discuss some examples of such restrictions.
+</p>
 <h3>Standard American and 2/1 systems</h3>
 <p>Older generations of American bridge players overwhelmingly used some
 variation of the <q>Standard American</q> system. In Standard American, for
