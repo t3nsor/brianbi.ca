@@ -22,7 +22,7 @@ Consider the auction below:
 <?=auction(array('1&hearts;', 'P', '1&spades;', 'P',
                  '2&hearts;', 'P', 'P', 'P'))?>
 </span>
-In <a href="http://brianbi.ca/bridge/1resp">Subsequent bidding at the one
+In <a href="/bridge/1resp">Subsequent bidding at the one
 level</a>, we discussed the possibility that, after opener bids 1 of a suit, and
 responder bids 1 of a different suit, and opener still doesn't have a fit,
 opener might bid 1NT. However, opener can also rebid their own suit, in the hope
@@ -42,7 +42,7 @@ as major suit fits. So if opener has only 5 of their minor suit, then chances
 are that the partnership belongs in notrump.)
 </p>
 <p>
-In <a href="http://brianbi.ca/bridge/support-major">Supporting a major suit</a>,
+In <a href="/bridge/support-major">Supporting a major suit</a>,
 we discussed how, when showing support for partner's major suit, the level of
 the bid you make signals how much strength you have; making a jump bid shows at
 least game-invitational strength. It is useful to follow a similar convention

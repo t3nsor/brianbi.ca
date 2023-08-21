@@ -172,7 +172,7 @@ What should you do? Well...
 </p>
 <ul>
 <li>
-As discussed in <a href="http://brianbi.ca/bridge/1resp">Subsequent bidding at
+As discussed in <a href="/bridge/1resp">Subsequent bidding at
 the one level</a>, if you have less than 6 points, you should pass. But that
 isn't the case here.
 </li>
@@ -183,7 +183,7 @@ game-forcing strength in this hand.
 </li>
 <li>
 As discussed in
-<a href="http://brianbi.ca/bridge/support-major">Supporting a major suit</a>, if
+<a href="/bridge/support-major">Supporting a major suit</a>, if
 you have support for your partner's major suit, you should bid that suit to show
 support. In this case you have 11 HCP, so if you had support, you would bid
 3&hearts;. But you don't have suppport, so what do you do?
@@ -314,7 +314,7 @@ points. Should you bid 2&spades;? No; 2&spades; is not a 2/1 response, because
 it is a jump bid. 2&clubs; or 2&diams; would be 2/1 responses. However, 2&clubs;
 and 2&diams; would not make sense as responses here because you only have 2
 cards in each minor suit. You should bid 1&spades;. As we discussed in
-<a href="http://brianbi.ca/bridge/1resp">Subsequent bidding at the one
+<a href="/bridge/1resp">Subsequent bidding at the one
 level</a>, your 1-level suit response to your partner's 1-level suit bid is
 forcing. You can make it even if you have a very strong hand, and your partner
 will give you another chance to bid. So, you should start with 1&spades;; it is
@@ -354,7 +354,7 @@ since you didn't bid their suit. You must show support on a later bid.
 When your partner opens 1 of a suit and you want to force to game but you don't
 have an appropriate suit with which to make a 2/1 response, you can bid a 4-card
 suit at the 1 level, just as discussed in
-<a href="http://brianbi.ca/bridge/1resp">a previous section</a>. You will have
+<a href="/bridge/1resp">a previous section</a>. You will have
 to let your partner know about your game-forcing strength and support on a later
 bid.
 </li>

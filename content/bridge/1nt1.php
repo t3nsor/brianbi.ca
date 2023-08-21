@@ -119,7 +119,7 @@ miss a game. In order to avoid this outcome, you might wish to open this hand
 1NT instead. On the other hand, if your 5-card suit is higher-ranking than your
 4-card suit, you can open with your 5-card suit, and if your partner does not
 show support, you can bid your 4-card suit at the 2 level later, as discussed in
-<a href="http://brianbi.ca/bridge/2resp">a previous section</a>. This approach
+<a href="/bridge/2resp">a previous section</a>. This approach
 has the advantage that you get your main suit out there as soon as possible,
 which is particularly valuable when it is a major suit. Hands with a 4=5=2=2
 distribution (meaning exactly 4 spades, 5 hearts, and 2 in each minor) are a
