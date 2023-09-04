@@ -92,3 +92,12 @@ this is not the response East was hoping for; East only has 4 spades. So East
 bids 3NT since no fit has been found. But West, now realizing that East has
 spades, is aware of a 4&ndash;4 fit in spades, and corrects 3NT to 4S.
 </p>
+<h3>Quantitative responses to 2NT</h3>
+<p>
+The quantitative responses to 1NT discussed in the
+<a href="/bridge/1nt4">previous section</a> also apply after a 2NT opening bid.
+That is, when a player has opened 2NT, their partner can raise to 6NT or 7NT, or
+bid 4NT to invite to 6NT, or bid 5NT to invite to 7NT. Similarly, if responder
+has bid a Jacoby transfer or Stayman, responder can make a quantitative notrump
+bid at their next turn to bid.
+</p>
