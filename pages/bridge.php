@@ -42,7 +42,7 @@ if (!in_array($file, scandir('content/bridge'))) {
     display: table-row;
     background-color: #ffffc0;
 }
-#content span.auction span span {
+#content span.auction > span > span {
     display: table-cell;
     border: 1px solid grey;
     width: 1.5em;
@@ -97,6 +97,19 @@ function auction($a) {
     for ($i = 0; $i < count($a); $i++) {
         if ($i % 4 == 0) {
             $result .= '<span>';
+        }
+        if (strlen($a[$i]) == 2) {
+            $num = $a[$i][0];
+            $strain = $a[$i][1];
+            if ($strain == 'C') {
+                $a[$i] = $num . '&clubs;';
+            } elseif ($strain == 'D') {
+                $a[$i] = $num . '<span style="color:red">&diams;</span>';
+            } elseif ($strain == 'H') {
+                $a[$i] = $num . '<span style="color:red">&hearts;</span>';
+            } elseif ($strain == 'S') {
+                $a[$i] = $num . '&spades;';
+            }
         }
         $result .= "<span>{$a[$i]}</span>";
         if ($i % 4 == 3) {
