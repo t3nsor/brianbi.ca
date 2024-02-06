@@ -14,6 +14,7 @@ header .title {
     display: inline-block;
     font-family: sans-serif;
     font-size: 200%;
+    line-height: 1.2em;
     margin: 1em;
 }
 header .title a {
@@ -23,8 +24,19 @@ header .title a {
 main {
     background: white;
     display: table-cell;
+    position: relative;
     vertical-align: top;
     width: 100%;
+}
+main::after {
+    background: linear-gradient(#333, #000);
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 6.4em;
+    z-index: -1;
 }
 nav {
     background: linear-gradient(to right, #00a, #006);
@@ -51,4 +63,7 @@ nav ul > li > a:hover {
 }
 .t1 {
     display: table;
+}
+.markdown-rendered mjx-container {
+    overflow-x: scroll;
 }
