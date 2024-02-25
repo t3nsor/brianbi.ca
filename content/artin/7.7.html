@@ -9,7 +9,7 @@
 \end{align*}
 Some of the terms in this product have both numerator and denominator divisible
 by \(p\), while the others have neither numerator nor denominator divisible by
-\(p\). The terms of the former type can be written in the form
+\(p\). The terms of the former type, other than the initial term \(mp^e/p^e\), can be written in the form
 \[
 \frac{mp^e - np^f}{p^e - np^f}
 \]
@@ -19,13 +19,13 @@ reduced to the form
 \frac{mp^{e-f} - n}{p^{e-f} - n}
 \]
 Once this reduction has been performed, all terms in the expansion of
-\(\binom{mp^e}{p^e}\) have a numerator and denominator that are not divisible
+\(\binom{mp^e}{p^e}\), other than the first, have a numerator and denominator that are not divisible
 by \(p\) and have the same remainder upon division by \(p\). This implies
 \[
-N = \binom{mp^e}{p^e} = \frac{a}{b}
+N = \binom{mp^e}{p^e} = \frac{mp^e}{p^e} \frac{a}{b} = \frac{ma}{b}
 \]
-where \(a \equiv b \not\equiv 0 \pmod{p}\). Then, \(a \equiv bN \pmod{p}\), or
-\(N \equiv b^{-1}a \equiv 1 \pmod{p}\).</p>
+where \(a \equiv b \not\equiv 0 \pmod{p}\). Thus,
+\(N \equiv m \pmod{p}\).</p>
 
 <p><span class="problem">Exercise 7.7.2</span> \(H_1\) is a \(p\)-group,
 therefore \(H_1\) is a \(p\)-subgroup of \(G_2\) and is contained in a Sylow
